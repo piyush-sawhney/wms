@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_l6bd",
+  "column_break_ekjm",
   "family_name",
   "column_break_vfis",
   "family_head",
@@ -47,12 +48,16 @@
    "fieldtype": "Table",
    "label": "Family Members",
    "options": "WMS Family Members"
+  },
+  {
+   "fieldname": "column_break_ekjm",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-14 17:32:53.379875",
+ "modified": "2025-07-14 18:38:22.193117",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Family",

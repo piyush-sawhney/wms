@@ -8,12 +8,16 @@
  "field_order": [
   "section_break_skst",
   "contact",
+  "column_break_ijqo",
+  "tax_status",
   "section_break_kjas",
   "full_name",
   "date_of_birth",
+  "occupation",
   "column_break_khna",
   "pan",
-  "place_of_birth"
+  "place_of_birth",
+  "income_slab"
  ],
  "fields": [
   {
@@ -60,13 +64,39 @@
   {
    "fieldname": "place_of_birth",
    "fieldtype": "Data",
-   "label": "Place of Birth"
+   "label": "Place of Birth",
+   "placeholder": "City or District"
+  },
+  {
+   "default": "Private Service",
+   "fieldname": "occupation",
+   "fieldtype": "Select",
+   "label": "Occupation",
+   "options": "Professional\nPrivate Service\nSelf-Employed",
+   "sort_options": 1
+  },
+  {
+   "fieldname": "income_slab",
+   "fieldtype": "Select",
+   "label": "Income Slab",
+   "options": "Below 1 Lakh\n1-5 Lakh\n5-10 Lakh\n10-25 Lakh\n25 Lakh to 1 Crore\nAbove 1 Crore"
+  },
+  {
+   "fieldname": "column_break_ijqo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tax_status",
+   "fieldtype": "Link",
+   "label": "Tax Status",
+   "options": "WMS Tax Status",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-14 17:17:09.476859",
+ "modified": "2025-07-14 18:42:18.454159",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",
