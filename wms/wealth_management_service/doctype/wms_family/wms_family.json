@@ -1,12 +1,17 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:family_name",
  "creation": "2025-07-14 15:53:18.507857",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_l6bd",
-  "family_name"
+  "family_name",
+  "column_break_vfis",
+  "family_head",
+  "section_break_lvol",
+  "family_members"
  ],
  "fields": [
   {
@@ -16,16 +21,42 @@
   {
    "fieldname": "family_name",
    "fieldtype": "Data",
-   "label": "Family Name"
+   "label": "Family Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_vfis",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "family_head",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Family Head",
+   "options": "WMS Client",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_lvol",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "family_members",
+   "fieldtype": "Table",
+   "label": "Family Members",
+   "options": "WMS Family Members"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-14 15:54:04.256314",
+ "modified": "2025-07-14 17:32:53.379875",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Family",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
