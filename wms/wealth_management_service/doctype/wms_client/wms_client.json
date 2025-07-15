@@ -1,37 +1,30 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "field:full_name",
+ "autoname": "autoincrement",
  "creation": "2025-07-14 15:51:35.384008",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_skst",
-  "contact",
   "column_break_ijqo",
-  "tax_status",
-  "section_break_kjas",
+  "type",
+  "pan",
+  "column_break_feqt",
+  "sub_type",
   "full_name",
+  "section_break_kjas",
   "date_of_birth",
   "occupation",
   "column_break_khna",
-  "pan",
   "place_of_birth",
   "income_slab"
  ],
  "fields": [
   {
-   "fieldname": "contact",
-   "fieldtype": "Link",
-   "label": "Contact",
-   "options": "Contact",
-   "reqd": 1
-  },
-  {
-   "fetch_from": "contact.full_name",
    "fieldname": "full_name",
    "fieldtype": "Data",
    "label": "Full Name",
+   "read_only_depends_on": "eval: doc.type == 'Individual'",
    "unique": 1
   },
   {
@@ -53,8 +46,10 @@
    "fieldtype": "Section Break"
   },
   {
+   "depends_on": "eval: doc.type == 'Individual'",
    "fieldname": "section_break_kjas",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Individual"
   },
   {
    "fieldname": "date_of_birth",
@@ -86,21 +81,36 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "tax_status",
-   "fieldtype": "Link",
-   "label": "Tax Status",
-   "options": "WMS Tax Status",
-   "reqd": 1
+   "default": "Individual",
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "Individual\nHindu Undivided Family (HUF)\nBody of Individuals (BOI)\nAssociation of Persons (AOP)\nCompany\nLimited Liability Partnership (LLP)\nPartnership Firm\nTrust\nGovernment Agency\nLocal Authority\nArtificial Judicial Person",
+   "reqd": 1,
+   "sort_options": 1
+  },
+  {
+   "fieldname": "column_break_feqt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Resident",
+   "fieldname": "sub_type",
+   "fieldtype": "Select",
+   "label": "Sub Type",
+   "options": "Resident\nMinor\nNRI",
+   "sort_options": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-14 18:42:18.454159",
+ "modified": "2025-07-15 15:38:49.651148",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",
- "naming_rule": "By fieldname",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
