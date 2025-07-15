@@ -12,12 +12,16 @@
   "column_break_feqt",
   "sub_type",
   "full_name",
+  "section_break_cnjx",
+  "dob",
+  "column_break_gjlj",
+  "pob",
   "section_break_kjas",
-  "date_of_birth",
   "occupation",
   "column_break_khna",
-  "place_of_birth",
-  "income_slab"
+  "income_slab",
+  "hindu_undivided_family_huf_section",
+  "karta_details"
  ],
  "fields": [
   {
@@ -50,17 +54,6 @@
    "fieldname": "section_break_kjas",
    "fieldtype": "Section Break",
    "label": "Individual"
-  },
-  {
-   "fieldname": "date_of_birth",
-   "fieldtype": "Date",
-   "label": "Date of Birth"
-  },
-  {
-   "fieldname": "place_of_birth",
-   "fieldtype": "Data",
-   "label": "Place of Birth",
-   "placeholder": "City or District"
   },
   {
    "default": "Private Service",
@@ -101,12 +94,42 @@
    "label": "Sub Type",
    "options": "Resident\nMinor\nNRI",
    "sort_options": 1
+  },
+  {
+   "depends_on": "eval: doc.type == 'Hindu Undivided Family (HUF)';",
+   "fieldname": "hindu_undivided_family_huf_section",
+   "fieldtype": "Section Break",
+   "label": "Hindu Undivided Family (HUF)"
+  },
+  {
+   "fieldname": "karta_details",
+   "fieldtype": "Link",
+   "label": "Karta Details",
+   "options": "WMS Client"
+  },
+  {
+   "fieldname": "section_break_cnjx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "column_break_gjlj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pob",
+   "fieldtype": "Data",
+   "label": "Place of Birth"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-15 15:38:49.651148",
+ "modified": "2025-07-15 19:24:35.065032",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",
