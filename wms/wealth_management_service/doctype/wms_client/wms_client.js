@@ -16,4 +16,10 @@ frappe.ui.form.on("WMS Client", {
                 break;
         }
 	},
+    before_save(frm){
+        doc = frm.doc;
+        if (doc.pan) {
+            doc.pan = doc.pan.upper()
+        }
+    }
 });

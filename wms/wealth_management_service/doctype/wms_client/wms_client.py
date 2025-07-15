@@ -36,7 +36,6 @@ class WMSClient(Document):
             "Local Authority": "L",
             "Artificial Judicial Person": "J"
         }
-
         expected_code = type_to_pan_code.get(self.type)
         actual_code = self.pan[3]
 
