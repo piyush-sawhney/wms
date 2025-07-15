@@ -1,6 +1,7 @@
 {
  "actions": [],
- "autoname": "autoincrement",
+ "allow_rename": 1,
+ "autoname": "field:full_name",
  "creation": "2025-07-14 15:51:35.384008",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -17,23 +18,22 @@
   "column_break_gjlj",
   "pob",
   "section_break_kjas",
-  "occupation",
-  "column_break_khna",
+  "contact",
+  "column_break_gfmi",
   "income_slab",
+  "occupation",
   "hindu_undivided_family_huf_section",
   "karta_details"
  ],
  "fields": [
   {
+   "fetch_from": "contact.full_name",
+   "fetch_if_empty": 1,
    "fieldname": "full_name",
    "fieldtype": "Data",
    "label": "Full Name",
    "read_only_depends_on": "eval: doc.type == 'Individual'",
    "unique": 1
-  },
-  {
-   "fieldname": "column_break_khna",
-   "fieldtype": "Column Break"
   },
   {
    "allow_in_quick_entry": 1,
@@ -91,6 +91,8 @@
    "default": "Resident",
    "fieldname": "sub_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Sub Type",
    "options": "Resident\nMinor\nNRI",
    "sort_options": 1
@@ -105,6 +107,7 @@
    "fieldname": "karta_details",
    "fieldtype": "Link",
    "label": "Karta Details",
+   "link_filters": "[[\"WMS Client\",\"type\",\"=\",\"Individual\"]]",
    "options": "WMS Client"
   },
   {
@@ -124,16 +127,27 @@
    "fieldname": "pob",
    "fieldtype": "Data",
    "label": "Place of Birth"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "label": "Contact",
+   "mandatory_depends_on": "eval: doc.type == 'Individual';",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "column_break_gfmi",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-15 19:24:35.065032",
+ "modified": "2025-07-15 21:45:17.302815",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",
- "naming_rule": "Autoincrement",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

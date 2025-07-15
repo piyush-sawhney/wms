@@ -9,6 +9,7 @@ frappe.ui.form.on("WMS Client", {
             case "Individual":
                 frm.set_value("sub_type", 'Resident');
                 frm.set_df_property("sub_type", "options", ['Resident', 'Minor', 'NRI']);
+                frm.set_df_property("full_name","fetch_from","contact" )
                 break;
             case "Company":
                 frm.set_value("sub_type", 'Private Limted');
@@ -19,7 +20,7 @@ frappe.ui.form.on("WMS Client", {
     before_save(frm){
         doc = frm.doc;
         if (doc.pan) {
-            doc.pan = doc.pan.upper()
+            doc.pan = doc.pan.toUpperCase()
         }
     }
 });
