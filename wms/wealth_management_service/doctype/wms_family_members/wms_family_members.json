@@ -6,7 +6,10 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "column_break_ruvp",
   "member_contact",
+  "column_break_myce",
+  "member_name",
   "column_break_iskd",
   "relation"
  ],
@@ -28,15 +31,34 @@
   {
    "fieldname": "member_contact",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Member ID",
+   "link_filters": "[[\"WMS Client\",\"type\",\"=\",\"Individual\"]]",
+   "options": "WMS Client"
+  },
+  {
+   "fetch_from": "member_contact.full_name",
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Member Name",
-   "options": "Contact"
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_myce",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ruvp",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-14 18:39:13.071730",
+ "modified": "2025-07-16 12:57:05.210889",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Family Members",

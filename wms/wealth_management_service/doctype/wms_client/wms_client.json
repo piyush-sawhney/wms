@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:KNAPS-CLIENT-{MM}{YYYY}-{#####}",
+ "autoname": "format:{full_name}-{MM}{YYYY}-{###}",
  "creation": "2025-07-14 15:51:35.384008",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -44,6 +44,7 @@
    "in_standard_filter": 1,
    "label": "PAN",
    "length": 10,
+   "placeholder": "ABCDE1234F",
    "unique": 1
   },
   {
@@ -119,7 +120,8 @@
   {
    "fieldname": "dob",
    "fieldtype": "Date",
-   "label": "Date of Birth"
+   "label": "Date of Birth",
+   "placeholder": "DD-MM-YYYY"
   },
   {
    "fieldname": "column_break_gjlj",
@@ -128,7 +130,8 @@
   {
    "fieldname": "pob",
    "fieldtype": "Data",
-   "label": "Place of Birth"
+   "label": "Place of Birth",
+   "placeholder": "City or District"
   },
   {
    "fieldname": "contact",
@@ -145,7 +148,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-16 12:01:32.514267",
+ "modified": "2025-07-16 12:52:20.707488",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",
