@@ -42,8 +42,14 @@ class WMSClient(Document):
             dob_date = frappe.utils.getdate(self.dob)
             today = frappe.utils.nowdate()
             age = frappe.utils.date_diff(today, dob_date) // 365
-            if age > 18 and self.sub_type == "Minor":
-                frappe.throw("Minor clients must be under 18 years old. Please check the date of birth.")
+            if self.sub_type == "Minor":
+                if age > 18:
+                    frappe.throw("Minor clients must be under 18 years old. Please check the date of birth.")
+            else:
+                if age < 18:
+                    frappe.throw("Age is less than 18, please select Minor")
+
+
         
     def validate_contact(self):
         if not self.contact and self.type == "Individual":
