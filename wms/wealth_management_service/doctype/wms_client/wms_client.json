@@ -27,16 +27,6 @@
  ],
  "fields": [
   {
-   "fetch_from": "contact.full_name",
-   "fetch_if_empty": 1,
-   "fieldname": "full_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Full Name",
-   "read_only_depends_on": "eval: doc.type == 'Individual'"
-  },
-  {
    "allow_in_quick_entry": 1,
    "fieldname": "pan",
    "fieldtype": "Data",
@@ -44,8 +34,7 @@
    "in_standard_filter": 1,
    "label": "PAN",
    "length": 10,
-   "placeholder": "ABCDE1234F",
-   "unique": 1
+   "placeholder": "ABCDE1234F"
   },
   {
    "fieldname": "section_break_skst",
@@ -94,10 +83,8 @@
    "default": "Resident",
    "fieldname": "sub_type",
    "fieldtype": "Select",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Sub Type",
-   "options": "Resident\nMinor\nNRI",
+   "options": "Resident\nMinor\nSole Proprietor",
    "sort_options": 1
   },
   {
@@ -121,6 +108,7 @@
    "fieldname": "dob",
    "fieldtype": "Date",
    "label": "Date of Birth",
+   "mandatory_depends_on": "eval: doc.sub_type == 'Minor'",
    "placeholder": "DD-MM-YYYY"
   },
   {
@@ -143,12 +131,21 @@
   {
    "fieldname": "column_break_gfmi",
    "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Name",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-16 12:52:20.707488",
+ "modified": "2025-07-16 15:18:08.819825",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",

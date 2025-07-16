@@ -21,7 +21,7 @@ frappe.ui.form.on("WMS Client", {
         switch (doc.type) {
             case "Individual":
                 frm.set_value("sub_type", 'Resident');
-                frm.set_df_property("sub_type", "options", ['Resident', 'Minor', 'NRI']);
+                frm.set_df_property("sub_type", "options", ['Resident', 'NRI', 'Sole Proprietor']);
                 set_dob_pob(frm,doc.type)
                 break;
             case "Company":
@@ -38,6 +38,12 @@ frappe.ui.form.on("WMS Client", {
         doc = frm.doc;
         if (doc.pan) {
             doc.pan = doc.pan.toUpperCase()
+        }
+        if (doc.full_name) {
+            doc.full_name = doc.full_name.trim()
+        }
+        if (doc.place_of_birth) {
+            doc.place_of_birth = doc.place_of_birth.trim()
         }
     }
 });
