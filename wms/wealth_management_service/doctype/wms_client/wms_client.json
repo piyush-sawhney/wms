@@ -11,7 +11,23 @@
   "column_break_uxli",
   "client_name",
   "column_break_wfzc",
-  "pan"
+  "pan",
+  "section_break_acso",
+  "date_of_birth",
+  "column_break_elxv",
+  "place_of_birth",
+  "section_break_wxfi",
+  "phone",
+  "column_break_rcap",
+  "email",
+  "individual_details_section",
+  "client_details",
+  "karta_details_section",
+  "karta_details",
+  "sole_proprietor_details_section",
+  "sole_proprietor",
+  "address_tab",
+  "banks_tab"
  ],
  "fields": [
   {
@@ -45,14 +61,100 @@
   {
    "fieldname": "pan",
    "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "PAN"
+  },
+  {
+   "fieldname": "section_break_acso",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date Of Birth"
+  },
+  {
+   "fieldname": "column_break_elxv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "place_of_birth",
+   "fieldtype": "Data",
+   "label": "Place of Birth"
+  },
+  {
+   "fieldname": "section_break_wxfi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Link",
+   "label": "Phone",
+   "options": "Contact Phone"
+  },
+  {
+   "fieldname": "column_break_rcap",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Link",
+   "label": "Email",
+   "options": "Contact Email"
+  },
+  {
+   "fieldname": "individual_details_section",
+   "fieldtype": "Section Break",
+   "label": "Individual Details"
+  },
+  {
+   "fieldname": "client_details",
+   "fieldtype": "Link",
+   "label": "Client Details",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "address_tab",
+   "fieldtype": "Tab Break",
+   "label": "Addresses"
+  },
+  {
+   "fieldname": "banks_tab",
+   "fieldtype": "Tab Break",
+   "label": "Banks"
+  },
+  {
+   "fieldname": "karta_details_section",
+   "fieldtype": "Section Break",
+   "label": "Karta Details"
+  },
+  {
+   "fieldname": "karta_details",
+   "fieldtype": "Link",
+   "label": "Karta Details",
+   "link_filters": "[[\"WMS Client\",\"type\",\"=\",\"Hindu Undivided Family (HUF)\"]]",
+   "options": "WMS Client"
+  },
+  {
+   "fieldname": "sole_proprietor_details_section",
+   "fieldtype": "Section Break",
+   "label": "Sole Proprietor Details"
+  },
+  {
+   "fieldname": "sole_proprietor",
+   "fieldtype": "Link",
+   "label": "Sole Proprietor",
+   "options": "WMS Client"
   }
  ],
  "grid_page_length": 50,
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-22 15:46:36.026748",
+ "modified": "2025-07-22 17:12:07.245088",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",
