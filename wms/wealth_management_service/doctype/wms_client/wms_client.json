@@ -1,151 +1,58 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{full_name}-{MM}{YYYY}-{###}",
- "creation": "2025-07-14 15:51:35.384008",
+ "autoname": "format:Client-{MM}{YYYY}-{###}",
+ "creation": "2025-07-22 15:33:43.707038",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_skst",
-  "column_break_ijqo",
   "type",
-  "pan",
-  "column_break_feqt",
-  "sub_type",
-  "full_name",
-  "section_break_cnjx",
-  "dob",
-  "column_break_gjlj",
-  "pob",
-  "section_break_kjas",
-  "contact",
-  "column_break_gfmi",
-  "income_slab",
-  "occupation",
-  "hindu_undivided_family_huf_section",
-  "karta_details"
+  "image",
+  "column_break_uxli",
+  "client_name",
+  "column_break_wfzc",
+  "pan"
  ],
  "fields": [
   {
-   "allow_in_quick_entry": 1,
-   "fieldname": "pan",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "PAN",
-   "length": 10,
-   "placeholder": "ABCDE1234F"
-  },
-  {
-   "fieldname": "section_break_skst",
-   "fieldtype": "Section Break"
-  },
-  {
-   "depends_on": "eval: doc.type == 'Individual'",
-   "fieldname": "section_break_kjas",
-   "fieldtype": "Section Break",
-   "label": "Individual"
-  },
-  {
-   "default": "Private Service",
-   "fieldname": "occupation",
-   "fieldtype": "Select",
-   "label": "Occupation",
-   "options": "Professional\nPrivate Service\nSelf-Employed",
-   "sort_options": 1
-  },
-  {
-   "fieldname": "income_slab",
-   "fieldtype": "Select",
-   "label": "Income Slab",
-   "options": "Below 1 Lakh\n1-5 Lakh\n5-10 Lakh\n10-25 Lakh\n25 Lakh to 1 Crore\nAbove 1 Crore"
-  },
-  {
-   "fieldname": "column_break_ijqo",
-   "fieldtype": "Column Break"
-  },
-  {
-   "default": "Individual",
    "fieldname": "type",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Type",
-   "options": "Individual\nHindu Undivided Family (HUF)\nBody of Individuals (BOI)\nAssociation of Persons (AOP)\nCompany\nLimited Liability Partnership (LLP)\nPartnership Firm\nTrust\nGovernment Agency\nLocal Authority\nArtificial Judicial Person",
-   "reqd": 1,
-   "sort_options": 1
+   "options": "WMS Client Type",
+   "reqd": 1
   },
   {
-   "fieldname": "column_break_feqt",
-   "fieldtype": "Column Break"
-  },
-  {
-   "default": "Resident",
-   "fieldname": "sub_type",
-   "fieldtype": "Select",
-   "label": "Sub Type",
-   "options": "Resident\nMinor\nSole Proprietor",
-   "sort_options": 1
-  },
-  {
-   "depends_on": "eval: doc.type == 'Hindu Undivided Family (HUF)';",
-   "fieldname": "hindu_undivided_family_huf_section",
-   "fieldtype": "Section Break",
-   "label": "Hindu Undivided Family (HUF)"
-  },
-  {
-   "fieldname": "karta_details",
-   "fieldtype": "Link",
-   "label": "Karta Details",
-   "link_filters": "[[\"WMS Client\",\"type\",\"=\",\"Individual\"]]",
-   "options": "WMS Client"
-  },
-  {
-   "fieldname": "section_break_cnjx",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "dob",
-   "fieldtype": "Date",
-   "label": "Date of Birth",
-   "mandatory_depends_on": "eval: doc.sub_type == 'Minor'",
-   "placeholder": "DD-MM-YYYY"
-  },
-  {
-   "fieldname": "column_break_gjlj",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "pob",
+   "fieldname": "client_name",
    "fieldtype": "Data",
-   "label": "Place of Birth",
-   "placeholder": "City or District"
-  },
-  {
-   "fieldname": "contact",
-   "fieldtype": "Link",
-   "label": "Contact",
-   "mandatory_depends_on": "eval: doc.type == 'Individual';",
-   "options": "Contact"
-  },
-  {
-   "fieldname": "column_break_gfmi",
-   "fieldtype": "Column Break"
-  },
-  {
-   "allow_in_quick_entry": 1,
-   "fieldname": "full_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Name",
    "reqd": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "column_break_uxli",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_wfzc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pan",
+   "fieldtype": "Data",
+   "label": "PAN"
   }
  ],
  "grid_page_length": 50,
+ "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-16 15:18:08.819825",
+ "modified": "2025-07-22 15:46:36.026748",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",
@@ -166,7 +73,9 @@
   }
  ],
  "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "client_name"
 }

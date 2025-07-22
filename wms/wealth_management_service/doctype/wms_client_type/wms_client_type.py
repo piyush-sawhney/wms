@@ -5,13 +5,5 @@
 from frappe.model.document import Document
 
 
-class WMSClient(Document):
-	def validate(self):
-		self.validate_pan()
-
-	def validate_pan(pan):
-		pass
-
-	def validate_pan_type(self):
-		pass
-
+class WMSClientType(Document):
+	pass
