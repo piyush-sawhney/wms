@@ -19,10 +19,10 @@
   "pob",
   "individual_details_section",
   "client_details",
-  "karta_details_section",
-  "karta_details",
   "sole_proprietor_details_section",
   "sole_proprietor",
+  "section_break_sihe",
+  "ultimate_beneficiary_owners",
   "address_tab",
   "banks_tab"
  ],
@@ -87,20 +87,6 @@
    "label": "Banks"
   },
   {
-   "fieldname": "karta_details_section",
-   "fieldtype": "Section Break",
-   "label": "Karta Details"
-  },
-  {
-   "depends_on": "eval:doc.type == \"Hindu Undivided Family (HUF)\"",
-   "fieldname": "karta_details",
-   "fieldtype": "Link",
-   "label": "Karta Details",
-   "link_filters": "[[\"WMS Client\",\"type\",\"=\",\"Hindu Undivided Family (HUF)\"]]",
-   "mandatory_depends_on": "eval:doc.type == \"Hindu Undivided Family (HUF)\"",
-   "options": "WMS Client"
-  },
-  {
    "fieldname": "sole_proprietor_details_section",
    "fieldtype": "Section Break",
    "label": "Sole Proprietor Details"
@@ -141,13 +127,23 @@
    "fieldname": "pob",
    "fieldtype": "Data",
    "label": "Place of Birth"
+  },
+  {
+   "fieldname": "section_break_sihe",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "ultimate_beneficiary_owners",
+   "fieldtype": "Table",
+   "label": "Ultimate Beneficiary Owners",
+   "options": "WMS UBO"
   }
  ],
  "grid_page_length": 50,
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-23 14:18:26.373360",
+ "modified": "2025-07-23 17:38:18.123790",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",
