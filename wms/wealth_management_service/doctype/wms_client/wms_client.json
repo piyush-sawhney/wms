@@ -6,20 +6,17 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "type",
+  "classification",
   "image",
   "column_break_uxli",
-  "client_name",
+  "type",
   "column_break_wfzc",
+  "client_name",
   "pan",
   "section_break_acso",
-  "date_of_birth",
+  "dob",
   "column_break_elxv",
-  "place_of_birth",
-  "section_break_wxfi",
-  "phone",
-  "column_break_rcap",
-  "email",
+  "pob",
   "individual_details_section",
   "client_details",
   "karta_details_section",
@@ -30,15 +27,6 @@
   "banks_tab"
  ],
  "fields": [
-  {
-   "fieldname": "type",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Type",
-   "options": "WMS Client Type",
-   "reqd": 1
-  },
   {
    "fieldname": "client_name",
    "fieldtype": "Data",
@@ -72,40 +60,11 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "date_of_birth",
-   "fieldtype": "Date",
-   "label": "Date Of Birth"
-  },
-  {
    "fieldname": "column_break_elxv",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "place_of_birth",
-   "fieldtype": "Data",
-   "label": "Place of Birth"
-  },
-  {
-   "fieldname": "section_break_wxfi",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "phone",
-   "fieldtype": "Link",
-   "label": "Phone",
-   "options": "Contact Phone"
-  },
-  {
-   "fieldname": "column_break_rcap",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "email",
-   "fieldtype": "Link",
-   "label": "Email",
-   "options": "Contact Email"
-  },
-  {
+   "depends_on": "eval:doc.type == \"Individual\" && doc.classification != \"Sole Proprietor\"",
    "fieldname": "individual_details_section",
    "fieldtype": "Section Break",
    "label": "Individual Details"
@@ -114,6 +73,7 @@
    "fieldname": "client_details",
    "fieldtype": "Link",
    "label": "Client Details",
+   "mandatory_depends_on": "eval:doc.type == \"Individual\" && doc.classification != \"Sole Proprietor\"",
    "options": "Contact"
   },
   {
@@ -132,10 +92,12 @@
    "label": "Karta Details"
   },
   {
+   "depends_on": "eval:doc.type == \"Hindu Undivided Family (HUF)\"",
    "fieldname": "karta_details",
    "fieldtype": "Link",
    "label": "Karta Details",
    "link_filters": "[[\"WMS Client\",\"type\",\"=\",\"Hindu Undivided Family (HUF)\"]]",
+   "mandatory_depends_on": "eval:doc.type == \"Hindu Undivided Family (HUF)\"",
    "options": "WMS Client"
   },
   {
@@ -144,17 +106,48 @@
    "label": "Sole Proprietor Details"
   },
   {
+   "depends_on": "eval:doc.classification == \"Sole Proprietor\"",
    "fieldname": "sole_proprietor",
    "fieldtype": "Link",
    "label": "Sole Proprietor",
+   "link_filters": "[[\"WMS Client\",\"classification\",\"=\",\"Resident\"]]",
+   "mandatory_depends_on": "eval:doc.classification == \"Sole Proprietor\"",
    "options": "WMS Client"
+  },
+  {
+   "fieldname": "classification",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Classification",
+   "options": "WMS Client Classification",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "classification.type",
+   "fieldname": "type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "Date Of Birth"
+  },
+  {
+   "fieldname": "pob",
+   "fieldtype": "Data",
+   "label": "Place of Birth"
   }
  ],
  "grid_page_length": 50,
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-22 17:12:07.245088",
+ "modified": "2025-07-23 14:18:26.373360",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",
