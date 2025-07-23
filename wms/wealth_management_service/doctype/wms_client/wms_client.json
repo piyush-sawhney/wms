@@ -129,13 +129,16 @@
    "label": "Place of Birth"
   },
   {
+   "depends_on": "eval: doc.type != null && doc.type != \"Individual\"",
    "fieldname": "section_break_sihe",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Non-Individual Details"
   },
   {
    "fieldname": "ultimate_beneficiary_owners",
    "fieldtype": "Table",
    "label": "Ultimate Beneficiary Owners",
+   "mandatory_depends_on": "eval:doc.type != \"Individual\"",
    "options": "WMS UBO"
   }
  ],
@@ -143,7 +146,7 @@
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-23 17:38:18.123790",
+ "modified": "2025-07-23 17:54:17.763051",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",
