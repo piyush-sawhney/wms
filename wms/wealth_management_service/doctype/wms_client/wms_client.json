@@ -13,18 +13,23 @@
   "column_break_wfzc",
   "client_name",
   "pan",
-  "section_break_acso",
-  "dob",
-  "column_break_elxv",
-  "pob",
   "individual_details_section",
   "client_details",
   "sole_proprietor_details_section",
   "sole_proprietor",
   "section_break_sihe",
   "ultimate_beneficiary_owners",
+  "section_break_hgvg",
+  "phone_numbers",
+  "email_ids",
+  "section_break_acso",
+  "dob",
+  "column_break_elxv",
+  "pob",
   "address_tab",
-  "banks_tab"
+  "addresess",
+  "banks_tab",
+  "banks"
  ],
  "fields": [
   {
@@ -140,13 +145,42 @@
    "label": "Ultimate Beneficiary Owners",
    "mandatory_depends_on": "eval:doc.type != \"Individual\"",
    "options": "WMS UBO"
+  },
+  {
+   "fieldname": "email_ids",
+   "fieldtype": "Table",
+   "label": "Email IDs",
+   "options": "Contact Email"
+  },
+  {
+   "fieldname": "section_break_hgvg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "phone_numbers",
+   "fieldtype": "Table",
+   "label": "Phone Numbers",
+   "options": "Contact Phone"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "addresess",
+   "fieldtype": "Table",
+   "label": "Addresess",
+   "options": "WMS Address"
+  },
+  {
+   "fieldname": "banks",
+   "fieldtype": "Table",
+   "label": "Banks",
+   "options": "WMS Client Bank"
   }
  ],
  "grid_page_length": 50,
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-23 17:54:17.763051",
+ "modified": "2025-07-24 13:43:15.395137",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",
