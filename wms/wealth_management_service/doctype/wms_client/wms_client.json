@@ -15,8 +15,8 @@
   "pan",
   "individual_details_section",
   "client_details",
-  "sole_proprietor_details_section",
-  "sole_proprietor",
+  "column_break_ruom",
+  "proprietor_details",
   "section_break_sihe",
   "ultimate_beneficiary_owners",
   "section_break_hgvg",
@@ -27,7 +27,7 @@
   "column_break_elxv",
   "pob",
   "address_tab",
-  "addresess",
+  "addresses",
   "banks_tab",
   "banks"
  ],
@@ -35,6 +35,8 @@
   {
    "fieldname": "client_name",
    "fieldtype": "Data",
+   "in_filter": 1,
+   "in_standard_filter": 1,
    "label": "Name",
    "reqd": 1
   },
@@ -69,12 +71,13 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:doc.type == \"Individual\" && doc.classification != \"Sole Proprietor\"",
+   "depends_on": "eval:doc.type === \"Individual\"",
    "fieldname": "individual_details_section",
    "fieldtype": "Section Break",
    "label": "Individual Details"
   },
   {
+   "depends_on": "eval:doc.type === \"Individual\" && doc.classification != \"Sole Proprietor\"",
    "fieldname": "client_details",
    "fieldtype": "Link",
    "label": "Client Details",
@@ -92,20 +95,7 @@
    "label": "Banks"
   },
   {
-   "fieldname": "sole_proprietor_details_section",
-   "fieldtype": "Section Break",
-   "label": "Sole Proprietor Details"
-  },
-  {
-   "depends_on": "eval:doc.classification == \"Sole Proprietor\"",
-   "fieldname": "sole_proprietor",
-   "fieldtype": "Link",
-   "label": "Sole Proprietor",
-   "link_filters": "[[\"WMS Client\",\"classification\",\"=\",\"Resident\"]]",
-   "mandatory_depends_on": "eval:doc.classification == \"Sole Proprietor\"",
-   "options": "WMS Client"
-  },
-  {
+   "default": "Resident",
    "fieldname": "classification",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -163,24 +153,36 @@
    "options": "Contact Phone"
   },
   {
-   "allow_in_quick_entry": 1,
-   "fieldname": "addresess",
-   "fieldtype": "Table",
-   "label": "Addresess",
-   "options": "WMS Address"
-  },
-  {
    "fieldname": "banks",
    "fieldtype": "Table",
    "label": "Banks",
    "options": "WMS Client Bank"
+  },
+  {
+   "fieldname": "addresses",
+   "fieldtype": "Table",
+   "label": "Addresses",
+   "options": "WMS Client Address"
+  },
+  {
+   "fieldname": "column_break_ruom",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.classification === \"Sole Proprietor\"",
+   "fieldname": "proprietor_details",
+   "fieldtype": "Link",
+   "label": "Proprietor Details",
+   "link_filters": "[[\"WMS Client\",\"type\",\"=\",\"Individual\"]]",
+   "mandatory_depends_on": "eval:doc.type == \"Individual\" && doc.classification === \"Sole Proprietor\"",
+   "options": "WMS Client"
   }
  ],
  "grid_page_length": 50,
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-24 13:43:15.395137",
+ "modified": "2025-07-25 14:14:29.451597",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",

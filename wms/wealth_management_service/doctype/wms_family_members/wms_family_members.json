@@ -33,11 +33,11 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Member ID",
-   "link_filters": "[[\"WMS Client\",\"name\",\"!=\",\"eval:parent.family_head\"]]",
+   "link_filters": "[[\"WMS Client\",\"type\",\"=\",\"Individual\"],[\"WMS Client\",\"classification\",\"!=\",\"Sole Proprietor\"]]",
    "options": "WMS Client"
   },
   {
-   "fetch_from": "member_contact.full_name",
+   "fetch_from": "member_contact.client_name",
    "fieldname": "member_name",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -58,7 +58,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-22 15:41:59.795241",
+ "modified": "2025-07-25 14:22:52.282791",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Family Members",
