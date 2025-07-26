@@ -1,0 +1,146 @@
+[
+ {
+  "classification": "Hindu Undivided Family (HUF)",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-23 17:56:33.831436",
+  "name": "Hindu Undivided Family (HUF)",
+  "type": "Hindu Undivided Family (HUF)"
+ },
+ {
+  "classification": "Resident",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-23 17:58:10.545066",
+  "name": "Resident",
+  "type": "Individual"
+ },
+ {
+  "classification": "Sole Proprietor",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-25 14:08:16.643325",
+  "name": "Sole Proprietor",
+  "type": "Individual"
+ },
+ {
+  "classification": "Minor",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-26 11:37:47.369237",
+  "name": "Minor",
+  "type": "Individual"
+ },
+ {
+  "classification": "Non Resident Indian",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-26 11:38:12.264174",
+  "name": "Non Resident Indian",
+  "type": "Individual"
+ },
+ {
+  "classification": "Public Limited",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-26 11:38:25.474878",
+  "name": "Public Limited",
+  "type": "Company"
+ },
+ {
+  "classification": "Private Limited",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-26 11:38:34.884251",
+  "name": "Private Limited",
+  "type": "Company"
+ },
+ {
+  "classification": "One Person",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-26 11:38:45.724876",
+  "name": "One Person",
+  "type": "Company"
+ },
+ {
+  "classification": "Non-Profit",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-26 11:39:04.801621",
+  "name": "Non-Profit",
+  "type": "Company"
+ },
+ {
+  "classification": "Producer",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-26 11:39:18.320274",
+  "name": "Producer",
+  "type": "Company"
+ },
+ {
+  "classification": "Nidhi",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-26 11:39:25.592260",
+  "name": "Nidhi",
+  "type": "Company"
+ },
+ {
+  "classification": "Government Owned",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-26 11:39:43.389645",
+  "name": "Government Owned",
+  "type": "Company"
+ },
+ {
+  "classification": "Partnership Firm",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-26 11:40:12.679211",
+  "name": "Partnership Firm",
+  "type": "Partnership Firm"
+ },
+ {
+  "classification": "Public Charitable",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-26 11:40:54.640288",
+  "name": "Public Charitable",
+  "type": "Trust"
+ },
+ {
+  "classification": "Private",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-26 11:41:06.603042",
+  "name": "Private",
+  "type": "Trust"
+ },
+ {
+  "classification": "Religious",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-26 11:41:16.061127",
+  "name": "Religious",
+  "type": "Trust"
+ },
+ {
+  "classification": "Employee Welfare",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-26 11:42:35.226059",
+  "name": "Employee Welfare",
+  "type": "Trust"
+ },
+ {
+  "classification": "Provident Fund",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-26 11:42:44.055426",
+  "name": "Provident Fund",
+  "type": "Trust"
+ }
+]

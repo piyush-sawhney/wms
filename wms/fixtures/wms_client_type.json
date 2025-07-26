@@ -1,0 +1,79 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "WMS Client Type",
+  "modified": "2025-07-22 17:10:54.054175",
+  "name": "Hindu Undivided Family (HUF)",
+  "type": "Hindu Undivided Family (HUF)"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Client Type",
+  "modified": "2025-07-23 17:58:03.872734",
+  "name": "Individual",
+  "type": "Individual"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Client Type",
+  "modified": "2025-07-26 11:11:21.458535",
+  "name": "Body of Individuals (BOI)",
+  "type": "Body of Individuals (BOI)"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Client Type",
+  "modified": "2025-07-26 11:11:30.494656",
+  "name": "Association of Persons (AOP)",
+  "type": "Association of Persons (AOP)"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Client Type",
+  "modified": "2025-07-26 11:11:50.812532",
+  "name": "Company",
+  "type": "Company"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Client Type",
+  "modified": "2025-07-26 11:11:59.371440",
+  "name": "Limited Liability Partnership (LLP)",
+  "type": "Limited Liability Partnership (LLP)"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Client Type",
+  "modified": "2025-07-26 11:12:09.035825",
+  "name": "Partnership Firm",
+  "type": "Partnership Firm"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Client Type",
+  "modified": "2025-07-26 11:12:16.571368",
+  "name": "Trust",
+  "type": "Trust"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Client Type",
+  "modified": "2025-07-26 11:12:25.258154",
+  "name": "Government Agency",
+  "type": "Government Agency"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Client Type",
+  "modified": "2025-07-26 11:12:32.014065",
+  "name": "Local Authority",
+  "type": "Local Authority"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Client Type",
+  "modified": "2025-07-26 11:12:40.371309",
+  "name": "Artificial Judicial Person",
+  "type": "Artificial Judicial Person"
+ }
+]
