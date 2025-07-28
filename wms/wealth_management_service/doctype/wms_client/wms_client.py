@@ -10,6 +10,19 @@ class WMSClient(Document):
 		
 	def validate(self):
 		self.validate_client_name()
+		self.validate_ubos()
+		
+	def validate_ubos(self):
+		if self.type == "Individual" and self.classification =="Sole Proprietor":
+			if len(self.ubos) != 1:
+				frappe.throw("Enter Single Proprietor details in Beneficiaries Table")
+		elif self.type != "Individual":
+			if self.type == "Hindu Undivided Family (HUF)" and len(self.ubos) != 1:
+				frappe.throw("Enter single karta details for the HUF")
+			elif len(self.ubos) < 1:
+				frappe.throw("At least one beneficiary required for Non-Individual Clients")
+
+
 
 	def validate_client_name(self):
 		if not self.client_name:

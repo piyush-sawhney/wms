@@ -40,59 +40,59 @@
   "type": "Individual"
  },
  {
-  "classification": "Public Limited",
+  "classification": "Public Limited Company",
   "docstatus": 0,
   "doctype": "WMS Client Classification",
   "modified": "2025-07-26 11:38:25.474878",
-  "name": "Public Limited",
+  "name": "Public Limited Company",
   "type": "Company"
  },
  {
-  "classification": "Private Limited",
+  "classification": "Private Limited Company",
   "docstatus": 0,
   "doctype": "WMS Client Classification",
   "modified": "2025-07-26 11:38:34.884251",
-  "name": "Private Limited",
+  "name": "Private Limited Company",
   "type": "Company"
  },
  {
-  "classification": "One Person",
+  "classification": "One Person Company",
   "docstatus": 0,
   "doctype": "WMS Client Classification",
   "modified": "2025-07-26 11:38:45.724876",
-  "name": "One Person",
+  "name": "One Person Company",
   "type": "Company"
  },
  {
-  "classification": "Non-Profit",
+  "classification": "Non-Profit Company",
   "docstatus": 0,
   "doctype": "WMS Client Classification",
   "modified": "2025-07-26 11:39:04.801621",
-  "name": "Non-Profit",
+  "name": "Non-Profit Company",
   "type": "Company"
  },
  {
-  "classification": "Producer",
+  "classification": "Producer Company",
   "docstatus": 0,
   "doctype": "WMS Client Classification",
   "modified": "2025-07-26 11:39:18.320274",
-  "name": "Producer",
+  "name": "Producer Company",
   "type": "Company"
  },
  {
-  "classification": "Nidhi",
+  "classification": "Nidhi Company",
   "docstatus": 0,
   "doctype": "WMS Client Classification",
   "modified": "2025-07-26 11:39:25.592260",
-  "name": "Nidhi",
+  "name": "Nidhi Company",
   "type": "Company"
  },
  {
-  "classification": "Government Owned",
+  "classification": "Government Owned Company",
   "docstatus": 0,
   "doctype": "WMS Client Classification",
   "modified": "2025-07-26 11:39:43.389645",
-  "name": "Government Owned",
+  "name": "Government Owned Company",
   "type": "Company"
  },
  {
@@ -104,43 +104,43 @@
   "type": "Partnership Firm"
  },
  {
-  "classification": "Public Charitable",
+  "classification": "Public Charitable Trust",
   "docstatus": 0,
   "doctype": "WMS Client Classification",
   "modified": "2025-07-26 11:40:54.640288",
-  "name": "Public Charitable",
+  "name": "Public Charitable Trust",
   "type": "Trust"
  },
  {
-  "classification": "Private",
+  "classification": "Private Trust",
   "docstatus": 0,
   "doctype": "WMS Client Classification",
   "modified": "2025-07-26 11:41:06.603042",
-  "name": "Private",
+  "name": "Private Trust",
   "type": "Trust"
  },
  {
-  "classification": "Religious",
+  "classification": "Religious Trust",
   "docstatus": 0,
   "doctype": "WMS Client Classification",
   "modified": "2025-07-26 11:41:16.061127",
-  "name": "Religious",
+  "name": "Religious Trust",
   "type": "Trust"
  },
  {
-  "classification": "Employee Welfare",
+  "classification": "Employee Welfare Trust",
   "docstatus": 0,
   "doctype": "WMS Client Classification",
   "modified": "2025-07-26 11:42:35.226059",
-  "name": "Employee Welfare",
+  "name": "Employee Welfare Trust",
   "type": "Trust"
  },
  {
-  "classification": "Provident Fund",
+  "classification": "Provident Fund Trust",
   "docstatus": 0,
   "doctype": "WMS Client Classification",
   "modified": "2025-07-26 11:42:44.055426",
-  "name": "Provident Fund",
+  "name": "Provident Fund Trust",
   "type": "Trust"
  }
 ]

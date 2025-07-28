@@ -7,15 +7,14 @@
  "engine": "InnoDB",
  "field_order": [
   "classification",
+  "pan",
   "column_break_uxli",
   "type",
   "column_break_wfzc",
   "client_name",
-  "pan",
-  "section_break_gkog",
   "gender",
   "section_break_sihe",
-  "ultimate_beneficiary_owners",
+  "ubos",
   "section_break_hgvg",
   "phone_numbers",
   "email_ids",
@@ -53,7 +52,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "PAN",
-   "options": "WMS PAN"
+   "options": "WMS PAN",
+   "placeholder": "Enter PAN Number"
   },
   {
    "fieldname": "section_break_acso",
@@ -93,27 +93,24 @@
    "read_only": 1
   },
   {
+   "depends_on": "eval:doc.classification != \"Sole Proprietor\"",
    "fieldname": "dob",
    "fieldtype": "Date",
-   "label": "Date Of Birth"
+   "label": "Date Of Birth/Incorporation",
+   "placeholder": "DD-MM-YYYY"
   },
   {
+   "depends_on": "eval:doc.classification != \"Sole Proprietor\"",
    "fieldname": "pob",
    "fieldtype": "Data",
-   "label": "Place of Birth"
+   "label": "Place of Birth",
+   "placeholder": "City/District"
   },
   {
-   "depends_on": "eval: doc.type != null && doc.type != \"Individual\"",
+   "depends_on": "eval: doc.type != \"Individual\"|| doc.classification ==\"Sole Proprietor\" ",
    "fieldname": "section_break_sihe",
    "fieldtype": "Section Break",
    "label": "Non-Individual Details"
-  },
-  {
-   "fieldname": "ultimate_beneficiary_owners",
-   "fieldtype": "Table",
-   "label": "Ultimate Beneficiary Owners",
-   "mandatory_depends_on": "eval:doc.type != \"Individual\"",
-   "options": "WMS UBO"
   },
   {
    "fieldname": "email_ids",
@@ -144,22 +141,25 @@
    "options": "WMS Client Address"
   },
   {
-   "fieldname": "section_break_gkog",
-   "fieldtype": "Section Break"
-  },
-  {
    "default": "Male",
    "depends_on": "eval:doc.type === \"Individual\" && doc.classification != \"Sole Proprietor\"",
    "fieldname": "gender",
    "fieldtype": "Select",
    "label": "Gender",
    "options": "Male\nFemale\nOthers"
+  },
+  {
+   "fieldname": "ubos",
+   "fieldtype": "Table",
+   "label": "Ultimate Beneficiary Owners",
+   "mandatory_depends_on": "eval:doc.type != \"Individual\"",
+   "options": "WMS UBO"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-28 16:12:45.209624",
+ "modified": "2025-07-28 21:59:03.676435",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",
