@@ -17,8 +17,7 @@
    "fieldname": "account_number",
    "fieldtype": "Link",
    "label": "Account Number",
-   "options": "WMS Bank",
-   "unique": 1
+   "options": "WMS Bank"
   },
   {
    "fetch_from": "account_number.name1",
@@ -61,7 +60,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-28 17:21:28.280151",
+ "modified": "2025-07-28 22:07:08.616973",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client Bank",
