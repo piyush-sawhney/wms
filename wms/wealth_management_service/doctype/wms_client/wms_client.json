@@ -55,12 +55,13 @@
   },
   {
    "fieldname": "pan",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_filter": 1,
    "in_global_search": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "PAN"
+   "label": "PAN",
+   "options": "WMS PAN"
   },
   {
    "fieldname": "section_break_acso",
@@ -182,7 +183,7 @@
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-25 14:14:29.451597",
+ "modified": "2025-07-28 14:27:21.233482",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",
