@@ -18,8 +18,8 @@ def random_dob(min_age=18, max_age=65):
 
 def random_dob_under_18():
     today = datetime.today()
-    max_birth_date = today.replace(year=today.year - 1)
-    min_birth_date = today.replace(year=today.year - 18)
+    max_birth_date = today - timedelta(days=1)
+    min_birth_date = today - timedelta(year=18)
 
     random_days = random.randint(0, (max_birth_date - min_birth_date).days)
     dob = min_birth_date + timedelta(days=random_days)
@@ -101,7 +101,10 @@ test_data = {
     ]       
 }
 
-	
+test_success_data = {
+	"doctype": "WMS Client",
+    "client_name": ''.join(random.choices(string.ascii_letters + string.digits, k=30)),
+}
 
 
 
@@ -133,29 +136,19 @@ class TestWMSClient(FrappeTestCase):
 			self.assertEqual(item.account_number, test_data["banks"][index]["account_number"])
 
 	def test_minor_client_creation_with_age_less_than_18(self):
-		test_minor_data = {
-			"doctype": "WMS Client",
-            "client_name": ''.join(random.choices(string.ascii_letters + string.digits, k=30)),
-            "classification": "Minor",
-            "dob": random_dob_under_18()
-        }
-		
-		client = frappe.get_doc(test_minor_data).insert()
+		test_success_data["classification"] = "Minor"
+		test_success_data["dob"] = random_dob_under_18()
+		client = frappe.get_doc(test_success_data).insert()
 		self.assertEqual(client.type, "Individual")
-		self.assertEqual(client.client_name, test_minor_data["client_name"])
-		self.assertEqual(client.dob, test_minor_data["dob"])
+		self.assertEqual(client.client_name, test_success_data["client_name"])
+		self.assertEqual(client.dob, test_success_data["dob"])
 
 	def test_resident_client_creation_with_age_less_than_18(self):
-		test_resident_data = {
-			"doctype": "WMS Client",
-            "client_name": ''.join(random.choices(string.ascii_letters + string.digits, k=30)),
-            "classification": "Resident",
-            "dob": random_dob_under_18()
-        }
-		
-		client = frappe.get_doc(test_resident_data).insert()
+		test_success_data["classification"] = "Resident"
+		test_success_data["dob"] = random_dob_under_18()
+		client = frappe.get_doc(test_success_data).insert()
 		self.assertEqual(client.type, "Individual")
 		self.assertEqual(client.classification, "Minor")
-		self.assertEqual(client.client_name, test_resident_data["client_name"])
-		self.assertEqual(client.dob, test_resident_data["dob"])
+		self.assertEqual(client.client_name, test_success_data["client_name"])
+		self.assertEqual(client.dob, test_success_data["dob"])
 		
