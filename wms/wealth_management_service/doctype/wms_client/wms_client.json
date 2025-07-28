@@ -7,16 +7,13 @@
  "engine": "InnoDB",
  "field_order": [
   "classification",
-  "image",
   "column_break_uxli",
   "type",
   "column_break_wfzc",
   "client_name",
   "pan",
-  "individual_details_section",
-  "client_details",
-  "column_break_ruom",
-  "proprietor_details",
+  "section_break_gkog",
+  "gender",
   "section_break_sihe",
   "ultimate_beneficiary_owners",
   "section_break_hgvg",
@@ -39,11 +36,6 @@
    "in_standard_filter": 1,
    "label": "Name",
    "reqd": 1
-  },
-  {
-   "fieldname": "image",
-   "fieldtype": "Attach Image",
-   "label": "Image"
   },
   {
    "fieldname": "column_break_uxli",
@@ -70,20 +62,6 @@
   {
    "fieldname": "column_break_elxv",
    "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:doc.type === \"Individual\"",
-   "fieldname": "individual_details_section",
-   "fieldtype": "Section Break",
-   "label": "Individual Details"
-  },
-  {
-   "depends_on": "eval:doc.type === \"Individual\" && doc.classification != \"Sole Proprietor\"",
-   "fieldname": "client_details",
-   "fieldtype": "Link",
-   "label": "Client Details",
-   "mandatory_depends_on": "eval:doc.type == \"Individual\" && doc.classification != \"Sole Proprietor\"",
-   "options": "Contact"
   },
   {
    "fieldname": "address_tab",
@@ -166,24 +144,22 @@
    "options": "WMS Client Address"
   },
   {
-   "fieldname": "column_break_ruom",
-   "fieldtype": "Column Break"
+   "fieldname": "section_break_gkog",
+   "fieldtype": "Section Break"
   },
   {
-   "depends_on": "eval:doc.classification === \"Sole Proprietor\"",
-   "fieldname": "proprietor_details",
-   "fieldtype": "Link",
-   "label": "Proprietor Details",
-   "link_filters": "[[\"WMS Client\",\"type\",\"=\",\"Individual\"]]",
-   "mandatory_depends_on": "eval:doc.type == \"Individual\" && doc.classification === \"Sole Proprietor\"",
-   "options": "WMS Client"
+   "default": "Male",
+   "depends_on": "eval:doc.type === \"Individual\" && doc.classification != \"Sole Proprietor\"",
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale\nOthers"
   }
  ],
  "grid_page_length": 50,
- "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-28 14:27:21.233482",
+ "modified": "2025-07-28 16:12:45.209624",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",

@@ -6,7 +6,7 @@ from frappe.model.document import Document
 
 class WMSClient(Document):
 	def validate(self):
-		self.validate_pan_type()
+		self.validate_pan_type_combination()
 		self.validate_client_name()
 
 	def validate_client_name(self):
@@ -15,7 +15,9 @@ class WMSClient(Document):
 		if len(self.client_name) < 3:
 			frappe.throw("Client Name must be at least 3 characters long")
 		
-	def validate_pan_type(self):
+	def validate_pan_type_combination(self):
+		if not self.pan:
+			return
 		type_to_pan_code = {
             "Individual": "P",
             "Body of Individuals (BOI)": "B",
