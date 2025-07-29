@@ -6,13 +6,15 @@ from frappe.model.document import Document
 
 
 class WMSFamily(Document):
+	def autoname(self):
+		if self.family_name:
+			self.family_name = self.family_name.strip().title()
+			self.name = self.family_name
+
 	def validate(self):
-		self.format_family_name()
 		self.validate_members()
 
-	def format_family_name(self):
-		# TODO: This is not workng as expected, need to check why
-		self.family_name = self.family_name.strip().title()
+
 
 	def validate_member_in_another_family(self):
 		for family_member in self.family_members:
@@ -29,8 +31,8 @@ class WMSFamily(Document):
 
 				if existing_members:
 					family_names = ", ".join([f.parent for f in existing_members])
-					frappe.msgprint(
-						f"Member {family_member.member_name} is also part of {family_names} family(ies): "
+					frappe.msgprint (
+						f"Member <b>{family_member.member_name}</b> is also part of <b>{family_names}</b> family(ies)."
 					)
 
 	def validate_members(self):
@@ -38,7 +40,7 @@ class WMSFamily(Document):
 			frappe.throw("Cannot create a family without any family members.")
 	
 		family_members = set()
-		for index,family_member in self.family_members:
+		for index,family_member in enumerate(self.family_members):
 			if not family_member.member_contact:
 				frappe.throw(f"All family members must be linked to a contact. Missing link for: {index + 1} row.")
 

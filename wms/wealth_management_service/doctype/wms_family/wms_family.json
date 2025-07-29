@@ -60,7 +60,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-29 16:54:55.548877",
+ "modified": "2025-07-29 17:09:46.248404",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Family",
@@ -81,9 +81,7 @@
   }
  ],
  "row_format": "Dynamic",
- "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "title_field": "family_name"
+ "states": []
 }
