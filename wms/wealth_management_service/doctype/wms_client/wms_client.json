@@ -7,12 +7,13 @@
  "engine": "InnoDB",
  "field_order": [
   "classification",
-  "pan",
-  "column_break_uxli",
+  "column_break_ojny",
   "type",
-  "column_break_wfzc",
+  "section_break_tkrr",
   "client_name",
   "gender",
+  "column_break_ojsg",
+  "pan",
   "section_break_sihe",
   "ubos",
   "section_break_hgvg",
@@ -35,14 +36,6 @@
    "in_standard_filter": 1,
    "label": "Name",
    "reqd": 1
-  },
-  {
-   "fieldname": "column_break_uxli",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_wfzc",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "pan",
@@ -154,12 +147,24 @@
    "label": "Ultimate Beneficiary Owners",
    "mandatory_depends_on": "eval:doc.type != \"Individual\"",
    "options": "WMS UBO"
+  },
+  {
+   "fieldname": "section_break_tkrr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ojsg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ojny",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-28 21:59:03.676435",
+ "modified": "2025-07-29 13:12:32.747553",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",
