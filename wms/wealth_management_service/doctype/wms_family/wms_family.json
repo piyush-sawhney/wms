@@ -1,6 +1,5 @@
 {
  "actions": [],
- "allow_rename": 1,
  "autoname": "field:family_name",
  "creation": "2025-07-14 15:53:18.507857",
  "doctype": "DocType",
@@ -9,7 +8,6 @@
   "section_break_l6bd",
   "column_break_ekjm",
   "family_name",
-  "column_break_vfis",
   "family_head",
   "section_break_lvol",
   "family_members"
@@ -32,10 +30,6 @@
    "unique": 1
   },
   {
-   "fieldname": "column_break_vfis",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "family_head",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -56,7 +50,7 @@
    "fieldname": "family_members",
    "fieldtype": "Table",
    "label": "Family Members",
-   "options": "WMS Family Members"
+   "options": "WMS Family Member"
   },
   {
    "fieldname": "column_break_ekjm",
@@ -66,7 +60,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-25 14:24:25.856201",
+ "modified": "2025-07-29 16:54:55.548877",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Family",
@@ -87,7 +81,9 @@
   }
  ],
  "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "family_name"
 }

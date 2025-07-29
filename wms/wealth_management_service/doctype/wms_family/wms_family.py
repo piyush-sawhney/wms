@@ -1,15 +1,50 @@
 # Copyright (c) 2025, KNAPS and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 
 class WMSFamily(Document):
-	def before_save(self):
-		self.format_fields()
+	def validate(self):
+		self.format_family_name()
+		self.validate_members()
 
-	def format_fields(self):
+	def format_family_name(self):
+		# TODO: This is not workng as expected, need to check why
 		self.family_name = self.family_name.strip().title()
-	# TODO:Implement unique family members in a family. 
-	# TODO:If a member is already present in the family, it can be added in another family but with a message that this member is already present in another family.
+
+	def validate_member_in_another_family(self):
+		for family_member in self.family_members:
+			if family_member.member_contact:
+				# First check in child table where this contact exists
+				existing_members = frappe.get_all(
+					"WMS Family Member",  # The child table Doctype name
+					filters={
+						"member_contact": family_member.member_contact,
+						"parent": ["!=", self.family_name]
+					},
+					fields=["parent"]
+				)
+
+				if existing_members:
+					family_names = ", ".join([f.parent for f in existing_members])
+					frappe.msgprint(
+						f"Member {family_member.member_name} is also part of {family_names} family(ies): "
+					)
+
+	def validate_members(self):
+		if not self.family_members:
+			frappe.throw("Cannot create a family without any family members.")
+	
+		family_members = set()
+		for index,family_member in self.family_members:
+			if not family_member.member_contact:
+				frappe.throw(f"All family members must be linked to a contact. Missing link for: {index + 1} row.")
+
+			if family_member.member_contact in family_members:
+				frappe.throw(f"Same family member cannot be added multiple times: {family_member.member_name}")
+		
+			family_members.add(family_member.member_contact)
+	
+		self.validate_member_in_another_family()

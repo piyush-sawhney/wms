@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class WMSFamilyMembers(Document):
+class WMSFamilyMember(Document):
 	pass
