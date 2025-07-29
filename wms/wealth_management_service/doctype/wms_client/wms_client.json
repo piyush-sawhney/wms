@@ -14,8 +14,6 @@
   "gender",
   "column_break_ojsg",
   "pan",
-  "section_break_sihe",
-  "ubos",
   "section_break_hgvg",
   "phone_numbers",
   "email_ids",
@@ -23,6 +21,8 @@
   "dob",
   "column_break_elxv",
   "pob",
+  "section_break_sihe",
+  "ubos",
   "address_tab",
   "addresses",
   "banks_tab",
@@ -96,14 +96,15 @@
    "depends_on": "eval:doc.classification != \"Sole Proprietor\"",
    "fieldname": "pob",
    "fieldtype": "Data",
-   "label": "Place of Birth",
+   "label": "Place of Birth/Incorporation",
    "placeholder": "City/District"
   },
   {
    "depends_on": "eval: doc.type != \"Individual\"|| doc.classification ==\"Sole Proprietor\" ",
    "fieldname": "section_break_sihe",
    "fieldtype": "Section Break",
-   "label": "Non-Individual Details"
+   "label": "Non-Individual Details",
+   "read_only_depends_on": "eval: doc.type != \"Individual\"|| doc.classification ==\"Sole Proprietor\" "
   },
   {
    "fieldname": "email_ids",
@@ -164,7 +165,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-29 13:12:32.747553",
+ "modified": "2025-07-29 16:12:00.483432",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",

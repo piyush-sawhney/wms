@@ -73,7 +73,7 @@ class WMSClient(Document):
 				email_ids.add(email_id.email_id)
 
 	def validate_ubos(self):
-		if self.type == "Individual" and self.classification =="Sole Proprietor":
+		if self.type == "Individual" and self.classification == "Sole Proprietor":
 			if len(self.ubos) != 1:
 				frappe.throw("Enter Single Proprietor details in Beneficiaries Table")
 		elif self.type != "Individual":
