@@ -7,26 +7,15 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "name1",
+  "account_number",
+  "bank_name",
   "ifsc",
   "column_break_ovuu",
+  "type",
   "branch",
-  "micr",
-  "section_break_hkzm",
-  "type_column",
-  "account_number",
-  "column_break_ulrj",
-  "type"
+  "micr"
  ],
  "fields": [
-  {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Name",
-   "reqd": 1
-  },
   {
    "fieldname": "column_break_ovuu",
    "fieldtype": "Column Break"
@@ -37,10 +26,6 @@
    "label": "Account Number",
    "reqd": 1,
    "unique": 1
-  },
-  {
-   "fieldname": "section_break_hkzm",
-   "fieldtype": "Section Break"
   },
   {
    "fieldname": "ifsc",
@@ -56,18 +41,10 @@
    "label": "Branch"
   },
   {
-   "fieldname": "column_break_ulrj",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "micr",
    "fieldtype": "Data",
    "label": "MICR",
    "length": 9
-  },
-  {
-   "fieldname": "type_column",
-   "fieldtype": "Column Break"
   },
   {
    "default": "Savings",
@@ -78,12 +55,20 @@
    "label": "Type",
    "options": "Savings\nCurrent\nNRE\nNRO\nFCNR",
    "reqd": 1
+  },
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Name",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-25 14:16:47.921301",
+ "modified": "2025-07-29 15:55:53.239130",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Bank",
