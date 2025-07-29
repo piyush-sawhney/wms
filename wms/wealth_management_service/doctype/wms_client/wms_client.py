@@ -18,7 +18,7 @@ class WMSClient(Document):
 		self.validate_dob()
 	
 	def validate_pan_type_combination(self):
-		if not self.type and not self.pan:
+		if not self.type or not self.pan:
 			return
 		type_to_pan_code = {
             "Individual": "P",
@@ -35,7 +35,6 @@ class WMSClient(Document):
 		}
 		expected_code = type_to_pan_code.get(self.type)
 		actual_code = self.pan[3]
-		frappe.msgprint(actual_code)
 		if actual_code != expected_code:
 			frappe.throw(
                 f"PAN does not match the selected type '{self.type}'. "
