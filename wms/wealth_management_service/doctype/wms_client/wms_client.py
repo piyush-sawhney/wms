@@ -14,7 +14,40 @@ class WMSClient(Document):
 		self.validate_bank_details()
 		self.validate_phone_details()
 		self.validate_emails()
+		self.validate_dob()
+		self.validate_pan_type_combination()
+
+	def validate_pan_type_combination(self):
+		if not self.type and not self.pan:
+			return
+		type_to_pan_code = {
+            "Individual": "P",
+            "Body of Individuals (BOI)": "B",
+            "Association of Persons (AOP)": "A",
+            "Hindu Undivided Family (HUF)": "H",
+            "Company": "C",
+            "Limited Liability Partnership (LLP)": "E",
+            "Partnership Firm": "F",
+            "Trust": "T",
+            "Government Agency": "G",
+            "Local Authority": "L",
+            "Artificial Judicial Person": "J"
+		}
+		expected_code = type_to_pan_code.get(self.type)
+		actual_code = self.pan[3]
+		if actual_code != expected_code:
+			frappe.throw(
+                f"PAN does not match the selected type '{self.type}'. "
+                f"The 4th character should be '{expected_code}', but found '{actual_code}'."
+            )
 	
+	def validate_dob(self):
+		if self.dob:
+			dob_date = frappe.utils.getdate(self.dob)
+			today = frappe.utils.getdate(frappe.utils.nowdate())
+			if dob_date > today:
+				frappe.throw("Date of Birth/Incorporation cannot be in the future.")
+
 	def validate_bank_details(self):
 		if self.banks and len(self.banks) > 0:
 			account_numbers = set()
