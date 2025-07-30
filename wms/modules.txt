@@ -1,8 +1,5 @@
 Wealth Management Service
 WMS Mutual Fund
 WMS Fixed Deposit
-WMS Life Insurance
 WMS Post Office
 WMS National Pension Scheme
-WMS General Insurance
-WMS Health Insurance
