@@ -22,7 +22,9 @@
   "section_break_yxnz",
   "start_date",
   "column_break_bvee",
-  "maturity_date"
+  "maturity_date",
+  "holders_tab",
+  "holders"
  ],
  "fields": [
   {
@@ -138,12 +140,23 @@
    "in_standard_filter": 1,
    "label": "Entry Date",
    "reqd": 1
+  },
+  {
+   "fieldname": "holders_tab",
+   "fieldtype": "Tab Break",
+   "label": "Holders"
+  },
+  {
+   "fieldname": "holders",
+   "fieldtype": "Table",
+   "label": "Holders",
+   "options": "WMS PO Holder"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-30 18:33:21.723362",
+ "modified": "2025-07-30 18:45:48.027749",
  "modified_by": "Administrator",
  "module": "WMS Post Office",
  "name": "WMS Client Post Office Investment",
