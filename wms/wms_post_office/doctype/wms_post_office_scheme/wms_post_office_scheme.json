@@ -1,6 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "autoincrement",
  "creation": "2025-07-30 16:31:14.600470",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -62,10 +62,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-30 18:38:59.786138",
+ "modified": "2025-07-30 23:02:56.639729",
  "modified_by": "Administrator",
  "module": "WMS Post Office",
  "name": "WMS Post Office Scheme",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
@@ -82,6 +83,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "code, period, roi",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

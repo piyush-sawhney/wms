@@ -6,6 +6,5 @@ from frappe.model.document import Document
 
 
 class WMSPostOfficeScheme(Document):
-	 def autoname(self):
-		 self.name = f"{self.code.strip().upper()}-{self.period}-{str(self.roi)}"
+	 pass
 	 

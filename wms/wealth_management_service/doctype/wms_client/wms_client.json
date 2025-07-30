@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:Client-{MM}{YYYY}-{###}",
  "creation": "2025-07-22 15:33:43.707038",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -23,6 +22,8 @@
   "pob",
   "section_break_sihe",
   "ubos",
+  "section_break_fnia",
+  "uuid",
   "address_tab",
   "addresses",
   "banks_tab",
@@ -160,16 +161,28 @@
   {
    "fieldname": "column_break_ojny",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_fnia",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "uuid",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "UUID",
+   "read_only": 1,
+   "report_hide": 1,
+   "unique": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-29 16:12:00.483432",
+ "modified": "2025-07-30 22:52:38.635550",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",
- "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -186,6 +199,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "pan",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

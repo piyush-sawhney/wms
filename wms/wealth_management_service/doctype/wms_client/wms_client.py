@@ -5,6 +5,14 @@ import frappe
 from frappe.model.document import Document
 
 class WMSClient(Document):
+	def autoname(self):
+		while True:
+			name = frappe.generate_hash(length=10).upper()
+
+			if not frappe.db.exists(self.doctype, name):
+				self.name = name
+				break
+		
 	def before_save(self):
 		self.update_classification_for_individuals()
 		

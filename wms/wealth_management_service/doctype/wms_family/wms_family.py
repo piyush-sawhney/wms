@@ -7,9 +7,12 @@ from frappe.model.document import Document
 
 class WMSFamily(Document):
 	def autoname(self):
-		if self.family_name:
-			self.family_name = self.family_name.strip().title()
-			self.name = self.family_name
+		while True:
+			name = frappe.generate_hash(length=10).upper()
+
+			if not frappe.db.exists(self.doctype, name):
+				self.name = name
+				break
 
 	def validate(self):
 		self.validate_members()
@@ -24,7 +27,7 @@ class WMSFamily(Document):
 					"WMS Family Member",  # The child table Doctype name
 					filters={
 						"member_contact": family_member.member_contact,
-						"parent": ["!=", self.family_name]
+						"parent": ["!=", self.name]
 					},
 					fields=["parent"]
 				)
@@ -32,7 +35,7 @@ class WMSFamily(Document):
 				if existing_members:
 					family_names = ", ".join([f.parent for f in existing_members])
 					frappe.msgprint (
-						f"Member <b>{family_member.member_name}</b> is also part of <b>{family_names}</b> family(ies)."
+						f"Member <b>{family_member.member_contact}</b> is also part of <b>{family_names}</b> family(ies)."
 					)
 
 	def validate_members(self):
