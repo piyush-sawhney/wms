@@ -1,0 +1,94 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-30 13:25:35.808699",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "column_break_fwlq",
+  "dob",
+  "column_break_ntcx",
+  "is_minor",
+  "column_break_biyd",
+  "percentage",
+  "section_break_opve",
+  "guardian_name",
+  "column_break_yvqs",
+  "guardian_relationship"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Link",
+   "label": "Name",
+   "options": "WMS Client"
+  },
+  {
+   "fieldname": "column_break_fwlq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "name1.dob",
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "column_break_biyd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "100",
+   "fieldname": "percentage",
+   "fieldtype": "Percent",
+   "label": "Percentage"
+  },
+  {
+   "fieldname": "column_break_ntcx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_minor",
+   "fieldtype": "Check",
+   "label": "Is minor?",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_opve",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "guardian_name",
+   "fieldtype": "Link",
+   "label": "Guardian Name",
+   "options": "WMS Client"
+  },
+  {
+   "fieldname": "column_break_yvqs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "guardian_relationship",
+   "fieldtype": "Select",
+   "label": "Guardian Relationship",
+   "options": "Father\nMother\nLegal Guardian"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-07-30 13:31:53.457784",
+ "modified_by": "Administrator",
+ "module": "WMS Fixed Deposit",
+ "name": "WMS FD Client Nominee",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
