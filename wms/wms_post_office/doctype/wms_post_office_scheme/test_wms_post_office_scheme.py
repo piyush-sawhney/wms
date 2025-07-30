@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestWMSClientLifeInsurance(FrappeTestCase):
+class TestWMSPostOfficeScheme(FrappeTestCase):
 	pass

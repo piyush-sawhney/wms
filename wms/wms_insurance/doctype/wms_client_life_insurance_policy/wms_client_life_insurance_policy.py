@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class WMSClientLifeInsurance(Document):
+class WMSClientLifeInsurancePolicy(Document):
 	pass
