@@ -3,3 +3,4 @@ WMS Mutual Fund
 WMS Fixed Deposit
 WMS Post Office
 WMS National Pension Scheme
+WMS Insurance
