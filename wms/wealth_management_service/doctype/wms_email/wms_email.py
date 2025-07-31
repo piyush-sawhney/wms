@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class WMSClientAddress(Document):
+class WMSEmail(Document):
 	pass

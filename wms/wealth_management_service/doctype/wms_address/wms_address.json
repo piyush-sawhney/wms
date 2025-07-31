@@ -6,7 +6,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "address_title",
+  "client",
   "column_break_pnch",
   "type",
   "section_break_lupu",
@@ -21,12 +21,6 @@
   "pincode"
  ],
  "fields": [
-  {
-   "fieldname": "address_title",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Address Title"
-  },
   {
    "fieldname": "section_break_lupu",
    "fieldtype": "Section Break"
@@ -98,14 +92,23 @@
   {
    "fieldname": "type",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Type",
    "options": "Home\nWork\nOthers"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "WMS Client",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-25 13:53:55.310548",
+ "modified": "2025-07-31 13:36:43.502994",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Address",
@@ -126,10 +129,10 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "address_1, address_2",
+ "search_fields": "address_1, address_2, address_3",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "address_title"
+ "title_field": "client"
 }

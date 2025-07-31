@@ -13,9 +13,6 @@
   "gender",
   "column_break_ojsg",
   "pan",
-  "section_break_hgvg",
-  "phone_numbers",
-  "email_ids",
   "section_break_acso",
   "dob",
   "column_break_elxv",
@@ -23,11 +20,7 @@
   "section_break_sihe",
   "ubos",
   "section_break_fnia",
-  "uuid",
-  "address_tab",
-  "addresses",
-  "banks_tab",
-  "banks"
+  "uuid"
  ],
  "fields": [
   {
@@ -56,16 +49,6 @@
   {
    "fieldname": "column_break_elxv",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "address_tab",
-   "fieldtype": "Tab Break",
-   "label": "Addresses"
-  },
-  {
-   "fieldname": "banks_tab",
-   "fieldtype": "Tab Break",
-   "label": "Banks"
   },
   {
    "default": "Resident",
@@ -106,34 +89,6 @@
    "fieldtype": "Section Break",
    "label": "Non-Individual Details",
    "read_only_depends_on": "eval: doc.type != \"Individual\"|| doc.classification ==\"Sole Proprietor\" "
-  },
-  {
-   "fieldname": "email_ids",
-   "fieldtype": "Table",
-   "label": "Email IDs",
-   "options": "Contact Email"
-  },
-  {
-   "fieldname": "section_break_hgvg",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "phone_numbers",
-   "fieldtype": "Table",
-   "label": "Phone Numbers",
-   "options": "Contact Phone"
-  },
-  {
-   "fieldname": "banks",
-   "fieldtype": "Table",
-   "label": "Banks",
-   "options": "WMS Client Bank"
-  },
-  {
-   "fieldname": "addresses",
-   "fieldtype": "Table",
-   "label": "Addresses",
-   "options": "WMS Client Address"
   },
   {
    "default": "Male",
@@ -178,8 +133,25 @@
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-07-30 22:52:38.635550",
+ "links": [
+  {
+   "link_doctype": "WMS Address",
+   "link_fieldname": "client"
+  },
+  {
+   "link_doctype": "WMS Bank",
+   "link_fieldname": "client"
+  },
+  {
+   "link_doctype": "WMS Phone",
+   "link_fieldname": "client"
+  },
+  {
+   "link_doctype": "WMS Email",
+   "link_fieldname": "client"
+  }
+ ],
+ "modified": "2025-07-31 12:11:58.334743",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Client",

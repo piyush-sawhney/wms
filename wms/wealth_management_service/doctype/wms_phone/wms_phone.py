@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class WMSClientBank(Document):
+class WMSPhone(Document):
 	pass
