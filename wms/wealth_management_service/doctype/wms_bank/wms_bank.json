@@ -1,7 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "field:account_number",
+ "autoname": "autoincrement",
  "creation": "2025-07-24 11:46:24.517824",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -39,11 +38,15 @@
   {
    "fieldname": "branch",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Branch"
   },
   {
    "fieldname": "micr",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "MICR",
    "length": 9
   },
@@ -68,6 +71,8 @@
   {
    "fieldname": "client",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Client",
    "options": "WMS Client",
    "read_only": 1,
@@ -78,11 +83,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-31 13:28:08.841600",
+ "modified": "2025-07-31 14:20:29.099760",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Bank",
- "naming_rule": "By fieldname",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
@@ -99,7 +104,10 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "client, bank_name",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "account_number"
 }

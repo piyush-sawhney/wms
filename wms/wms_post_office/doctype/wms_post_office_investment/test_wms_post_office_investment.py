@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestWMSClientPostOfficeInvestment(FrappeTestCase):
+class TestWMSPostOfficeInvestment(FrappeTestCase):
 	pass

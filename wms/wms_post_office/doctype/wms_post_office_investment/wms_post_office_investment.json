@@ -34,7 +34,8 @@
    "in_standard_filter": 1,
    "label": "Client",
    "options": "WMS Client",
-   "reqd": 1
+   "reqd": 1,
+   "search_index": 1
   },
   {
    "fieldname": "section_break_ckes",
@@ -156,10 +157,10 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-30 18:45:48.027749",
+ "modified": "2025-07-31 14:21:51.646081",
  "modified_by": "Administrator",
  "module": "WMS Post Office",
- "name": "WMS Client Post Office Investment",
+ "name": "WMS Post Office Investment",
  "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [

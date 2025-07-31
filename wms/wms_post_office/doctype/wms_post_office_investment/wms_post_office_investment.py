@@ -5,7 +5,7 @@ from frappe.model.document import Document
 from datetime import timedelta
 from frappe.utils import getdate, add_months
 
-class WMSClientPostOfficeInvestment(Document):
+class WMSPostOfficeInvestment(Document):
 	def before_save(self):
 		if self.start_date and self.period:
 			start_date = getdate(self.start_date)

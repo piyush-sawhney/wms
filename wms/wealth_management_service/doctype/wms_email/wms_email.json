@@ -35,11 +35,12 @@
    "label": "Client",
    "options": "WMS Client",
    "read_only": 1,
-   "reqd": 1
+   "reqd": 1,
+   "search_index": 1
   }
  ],
  "links": [],
- "modified": "2025-07-31 12:05:56.527053",
+ "modified": "2025-07-31 13:47:31.632282",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Email",

@@ -44,11 +44,12 @@
    "label": "Client",
    "options": "WMS Client",
    "read_only": 1,
-   "reqd": 1
+   "reqd": 1,
+   "search_index": 1
   }
  ],
  "links": [],
- "modified": "2025-07-31 11:58:04.880212",
+ "modified": "2025-07-31 13:47:42.897941",
  "modified_by": "Administrator",
  "module": "Wealth Management Service",
  "name": "WMS Phone",
