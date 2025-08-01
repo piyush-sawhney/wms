@@ -23,6 +23,12 @@
   "column_break_xoon",
   "start_date",
   "maturity_date",
+  "section_break_doic",
+  "bank",
+  "bank_account_number",
+  "column_break_lmmn",
+  "cheque_date",
+  "cheque_number",
   "holders_tab",
   "holders",
   "nominees_tab",
@@ -97,7 +103,8 @@
    "non_negative": 1,
    "options": "currency",
    "precision": "2",
-   "reqd": 1
+   "reqd": 1,
+   "set_only_once": 1
   },
   {
    "fieldname": "column_break_ubqv",
@@ -105,6 +112,7 @@
   },
   {
    "fetch_from": "scheme_name.period",
+   "fetch_if_empty": 1,
    "fieldname": "period",
    "fieldtype": "Int",
    "label": "Period",
@@ -125,6 +133,7 @@
   },
   {
    "fetch_from": "scheme_name.roi",
+   "fetch_if_empty": 1,
    "fieldname": "roi",
    "fieldtype": "Float",
    "label": "Rate of Interest",
@@ -179,12 +188,44 @@
   {
    "fieldname": "column_break_pojr",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_doic",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_lmmn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cheque_date",
+   "fieldtype": "Data",
+   "label": "Cheque Date"
+  },
+  {
+   "fieldname": "cheque_number",
+   "fieldtype": "Data",
+   "label": "Cheque Number"
+  },
+  {
+   "fieldname": "bank",
+   "fieldtype": "Link",
+   "label": "Client Bank",
+   "options": "WMS Bank"
+  },
+  {
+   "fetch_from": "bank.account_number",
+   "fetch_if_empty": 1,
+   "fieldname": "bank_account_number",
+   "fieldtype": "Data",
+   "label": "Bank Account Number",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-01 17:08:08.110758",
+ "modified": "2025-08-01 18:10:23.387276",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",
@@ -206,6 +247,7 @@
  ],
  "row_format": "Dynamic",
  "search_fields": "scheme_name, period, start_date",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

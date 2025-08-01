@@ -1,6 +1,5 @@
 {
  "actions": [],
- "autoname": "autoincrement",
  "creation": "2025-07-24 11:46:24.517824",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -75,7 +74,6 @@
    "in_standard_filter": 1,
    "label": "Client",
    "options": "WMS Client",
-   "read_only": 1,
    "reqd": 1,
    "search_index": 1
   }
@@ -83,11 +81,10 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-31 14:20:29.099760",
+ "modified": "2025-08-01 18:06:13.034626",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Bank",
- "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
@@ -104,10 +101,10 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "client, bank_name",
+ "search_fields": "account_number, client",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "account_number"
+ "title_field": "bank_name"
 }
