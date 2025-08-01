@@ -15,6 +15,7 @@
   "through_us",
   "section_break_ckes",
   "scheme_name",
+  "scheme_code",
   "period",
   "roi",
   "column_break_ubqv",
@@ -90,7 +91,6 @@
    "columns": 3,
    "fieldname": "scheme_name",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Scheme Name",
    "options": "WMS PO Scheme",
@@ -231,6 +231,14 @@
    "fieldname": "through_us",
    "fieldtype": "Check",
    "label": "Through Us?"
+  },
+  {
+   "fetch_from": "scheme_name.code",
+   "fieldname": "scheme_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Scheme Code",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
@@ -242,7 +250,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-01 20:58:02.693645",
+ "modified": "2025-08-01 21:03:38.854526",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",
