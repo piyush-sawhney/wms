@@ -186,7 +186,8 @@
    "fieldname": "nominees",
    "fieldtype": "Table",
    "label": "Nominees",
-   "options": "WMS Nominee"
+   "options": "WMS Nominee",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_pojr",
@@ -250,7 +251,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-01 21:03:38.854526",
+ "modified": "2025-08-01 21:18:35.603311",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",
