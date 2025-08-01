@@ -1,3 +1,4 @@
 Wealth Management Service
 WMS Post Office
 WMS Insurance
+WMS Investment
