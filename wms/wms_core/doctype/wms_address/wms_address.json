@@ -114,7 +114,7 @@
  "links": [],
  "modified": "2025-07-31 13:47:15.378603",
  "modified_by": "Administrator",
- "module": "Wealth Management Service",
+ "module": "WMS Core",
  "name": "WMS Address",
  "naming_rule": "Autoincrement",
  "owner": "Administrator",

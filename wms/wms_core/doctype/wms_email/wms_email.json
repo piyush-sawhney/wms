@@ -42,7 +42,7 @@
  "links": [],
  "modified": "2025-07-31 13:47:31.632282",
  "modified_by": "Administrator",
- "module": "Wealth Management Service",
+ "module": "WMS Core",
  "name": "WMS Email",
  "naming_rule": "Autoincrement",
  "owner": "Administrator",

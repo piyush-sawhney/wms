@@ -1,6 +1,5 @@
 {
  "actions": [],
- "autoname": "autoincrement",
  "creation": "2025-07-30 16:31:14.600470",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -9,8 +8,7 @@
   "code",
   "column_break_jihi",
   "period",
-  "roi",
-  "amended_from"
+  "roi"
  ],
  "fields": [
   {
@@ -47,26 +45,15 @@
    "non_negative": 1,
    "precision": "2",
    "reqd": 1
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "WMS Post Office Scheme",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-01 12:30:05.474828",
+ "modified": "2025-08-01 14:51:13.169817",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Scheme",
- "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {

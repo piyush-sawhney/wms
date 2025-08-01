@@ -151,17 +151,17 @@
    "link_fieldname": "client"
   },
   {
-   "link_doctype": "WMS Post Office Investment",
-   "link_fieldname": "client"
-  },
-  {
    "link_doctype": "WMS Family",
    "link_fieldname": "family_head"
+  },
+  {
+   "link_doctype": "WMS PO Investment",
+   "link_fieldname": "client"
   }
  ],
- "modified": "2025-07-31 14:32:38.878213",
+ "modified": "2025-08-01 15:01:25.889444",
  "modified_by": "Administrator",
- "module": "Wealth Management Service",
+ "module": "WMS Core",
  "name": "WMS Client",
  "owner": "Administrator",
  "permissions": [

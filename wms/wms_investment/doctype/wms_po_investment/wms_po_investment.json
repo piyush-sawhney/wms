@@ -35,7 +35,8 @@
    "label": "Client",
    "options": "WMS Client",
    "reqd": 1,
-   "search_index": 1
+   "search_index": 1,
+   "set_only_once": 1
   },
   {
    "fieldname": "account_number",
@@ -80,7 +81,8 @@
    "in_standard_filter": 1,
    "label": "Scheme Name",
    "options": "WMS PO Scheme",
-   "reqd": 1
+   "reqd": 1,
+   "set_only_once": 1
   },
   {
    "fieldname": "amount",
@@ -109,7 +111,8 @@
    "fieldname": "currency",
    "fieldtype": "Link",
    "label": "Currency",
-   "options": "Currency"
+   "options": "Currency",
+   "set_only_once": 1
   },
   {
    "fieldname": "column_break_xoon",
@@ -150,6 +153,7 @@
   {
    "fieldname": "holders",
    "fieldtype": "Table",
+   "in_standard_filter": 1,
    "label": "Holders",
    "options": "WMS Investment Holder"
   }
@@ -157,7 +161,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-01 12:33:02.535632",
+ "modified": "2025-08-01 14:59:54.153899",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",
