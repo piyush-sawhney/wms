@@ -59,5 +59,5 @@ class WMSPOInvestment(Document):
 		if self.start_date:
 			if self.start_date > now_date:
 				frappe.throw("Start Date cannot be in the future.")
-			self.maturity_date = add_days(add_months(self.start_date, self.period), -1) 
+			self.maturity_date = add_months(self.start_date, self.period) 
 
