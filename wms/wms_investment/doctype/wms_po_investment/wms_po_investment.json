@@ -79,7 +79,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Scheme Name",
-   "options": "WMS Post Office Scheme",
+   "options": "WMS PO Scheme",
    "reqd": 1
   },
   {
@@ -151,16 +151,16 @@
    "fieldname": "holders",
    "fieldtype": "Table",
    "label": "Holders",
-   "options": "WMS PO Holder"
+   "options": "WMS Investment Holder"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-01 12:29:55.231474",
+ "modified": "2025-08-01 12:33:02.535632",
  "modified_by": "Administrator",
  "module": "WMS Investment",
- "name": "WMS Post Office Investment",
+ "name": "WMS PO Investment",
  "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [

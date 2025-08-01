@@ -1,7 +1,7 @@
 // Copyright (c) 2025, KNAPS and contributors
 // For license information, please see license.txt
 
-// frappe.ui.form.on("WMS Health Insurance Company", {
+// frappe.ui.form.on("WMS PO Investment", {
 // 	refresh(frm) {
 
 // 	},

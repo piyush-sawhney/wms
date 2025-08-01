@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class WMSPOHolder(Document):
+class WMSPOScheme(Document):
 	pass
