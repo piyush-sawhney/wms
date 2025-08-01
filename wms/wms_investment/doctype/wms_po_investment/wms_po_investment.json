@@ -198,13 +198,15 @@
   },
   {
    "fieldname": "cheque_date",
-   "fieldtype": "Data",
-   "label": "Cheque Date"
+   "fieldtype": "Date",
+   "label": "Cheque Date",
+   "set_only_once": 1
   },
   {
    "fieldname": "cheque_number",
    "fieldtype": "Data",
-   "label": "Cheque Number"
+   "label": "Cheque Number",
+   "set_only_once": 1
   },
   {
    "fieldname": "bank",
@@ -224,7 +226,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-01 18:13:21.476111",
+ "modified": "2025-08-01 18:27:15.023895",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",
