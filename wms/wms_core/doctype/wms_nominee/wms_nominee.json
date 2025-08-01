@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-01 15:28:31.098775",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "nominee_name",
+  "is_minor",
+  "dob",
+  "relation"
+ ],
+ "fields": [
+  {
+   "fieldname": "nominee_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Name",
+   "options": "WMS Client",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_minor",
+   "fieldtype": "Check",
+   "label": "Is Minor"
+  },
+  {
+   "fetch_from": "nominee_name.dob",
+   "fieldname": "dob",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Date of Birth",
+   "read_only": 1
+  },
+  {
+   "fieldname": "relation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Relation",
+   "options": "WMS Relation",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-01 15:51:59.259298",
+ "modified_by": "Administrator",
+ "module": "WMS Core",
+ "name": "WMS Nominee",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

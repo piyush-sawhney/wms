@@ -1,0 +1,23 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "WMS Holding Type",
+  "modified": "2025-08-01 15:18:22.640945",
+  "name": "Single",
+  "type_name": "Single"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Holding Type",
+  "modified": "2025-08-01 15:18:25.853750",
+  "name": "Joint",
+  "type_name": "Joint"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Holding Type",
+  "modified": "2025-08-01 15:18:36.699911",
+  "name": "Anyone or Survivor",
+  "type_name": "Anyone or Survivor"
+ }
+]

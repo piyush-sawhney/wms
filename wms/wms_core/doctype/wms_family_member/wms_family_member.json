@@ -15,10 +15,10 @@
   {
    "default": "Spouse",
    "fieldname": "relation",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Relation",
-   "options": "Spouse\nDaughter\nSon\nMother\nFather\nFather-in-Law\nMother-in-Law\nDaughter-in-Law\nSon-in-Law\nOthers",
+   "options": "WMS Relation",
    "reqd": 1,
    "sort_options": 1
   },
@@ -43,7 +43,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-30 23:12:49.678553",
+ "modified": "2025-08-01 15:35:48.416336",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Family Member",

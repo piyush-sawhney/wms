@@ -245,6 +245,8 @@ app_license = "mit"
 # Fixtures
 fixtures = [
  "WMS Client Type",
- "WMS Client Classification"
+ "WMS Client Classification",
+ "WMS Holding Type",
+ "WMS Relation"
 ]
 

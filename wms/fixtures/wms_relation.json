@@ -1,0 +1,65 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "WMS Relation",
+  "modified": "2025-08-01 15:36:05.298203",
+  "name": "Spouse",
+  "relation_name": "Spouse"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Relation",
+  "modified": "2025-08-01 15:36:12.976088",
+  "name": "Daughter",
+  "relation_name": "Daughter"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Relation",
+  "modified": "2025-08-01 15:36:17.708156",
+  "name": "Son",
+  "relation_name": "Son"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Relation",
+  "modified": "2025-08-01 15:36:22.546945",
+  "name": "Mother",
+  "relation_name": "Mother"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Relation",
+  "modified": "2025-08-01 15:36:29.085181",
+  "name": "Father",
+  "relation_name": "Father"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Relation",
+  "modified": "2025-08-01 15:36:35.422691",
+  "name": "Father-in-Law",
+  "relation_name": "Father-in-Law"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Relation",
+  "modified": "2025-08-01 15:37:04.390096",
+  "name": "Mother-in-Law",
+  "relation_name": "Mother-in-Law"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Relation",
+  "modified": "2025-08-01 15:37:11.883894",
+  "name": "Daughter-in-Law",
+  "relation_name": "Daughter-in-Law"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Relation",
+  "modified": "2025-08-01 15:37:19.100893",
+  "name": "Son-in-Law",
+  "relation_name": "Son-in-Law"
+ }
+]

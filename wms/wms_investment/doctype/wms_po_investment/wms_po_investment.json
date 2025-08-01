@@ -13,18 +13,21 @@
   "status",
   "section_break_ckes",
   "scheme_name",
-  "amount",
+  "holding_type",
   "column_break_ubqv",
   "period",
-  "currency",
+  "amount",
   "column_break_xoon",
   "roi",
+  "currency",
   "section_break_yxnz",
   "start_date",
   "column_break_bvee",
   "maturity_date",
   "holders_tab",
-  "holders"
+  "holders",
+  "nominees_tab",
+  "nominees"
  ],
  "fields": [
   {
@@ -45,6 +48,7 @@
    "in_standard_filter": 1,
    "label": "Account Number",
    "mandatory_depends_on": "eval:doc.status == \"Book Recevied\"",
+   "set_only_once": 1,
    "unique": 1
   },
   {
@@ -146,22 +150,43 @@
    "read_only": 1
   },
   {
+   "depends_on": "eval:doc.holding_type != null && doc.holding_type != \"Single\"",
    "fieldname": "holders_tab",
    "fieldtype": "Tab Break",
    "label": "Holders"
   },
   {
+   "depends_on": "eval:doc.holding_type != \"Single\"",
    "fieldname": "holders",
    "fieldtype": "Table",
    "in_standard_filter": 1,
    "label": "Holders",
+   "mandatory_depends_on": "eval:doc.holding_type != \"Single\"",
    "options": "WMS Investment Holder"
+  },
+  {
+   "fieldname": "holding_type",
+   "fieldtype": "Link",
+   "label": "Holding Type",
+   "options": "WMS Holding Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nominees_tab",
+   "fieldtype": "Tab Break",
+   "label": "Nominees"
+  },
+  {
+   "fieldname": "nominees",
+   "fieldtype": "Table",
+   "label": "Nominees",
+   "options": "WMS Nominee"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-01 14:59:54.153899",
+ "modified": "2025-08-01 15:46:39.561304",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",
