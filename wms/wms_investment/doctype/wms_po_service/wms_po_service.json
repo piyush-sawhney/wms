@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-01 18:53:02.947620",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "status",
+  "column_break_ewqr",
+  "entry_date",
+  "section_break_jjsb",
+  "type",
+  "column_break_dvan",
+  "investment",
+  "section_break_xrtq",
+  "description"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "entry_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Entry Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "investment",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Investment ",
+   "options": "WMS PO Investment",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "default": "Entry Done",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Entry Done",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Link",
+   "label": "Type",
+   "options": "WMS PO Service Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ewqr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_jjsb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_dvan",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_xrtq",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-01 20:31:38.883087",
+ "modified_by": "Administrator",
+ "module": "WMS Investment",
+ "name": "WMS PO Service",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

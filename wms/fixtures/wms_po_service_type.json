@@ -1,0 +1,79 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Service Type",
+  "modified": "2025-08-01 19:19:51.652566",
+  "name": "15 G/H Update",
+  "type_name": "15 G/H Update"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Service Type",
+  "modified": "2025-08-01 19:20:00.500482",
+  "name": "Nominee Update",
+  "type_name": "Nominee Update"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Service Type",
+  "modified": "2025-08-01 19:20:15.499948",
+  "name": "Pre-Mature Request",
+  "type_name": "Pre-Mature Request"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Service Type",
+  "modified": "2025-08-01 19:20:22.464802",
+  "name": "Loan Request",
+  "type_name": "Loan Request"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Service Type",
+  "modified": "2025-08-01 19:20:34.672482",
+  "name": "Interest Certificate",
+  "type_name": "Interest Certificate"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Service Type",
+  "modified": "2025-08-01 19:20:52.669275",
+  "name": "Extension Request",
+  "type_name": "Extension Request"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Service Type",
+  "modified": "2025-08-01 19:21:31.965568",
+  "name": "Transmission Request",
+  "type_name": "Transmission Request"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Service Type",
+  "modified": "2025-08-01 19:21:43.913996",
+  "name": "KYC Update",
+  "type_name": "KYC Update"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Service Type",
+  "modified": "2025-08-01 19:24:28.349577",
+  "name": "Maturity Request",
+  "type_name": "Maturity Request"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Service Type",
+  "modified": "2025-08-01 19:24:38.235225",
+  "name": "Renewal Request",
+  "type_name": "Renewal Request"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Service Type",
+  "modified": "2025-08-01 19:27:13.149507",
+  "name": "Branch Shift Request",
+  "type_name": "Branch Shift Request"
+ }
+]

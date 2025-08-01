@@ -12,6 +12,7 @@
   "entry_date",
   "column_break_pojr",
   "status",
+  "through_us",
   "section_break_ckes",
   "scheme_name",
   "period",
@@ -221,12 +222,24 @@
    "fieldtype": "Data",
    "label": "Bank Account Number",
    "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "through_us",
+   "fieldtype": "Check",
+   "label": "Through Us?"
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-08-01 18:27:15.023895",
+ "links": [
+  {
+   "link_doctype": "WMS PO Service",
+   "link_fieldname": "investment"
+  }
+ ],
+ "modified": "2025-08-01 20:30:00.321736",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",
