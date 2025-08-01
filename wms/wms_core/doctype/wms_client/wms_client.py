@@ -3,6 +3,7 @@
 
 import frappe
 from frappe.model.document import Document
+from wms.utils import calculate_age
 
 class WMSClient(Document):
 	def autoname(self):
@@ -82,7 +83,4 @@ class WMSClient(Document):
 			elif age >= 18 and self.classification == "Minor":
 				frappe.throw("Minor cannot be greater than 18 years old. ")
 
-def calculate_age(dob):
-	dob_date = frappe.utils.getdate(dob)
-	today = frappe.utils.nowdate()
-	return frappe.utils.date_diff(today, dob_date) // 365
+

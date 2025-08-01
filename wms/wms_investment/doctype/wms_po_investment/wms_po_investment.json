@@ -10,19 +10,18 @@
   "account_number",
   "column_break_uehu",
   "entry_date",
+  "column_break_pojr",
   "status",
   "section_break_ckes",
   "scheme_name",
-  "holding_type",
-  "column_break_ubqv",
   "period",
-  "amount",
-  "column_break_xoon",
   "roi",
+  "column_break_ubqv",
+  "holding_type",
+  "amount",
   "currency",
-  "section_break_yxnz",
+  "column_break_xoon",
   "start_date",
-  "column_break_bvee",
   "maturity_date",
   "holders_tab",
   "holders",
@@ -62,7 +61,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Entry Date",
-   "reqd": 1
+   "reqd": 1,
+   "set_only_once": 1
   },
   {
    "default": "Entry Done",
@@ -112,6 +112,7 @@
    "read_only": 1
   },
   {
+   "default": "INR",
    "fieldname": "currency",
    "fieldtype": "Link",
    "label": "Currency",
@@ -131,17 +132,9 @@
    "read_only": 1
   },
   {
-   "fieldname": "section_break_yxnz",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "start_date",
    "fieldtype": "Date",
    "label": "Start Date"
-  },
-  {
-   "fieldname": "column_break_bvee",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "maturity_date",
@@ -169,7 +162,8 @@
    "fieldtype": "Link",
    "label": "Holding Type",
    "options": "WMS Holding Type",
-   "reqd": 1
+   "reqd": 1,
+   "set_only_once": 1
   },
   {
    "fieldname": "nominees_tab",
@@ -181,12 +175,16 @@
    "fieldtype": "Table",
    "label": "Nominees",
    "options": "WMS Nominee"
+  },
+  {
+   "fieldname": "column_break_pojr",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-01 15:46:39.561304",
+ "modified": "2025-08-01 17:08:08.110758",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",

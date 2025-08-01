@@ -61,5 +61,19 @@
   "modified": "2025-08-01 15:37:19.100893",
   "name": "Son-in-Law",
   "relation_name": "Son-in-Law"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Relation",
+  "modified": "2025-08-01 17:04:46.232065",
+  "name": "Grandfather",
+  "relation_name": "Grandfather"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Relation",
+  "modified": "2025-08-01 17:06:13.164682",
+  "name": "Sister",
+  "relation_name": "Sister"
  }
 ]

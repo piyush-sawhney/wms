@@ -1,4 +1,8 @@
 import frappe
+def calculate_age(dob):
+	dob_date = frappe.utils.getdate(dob)
+	today = frappe.utils.nowdate()
+	return frappe.utils.date_diff(today, dob_date) // 365
 
 def get_title_fallback(doctype: str, name: str) -> str:
 	try:
