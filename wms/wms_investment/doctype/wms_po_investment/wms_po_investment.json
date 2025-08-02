@@ -10,6 +10,7 @@
   "account_number",
   "column_break_uehu",
   "entry_date",
+  "renewed_investment",
   "column_break_pojr",
   "status",
   "through_us",
@@ -240,6 +241,14 @@
    "in_list_view": 1,
    "label": "Scheme Code",
    "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.status === \"Renewed\";",
+   "fieldname": "renewed_investment",
+   "fieldtype": "Link",
+   "label": "Renewed Investment",
+   "mandatory_depends_on": "eval:doc.status === \"Renewed\";",
+   "options": "WMS PO Investment"
   }
  ],
  "grid_page_length": 50,
@@ -251,7 +260,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-01 21:18:35.603311",
+ "modified": "2025-08-01 21:27:04.132952",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",
