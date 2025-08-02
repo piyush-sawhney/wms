@@ -25,16 +25,14 @@
   "column_break_xoon",
   "start_date",
   "maturity_date",
-  "section_break_doic",
-  "bank",
-  "bank_account_number",
-  "column_break_lmmn",
-  "cheque_date",
-  "cheque_number",
   "holders_tab",
   "holders",
   "nominees_tab",
-  "nominees"
+  "nominees",
+  "payment_details_tab",
+  "payment",
+  "column_break_hdvh",
+  "type"
  ],
  "fields": [
   {
@@ -194,40 +192,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "section_break_doic",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_lmmn",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "cheque_date",
-   "fieldtype": "Date",
-   "label": "Cheque Date",
-   "set_only_once": 1
-  },
-  {
-   "fieldname": "cheque_number",
-   "fieldtype": "Data",
-   "label": "Cheque Number",
-   "set_only_once": 1
-  },
-  {
-   "fieldname": "bank",
-   "fieldtype": "Link",
-   "label": "Client Bank",
-   "options": "WMS Bank"
-  },
-  {
-   "fetch_from": "bank.account_number",
-   "fetch_if_empty": 1,
-   "fieldname": "bank_account_number",
-   "fieldtype": "Data",
-   "label": "Bank Account Number",
-   "read_only": 1
-  },
-  {
    "default": "1",
    "fieldname": "through_us",
    "fieldtype": "Check",
@@ -248,6 +212,29 @@
    "label": "Renewed Investment",
    "mandatory_depends_on": "eval:doc.status === \"Renewed\";",
    "options": "WMS PO Investment"
+  },
+  {
+   "fieldname": "payment_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Payment Details"
+  },
+  {
+   "fieldname": "payment",
+   "fieldtype": "Link",
+   "label": "Payment",
+   "mandatory_depends_on": "eval:doc.through_us == 1;",
+   "options": "WMS Payment"
+  },
+  {
+   "fieldname": "column_break_hdvh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "payment.payment_type",
+   "fieldname": "type",
+   "fieldtype": "Data",
+   "label": "Type",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
@@ -259,7 +246,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-02 13:32:04.234492",
+ "modified": "2025-08-02 18:00:11.364523",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",

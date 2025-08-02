@@ -20,10 +20,6 @@ class WMSPOInvestment(Document):
 
 		account_number: DF.Data | None
 		amount: DF.Currency
-		bank: DF.Link | None
-		bank_account_number: DF.Data | None
-		cheque_date: DF.Date | None
-		cheque_number: DF.Data | None
 		client: DF.Link
 		currency: DF.Link | None
 		entry_date: DF.Date
@@ -31,6 +27,7 @@ class WMSPOInvestment(Document):
 		holding_type: DF.Link
 		maturity_date: DF.Date | None
 		nominees: DF.Table[WMSNominee]
+		payment: DF.Link | None
 		period: DF.Int
 		renewed_investment: DF.Link | None
 		roi: DF.Float
@@ -39,6 +36,7 @@ class WMSPOInvestment(Document):
 		start_date: DF.Date | None
 		status: DF.Literal["Entry Done", "Submitted to PO", "Passbook Received", "Passbook Sent to Customer", "Renewed", "Matured", "Pre-Matured", "Transmitted"]
 		through_us: DF.Check
+		type: DF.Data | None
 	# end: auto-generated types
 	def autoname(self):
 		FY = get_financial_year_code(self.entry_date)
