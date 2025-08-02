@@ -3,10 +3,16 @@
 
 import frappe
 from frappe.model.document import Document
-from frappe.utils import nowdate, add_months, add_days
-from wms.utils import calculate_age
+from frappe.model.naming import make_autoname
+from frappe.utils import nowdate, add_months
+from wms.utils import calculate_age, get_financial_year_code
 
 class WMSPOInvestment(Document):
+	def autoname(self):
+		FY = get_financial_year_code(self.entry_date)
+		self.name = make_autoname(f'PO-{FY}-.####')
+	
+
 	def validate(self):
 		self.validate_holders()
 		self.validate_nominee()

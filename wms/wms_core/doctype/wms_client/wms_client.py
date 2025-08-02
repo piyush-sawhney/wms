@@ -4,15 +4,31 @@
 import frappe
 from frappe.model.document import Document
 from wms.utils import calculate_age
+from frappe.model.naming import make_autoname
 
 class WMSClient(Document):
-	def autoname(self):
-		while True:
-			name = frappe.generate_hash(length=10).upper()
+	# begin: auto-generated types
+	# This code is auto-generated. Do not modify anything in this block.
 
-			if not frappe.db.exists(self.doctype, name):
-				self.name = name
-				break
+	from typing import TYPE_CHECKING
+
+	if TYPE_CHECKING:
+		from frappe.types import DF
+		from wms.wms_core.doctype.wms_ubo.wms_ubo import WMSUBO
+
+		classification: DF.Link
+		client_name: DF.Data
+		dob: DF.Date | None
+		gender: DF.Literal["Male", "Female", "Others"]
+		pan: DF.Link | None
+		pob: DF.Data | None
+		type: DF.Data | None
+		ubos: DF.Table[WMSUBO]
+		uuid: DF.Data | None
+	# end: auto-generated types
+
+	def autoname(self):
+		self.name = self.create_name()
 		
 	def before_save(self):
 		self.update_classification_for_individuals()
@@ -22,6 +38,37 @@ class WMSClient(Document):
 		self.validate_ubos()
 		self.validate_pan_type_combination()
 		self.validate_dob()
+		self.rename_client()
+
+	def create_name(self):
+		name_part = frappe.scrub(self.client_name).upper()  # Remove unsafe chars
+		if self.classification == "Sole Proprietor" and self.pan:
+			serial = make_autoname("###")
+			created_name = f"{name_part}-{self.pan.upper()}-{serial}"
+		elif self.pan:
+			created_name = f"{name_part}-{self.pan.upper()}"
+		else:
+			while True:
+				random_hash = frappe.generate_hash(length=5).upper()
+				name = f"{name_part}-{random_hash}"
+				if not frappe.db.exists(self.doctype, name):
+					created_name = name
+					break
+		return created_name
+	
+	def rename_client(self):
+		if self.is_new() or frappe.flags.in_insert:
+			return  # Do not rename during first insert\new_name = self.create_name()
+		new_name = self.create_name()
+		if self.name == new_name:
+				return
+		if self.pan and self.pan.upper() not in self.name:
+			frappe.rename_doc(self.doctype, self.name, new_name, force=True)
+			self.name = new_name
+			return
+		if self.name.split("-")[0] != new_name.split("-")[0]:
+			frappe.rename_doc(self.doctype, self.name, new_name, force=True)
+			self.name = new_name
 	
 	def validate_pan_type_combination(self):
 		if not self.type or not self.pan:

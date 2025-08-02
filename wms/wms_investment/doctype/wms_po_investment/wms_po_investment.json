@@ -1,6 +1,5 @@
 {
  "actions": [],
- "autoname": "autoincrement",
  "creation": "2025-07-30 16:34:44.361836",
  "default_view": "List",
  "doctype": "DocType",
@@ -260,11 +259,11 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-01 21:27:04.132952",
+ "modified": "2025-08-02 11:03:59.774693",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",
- "naming_rule": "Autoincrement",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

@@ -5,13 +5,15 @@ import frappe
 from frappe.model.document import Document
 import re
 class WMSPAN(Document):
+	def autoname(self):
+			self.name = self.pan.strip().upper()
+
 	def validate(self):
 		self.validate_pan()
 
 	def validate_pan(self):
 		if not self.pan:
 			return
-		self.pan = self.pan.strip().upper()
 		if len(self.pan) != 10:
 			frappe.throw("PAN must be 10 characters long")
 		if not self.pan.isalnum():

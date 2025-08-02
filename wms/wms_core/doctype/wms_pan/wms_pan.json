@@ -1,7 +1,5 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "field:pan",
  "creation": "2025-07-28 14:26:16.007961",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -23,11 +21,10 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-28 14:27:00.475441",
+ "modified": "2025-08-02 11:33:48.426678",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS PAN",
- "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

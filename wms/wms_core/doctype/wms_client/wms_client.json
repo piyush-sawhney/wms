@@ -29,6 +29,7 @@
    "in_filter": 1,
    "in_standard_filter": 1,
    "label": "Name",
+   "placeholder": "Client Name",
    "reqd": 1
   },
   {
@@ -159,7 +160,7 @@
    "link_fieldname": "client"
   }
  ],
- "modified": "2025-08-01 15:01:25.889444",
+ "modified": "2025-08-02 13:18:03.501437",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",
