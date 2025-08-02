@@ -78,7 +78,7 @@
    "fieldtype": "Link",
    "label": "Renewed Investment",
    "mandatory_depends_on": "eval:doc.status === \"Renewed\";",
-   "options": "WMS PO Investment Entry"
+   "options": "WMS PO Investment"
   },
   {
    "fieldname": "column_break_pojr",
@@ -254,10 +254,10 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-02 20:30:58.335579",
+ "modified": "2025-08-02 22:11:15.865961",
  "modified_by": "Administrator",
  "module": "WMS Investment",
- "name": "WMS Fixed Investment Entry",
+ "name": "WMS Fixed Investment",
  "owner": "Administrator",
  "permissions": [
   {

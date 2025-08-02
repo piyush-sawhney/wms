@@ -3,11 +3,11 @@
 
 import frappe
 from frappe.model.document import Document
-from wms.utils import get_financial_year_code,calculate_age
 from frappe.model.naming import make_autoname
 from frappe.utils import nowdate, add_months
+from wms.utils import calculate_age, get_financial_year_code
 
-class WMSFixedInvestmentEntry(Document):
+class WMSPOInvestment(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -20,34 +20,32 @@ class WMSFixedInvestmentEntry(Document):
 
 		account_number: DF.Data | None
 		amount: DF.Currency
-		broker_name: DF.Link | None
 		client: DF.Link
-		company: DF.Link
 		currency: DF.Link | None
 		entry_date: DF.Date
 		holders: DF.Table[WMSInvestmentHolder]
 		holding_type: DF.Link
-		investment_mode: DF.Literal["Cumulative", "Monthly", "Quarterly", "Half Yearly", "Yearly"]
-		investment_type: DF.Literal["FD", "BOND", "NCD"]
-		ledger_number: DF.Data | None
 		maturity_date: DF.Date | None
 		nominees: DF.Table[WMSNominee]
 		period: DF.Int
 		renewed_investment: DF.Link | None
 		roi: DF.Float
+		scheme_code: DF.Data | None
+		scheme_name: DF.Link
 		start_date: DF.Date | None
-		status: DF.Literal["Entry Done", "Submitted", "Investment Created", "Renewed", "Matured", "Pre-Matured", "Transmitted"]
-		through_broker: DF.Check
+		status: DF.Literal["Entry Done", "Submitted to PO", "Passbook Received", "Passbook Sent to Customer", "Renewed", "Matured", "Pre-Matured", "Transmitted"]
 		through_us: DF.Check
 	# end: auto-generated types
-	pass
 	def autoname(self):
 		FY = get_financial_year_code(self.entry_date)
-		self.name = make_autoname(f'{self.investment_type}-{FY}-.####')
+		self.name = make_autoname(f'PO-{FY}-.####')
+	
+
 	def validate(self):
 		self.validate_holders()
 		self.validate_nominee()
 		self.validate_dates()
+
 	def validate_nominee(self):
 		if self.nominees and len(self.nominees) > 0:
 			holders = [holder.holder for holder in self.holders] if len(self.holders) > 0 else []
@@ -96,3 +94,4 @@ class WMSFixedInvestmentEntry(Document):
 			if self.start_date > now_date:
 				frappe.throw("Start Date cannot be in the future.")
 			self.maturity_date = add_months(self.start_date, self.period) 
+
