@@ -5,6 +5,10 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "investment_type",
+  "column_break_ydor",
+  "investment",
+  "section_break_tifa",
   "type",
   "bank",
   "account_number",
@@ -36,6 +40,8 @@
   {
    "fieldname": "payment_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Date",
    "mandatory_depends_on": "eval:doc.payment_type == \"Cheque\""
   },
@@ -69,12 +75,37 @@
    "label": "Type",
    "options": "WMS Payment Type",
    "reqd": 1
+  },
+  {
+   "fieldname": "investment_type",
+   "fieldtype": "Link",
+   "label": "Investment Type",
+   "link_filters": "[[\"DocType\",\"module\",\"=\",\"WMS Investment\"],[\"DocType\",\"name\",\"like\",\"%Entry%\"]]",
+   "options": "DocType",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ydor",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "investment",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Investment",
+   "options": "investment_type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_tifa",
+   "fieldtype": "Section Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-02 18:02:08.456978",
+ "modified": "2025-08-02 20:25:43.056610",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Payment",

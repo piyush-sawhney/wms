@@ -222,7 +222,6 @@
    "fieldname": "payment",
    "fieldtype": "Link",
    "label": "Payment",
-   "mandatory_depends_on": "eval:doc.through_us == 1;",
    "options": "WMS Payment"
   },
   {
@@ -244,12 +243,17 @@
   {
    "link_doctype": "WMS PO Service",
    "link_fieldname": "investment"
+  },
+  {
+   "group": "Investment",
+   "link_doctype": "WMS Payment",
+   "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-02 18:16:27.020303",
+ "modified": "2025-08-02 20:11:47.471327",
  "modified_by": "Administrator",
  "module": "WMS Investment",
- "name": "WMS PO Investment",
+ "name": "WMS PO Investment Entry",
  "owner": "Administrator",
  "permissions": [
   {

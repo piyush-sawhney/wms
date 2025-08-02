@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestWMSPOInvestment(FrappeTestCase):
+class TestWMSFixedInvestmentEntry(FrappeTestCase):
 	pass

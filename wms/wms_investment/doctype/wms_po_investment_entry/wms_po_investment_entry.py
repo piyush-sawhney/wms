@@ -7,7 +7,7 @@ from frappe.model.naming import make_autoname
 from frappe.utils import nowdate, add_months
 from wms.utils import calculate_age, get_financial_year_code
 
-class WMSPOInvestment(Document):
+class WMSPOInvestmentEntry(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 

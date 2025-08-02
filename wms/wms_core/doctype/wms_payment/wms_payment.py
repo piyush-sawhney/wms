@@ -18,6 +18,8 @@ class WMSPayment(Document):
 		amount: DF.Currency
 		bank: DF.Link | None
 		currency: DF.Link | None
+		investment: DF.DynamicLink
+		investment_type: DF.Link
 		name: DF.Int | None
 		number: DF.Data | None
 		payment_date: DF.Date | None

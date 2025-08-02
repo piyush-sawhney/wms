@@ -82,7 +82,7 @@
    "fieldtype": "Link",
    "label": "Renewed Investment",
    "mandatory_depends_on": "eval:doc.status === \"Renewed\";",
-   "options": "WMS PO Investment"
+   "options": "WMS PO Investment Entry"
   },
   {
    "fieldname": "column_break_pojr",
@@ -229,14 +229,16 @@
    "fieldname": "investment_type",
    "fieldtype": "Select",
    "label": "Investment Type",
-   "options": "FD\nBond\nNCD",
+   "options": "FD\nBOND\nNCD",
    "reqd": 1,
-   "set_only_once": 1
+   "set_only_once": 1,
+   "sort_options": 1
   },
   {
    "fieldname": "payment_details_tab",
    "fieldtype": "Tab Break",
-   "label": "Payment Details"
+   "label": "Payment Details",
+   "mandatory_depends_on": "through_us"
   },
   {
    "default": "Cumulative",
@@ -255,6 +257,7 @@
    "fieldname": "payment",
    "fieldtype": "Link",
    "label": "Payment",
+   "mandatory_depends_on": "eval:doc.through_us == 1;",
    "options": "WMS Payment"
   },
   {
@@ -272,11 +275,17 @@
  "grid_page_length": 50,
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-08-02 18:14:23.836214",
+ "links": [
+  {
+   "group": "Investment",
+   "link_doctype": "WMS Payment",
+   "link_fieldname": "investment"
+  }
+ ],
+ "modified": "2025-08-02 20:24:27.859336",
  "modified_by": "Administrator",
  "module": "WMS Investment",
- "name": "WMS Fixed Investment",
+ "name": "WMS Fixed Investment Entry",
  "owner": "Administrator",
  "permissions": [
   {

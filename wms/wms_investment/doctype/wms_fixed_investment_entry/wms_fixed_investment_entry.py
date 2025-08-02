@@ -7,7 +7,7 @@ from wms.utils import get_financial_year_code,calculate_age
 from frappe.model.naming import make_autoname
 from frappe.utils import nowdate, add_months
 
-class WMSFixedInvestment(Document):
+class WMSFixedInvestmentEntry(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -29,7 +29,7 @@ class WMSFixedInvestment(Document):
 		holders: DF.Table[WMSInvestmentHolder]
 		holding_type: DF.Link
 		investment_mode: DF.Literal["Cumulative", "Monthly", "Quarterly", "Half Yearly", "Yearly"]
-		investment_type: DF.Literal["FD", "Bond", "NCD"]
+		investment_type: DF.Literal["FD", "BOND", "NCD"]
 		ledger_number: DF.Data | None
 		maturity_date: DF.Date | None
 		nominees: DF.Table[WMSNominee]
