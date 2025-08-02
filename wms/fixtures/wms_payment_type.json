@@ -1,0 +1,51 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "WMS Payment Type",
+  "modified": "2025-08-02 17:43:16.075497",
+  "name": "UPI",
+  "payment_type": "UPI"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Payment Type",
+  "modified": "2025-08-02 17:43:20.316489",
+  "name": "Cheque",
+  "payment_type": "Cheque"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Payment Type",
+  "modified": "2025-08-02 17:43:30.040391",
+  "name": "NEFT/RTGS",
+  "payment_type": "NEFT/RTGS"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Payment Type",
+  "modified": "2025-08-02 17:43:37.324133",
+  "name": "Internet Banking",
+  "payment_type": "Internet Banking"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Payment Type",
+  "modified": "2025-08-02 17:43:41.952261",
+  "name": "Debit/Credit Card",
+  "payment_type": "Debit/Credit Card"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Payment Type",
+  "modified": "2025-08-02 17:44:01.709638",
+  "name": "Cash",
+  "payment_type": "Cash"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Payment Type",
+  "modified": "2025-08-02 17:45:18.391159",
+  "name": "Demand Draft",
+  "payment_type": "Demand Draft"
+ }
+]
