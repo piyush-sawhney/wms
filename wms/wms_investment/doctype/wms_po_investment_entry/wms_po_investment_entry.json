@@ -28,11 +28,7 @@
   "holders_tab",
   "holders",
   "nominees_tab",
-  "nominees",
-  "payment_details_tab",
-  "payment",
-  "column_break_hdvh",
-  "date"
+  "nominees"
  ],
  "fields": [
   {
@@ -211,29 +207,7 @@
    "fieldtype": "Link",
    "label": "Renewed Investment",
    "mandatory_depends_on": "eval:doc.status === \"Renewed\";",
-   "options": "WMS PO Investment"
-  },
-  {
-   "fieldname": "payment_details_tab",
-   "fieldtype": "Tab Break",
-   "label": "Payment Details"
-  },
-  {
-   "fieldname": "payment",
-   "fieldtype": "Link",
-   "label": "Payment",
-   "options": "WMS Payment"
-  },
-  {
-   "fieldname": "column_break_hdvh",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fetch_from": "payment.payment_date",
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date",
-   "read_only": 1
+   "options": "WMS PO Investment Entry"
   }
  ],
  "grid_page_length": 50,
@@ -250,7 +224,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-02 20:11:47.471327",
+ "modified": "2025-08-02 20:31:09.871104",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment Entry",

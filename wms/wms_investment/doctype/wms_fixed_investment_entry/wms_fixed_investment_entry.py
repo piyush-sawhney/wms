@@ -24,7 +24,6 @@ class WMSFixedInvestmentEntry(Document):
 		client: DF.Link
 		company: DF.Link
 		currency: DF.Link | None
-		date: DF.Date | None
 		entry_date: DF.Date
 		holders: DF.Table[WMSInvestmentHolder]
 		holding_type: DF.Link
@@ -33,7 +32,6 @@ class WMSFixedInvestmentEntry(Document):
 		ledger_number: DF.Data | None
 		maturity_date: DF.Date | None
 		nominees: DF.Table[WMSNominee]
-		payment: DF.Link | None
 		period: DF.Int
 		renewed_investment: DF.Link | None
 		roi: DF.Float

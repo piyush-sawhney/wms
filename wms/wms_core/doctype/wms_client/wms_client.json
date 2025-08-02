@@ -136,35 +136,42 @@
  "index_web_pages_for_search": 1,
  "links": [
   {
+   "group": "Contact",
    "link_doctype": "WMS Address",
    "link_fieldname": "client"
   },
   {
+   "group": "Bank",
    "link_doctype": "WMS Bank",
    "link_fieldname": "client"
   },
   {
+   "group": "Contact",
    "link_doctype": "WMS Phone",
    "link_fieldname": "client"
   },
   {
+   "group": "Contact",
    "link_doctype": "WMS Email",
    "link_fieldname": "client"
   },
   {
+   "group": "Family",
    "link_doctype": "WMS Family",
    "link_fieldname": "family_head"
   },
   {
-   "link_doctype": "WMS PO Investment",
+   "group": "Investment",
+   "link_doctype": "WMS PO Investment Entry",
    "link_fieldname": "client"
   },
   {
-   "link_doctype": "WMS Fixed Investment",
+   "group": "Investment",
+   "link_doctype": "WMS Fixed Investment Entry",
    "link_fieldname": "client"
   }
  ],
- "modified": "2025-08-02 18:03:04.123301",
+ "modified": "2025-08-02 20:36:29.913849",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",

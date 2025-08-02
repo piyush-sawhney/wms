@@ -33,11 +33,7 @@
   "holders_tab",
   "holders",
   "nominees_tab",
-  "nominees",
-  "payment_details_tab",
-  "payment",
-  "column_break_mcfv",
-  "date"
+  "nominees"
  ],
  "fields": [
   {
@@ -235,12 +231,6 @@
    "sort_options": 1
   },
   {
-   "fieldname": "payment_details_tab",
-   "fieldtype": "Tab Break",
-   "label": "Payment Details",
-   "mandatory_depends_on": "through_us"
-  },
-  {
    "default": "Cumulative",
    "fieldname": "investment_mode",
    "fieldtype": "Select",
@@ -252,24 +242,6 @@
   {
    "fieldname": "column_break_ebns",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "payment",
-   "fieldtype": "Link",
-   "label": "Payment",
-   "mandatory_depends_on": "eval:doc.through_us == 1;",
-   "options": "WMS Payment"
-  },
-  {
-   "fieldname": "column_break_mcfv",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fetch_from": "payment.payment_date",
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date",
-   "read_only": 1
   }
  ],
  "grid_page_length": 50,
@@ -282,7 +254,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-02 20:24:27.859336",
+ "modified": "2025-08-02 20:30:58.335579",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS Fixed Investment Entry",
