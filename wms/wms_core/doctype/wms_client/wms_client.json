@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "creation": "2025-07-22 15:33:43.707038",
  "doctype": "DocType",
@@ -133,6 +134,7 @@
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [
   {
@@ -171,7 +173,7 @@
    "link_fieldname": "client"
   }
  ],
- "modified": "2025-08-02 20:36:29.913849",
+ "modified": "2025-08-02 20:43:28.222883",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",
