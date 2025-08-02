@@ -1,6 +1,5 @@
 {
  "actions": [],
- "allow_rename": 1,
  "creation": "2025-08-01 18:53:02.947620",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -9,9 +8,9 @@
   "column_break_ewqr",
   "entry_date",
   "section_break_jjsb",
-  "type",
-  "column_break_dvan",
   "investment",
+  "column_break_dvan",
+  "type",
   "section_break_xrtq",
   "description"
  ],
@@ -30,7 +29,8 @@
    "in_list_view": 1,
    "label": "Investment ",
    "options": "WMS PO Investment",
-   "reqd": 1
+   "reqd": 1,
+   "search_index": 1
   },
   {
    "fieldname": "description",
@@ -74,7 +74,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-01 20:31:38.883087",
+ "modified": "2025-08-02 13:33:01.457803",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Service",

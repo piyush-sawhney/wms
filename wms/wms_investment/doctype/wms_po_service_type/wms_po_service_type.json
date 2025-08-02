@@ -21,7 +21,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-01 19:19:29.141874",
+ "modified": "2025-08-02 13:50:23.908792",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Service Type",
@@ -42,7 +42,7 @@
   }
  ],
  "row_format": "Dynamic",
- "sort_field": "modified",
- "sort_order": "DESC",
+ "sort_field": "type_name",
+ "sort_order": "ASC",
  "states": []
 }

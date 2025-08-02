@@ -8,6 +8,38 @@ from frappe.utils import nowdate, add_months
 from wms.utils import calculate_age, get_financial_year_code
 
 class WMSPOInvestment(Document):
+	# begin: auto-generated types
+	# This code is auto-generated. Do not modify anything in this block.
+
+	from typing import TYPE_CHECKING
+
+	if TYPE_CHECKING:
+		from frappe.types import DF
+		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
+		from wms.wms_investment.doctype.wms_investment_holder.wms_investment_holder import WMSInvestmentHolder
+
+		account_number: DF.Data | None
+		amount: DF.Currency
+		bank: DF.Link | None
+		bank_account_number: DF.Data | None
+		cheque_date: DF.Date | None
+		cheque_number: DF.Data | None
+		client: DF.Link
+		currency: DF.Link | None
+		entry_date: DF.Date
+		holders: DF.Table[WMSInvestmentHolder]
+		holding_type: DF.Link
+		maturity_date: DF.Date | None
+		nominees: DF.Table[WMSNominee]
+		period: DF.Int
+		renewed_investment: DF.Link | None
+		roi: DF.Float
+		scheme_code: DF.Data | None
+		scheme_name: DF.Link
+		start_date: DF.Date | None
+		status: DF.Literal["Entry Done", "Submitted to PO", "Passbook Received", "Passbook Sent to Customer", "Renewed", "Matured", "Pre-Matured", "Transmitted"]
+		through_us: DF.Check
+	# end: auto-generated types
 	def autoname(self):
 		FY = get_financial_year_code(self.entry_date)
 		self.name = make_autoname(f'PO-{FY}-.####')
