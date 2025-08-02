@@ -18,8 +18,9 @@ class WMSPayment(Document):
 		amount: DF.Currency
 		bank: DF.Link | None
 		currency: DF.Link | None
+		name: DF.Int | None
 		number: DF.Data | None
 		payment_date: DF.Date | None
-		payment_type: DF.Link
+		type: DF.Link
 	# end: auto-generated types
 	pass

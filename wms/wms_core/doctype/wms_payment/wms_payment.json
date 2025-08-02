@@ -1,11 +1,11 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "autoincrement",
  "creation": "2025-08-02 16:36:57.248485",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "payment_type",
+  "type",
   "bank",
   "account_number",
   "column_break_xtcr",
@@ -16,14 +16,6 @@
   "currency"
  ],
  "fields": [
-  {
-   "fieldname": "payment_type",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Type",
-   "options": "WMS Payment Type",
-   "reqd": 1
-  },
   {
    "fieldname": "bank",
    "fieldtype": "Link",
@@ -69,15 +61,24 @@
    "label": "Number",
    "mandatory_depends_on": "eval:doc.payment_type == \"Cheque\"",
    "placeholder": "If type cheque, enter cheque number"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "WMS Payment Type",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-02 16:51:50.167937",
+ "modified": "2025-08-02 18:02:08.456978",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Payment",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
@@ -94,7 +95,9 @@
   }
  ],
  "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "type"
 }

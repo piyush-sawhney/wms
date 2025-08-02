@@ -22,6 +22,7 @@ class WMSPOInvestment(Document):
 		amount: DF.Currency
 		client: DF.Link
 		currency: DF.Link | None
+		date: DF.Date | None
 		entry_date: DF.Date
 		holders: DF.Table[WMSInvestmentHolder]
 		holding_type: DF.Link
@@ -36,7 +37,6 @@ class WMSPOInvestment(Document):
 		start_date: DF.Date | None
 		status: DF.Literal["Entry Done", "Submitted to PO", "Passbook Received", "Passbook Sent to Customer", "Renewed", "Matured", "Pre-Matured", "Transmitted"]
 		through_us: DF.Check
-		type: DF.Data | None
 	# end: auto-generated types
 	def autoname(self):
 		FY = get_financial_year_code(self.entry_date)

@@ -158,9 +158,13 @@
   {
    "link_doctype": "WMS PO Investment",
    "link_fieldname": "client"
+  },
+  {
+   "link_doctype": "WMS Fixed Investment",
+   "link_fieldname": "client"
   }
  ],
- "modified": "2025-08-02 13:18:03.501437",
+ "modified": "2025-08-02 18:03:04.123301",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",

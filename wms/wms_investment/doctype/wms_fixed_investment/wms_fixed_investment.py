@@ -24,6 +24,7 @@ class WMSFixedInvestment(Document):
 		client: DF.Link
 		company: DF.Link
 		currency: DF.Link | None
+		date: DF.Date | None
 		entry_date: DF.Date
 		holders: DF.Table[WMSInvestmentHolder]
 		holding_type: DF.Link
@@ -40,7 +41,6 @@ class WMSFixedInvestment(Document):
 		status: DF.Literal["Entry Done", "Submitted", "Investment Created", "Renewed", "Matured", "Pre-Matured", "Transmitted"]
 		through_broker: DF.Check
 		through_us: DF.Check
-		type: DF.Data | None
 	# end: auto-generated types
 	pass
 	def autoname(self):

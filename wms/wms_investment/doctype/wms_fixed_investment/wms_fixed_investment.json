@@ -36,8 +36,8 @@
   "nominees",
   "payment_details_tab",
   "payment",
-  "column_break_blgx",
-  "type"
+  "column_break_mcfv",
+  "date"
  ],
  "fields": [
   {
@@ -255,18 +255,17 @@
    "fieldname": "payment",
    "fieldtype": "Link",
    "label": "Payment",
-   "mandatory_depends_on": "eval:doc.through_us == 1;",
    "options": "WMS Payment"
   },
   {
-   "fieldname": "column_break_blgx",
+   "fieldname": "column_break_mcfv",
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "payment.payment_type",
-   "fieldname": "type",
-   "fieldtype": "Data",
-   "label": "Type",
+   "fetch_from": "payment.payment_date",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
    "read_only": 1
   }
  ],
@@ -274,7 +273,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-02 17:58:01.743552",
+ "modified": "2025-08-02 18:14:23.836214",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS Fixed Investment",
