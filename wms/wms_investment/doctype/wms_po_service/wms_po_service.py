@@ -18,7 +18,8 @@ class WMSPOService(Document):
 		description: DF.SmallText | None
 		entry_date: DF.Date
 		investment: DF.Link
-		status: DF.Literal["Entry Done"]
+		notes: DF.TextEditor | None
+		status: DF.Literal["Entry Done", "Submitted to PO", "Client Dependency", "Pending With Us", "Resolved", "Rejected"]
 		type: DF.Link
 	# end: auto-generated types
 	pass

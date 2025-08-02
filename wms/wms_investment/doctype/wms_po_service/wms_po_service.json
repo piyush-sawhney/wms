@@ -12,7 +12,9 @@
   "column_break_dvan",
   "type",
   "section_break_xrtq",
-  "description"
+  "description",
+  "section_break_itst",
+  "notes"
  ],
  "fields": [
   {
@@ -27,6 +29,7 @@
    "fieldname": "investment",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Investment ",
    "options": "WMS PO Investment",
    "reqd": 1,
@@ -43,12 +46,14 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Entry Done",
+   "options": "Entry Done\nSubmitted to PO\nClient Dependency\nPending With Us\nResolved\nRejected",
    "reqd": 1
   },
   {
    "fieldname": "type",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Type",
    "options": "WMS PO Service Type",
    "reqd": 1
@@ -68,13 +73,23 @@
   {
    "fieldname": "section_break_xrtq",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_itst",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes",
+   "mandatory_depends_on": "eval:doc.status === \"Client Dependency\""
   }
  ],
  "grid_page_length": 50,
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-02 13:33:01.457803",
+ "modified": "2025-08-02 14:08:14.043715",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Service",
@@ -94,7 +109,34 @@
   }
  ],
  "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [
+  {
+   "color": "Purple",
+   "title": "Entry Done"
+  },
+  {
+   "color": "Yellow",
+   "title": "Submitted to PO"
+  },
+  {
+   "color": "Orange",
+   "title": "Client Dependency"
+  },
+  {
+   "color": "Red",
+   "title": "Pending With Us"
+  },
+  {
+   "color": "Green",
+   "title": "Resolved"
+  },
+  {
+   "color": "Orange",
+   "title": "Rejected"
+  }
+ ],
+ "title_field": "type"
 }
