@@ -30,6 +30,7 @@ class WMSFixedInvestment(Document):
 		investment_mode: DF.Literal["Cumulative", "Monthly", "Quarterly", "Half Yearly", "Yearly"]
 		investment_type: DF.Literal["FD", "BOND", "NCD"]
 		is_active: DF.Check
+		is_existing_investment: DF.Check
 		ledger_number: DF.Data | None
 		maturity_date: DF.Date | None
 		nominees: DF.Table[WMSNominee]

@@ -12,11 +12,12 @@
   "column_break_uehu",
   "entry_date",
   "through_us",
-  "is_active",
+  "is_existing_investment",
   "through_broker",
   "broker_name",
   "column_break_pojr",
   "status",
+  "is_active",
   "renewed_investment_type",
   "renewed_investment",
   "section_break_ckes",
@@ -182,7 +183,7 @@
    "fieldtype": "Table",
    "in_standard_filter": 1,
    "label": "Holders",
-   "mandatory_depends_on": "eval:doc.holding_type != \"Single\"",
+   "mandatory_depends_on": "eval:doc.holding_type != \"Single\" && doc.through_us == 1 && doc.is_existing_investment != 1;",
    "options": "WMS Investment Holder"
   },
   {
@@ -194,7 +195,7 @@
    "fieldname": "nominees",
    "fieldtype": "Table",
    "label": "Nominees",
-   "mandatory_depends_on": "eval:doc.through_us == 1;",
+   "mandatory_depends_on": "eval:doc.through_us == 1 && doc.is_existing_investment != 1;",
    "options": "WMS Nominee"
   },
   {
@@ -260,6 +261,12 @@
    "fieldtype": "Check",
    "label": "Is Active?",
    "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_existing_investment",
+   "fieldtype": "Check",
+   "label": "Is Existing Investment?"
   }
  ],
  "grid_page_length": 50,
@@ -277,7 +284,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-03 14:53:37.191237",
+ "modified": "2025-08-03 15:17:28.839187",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS Fixed Investment",

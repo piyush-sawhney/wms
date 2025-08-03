@@ -26,6 +26,7 @@ class WMSPOInvestment(Document):
 		holders: DF.Table[WMSInvestmentHolder]
 		holding_type: DF.Link
 		is_active: DF.Check
+		is_existing_investment: DF.Check
 		maturity_date: DF.Date | None
 		nominees: DF.Table[WMSNominee]
 		period: DF.Int
