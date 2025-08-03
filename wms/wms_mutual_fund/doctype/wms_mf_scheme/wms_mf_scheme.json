@@ -1,6 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "autoincrement",
  "creation": "2025-08-03 11:57:00.693313",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -8,8 +8,22 @@
   "scheme_name",
   "plan",
   "option",
+  "sub_option",
   "column_break_xiqo",
-  "amc"
+  "amc",
+  "amc_code",
+  "type",
+  "rta",
+  "nav_details_section",
+  "nav",
+  "column_break_tvpb",
+  "nav_date",
+  "codes_tab",
+  "amfi_code",
+  "column_break_kosb",
+  "isin",
+  "column_break_vngz",
+  "rta_code"
  ],
  "fields": [
   {
@@ -47,15 +61,89 @@
    "label": "AMC",
    "options": "WMS Asset Management Company",
    "reqd": 1
+  },
+  {
+   "fieldname": "codes_tab",
+   "fieldtype": "Tab Break",
+   "label": "Codes"
+  },
+  {
+   "fieldname": "amfi_code",
+   "fieldtype": "Data",
+   "label": "AMFI Code"
+  },
+  {
+   "fieldname": "column_break_kosb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "isin",
+   "fieldtype": "Data",
+   "label": "ISIN"
+  },
+  {
+   "fieldname": "column_break_vngz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rta_code",
+   "fieldtype": "Data",
+   "label": "RTA Code"
+  },
+  {
+   "fieldname": "sub_option",
+   "fieldtype": "Select",
+   "label": "Sub Option",
+   "mandatory_depends_on": "eval:doc.option == \"IDCW\""
+  },
+  {
+   "fieldname": "nav_date",
+   "fieldtype": "Date",
+   "label": "NAV Date"
+  },
+  {
+   "fieldname": "nav",
+   "fieldtype": "Float",
+   "label": "NAV",
+   "precision": "4"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Link",
+   "label": "Type",
+   "options": "WMS MF Scheme Type"
+  },
+  {
+   "fieldname": "nav_details_section",
+   "fieldtype": "Section Break",
+   "label": "NAV Details"
+  },
+  {
+   "fieldname": "column_break_tvpb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "amc.code",
+   "fieldname": "amc_code",
+   "fieldtype": "Data",
+   "label": "AMC Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rta",
+   "fieldtype": "Select",
+   "label": "RTA",
+   "options": "CAMS\nKFintech"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-03 11:59:11.676617",
+ "modified": "2025-08-03 14:50:40.614348",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Scheme",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
@@ -72,7 +160,10 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "plan, option, sub_option",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "scheme_name"
 }

@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class WMSAssetManagementCompany(Document):
+class WMSMFSchemeType(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,7 +14,6 @@ class WMSAssetManagementCompany(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		code: DF.Data | None
-		company_name: DF.Data
+		scheme_type: DF.Data
 	# end: auto-generated types
 	pass

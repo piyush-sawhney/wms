@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "client",
+  "holding_type",
   "folio_number",
   "column_break_uehu",
   "request_type",
@@ -19,10 +20,8 @@
   "company",
   "scheme",
   "scheme_out",
-  "column_break_ubqv",
-  "holding_type",
-  "units",
   "column_break_droz",
+  "units",
   "amount",
   "currency",
   "holders_tab",
@@ -111,10 +110,6 @@
    "options": "WMS Asset Management Company",
    "reqd": 1,
    "set_only_once": 1
-  },
-  {
-   "fieldname": "column_break_ubqv",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "holding_type",
@@ -219,7 +214,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-03 14:13:06.527834",
+ "modified": "2025-08-03 14:30:21.983873",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Investment",

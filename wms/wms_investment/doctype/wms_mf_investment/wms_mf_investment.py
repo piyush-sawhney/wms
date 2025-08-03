@@ -26,8 +26,12 @@ class WMSMFInvestment(Document):
 		holders: DF.Table[WMSInvestmentHolder]
 		holding_type: DF.Link
 		nominees: DF.Table[WMSNominee]
-		status: DF.Literal["Entry Done", "Submitted", "Investment Created", "Renewed", "Matured", "Pre-Matured", "Transmitted"]
+		request_type: DF.Literal["NFO", "New Purchase", "Additional Purchase", "Redemption", "SIP", "Redemption", "Switch", "STP", "SWP"]
+		scheme: DF.Link
+		scheme_out: DF.Link | None
+		status: DF.Literal["Entry Done", "Submitted", "Investment Created", "Already Created", "Dependency on Client"]
 		through_broker: DF.Check
 		through_us: DF.Check
+		units: DF.Float
 	# end: auto-generated types
 	pass

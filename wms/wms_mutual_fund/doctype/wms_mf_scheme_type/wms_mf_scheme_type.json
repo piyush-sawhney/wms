@@ -1,41 +1,30 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:company_name",
- "creation": "2025-08-02 22:58:15.778886",
+ "autoname": "field:scheme_type",
+ "creation": "2025-08-03 14:33:40.599953",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "company_name",
-  "column_break_kxdf",
-  "code"
+  "scheme_type"
  ],
  "fields": [
   {
-   "fieldname": "company_name",
+   "fieldname": "scheme_type",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Name",
    "reqd": 1,
    "unique": 1
-  },
-  {
-   "fieldname": "column_break_kxdf",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "code",
-   "fieldtype": "Data",
-   "label": "Code"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-03 14:36:14.510943",
+ "modified": "2025-08-03 14:34:11.454237",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
- "name": "WMS Asset Management Company",
+ "name": "WMS MF Scheme Type",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
@@ -53,7 +42,6 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "code",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
