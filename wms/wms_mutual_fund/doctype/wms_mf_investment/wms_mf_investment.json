@@ -22,8 +22,9 @@
   "scheme",
   "scheme_out",
   "column_break_droz",
-  "units",
   "amount",
+  "all_units",
+  "units",
   "currency",
   "holders_tab",
   "holders",
@@ -171,7 +172,8 @@
    "fieldtype": "Link",
    "label": "Scheme",
    "options": "WMS MF Scheme",
-   "reqd": 1
+   "reqd": 1,
+   "set_only_once": 1
   },
   {
    "fieldname": "request_type",
@@ -193,7 +195,9 @@
    "fieldname": "units",
    "fieldtype": "Float",
    "label": "Units",
-   "non_negative": 1
+   "non_negative": 1,
+   "read_only_depends_on": "eval:doc.all_units === 1;",
+   "set_only_once": 1
   },
   {
    "fieldname": "column_break_droz",
@@ -204,6 +208,13 @@
    "fieldname": "is_existing_folio",
    "fieldtype": "Check",
    "label": "Is Existing Folio?"
+  },
+  {
+   "default": "0",
+   "fieldname": "all_units",
+   "fieldtype": "Check",
+   "label": "All Units?",
+   "set_only_once": 1
   }
  ],
  "grid_page_length": 50,
@@ -221,7 +232,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-03 15:10:49.159338",
+ "modified": "2025-08-03 15:40:05.381667",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Investment",

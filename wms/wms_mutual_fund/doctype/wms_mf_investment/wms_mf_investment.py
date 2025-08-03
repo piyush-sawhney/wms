@@ -17,6 +17,7 @@ class WMSMFInvestment(Document):
 		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
 		from wms.wms_investment.doctype.wms_investment_holder.wms_investment_holder import WMSInvestmentHolder
 
+		all_units: DF.Check
 		amount: DF.Currency
 		broker_name: DF.Link | None
 		client: DF.Link
@@ -45,6 +46,15 @@ class WMSMFInvestment(Document):
 	def validate(self):
 		self.validate_holders()
 		self.validate_nominee()
+		self.validate_units_or_amount()
+		
+	def validate_units_or_amount(self):
+		if not self.all_units and not self.amount and not self.units:
+			frappe.throw("Please enter either Units or Amount.")
+		if self.all_units and (self.amount or self.units):
+			frappe.throw("Please enter only one of Units, Amount or All Units.")
+		if self.amount and self.units:
+			frappe.throw("Please enter only one of Amount or Units.")
 
 	def validate_nominee(self):
 		if self.nominees and len(self.nominees) > 0:
