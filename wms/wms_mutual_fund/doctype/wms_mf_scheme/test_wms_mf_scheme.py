@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestWMSPOService(FrappeTestCase):
+class TestWMSMFScheme(FrappeTestCase):
 	pass

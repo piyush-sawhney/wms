@@ -29,11 +29,13 @@ class WMSFixedInvestment(Document):
 		holding_type: DF.Link
 		investment_mode: DF.Literal["Cumulative", "Monthly", "Quarterly", "Half Yearly", "Yearly"]
 		investment_type: DF.Literal["FD", "BOND", "NCD"]
+		is_active: DF.Check
 		ledger_number: DF.Data | None
 		maturity_date: DF.Date | None
 		nominees: DF.Table[WMSNominee]
 		period: DF.Int
-		renewed_investment: DF.Link | None
+		renewed_investment: DF.DynamicLink | None
+		renewed_investment_type: DF.Link | None
 		roi: DF.Float
 		start_date: DF.Date | None
 		status: DF.Literal["Entry Done", "Submitted", "Investment Created", "Renewed", "Matured", "Pre-Matured", "Transmitted"]

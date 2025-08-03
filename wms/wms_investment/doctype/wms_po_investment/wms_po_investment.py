@@ -25,10 +25,12 @@ class WMSPOInvestment(Document):
 		entry_date: DF.Date
 		holders: DF.Table[WMSInvestmentHolder]
 		holding_type: DF.Link
+		is_active: DF.Check
 		maturity_date: DF.Date | None
 		nominees: DF.Table[WMSNominee]
 		period: DF.Int
-		renewed_investment: DF.Link | None
+		renewed_investment: DF.DynamicLink | None
+		renewed_investment_type: DF.Link | None
 		roi: DF.Float
 		scheme_code: DF.Data | None
 		scheme_name: DF.Link

@@ -8,9 +8,9 @@
   "column_break_ewqr",
   "entry_date",
   "section_break_jjsb",
-  "service_for",
+  "service_entity",
   "column_break_jkzo",
-  "service_link",
+  "service_item",
   "column_break_dvan",
   "type",
   "section_break_xrtq",
@@ -25,7 +25,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Entry Done\nSubmitted to PO\nClient Dependency\nPending With Us\nResolved\nRejected",
+   "options": "Entry Done\nSubmitted\nClient Dependency\nPending With Us\nResolved\nRejected",
    "reqd": 1
   },
   {
@@ -77,31 +77,34 @@
    "mandatory_depends_on": "eval:doc.status === \"Client Dependency\""
   },
   {
-   "fieldname": "service_for",
+   "fieldname": "column_break_jkzo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_entity",
    "fieldtype": "Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Service For",
+   "label": "Service Entity",
    "link_filters": "[[\"DocType\",\"name\",\"in\",[\"WMS Client\",\"WMS Fixed Investment\",\"WMS PO Investment\"]]]",
    "options": "DocType",
    "reqd": 1
   },
   {
-   "fieldname": "column_break_jkzo",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "service_link",
+   "fieldname": "service_item",
    "fieldtype": "Dynamic Link",
-   "label": "Service Link",
-   "options": "service_for"
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Service Item",
+   "options": "service_entity",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-02 22:16:03.668796",
+ "modified": "2025-08-02 22:51:35.175126",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Service",
@@ -121,6 +124,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "service_item",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
@@ -131,7 +135,7 @@
   },
   {
    "color": "Yellow",
-   "title": "Submitted to PO"
+   "title": "Submitted"
   },
   {
    "color": "Orange",

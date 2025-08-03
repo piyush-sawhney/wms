@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class WMSService(Document):
+class WMSAssetManagementCompany(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,12 +14,6 @@ class WMSService(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		description: DF.SmallText | None
-		entry_date: DF.Date
-		notes: DF.TextEditor | None
-		service_entity: DF.Link
-		service_item: DF.DynamicLink
-		status: DF.Literal["Entry Done", "Submitted", "Client Dependency", "Pending With Us", "Resolved", "Rejected"]
-		type: DF.Link
+		company_name: DF.Data
 	# end: auto-generated types
 	pass

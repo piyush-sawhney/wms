@@ -164,16 +164,21 @@
   },
   {
    "group": "Investment",
-   "link_doctype": "WMS PO Investment Entry",
+   "link_doctype": "WMS PO Investment",
    "link_fieldname": "client"
   },
   {
    "group": "Investment",
-   "link_doctype": "WMS Fixed Investment Entry",
+   "link_doctype": "WMS Fixed Investment",
    "link_fieldname": "client"
+  },
+  {
+   "group": "Service",
+   "link_doctype": "WMS Service",
+   "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-02 20:43:28.222883",
+ "modified": "2025-08-02 22:52:27.920086",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",

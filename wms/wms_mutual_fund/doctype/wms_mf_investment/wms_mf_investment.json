@@ -1,37 +1,30 @@
 {
  "actions": [],
- "creation": "2025-08-02 14:50:43.550692",
+ "creation": "2025-08-02 23:00:51.434847",
  "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "client",
-  "account_number",
-  "ledger_number",
+  "folio_number",
   "column_break_uehu",
-  "entry_date",
-  "renewed_investment_type",
-  "renewed_investment",
-  "column_break_pojr",
-  "status",
-  "through_us",
-  "is_active",
+  "request_type",
   "through_broker",
   "broker_name",
+  "column_break_pojr",
+  "entry_date",
+  "status",
+  "through_us",
   "section_break_ckes",
   "company",
-  "investment_type",
-  "column_break_ebns",
-  "investment_mode",
-  "period",
-  "roi",
+  "scheme",
+  "scheme_out",
   "column_break_ubqv",
   "holding_type",
+  "units",
+  "column_break_droz",
   "amount",
   "currency",
-  "column_break_xoon",
-  "start_date",
-  "maturity_date",
   "holders_tab",
   "holders",
   "nominees_tab",
@@ -51,11 +44,11 @@
   },
   {
    "columns": 2,
-   "fieldname": "account_number",
+   "fieldname": "folio_number",
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Account Number",
+   "label": "Folio Number",
    "mandatory_depends_on": "eval:doc.status == \"Book Recevied\"",
    "unique": 1
   },
@@ -75,14 +68,6 @@
    "set_only_once": 1
   },
   {
-   "depends_on": "eval:doc.status === \"Renewed\";",
-   "fieldname": "renewed_investment",
-   "fieldtype": "Dynamic Link",
-   "label": "Renewed Investment",
-   "mandatory_depends_on": "eval:doc.status === \"Renewed\";",
-   "options": "renewed_investment_type"
-  },
-  {
    "fieldname": "column_break_pojr",
    "fieldtype": "Column Break"
   },
@@ -93,7 +78,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Status",
-   "options": "Entry Done\nSubmitted\nInvestment Created\nRenewed\nMatured\nPre-Matured\nTransmitted",
+   "options": "Entry Done\nSubmitted\nInvestment Created\nAlready Created\nDependency on Client",
    "reqd": 1
   },
   {
@@ -103,23 +88,27 @@
    "label": "Through Us?"
   },
   {
+   "default": "0",
+   "fieldname": "through_broker",
+   "fieldtype": "Check",
+   "label": "Through Broker?"
+  },
+  {
+   "fieldname": "broker_name",
+   "fieldtype": "Link",
+   "label": "Broker Name",
+   "mandatory_depends_on": "eval:doc.through_broker == 1;",
+   "options": "WMS Broker"
+  },
+  {
    "fieldname": "section_break_ckes",
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "period",
-   "fieldtype": "Int",
-   "label": "Period",
-   "non_negative": 1,
-   "reqd": 1,
-   "set_only_once": 1
-  },
-  {
-   "fieldname": "roi",
-   "fieldtype": "Float",
-   "label": "Rate of Interest",
-   "non_negative": 1,
-   "precision": "2",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "AMC",
+   "options": "WMS Asset Management Company",
    "reqd": 1,
    "set_only_once": 1
   },
@@ -144,7 +133,6 @@
    "non_negative": 1,
    "options": "currency",
    "precision": "2",
-   "reqd": 1,
    "set_only_once": 1
   },
   {
@@ -154,21 +142,6 @@
    "label": "Currency",
    "options": "Currency",
    "set_only_once": 1
-  },
-  {
-   "fieldname": "column_break_xoon",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "start_date",
-   "fieldtype": "Date",
-   "label": "Start Date"
-  },
-  {
-   "fieldname": "maturity_date",
-   "fieldtype": "Date",
-   "label": "Maturity Date",
-   "read_only": 1
   },
   {
    "depends_on": "eval:doc.holding_type != null && doc.holding_type != \"Single\"",
@@ -198,68 +171,37 @@
    "options": "WMS Nominee"
   },
   {
-   "fieldname": "ledger_number",
-   "fieldtype": "Data",
-   "label": "Ledger Number"
-  },
-  {
-   "default": "0",
-   "fieldname": "through_broker",
-   "fieldtype": "Check",
-   "label": "Through Broker?"
-  },
-  {
-   "fieldname": "broker_name",
+   "fieldname": "scheme",
    "fieldtype": "Link",
-   "label": "Broker Name",
-   "mandatory_depends_on": "eval:doc.through_broker == 1;",
-   "options": "WMS Broker"
+   "label": "Scheme",
+   "options": "WMS MF Scheme",
+   "reqd": 1
   },
   {
-   "fieldname": "company",
-   "fieldtype": "Link",
-   "label": "Company",
-   "options": "WMS Investment Company",
-   "reqd": 1,
-   "set_only_once": 1
-  },
-  {
-   "fieldname": "investment_type",
+   "fieldname": "request_type",
    "fieldtype": "Select",
-   "label": "Investment Type",
-   "options": "FD\nBOND\nNCD",
+   "label": "Request Type",
+   "options": "NFO\nNew Purchase\nAdditional Purchase\nRedemption\nSIP\nRedemption\nSwitch\nSTP\nSWP",
    "reqd": 1,
-   "set_only_once": 1,
    "sort_options": 1
   },
   {
-   "default": "Cumulative",
-   "fieldname": "investment_mode",
-   "fieldtype": "Select",
-   "label": "Investment Mode",
-   "options": "Cumulative\nMonthly\nQuarterly\nHalf Yearly\nYearly",
-   "reqd": 1,
-   "set_only_once": 1
-  },
-  {
-   "fieldname": "column_break_ebns",
-   "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:doc.status === \"Renewed\";",
-   "fieldname": "renewed_investment_type",
+   "depends_on": "eval:doc.request_type == \"STP\"",
+   "fieldname": "scheme_out",
    "fieldtype": "Link",
-   "label": "Renewed Investment Type",
-   "link_filters": "[[\"DocType\",\"name\",\"in\",[\"WMS Fixed Investment\",\"WMS PO Investment\",\"WMS MF Investment\"]]]",
-   "mandatory_depends_on": "eval:doc.status === \"Renewed\";",
-   "options": "DocType"
+   "label": "Scheme Out",
+   "mandatory_depends_on": "eval:doc.request_type == \"STP\"",
+   "options": "WMS MF Scheme"
   },
   {
-   "default": "0",
-   "fieldname": "is_active",
-   "fieldtype": "Check",
-   "label": "Is Active?",
-   "read_only": 1
+   "fieldname": "units",
+   "fieldtype": "Float",
+   "label": "Units",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_droz",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
@@ -267,7 +209,7 @@
  "index_web_pages_for_search": 1,
  "links": [
   {
-   "group": "Investment",
+   "group": "Payment",
    "link_doctype": "WMS Payment",
    "link_fieldname": "investment"
   },
@@ -277,10 +219,10 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-03 11:56:37.471077",
+ "modified": "2025-08-03 14:13:06.527834",
  "modified_by": "Administrator",
- "module": "WMS Investment",
- "name": "WMS Fixed Investment",
+ "module": "WMS Mutual Fund",
+ "name": "WMS MF Investment",
  "owner": "Administrator",
  "permissions": [
   {
