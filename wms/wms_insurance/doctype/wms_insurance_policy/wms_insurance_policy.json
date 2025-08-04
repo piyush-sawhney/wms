@@ -1,0 +1,324 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-04 14:36:27.383839",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "proposer",
+  "is_for_self",
+  "client",
+  "provider",
+  "column_break_mjwm",
+  "quote_number",
+  "policy_number",
+  "insurance_type",
+  "renewed_policy",
+  "column_break_crjn",
+  "status",
+  "through_us",
+  "is_existing_policy",
+  "section_break_udyg",
+  "sum_assured",
+  "premium",
+  "column_break_nwvn",
+  "period",
+  "start_date",
+  "end_date",
+  "section_break_lxcy",
+  "desciption",
+  "life_tab",
+  "life_plan_name",
+  "plan_number",
+  "column_break_jdfo",
+  "ppt",
+  "premium_mode",
+  "health_tab",
+  "health_plan_name",
+  "column_break_loxf",
+  "health_type",
+  "section_break_gset",
+  "members",
+  "vehicle_tab",
+  "vehicle_type",
+  "date_of_registration",
+  "vehicle_model",
+  "vehicle_make",
+  "idv",
+  "column_break_xejf",
+  "vehicle_number",
+  "chassis_number",
+  "engine_number",
+  "ncb",
+  "tp_loading"
+ ],
+ "fields": [
+  {
+   "fieldname": "proposer",
+   "fieldtype": "Link",
+   "label": "Proposer",
+   "options": "WMS Client"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_for_self",
+   "fieldtype": "Check",
+   "label": "Is for self?"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "WMS Client"
+  },
+  {
+   "fieldname": "column_break_mjwm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Data",
+   "label": "Number"
+  },
+  {
+   "fieldname": "provider",
+   "fieldtype": "Link",
+   "label": "Provider",
+   "options": "WMS Insurance Provider"
+  },
+  {
+   "fieldname": "section_break_udyg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sum_assured",
+   "fieldtype": "Float",
+   "label": "Sum Assured",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_nwvn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "premium",
+   "fieldtype": "Float",
+   "label": "Premium",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_crjn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nCancelled\nExpired\nRenewed"
+  },
+  {
+   "default": "0",
+   "fieldname": "through_us",
+   "fieldtype": "Check",
+   "label": "Through Us?"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_existing_policy",
+   "fieldtype": "Check",
+   "label": "Is Existing Policy?"
+  },
+  {
+   "fieldname": "period",
+   "fieldtype": "Int",
+   "label": "Period",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "life_tab",
+   "fieldtype": "Tab Break",
+   "label": "Life"
+  },
+  {
+   "depends_on": "eval:",
+   "fieldname": "health_tab",
+   "fieldtype": "Tab Break",
+   "label": "Health"
+  },
+  {
+   "fieldname": "vehicle_tab",
+   "fieldtype": "Tab Break",
+   "label": "Vehicle"
+  },
+  {
+   "fieldname": "section_break_lxcy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "desciption",
+   "fieldtype": "Text Editor",
+   "label": "Desciption"
+  },
+  {
+   "fieldname": "column_break_jdfo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ppt",
+   "fieldtype": "Int",
+   "label": "Premium Payment Term"
+  },
+  {
+   "fieldname": "plan_number",
+   "fieldtype": "Data",
+   "label": "Plan Number"
+  },
+  {
+   "fieldname": "premium_mode",
+   "fieldtype": "Select",
+   "label": "Premium Mode",
+   "options": "Monthly\nQuarterly\nHalf Yearly\nYearly\nSingle"
+  },
+  {
+   "fieldname": "quote_number",
+   "fieldtype": "Data",
+   "label": "Quote Number"
+  },
+  {
+   "fieldname": "renewed_policy",
+   "fieldtype": "Link",
+   "label": "Renewed Policy",
+   "options": "WMS Insurance Policy"
+  },
+  {
+   "fieldname": "insurance_type",
+   "fieldtype": "Link",
+   "label": "Type",
+   "link_filters": "[]",
+   "options": "WMS Insurance Type"
+  },
+  {
+   "fieldname": "life_plan_name",
+   "fieldtype": "Data",
+   "label": "Plan Name"
+  },
+  {
+   "fieldname": "health_plan_name",
+   "fieldtype": "Data",
+   "label": "Plan Name"
+  },
+  {
+   "fieldname": "health_type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Floater\nIndividual\nMulti-Individual\nTop Up\nSuper Top Up"
+  },
+  {
+   "fieldname": "column_break_loxf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_gset",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.health_type == \"Floater\" || doc.health_type == \"Multi-Individual\"",
+   "fieldname": "members",
+   "fieldtype": "Table",
+   "label": "Members",
+   "mandatory_depends_on": "eval:doc.health_type == \"Floater\" || doc.health_type == \"Multi-Individual\"",
+   "options": "WMS Insurance Member"
+  },
+  {
+   "fieldname": "vehicle_type",
+   "fieldtype": "Link",
+   "label": "Vehicle Type",
+   "options": "WMS Vehicle Type"
+  },
+  {
+   "fieldname": "chassis_number",
+   "fieldtype": "Data",
+   "label": "Chassis Number"
+  },
+  {
+   "fieldname": "date_of_registration",
+   "fieldtype": "Date",
+   "label": "Date of Registration"
+  },
+  {
+   "fieldname": "idv",
+   "fieldtype": "Float",
+   "label": "IDV"
+  },
+  {
+   "fieldname": "column_break_xejf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vehicle_number",
+   "fieldtype": "Data",
+   "label": "Vehicle Number"
+  },
+  {
+   "fieldname": "engine_number",
+   "fieldtype": "Data",
+   "label": "Engine Number"
+  },
+  {
+   "fieldname": "vehicle_make",
+   "fieldtype": "Data",
+   "label": "Vehicle Make"
+  },
+  {
+   "fieldname": "vehicle_model",
+   "fieldtype": "Data",
+   "label": "Vehicle Model"
+  },
+  {
+   "fieldname": "ncb",
+   "fieldtype": "Percent",
+   "label": "No Claim Bonus"
+  },
+  {
+   "fieldname": "tp_loading",
+   "fieldtype": "Percent",
+   "label": "TP Loading"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-04 17:14:03.828808",
+ "modified_by": "Administrator",
+ "module": "WMS Insurance",
+ "name": "WMS Insurance Policy",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
