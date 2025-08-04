@@ -20,12 +20,19 @@
   "is_existing_policy",
   "section_break_udyg",
   "sum_assured",
+  "sum_assured_currency",
   "premium",
+  "currency",
   "column_break_nwvn",
+  "period_type",
   "period",
   "start_date",
   "end_date",
   "section_break_lxcy",
+  "entity_type",
+  "column_break_idbk",
+  "entity_item",
+  "section_break_awjb",
   "desciption",
   "life_tab",
   "life_plan_name",
@@ -50,14 +57,19 @@
   "chassis_number",
   "engine_number",
   "ncb",
-  "tp_loading"
+  "tp_loading",
+  "tab_5_tab",
+  "nominees"
  ],
  "fields": [
   {
    "fieldname": "proposer",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Proposer",
-   "options": "WMS Client"
+   "options": "WMS Client",
+   "reqd": 1
   },
   {
    "default": "1",
@@ -66,9 +78,12 @@
    "label": "Is for self?"
   },
   {
+   "depends_on": "eval:doc.is_for_self === 0;",
    "fieldname": "client",
    "fieldtype": "Link",
-   "label": "Client",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Person Assured",
    "options": "WMS Client"
   },
   {
@@ -78,13 +93,17 @@
   {
    "fieldname": "policy_number",
    "fieldtype": "Data",
-   "label": "Number"
+   "label": "Number",
+   "mandatory_depends_on": "eval:dec.status != \"Proposal\""
   },
   {
    "fieldname": "provider",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Provider",
-   "options": "WMS Insurance Provider"
+   "options": "WMS Insurance Provider",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_udyg",
@@ -92,9 +111,14 @@
   },
   {
    "fieldname": "sum_assured",
-   "fieldtype": "Float",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Sum Assured",
-   "non_negative": 1
+   "non_negative": 1,
+   "options": "sum_assured_currency",
+   "precision": "2",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_nwvn",
@@ -102,19 +126,25 @@
   },
   {
    "fieldname": "premium",
-   "fieldtype": "Float",
+   "fieldtype": "Currency",
    "label": "Premium",
-   "non_negative": 1
+   "non_negative": 1,
+   "options": "currency",
+   "precision": "2",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_crjn",
    "fieldtype": "Column Break"
   },
   {
+   "default": "Proposal",
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Status",
-   "options": "Active\nCancelled\nExpired\nRenewed"
+   "options": "Proposal\nActive\nCancelled\nExpired\nRenewed"
   },
   {
    "default": "1",
@@ -132,29 +162,36 @@
    "fieldname": "period",
    "fieldtype": "Int",
    "label": "Period",
-   "non_negative": 1
+   "non_negative": 1,
+   "placeholder": "In years",
+   "reqd": 1
   },
   {
    "fieldname": "start_date",
    "fieldtype": "Date",
-   "label": "Start Date"
+   "label": "Commencement Date",
+   "mandatory_depends_on": "eval:doc.status != \"Proposal\""
   },
   {
    "fieldname": "end_date",
    "fieldtype": "Date",
-   "label": "End Date"
+   "label": "Maturity Date",
+   "read_only": 1
   },
   {
+   "depends_on": "eval:doc.insurance_type === \"Life Insurance\"",
    "fieldname": "life_tab",
    "fieldtype": "Tab Break",
    "label": "Life"
   },
   {
+   "depends_on": "eval:doc.insurance_type === \"Health Insurance\"",
    "fieldname": "health_tab",
    "fieldtype": "Tab Break",
    "label": "Health"
   },
   {
+   "depends_on": "eval:doc.insurance_type === \"Vehicle Insurance\"",
    "fieldname": "vehicle_tab",
    "fieldtype": "Tab Break",
    "label": "Vehicle"
@@ -191,7 +228,8 @@
   {
    "fieldname": "quote_number",
    "fieldtype": "Data",
-   "label": "Quote Number"
+   "label": "Quote Number",
+   "mandatory_depends_on": "eval:doc.is_existing_policy !=1;"
   },
   {
    "fieldname": "renewed_policy",
@@ -203,6 +241,7 @@
    "fieldname": "insurance_type",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Type",
    "link_filters": "[]",
    "options": "WMS Insurance Type",
@@ -293,6 +332,58 @@
    "fieldname": "tp_loading",
    "fieldtype": "Percent",
    "label": "TP Loading"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "tab_5_tab",
+   "fieldtype": "Tab Break",
+   "label": "Nominees"
+  },
+  {
+   "fieldname": "nominees",
+   "fieldtype": "Table",
+   "label": "Nominees",
+   "mandatory_depends_on": "eval:doc.through_us === 1 && doc.is_existing_policy != 1;",
+   "options": "WMS Nominee"
+  },
+  {
+   "fieldname": "entity_type",
+   "fieldtype": "Link",
+   "label": "Entity Type",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "column_break_idbk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "entity_item",
+   "fieldtype": "Dynamic Link",
+   "label": "Entity Item",
+   "options": "entity_type"
+  },
+  {
+   "fieldname": "section_break_awjb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Years",
+   "fieldname": "period_type",
+   "fieldtype": "Select",
+   "label": "Period Type",
+   "options": "Days\nMonths\nYears",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sum_assured_currency",
+   "fieldtype": "Link",
+   "label": "Sum Assured Currency",
+   "options": "Currency"
   }
  ],
  "grid_page_length": 50,
@@ -301,9 +392,13 @@
   {
    "link_doctype": "WMS Payment",
    "link_fieldname": "investment"
+  },
+  {
+   "link_doctype": "WMS Service",
+   "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-04 17:43:12.866137",
+ "modified": "2025-08-04 19:35:53.176433",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Policy",
