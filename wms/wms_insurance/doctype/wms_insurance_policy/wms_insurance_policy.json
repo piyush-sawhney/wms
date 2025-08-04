@@ -10,9 +10,9 @@
   "client",
   "provider",
   "column_break_mjwm",
+  "insurance_type",
   "quote_number",
   "policy_number",
-  "insurance_type",
   "renewed_policy",
   "column_break_crjn",
   "status",
@@ -117,7 +117,7 @@
    "options": "Active\nCancelled\nExpired\nRenewed"
   },
   {
-   "default": "0",
+   "default": "1",
    "fieldname": "through_us",
    "fieldtype": "Check",
    "label": "Through Us?"
@@ -150,7 +150,6 @@
    "label": "Life"
   },
   {
-   "depends_on": "eval:",
    "fieldname": "health_tab",
    "fieldtype": "Tab Break",
    "label": "Health"
@@ -203,9 +202,11 @@
   {
    "fieldname": "insurance_type",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Type",
    "link_filters": "[]",
-   "options": "WMS Insurance Type"
+   "options": "WMS Insurance Type",
+   "reqd": 1
   },
   {
    "fieldname": "life_plan_name",
@@ -232,11 +233,10 @@
    "fieldtype": "Section Break"
   },
   {
-   "depends_on": "eval:doc.health_type == \"Floater\" || doc.health_type == \"Multi-Individual\"",
+   "depends_on": "eval:doc.health_type === \"Floater\" || doc.health_type === \"Multi-Individual\"",
    "fieldname": "members",
    "fieldtype": "Table",
    "label": "Members",
-   "mandatory_depends_on": "eval:doc.health_type == \"Floater\" || doc.health_type == \"Multi-Individual\"",
    "options": "WMS Insurance Member"
   },
   {
@@ -297,8 +297,13 @@
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-08-04 17:14:03.828808",
+ "links": [
+  {
+   "link_doctype": "WMS Payment",
+   "link_fieldname": "investment"
+  }
+ ],
+ "modified": "2025-08-04 17:43:12.866137",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Policy",

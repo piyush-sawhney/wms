@@ -24,7 +24,7 @@ class WMSInsurancePolicy(Document):
 		health_plan_name: DF.Data | None
 		health_type: DF.Literal["Floater", "Individual", "Multi-Individual", "Top Up", "Super Top Up"]
 		idv: DF.Float
-		insurance_type: DF.Link | None
+		insurance_type: DF.Link
 		is_existing_policy: DF.Check
 		is_for_self: DF.Check
 		life_plan_name: DF.Data | None
