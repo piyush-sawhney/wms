@@ -30,6 +30,7 @@ class WMSInsurancePolicy(Document):
 		health_type: DF.Literal["Floater", "Individual", "Multi-Individual", "Top Up", "Super Top Up"]
 		idv: DF.Float
 		insurance_type: DF.Link
+		is_active: DF.Check
 		is_existing_policy: DF.Check
 		is_for_self: DF.Check
 		life_plan_name: DF.Data | None
@@ -71,6 +72,11 @@ class WMSInsurancePolicy(Document):
 		self.validate_health_insurance()
 		self.validate_vehicle_insurance()	
 		self.validate_other_insurance()
+		self.validate_is_active()
+		
+	def validate_is_active(self):
+		if self.status in ["Cancelled","Expired", "Renewed"]:
+			self.is_active = 0
 	
 	def validate_other_insurance(self):
 		if self.insurance_type not in ["Vehicle Insurance", "Health Insurance", "Life Insurance"]:

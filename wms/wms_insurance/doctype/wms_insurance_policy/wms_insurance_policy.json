@@ -17,6 +17,7 @@
   "renewed_policy",
   "column_break_crjn",
   "status",
+  "is_active",
   "through_us",
   "is_existing_policy",
   "section_break_udyg",
@@ -385,6 +386,13 @@
    "fieldtype": "Link",
    "label": "Sum Assured Currency",
    "options": "Currency"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active?",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
@@ -400,7 +408,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-05 13:44:21.960877",
+ "modified": "2025-08-05 13:51:14.942404",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Policy",
