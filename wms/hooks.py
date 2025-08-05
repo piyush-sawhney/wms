@@ -248,7 +248,7 @@ fixtures = [
  "WMS Client Classification",
  "WMS Holding Type",
  "WMS Relation",
- "WMS PO Service Type",
+ "WMS Service Type",
  "WMS Payment Type"
 ]
 
