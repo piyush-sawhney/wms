@@ -233,7 +233,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-05 13:44:17.374723",
+ "modified": "2025-08-05 15:27:36.073895",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Investment",
@@ -253,6 +253,8 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "client, scheme",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [
@@ -277,6 +279,7 @@
    "title": "Pending With Us"
   }
  ],
+ "title_field": "client",
  "track_changes": 1,
  "track_seen": 1
 }

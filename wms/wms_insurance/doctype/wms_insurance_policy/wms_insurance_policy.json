@@ -408,7 +408,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-05 13:51:14.942404",
+ "modified": "2025-08-05 15:38:56.647274",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Policy",
@@ -428,6 +428,8 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "insurance_type, provider, sum_assured",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [
@@ -452,6 +454,7 @@
    "title": "Renewed"
   }
  ],
+ "title_field": "client",
  "track_changes": 1,
  "track_seen": 1
 }
