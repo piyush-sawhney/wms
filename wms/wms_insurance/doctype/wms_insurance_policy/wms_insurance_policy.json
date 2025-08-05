@@ -16,8 +16,8 @@
   "policy_number",
   "renewed_policy",
   "column_break_crjn",
+  "entry_date",
   "status",
-  "is_active",
   "through_us",
   "is_existing_policy",
   "section_break_udyg",
@@ -71,7 +71,8 @@
    "in_standard_filter": 1,
    "label": "Proposer",
    "options": "WMS Client",
-   "reqd": 1
+   "reqd": 1,
+   "search_index": 1
   },
   {
    "default": "1",
@@ -86,7 +87,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Person Assured",
-   "options": "WMS Client"
+   "options": "WMS Client",
+   "search_index": 1
   },
   {
    "fieldname": "column_break_mjwm",
@@ -96,7 +98,7 @@
    "fieldname": "policy_number",
    "fieldtype": "Data",
    "label": "Number",
-   "mandatory_depends_on": "eval:dec.status != \"Proposal\""
+   "mandatory_depends_on": "eval:doc.status != \"Proposal\""
   },
   {
    "fieldname": "provider",
@@ -388,11 +390,11 @@
    "options": "Currency"
   },
   {
-   "default": "1",
-   "fieldname": "is_active",
-   "fieldtype": "Check",
-   "label": "Is Active?",
-   "read_only": 1
+   "default": "Today",
+   "fieldname": "entry_date",
+   "fieldtype": "Date",
+   "label": "Entry Date",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
@@ -408,7 +410,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-05 16:34:52.535351",
+ "modified": "2025-08-05 17:32:09.621654",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Policy",

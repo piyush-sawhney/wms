@@ -213,9 +213,24 @@
    "group": "Service",
    "link_doctype": "WMS Service",
    "link_fieldname": "service_item"
+  },
+  {
+   "group": "Investment",
+   "link_doctype": "WMS MF Investment",
+   "link_fieldname": "client"
+  },
+  {
+   "group": "Insurance",
+   "link_doctype": "WMS Insurance Policy",
+   "link_fieldname": "proposer"
+  },
+  {
+   "group": "Insurance",
+   "link_doctype": "WMS Insurance Policy",
+   "link_fieldname": "client"
   }
  ],
- "modified": "2025-08-05 16:26:12.181832",
+ "modified": "2025-08-05 17:24:53.908121",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",
