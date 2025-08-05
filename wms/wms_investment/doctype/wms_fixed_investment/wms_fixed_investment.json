@@ -48,8 +48,7 @@
    "label": "Client",
    "options": "WMS Client",
    "reqd": 1,
-   "search_index": 1,
-   "set_only_once": 1
+   "search_index": 1
   },
   {
    "columns": 2,
@@ -73,8 +72,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Entry Date",
-   "reqd": 1,
-   "set_only_once": 1
+   "reqd": 1
   },
   {
    "depends_on": "eval:doc.status === \"Renewed\";",
@@ -113,8 +111,8 @@
    "fieldtype": "Int",
    "label": "Period",
    "non_negative": 1,
-   "reqd": 1,
-   "set_only_once": 1
+   "placeholder": "In months",
+   "reqd": 1
   },
   {
    "fieldname": "roi",
@@ -122,8 +120,7 @@
    "label": "Rate of Interest",
    "non_negative": 1,
    "precision": "2",
-   "reqd": 1,
-   "set_only_once": 1
+   "reqd": 1
   },
   {
    "fieldname": "column_break_ubqv",
@@ -134,8 +131,7 @@
    "fieldtype": "Link",
    "label": "Holding Type",
    "options": "WMS Holding Type",
-   "reqd": 1,
-   "set_only_once": 1
+   "reqd": 1
   },
   {
    "fieldname": "amount",
@@ -146,16 +142,14 @@
    "non_negative": 1,
    "options": "currency",
    "precision": "2",
-   "reqd": 1,
-   "set_only_once": 1
+   "reqd": 1
   },
   {
    "default": "INR",
    "fieldname": "currency",
    "fieldtype": "Link",
    "label": "Currency",
-   "options": "Currency",
-   "set_only_once": 1
+   "options": "Currency"
   },
   {
    "fieldname": "column_break_xoon",
@@ -222,8 +216,7 @@
    "fieldtype": "Link",
    "label": "Company",
    "options": "WMS Investment Company",
-   "reqd": 1,
-   "set_only_once": 1
+   "reqd": 1
   },
   {
    "fieldname": "investment_type",
@@ -231,7 +224,6 @@
    "label": "Investment Type",
    "options": "FD\nBOND\nNCD",
    "reqd": 1,
-   "set_only_once": 1,
    "sort_options": 1
   },
   {
@@ -240,8 +232,7 @@
    "fieldtype": "Select",
    "label": "Investment Mode",
    "options": "Cumulative\nMonthly\nQuarterly\nHalf Yearly\nYearly",
-   "reqd": 1,
-   "set_only_once": 1
+   "reqd": 1
   },
   {
    "fieldname": "column_break_ebns",
@@ -285,7 +276,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-05 16:29:14.995152",
+ "modified": "2025-08-05 18:11:58.531486",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS Fixed Investment",

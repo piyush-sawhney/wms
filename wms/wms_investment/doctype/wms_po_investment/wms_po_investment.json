@@ -43,8 +43,7 @@
    "label": "Client",
    "options": "WMS Client",
    "reqd": 1,
-   "search_index": 1,
-   "set_only_once": 1
+   "search_index": 1
   },
   {
    "columns": 2,
@@ -68,8 +67,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Entry Date",
-   "reqd": 1,
-   "set_only_once": 1
+   "reqd": 1
   },
   {
    "default": "Entry Done",
@@ -92,8 +90,7 @@
    "in_standard_filter": 1,
    "label": "Scheme Name",
    "options": "WMS PO Scheme",
-   "reqd": 1,
-   "set_only_once": 1
+   "reqd": 1
   },
   {
    "fieldname": "amount",
@@ -104,8 +101,7 @@
    "non_negative": 1,
    "options": "currency",
    "precision": "2",
-   "reqd": 1,
-   "set_only_once": 1
+   "reqd": 1
   },
   {
    "fieldname": "column_break_ubqv",
@@ -125,8 +121,7 @@
    "fieldname": "currency",
    "fieldtype": "Link",
    "label": "Currency",
-   "options": "Currency",
-   "set_only_once": 1
+   "options": "Currency"
   },
   {
    "fieldname": "column_break_xoon",
@@ -172,8 +167,7 @@
    "fieldtype": "Link",
    "label": "Holding Type",
    "options": "WMS Holding Type",
-   "reqd": 1,
-   "set_only_once": 1
+   "reqd": 1
   },
   {
    "fieldname": "nominees_tab",
@@ -250,7 +244,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-05 16:30:03.056218",
+ "modified": "2025-08-05 18:12:48.586559",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",
