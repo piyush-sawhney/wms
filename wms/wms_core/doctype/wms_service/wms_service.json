@@ -104,7 +104,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-02 22:51:35.175126",
+ "modified": "2025-08-05 13:41:31.036860",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Service",
@@ -154,5 +154,7 @@
    "title": "Rejected"
   }
  ],
- "title_field": "type"
+ "title_field": "type",
+ "track_changes": 1,
+ "track_seen": 1
 }

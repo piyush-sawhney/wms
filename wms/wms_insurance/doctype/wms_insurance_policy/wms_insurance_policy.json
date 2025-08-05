@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "creation": "2025-08-04 14:36:27.383839",
  "doctype": "DocType",
@@ -387,6 +388,7 @@
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [
   {
@@ -398,7 +400,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-04 19:35:53.176433",
+ "modified": "2025-08-05 13:44:21.960877",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Policy",
@@ -420,5 +422,28 @@
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [
+  {
+   "color": "Purple",
+   "title": "Proposal"
+  },
+  {
+   "color": "Green",
+   "title": "Active"
+  },
+  {
+   "color": "Red",
+   "title": "Cancelled"
+  },
+  {
+   "color": "Orange",
+   "title": "Expired"
+  },
+  {
+   "color": "Light Blue",
+   "title": "Renewed"
+  }
+ ],
+ "track_changes": 1,
+ "track_seen": 1
 }

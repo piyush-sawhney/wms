@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "creation": "2025-08-02 14:50:43.550692",
  "default_view": "List",
  "doctype": "DocType",
@@ -284,7 +285,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-03 15:17:28.839187",
+ "modified": "2025-08-05 13:44:14.921206",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS Fixed Investment",
@@ -306,5 +307,36 @@
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [
+  {
+   "color": "Purple",
+   "title": "Entry Done"
+  },
+  {
+   "color": "Yellow",
+   "title": "Submitted"
+  },
+  {
+   "color": "Green",
+   "title": "Investment Created"
+  },
+  {
+   "color": "Light Blue",
+   "title": "Renewed"
+  },
+  {
+   "color": "Pink",
+   "title": "Matured"
+  },
+  {
+   "color": "Red",
+   "title": "Pre-Matured"
+  },
+  {
+   "color": "Orange",
+   "title": "Transmitted"
+  }
+ ],
+ "track_changes": 1,
+ "track_seen": 1
 }

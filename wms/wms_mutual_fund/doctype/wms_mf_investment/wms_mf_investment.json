@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "creation": "2025-08-02 23:00:51.434847",
  "default_view": "List",
  "doctype": "DocType",
@@ -232,7 +233,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-03 15:40:05.381667",
+ "modified": "2025-08-05 13:44:17.374723",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Investment",
@@ -254,5 +255,28 @@
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [
+  {
+   "color": "Purple",
+   "title": "Entry Done"
+  },
+  {
+   "color": "Yellow",
+   "title": "Submitted"
+  },
+  {
+   "color": "Green",
+   "title": "Investment Created"
+  },
+  {
+   "color": "Blue",
+   "title": "Dependency on Client"
+  },
+  {
+   "color": "Red",
+   "title": "Pending With Us"
+  }
+ ],
+ "track_changes": 1,
+ "track_seen": 1
 }
