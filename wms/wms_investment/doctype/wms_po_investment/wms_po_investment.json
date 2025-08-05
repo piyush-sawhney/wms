@@ -250,7 +250,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-05 13:47:43.546553",
+ "modified": "2025-08-05 16:30:03.056218",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",
@@ -266,6 +266,16 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "write": 1
+  },
+  {
+   "role": "WMS Employee",
+   "select": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "WMS Investment Manager",
    "write": 1
   }
  ],

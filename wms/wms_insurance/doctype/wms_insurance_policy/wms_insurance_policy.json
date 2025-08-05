@@ -408,7 +408,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-05 15:38:56.647274",
+ "modified": "2025-08-05 16:34:52.535351",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Policy",
@@ -424,6 +424,16 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "write": 1
+  },
+  {
+   "role": "WMS Employee",
+   "select": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "WMS Insurance Manager",
    "write": 1
   }
  ],

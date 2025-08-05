@@ -15,5 +15,6 @@ class WMSMFSchemeType(Document):
 		from frappe.types import DF
 
 		scheme_type: DF.Data
+		sub_type: DF.Data | None
 	# end: auto-generated types
 	pass

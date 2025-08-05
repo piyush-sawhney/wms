@@ -13,6 +13,7 @@
   "amc",
   "amc_code",
   "type",
+  "sub_type",
   "rta",
   "nav_details_section",
   "nav",
@@ -134,12 +135,19 @@
    "fieldtype": "Select",
    "label": "RTA",
    "options": "CAMS\nKFintech"
+  },
+  {
+   "fetch_from": "type.sub_type",
+   "fieldname": "sub_type",
+   "fieldtype": "Data",
+   "label": "Sub Type",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-03 14:50:40.614348",
+ "modified": "2025-08-05 16:50:00.187123",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Scheme",
@@ -157,6 +165,10 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "role": "WMS MF Manager",
+   "select": 1
   }
  ],
  "row_format": "Dynamic",

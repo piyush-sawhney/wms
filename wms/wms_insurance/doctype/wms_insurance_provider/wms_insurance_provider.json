@@ -21,7 +21,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-03 17:17:43.590845",
+ "modified": "2025-08-05 16:35:29.515526",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Provider",
@@ -39,6 +39,11 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "WMS Insurance Manager"
   }
  ],
  "row_format": "Dynamic",

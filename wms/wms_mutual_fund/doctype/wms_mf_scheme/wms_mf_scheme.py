@@ -27,6 +27,7 @@ class WMSMFScheme(Document):
 		rta_code: DF.Data | None
 		scheme_name: DF.Data
 		sub_option: DF.Literal[None]
+		sub_type: DF.Data | None
 		type: DF.Link | None
 	# end: auto-generated types
 	pass

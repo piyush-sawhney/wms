@@ -21,7 +21,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-02 16:08:35.401558",
+ "modified": "2025-08-05 16:32:57.450512",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS Broker",
@@ -39,6 +39,12 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "WMS Employee",
+   "select": 1
   }
  ],
  "row_format": "Dynamic",

@@ -6,6 +6,19 @@ from frappe.model.document import Document
 
 
 class WMSFamily(Document):
+	# begin: auto-generated types
+	# This code is auto-generated. Do not modify anything in this block.
+
+	from typing import TYPE_CHECKING
+
+	if TYPE_CHECKING:
+		from frappe.types import DF
+		from wms.wms_core.doctype.wms_family_member.wms_family_member import WMSFamilyMember
+
+		family_head: DF.Link
+		family_members: DF.Table[WMSFamilyMember]
+		family_name: DF.Data
+	# end: auto-generated types
 	def autoname(self):
 		while True:
 			name = frappe.generate_hash(length=10).upper()

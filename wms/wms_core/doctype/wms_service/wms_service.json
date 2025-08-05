@@ -104,7 +104,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-05 15:20:37.218435",
+ "modified": "2025-08-05 16:27:33.209141",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Service",
@@ -120,6 +120,12 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "WMS Employee",
    "write": 1
   }
  ],

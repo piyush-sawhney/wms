@@ -87,7 +87,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-05 15:19:38.003710",
+ "modified": "2025-08-05 16:26:33.960768",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Bank",
@@ -104,6 +104,12 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "WMS Employee",
    "write": 1
   }
  ],

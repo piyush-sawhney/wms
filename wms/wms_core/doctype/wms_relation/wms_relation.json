@@ -21,7 +21,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-01 15:33:50.143560",
+ "modified": "2025-08-05 16:23:00.703103",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Relation",
@@ -39,10 +39,14 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "role": "WMS Employee",
+   "select": 1
   }
  ],
  "row_format": "Dynamic",
- "sort_field": "modified",
- "sort_order": "DESC",
+ "sort_field": "relation_name",
+ "sort_order": "ASC",
  "states": []
 }

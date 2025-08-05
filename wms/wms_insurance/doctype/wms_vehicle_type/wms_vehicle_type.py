@@ -14,6 +14,6 @@ class WMSVehicleType(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-
+		vehicle_type: DF.Data | None
 	# end: auto-generated types
 	pass

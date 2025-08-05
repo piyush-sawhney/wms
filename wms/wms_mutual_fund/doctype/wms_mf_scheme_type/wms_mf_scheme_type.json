@@ -1,12 +1,15 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:scheme_type",
+ "autoname": "format:{scheme_type}-{sub_type}",
  "creation": "2025-08-03 14:33:40.599953",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "scheme_type"
+  "scheme_type",
+  "column_break_zcmu",
+  "sub_type"
  ],
  "fields": [
   {
@@ -16,16 +19,26 @@
    "label": "Name",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "column_break_zcmu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sub_type",
+   "fieldtype": "Data",
+   "label": "Sub Type"
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-03 14:34:11.454237",
+ "modified": "2025-08-05 16:49:15.396954",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Scheme Type",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -37,6 +50,23 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "role": "WMS MF Manager",
+   "select": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "MF Supervisor",
    "share": 1,
    "write": 1
   }

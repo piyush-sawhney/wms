@@ -1,25 +1,29 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:vehicle_type",
  "creation": "2025-08-04 17:08:43.875013",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_4huy"
+  "vehicle_type"
  ],
  "fields": [
   {
-   "fieldname": "section_break_4huy",
-   "fieldtype": "Section Break"
+   "fieldname": "vehicle_type",
+   "fieldtype": "Data",
+   "label": "Name",
+   "unique": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-04 17:08:43.875013",
+ "modified": "2025-08-05 16:36:43.964232",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Vehicle Type",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -33,6 +37,11 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "WMS Insurance Manager"
   }
  ],
  "row_format": "Dynamic",

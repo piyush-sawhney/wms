@@ -5,6 +5,16 @@ import frappe
 from frappe.model.document import Document
 import re
 class WMSPAN(Document):
+	# begin: auto-generated types
+	# This code is auto-generated. Do not modify anything in this block.
+
+	from typing import TYPE_CHECKING
+
+	if TYPE_CHECKING:
+		from frappe.types import DF
+
+		pan: DF.Data | None
+	# end: auto-generated types
 	def autoname(self):
 			self.name = self.pan.strip().upper()
 

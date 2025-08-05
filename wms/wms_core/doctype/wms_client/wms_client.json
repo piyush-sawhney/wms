@@ -215,7 +215,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-05 11:32:14.205667",
+ "modified": "2025-08-05 16:26:12.181832",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",
@@ -231,6 +231,12 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "WMS Employee",
    "write": 1
   }
  ],

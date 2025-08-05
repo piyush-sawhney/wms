@@ -34,7 +34,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-23 12:52:12.834343",
+ "modified": "2025-08-05 16:20:48.508548",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client Classification",
@@ -52,6 +52,10 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "role": "WMS Employee",
+   "select": 1
   }
  ],
  "row_format": "Dynamic",

@@ -3,6 +3,7 @@
  "allow_rename": 1,
  "creation": "2025-08-04 17:03:03.317891",
  "doctype": "DocType",
+ "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "member_name",
@@ -36,7 +37,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-08-04 17:40:45.156976",
+ "modified": "2025-08-05 16:35:08.280472",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Member",
