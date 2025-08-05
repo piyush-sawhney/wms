@@ -51,6 +51,12 @@ class WMSFixedInvestment(Document):
 		self.validate_holders()
 		self.validate_nominee()
 		self.validate_dates()
+		self.validate_is_active()
+		
+	def validate_is_active(self):
+		if self.status in ["Renewed","Matured", "Pre-Matured", "Transmitted"]:
+			self.is_active = 0
+			
 	def validate_nominee(self):
 		if self.nominees and len(self.nominees) > 0:
 			holders = [holder.holder for holder in self.holders] if len(self.holders) > 0 else []
