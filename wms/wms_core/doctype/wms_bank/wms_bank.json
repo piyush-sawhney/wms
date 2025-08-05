@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "autoname": "autoincrement",
  "creation": "2025-07-24 11:46:24.517824",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -80,11 +81,17 @@
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-08-01 18:06:13.034626",
+ "links": [
+  {
+   "link_doctype": "WMS Service",
+   "link_fieldname": "service_item"
+  }
+ ],
+ "modified": "2025-08-05 15:19:38.003710",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Bank",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {

@@ -6,6 +6,23 @@ from frappe.model.document import Document
 
 
 class WMSBank(Document):
+	# begin: auto-generated types
+	# This code is auto-generated. Do not modify anything in this block.
+
+	from typing import TYPE_CHECKING
+
+	if TYPE_CHECKING:
+		from frappe.types import DF
+
+		account_number: DF.Data
+		bank_name: DF.Data
+		branch: DF.Data | None
+		client: DF.Link
+		ifsc: DF.Data | None
+		micr: DF.Data | None
+		name: DF.Int | None
+		type: DF.Literal["Savings", "Current", "NRE", "NRO", "FCNR"]
+	# end: auto-generated types
 	def before_save(self):
 		self.format_fields()
 	

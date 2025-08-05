@@ -24,7 +24,7 @@
  "modified": "2025-08-02 13:50:23.908792",
  "modified_by": "Administrator",
  "module": "WMS Investment",
- "name": "WMS PO Service Type",
+ "name": "WMS Service Type",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
