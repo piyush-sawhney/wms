@@ -14,14 +14,18 @@ class WMSClient(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
+		from wms.wms_core.doctype.wms_client_codes.wms_client_codes import WMSClientCodes
 		from wms.wms_core.doctype.wms_ubo.wms_ubo import WMSUBO
 
 		classification: DF.Link
 		client_name: DF.Data
+		codes: DF.Table[WMSClientCodes]
 		dob: DF.Date | None
 		gender: DF.Literal["Male", "Female", "Others"]
+		nps_pran: DF.Data | None
 		pan: DF.Link | None
 		pob: DF.Data | None
+		post_office_cif: DF.Data | None
 		type: DF.Data | None
 		ubos: DF.Table[WMSUBO]
 		uuid: DF.Data | None

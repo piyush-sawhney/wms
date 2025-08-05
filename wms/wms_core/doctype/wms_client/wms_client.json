@@ -21,7 +21,13 @@
   "section_break_sihe",
   "ubos",
   "section_break_fnia",
-  "uuid"
+  "uuid",
+  "codes_tab",
+  "post_office_cif",
+  "column_break_iwuy",
+  "nps_pran",
+  "section_break_mmdh",
+  "codes"
  ],
  "fields": [
   {
@@ -131,6 +137,37 @@
    "read_only": 1,
    "report_hide": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "codes_tab",
+   "fieldtype": "Tab Break",
+   "label": "Codes"
+  },
+  {
+   "fieldname": "post_office_cif",
+   "fieldtype": "Data",
+   "label": "Post Office CIF",
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_mmdh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "codes",
+   "fieldtype": "Table",
+   "label": "Codes",
+   "options": "WMS Client Codes"
+  },
+  {
+   "fieldname": "column_break_iwuy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nps_pran",
+   "fieldtype": "Data",
+   "label": "NPS PRAN",
+   "unique": 1
   }
  ],
  "grid_page_length": 50,
@@ -178,7 +215,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-02 22:52:27.920086",
+ "modified": "2025-08-05 11:32:14.205667",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",
