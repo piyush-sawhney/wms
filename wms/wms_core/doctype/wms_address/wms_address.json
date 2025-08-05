@@ -114,7 +114,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-05 16:25:32.750998",
+ "modified": "2025-08-05 18:29:56.487745",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Address",
@@ -146,5 +146,6 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "client"
+ "title_field": "client",
+ "track_changes": 1
 }

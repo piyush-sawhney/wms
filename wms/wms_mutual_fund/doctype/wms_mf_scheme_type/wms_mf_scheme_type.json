@@ -34,7 +34,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-05 16:49:15.396954",
+ "modified": "2025-08-05 18:33:06.538573",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Scheme Type",
@@ -54,8 +54,11 @@
    "write": 1
   },
   {
+   "create": 1,
+   "read": 1,
    "role": "WMS MF Manager",
-   "select": 1
+   "select": 1,
+   "write": 1
   },
   {
    "create": 1,
@@ -66,7 +69,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "MF Supervisor",
+   "role": "WMS MF Supervisor",
    "share": 1,
    "write": 1
   }

@@ -41,6 +41,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Client",
+   "link_filters": "[[\"WMS Client\",\"type\",\"=\",\"Individual\"],[\"WMS Client\",\"classification\",\"!=\",\"Sole Proprietor\"]]",
    "options": "WMS Client",
    "reqd": 1,
    "search_index": 1
@@ -172,8 +173,7 @@
   {
    "fieldname": "nominees_tab",
    "fieldtype": "Tab Break",
-   "label": "Nominees",
-   "mandatory_depends_on": "eval: doc.through_us == 1"
+   "label": "Nominees"
   },
   {
    "fieldname": "nominees",
@@ -244,7 +244,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-05 18:12:48.586559",
+ "modified": "2025-08-05 18:28:59.846271",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",

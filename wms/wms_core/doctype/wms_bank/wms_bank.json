@@ -87,7 +87,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-05 16:26:33.960768",
+ "modified": "2025-08-05 18:30:14.966512",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Bank",
@@ -119,5 +119,7 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "bank_name"
+ "title_field": "bank_name",
+ "track_changes": 1,
+ "track_views": 1
 }
