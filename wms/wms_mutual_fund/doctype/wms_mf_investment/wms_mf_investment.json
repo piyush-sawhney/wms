@@ -51,7 +51,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Folio Number",
-   "mandatory_depends_on": "eval:doc.status == \"Book Recevied\"",
+   "mandatory_depends_on": "eval:doc.is_existing_folio == 1;",
    "unique": 1
   },
   {
@@ -100,7 +100,8 @@
    "fieldtype": "Link",
    "label": "Broker Name",
    "mandatory_depends_on": "eval:doc.through_broker == 1;",
-   "options": "WMS Broker"
+   "options": "WMS Broker",
+   "read_only_depends_on": "eval:doc.through_broker == 0;"
   },
   {
    "fieldname": "section_break_ckes",
@@ -233,7 +234,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-05 16:37:41.189498",
+ "modified": "2025-08-08 12:23:19.080919",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Investment",

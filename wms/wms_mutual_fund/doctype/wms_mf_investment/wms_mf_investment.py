@@ -47,7 +47,23 @@ class WMSMFInvestment(Document):
 		self.validate_holders()
 		self.validate_nominee()
 		self.validate_units_or_amount()
+		self.validate_folio_number()
 		
+	def validate_folio_number(self):
+		if self.is_existing_folio and not self.folio_number:
+			frappe.throw("Folio Number is required for existing folios.")
+		if not self.is_existing_folio and self.folio_number:
+			frappe.throw("Folio Number should not be provided for new folios.")
+		import re
+		pattern = r'^\d+(\/\d{2})?$'
+		if bool(re.match(pattern, self.folio_number)) is False:
+			frappe.throw("Folio Number must be a number or a number followed by a slash and two digits (e.g., 12563/45).")
+
+	def validate_scheme(self):
+		if not self.scheme:
+			frappe.throw("Scheme is required.")
+		if self.scheme_out and self.scheme == self.scheme_out:
+			frappe.throw("Scheme and Scheme Out cannot be the same.")
 	def validate_units_or_amount(self):
 		if not self.all_units and not self.amount and not self.units:
 			frappe.throw("Please enter either Units or Amount.")
