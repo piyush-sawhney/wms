@@ -178,10 +178,11 @@
    "set_only_once": 1
   },
   {
+   "default": "New Purchase",
    "fieldname": "request_type",
    "fieldtype": "Select",
    "label": "Request Type",
-   "options": "NFO\nNew Purchase\nAdditional Purchase\nRedemption\nSIP\nRedemption\nSwitch\nSTP\nSWP",
+   "options": "New Purchase\nAdditional Purchase\nSIP\nRedemption\nSwitch\nSTP\nSWP",
    "reqd": 1,
    "sort_options": 1
   },
@@ -234,7 +235,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-08 12:23:19.080919",
+ "modified": "2025-08-12 15:07:54.605688",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Investment",
@@ -264,7 +265,7 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "client, scheme",
+ "search_fields": "scheme, folio_number",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

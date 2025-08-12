@@ -29,7 +29,7 @@ class WMSMFInvestment(Document):
 		holding_type: DF.Link
 		is_existing_folio: DF.Check
 		nominees: DF.Table[WMSNominee]
-		request_type: DF.Literal["NFO", "New Purchase", "Additional Purchase", "Redemption", "SIP", "Redemption", "Switch", "STP", "SWP"]
+		request_type: DF.Literal["New Purchase", "Additional Purchase", "SIP", "Redemption", "Switch", "STP", "SWP"]
 		scheme: DF.Link
 		scheme_out: DF.Link | None
 		status: DF.Literal["Entry Done", "Submitted", "Investment Created", "Dependency on Client", "Pending With Us"]
@@ -48,6 +48,11 @@ class WMSMFInvestment(Document):
 		self.validate_nominee()
 		self.validate_units_or_amount()
 		self.validate_folio_number()
+		self.validate_existing_folio()
+	
+	def validate_existing_folio(self):
+		if self.request_type != "New Purchase":
+			self.is_existing_folio = 1
 		
 	def validate_folio_number(self):
 		if self.is_existing_folio and not self.folio_number:
