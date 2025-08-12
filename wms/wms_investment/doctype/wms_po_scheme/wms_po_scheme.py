@@ -20,21 +20,22 @@ class WMSPOScheme(Document):
 		scheme_name: DF.Data
 
 		# end: auto-generated types
-		def autoname(self):
-			roi_formatted = f"{self.roi:.2f}".replace(".", "-")
-			self.name = f"{self.code}-{self.period}M-R{roi_formatted}"
-		
-		def validate(self):
-			self.validate_scheme()
 
-		def validate_scheme(self):
-			if not self.code:
-				frappe.throw("Code is required for the scheme.")
-			if not self.period:
-				frappe.throw("Period is required for the scheme.")
-			if not self.roi:
-				frappe.throw("ROI is required for the scheme.")
-			if not self.scheme_name:
-				frappe.throw("Scheme Name is required for the scheme.")
-			self.scheme_name = self.scheme_name.title().strip()
-			self.code = self.code.upper().strip()
+	def autoname(self):
+		roi_formatted = f"{self.roi:.2f}".replace(".", "-")
+		self.name = f"{self.code.upper()}-{self.period}M-R{roi_formatted}"
+
+	def validate(self):
+		self.validate_scheme()
+
+	def validate_scheme(self):
+		if not self.code:
+			frappe.throw("Code is required for the scheme.")
+		if not self.period:
+			frappe.throw("Period is required for the scheme.")
+		if not self.roi:
+			frappe.throw("ROI is required for the scheme.")
+		if not self.scheme_name:
+			frappe.throw("Scheme Name is required for the scheme.")
+		self.scheme_name = self.scheme_name.title().strip()
+		self.code = self.code.upper().strip()
