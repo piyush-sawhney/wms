@@ -22,15 +22,16 @@ class WMSBank(Document):
 		micr: DF.Data | None
 		name: DF.Int | None
 		type: DF.Literal["Savings", "Current", "NRE", "NRO", "FCNR"]
+
 	# end: auto-generated types
 	def before_save(self):
 		self.format_fields()
-	
+
 	def validate(self):
 		self.validate_micr()
 		self.validate_ifsc()
 		self.validate_bank_name()
-	
+
 	def validate_bank_name(self):
 		if not self.bank_name:
 			frappe.throw("Bank Name is required.")
@@ -51,8 +52,7 @@ class WMSBank(Document):
 			self.ifsc = self.ifsc.upper()
 		if self.branch:
 			self.branch = self.branch.strip().title()
-		
-		
+
 	def validate_micr(self):
 		if self.micr:
 			self.micr = self.micr.replace(" ", "")

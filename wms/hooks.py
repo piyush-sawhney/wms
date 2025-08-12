@@ -244,11 +244,10 @@ export_python_type_annotations = True
 
 # Fixtures
 fixtures = [
- "WMS Client Type",
- "WMS Client Classification",
- "WMS Holding Type",
- "WMS Relation",
- "WMS Service Type",
- "WMS Payment Type"
+	"WMS Client Type",
+	"WMS Client Classification",
+	"WMS Holding Type",
+	"WMS Relation",
+	"WMS Service Type",
+	"WMS Payment Type",
 ]
-

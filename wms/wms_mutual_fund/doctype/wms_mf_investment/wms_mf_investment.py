@@ -3,8 +3,10 @@
 
 import frappe
 from frappe.model.document import Document
-from wms.utils import calculate_age, get_financial_year_code
 from frappe.model.naming import make_autoname
+
+from wms.utils import calculate_age, get_financial_year_code
+
 
 class WMSMFInvestment(Document):
 	# begin: auto-generated types
@@ -14,6 +16,7 @@ class WMSMFInvestment(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
+
 		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
 		from wms.wms_investment.doctype.wms_investment_holder.wms_investment_holder import WMSInvestmentHolder
 
@@ -29,10 +32,14 @@ class WMSMFInvestment(Document):
 		holding_type: DF.Link
 		is_existing_folio: DF.Check
 		nominees: DF.Table[WMSNominee]
-		request_type: DF.Literal["New Purchase", "Additional Purchase", "SIP", "Redemption", "Switch", "STP", "SWP"]
+		request_type: DF.Literal[
+			"New Purchase", "Additional Purchase", "SIP", "Redemption", "Switch", "STP", "SWP"
+		]
 		scheme: DF.Link
 		scheme_out: DF.Link | None
-		status: DF.Literal["Entry Done", "Submitted", "Investment Created", "Dependency on Client", "Pending With Us"]
+		status: DF.Literal[
+			"Entry Done", "Submitted", "Investment Created", "Dependency on Client", "Pending With Us"
+		]
 		through_broker: DF.Check
 		through_us: DF.Check
 		units: DF.Float
@@ -41,7 +48,7 @@ class WMSMFInvestment(Document):
 
 	def autoname(self):
 		FY = get_financial_year_code(self.entry_date)
-		self.name = make_autoname(f'MF-{FY}-.####')
+		self.name = make_autoname(f"MF-{FY}-.####")
 
 	def validate(self):
 		self.validate_holders()
@@ -49,26 +56,30 @@ class WMSMFInvestment(Document):
 		self.validate_units_or_amount()
 		self.validate_folio_number()
 		self.validate_existing_folio()
-	
+
 	def validate_existing_folio(self):
 		if self.request_type != "New Purchase":
 			self.is_existing_folio = 1
-		
+
 	def validate_folio_number(self):
 		if self.is_existing_folio and not self.folio_number:
 			frappe.throw("Folio Number is required for existing folios.")
 		if not self.is_existing_folio and self.folio_number:
 			frappe.throw("Folio Number should not be provided for new folios.")
 		import re
-		pattern = r'^\d+(\/\d{2})?$'
+
+		pattern = r"^\d+(\/\d{2})?$"
 		if bool(re.match(pattern, self.folio_number)) is False:
-			frappe.throw("Folio Number must be a number or a number followed by a slash and two digits (e.g., 12563/45).")
+			frappe.throw(
+				"Folio Number must be a number or a number followed by a slash and two digits (e.g., 12563/45)."
+			)
 
 	def validate_scheme(self):
 		if not self.scheme:
 			frappe.throw("Scheme is required.")
 		if self.scheme_out and self.scheme == self.scheme_out:
 			frappe.throw("Scheme and Scheme Out cannot be the same.")
+
 	def validate_units_or_amount(self):
 		if not self.all_units and not self.amount and not self.units:
 			frappe.throw("Please enter either Units or Amount.")
@@ -103,7 +114,7 @@ class WMSMFInvestment(Document):
 
 			if share_percentage != 100:
 				frappe.throw("Total share percentage of nominees must be 100%.")
-		
+
 	def validate_holders(self):
 		if self.holders and len(self.holders) > 0:
 			if self.holding_type == "Single":

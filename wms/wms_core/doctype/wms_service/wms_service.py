@@ -19,7 +19,9 @@ class WMSService(Document):
 		notes: DF.TextEditor | None
 		service_entity: DF.Link
 		service_item: DF.DynamicLink
-		status: DF.Literal["Entry Done", "Submitted", "Client Dependency", "Pending With Us", "Resolved", "Rejected"]
+		status: DF.Literal[
+			"Entry Done", "Submitted", "Client Dependency", "Pending With Us", "Resolved", "Rejected"
+		]
 		type: DF.Link
 	# end: auto-generated types
 	pass

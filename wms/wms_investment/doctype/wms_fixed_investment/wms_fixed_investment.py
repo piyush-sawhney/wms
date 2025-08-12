@@ -3,9 +3,11 @@
 
 import frappe
 from frappe.model.document import Document
-from wms.utils import get_financial_year_code,calculate_age
 from frappe.model.naming import make_autoname
-from frappe.utils import nowdate, add_months
+from frappe.utils import add_months, nowdate
+
+from wms.utils import calculate_age, get_financial_year_code
+
 
 class WMSFixedInvestment(Document):
 	# begin: auto-generated types
@@ -15,6 +17,7 @@ class WMSFixedInvestment(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
+
 		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
 		from wms.wms_investment.doctype.wms_investment_holder.wms_investment_holder import WMSInvestmentHolder
 
@@ -39,24 +42,34 @@ class WMSFixedInvestment(Document):
 		renewed_investment_type: DF.Link | None
 		roi: DF.Float
 		start_date: DF.Date | None
-		status: DF.Literal["Entry Done", "Submitted", "Investment Created", "Renewed", "Matured", "Pre-Matured", "Transmitted"]
+		status: DF.Literal[
+			"Entry Done",
+			"Submitted",
+			"Investment Created",
+			"Renewed",
+			"Matured",
+			"Pre-Matured",
+			"Transmitted",
+		]
 		through_broker: DF.Check
 		through_us: DF.Check
 	# end: auto-generated types
 	pass
+
 	def autoname(self):
 		FY = get_financial_year_code(self.entry_date)
-		self.name = make_autoname(f'{self.investment_type}-{FY}-.####')
+		self.name = make_autoname(f"{self.investment_type}-{FY}-.####")
+
 	def validate(self):
 		self.validate_holders()
 		self.validate_nominee()
 		self.validate_dates()
 		self.validate_is_active()
-		
+
 	def validate_is_active(self):
-		if self.status in ["Renewed","Matured", "Pre-Matured", "Transmitted"]:
+		if self.status in ["Renewed", "Matured", "Pre-Matured", "Transmitted"]:
 			self.is_active = 0
-			
+
 	def validate_nominee(self):
 		if self.nominees and len(self.nominees) > 0:
 			holders = [holder.holder for holder in self.holders] if len(self.holders) > 0 else []
@@ -83,7 +96,7 @@ class WMSFixedInvestment(Document):
 
 			if share_percentage != 100:
 				frappe.throw("Total share percentage of nominees must be 100%.")
-		
+
 	def validate_holders(self):
 		if self.holders and len(self.holders) > 0:
 			if self.holding_type == "Single":
@@ -93,15 +106,13 @@ class WMSFixedInvestment(Document):
 			for holder in self.holders:
 				if holder.holder == self.client:
 					frappe.throw("Client cannot be a holder.")
-			
-
 
 	def validate_dates(self):
 		now_date = nowdate()
 		if self.entry_date and self.entry_date > now_date:
 			frappe.throw("Entry Date cannot be in the future.")
-		
+
 		if self.start_date:
 			if self.start_date > now_date:
 				frappe.throw("Start Date cannot be in the future.")
-			self.maturity_date = add_months(self.start_date, self.period) 
+			self.maturity_date = add_months(self.start_date, self.period)

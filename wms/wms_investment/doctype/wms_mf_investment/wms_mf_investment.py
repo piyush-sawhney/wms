@@ -13,6 +13,7 @@ class WMSMFInvestment(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
+
 		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
 		from wms.wms_investment.doctype.wms_investment_holder.wms_investment_holder import WMSInvestmentHolder
 
@@ -26,10 +27,22 @@ class WMSMFInvestment(Document):
 		holders: DF.Table[WMSInvestmentHolder]
 		holding_type: DF.Link
 		nominees: DF.Table[WMSNominee]
-		request_type: DF.Literal["NFO", "New Purchase", "Additional Purchase", "Redemption", "SIP", "Redemption", "Switch", "STP", "SWP"]
+		request_type: DF.Literal[
+			"NFO",
+			"New Purchase",
+			"Additional Purchase",
+			"Redemption",
+			"SIP",
+			"Redemption",
+			"Switch",
+			"STP",
+			"SWP",
+		]
 		scheme: DF.Link
 		scheme_out: DF.Link | None
-		status: DF.Literal["Entry Done", "Submitted", "Investment Created", "Already Created", "Dependency on Client"]
+		status: DF.Literal[
+			"Entry Done", "Submitted", "Investment Created", "Already Created", "Dependency on Client"
+		]
 		through_broker: DF.Check
 		through_us: DF.Check
 		units: DF.Float

@@ -4,8 +4,10 @@
 import frappe
 from frappe.model.document import Document
 from frappe.model.naming import make_autoname
-from frappe.utils import nowdate, add_months
+from frappe.utils import add_months, nowdate
+
 from wms.utils import calculate_age, get_financial_year_code
+
 
 class WMSPOInvestment(Document):
 	# begin: auto-generated types
@@ -15,6 +17,7 @@ class WMSPOInvestment(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
+
 		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
 		from wms.wms_investment.doctype.wms_investment_holder.wms_investment_holder import WMSInvestmentHolder
 
@@ -36,22 +39,31 @@ class WMSPOInvestment(Document):
 		scheme_code: DF.Data | None
 		scheme_name: DF.Link
 		start_date: DF.Date | None
-		status: DF.Literal["Entry Done", "Submitted to PO", "Passbook Received", "Passbook Sent to Customer", "Renewed", "Matured", "Pre-Matured", "Transmitted"]
+		status: DF.Literal[
+			"Entry Done",
+			"Submitted to PO",
+			"Passbook Received",
+			"Passbook Sent to Customer",
+			"Renewed",
+			"Matured",
+			"Pre-Matured",
+			"Transmitted",
+		]
 		through_us: DF.Check
+
 	# end: auto-generated types
 	def autoname(self):
 		FY = get_financial_year_code(self.entry_date)
-		self.name = make_autoname(f'PO-{FY}-.####')
-	
+		self.name = make_autoname(f"PO-{FY}-.####")
 
 	def validate(self):
 		self.validate_holders()
 		self.validate_nominee()
 		self.validate_dates()
 		self.validate_is_active()
-		
+
 	def validate_is_active(self):
-		if self.status in ["Renewed","Matured", "Pre-Matured", "Transmitted"]:
+		if self.status in ["Renewed", "Matured", "Pre-Matured", "Transmitted"]:
 			self.is_active = 0
 
 	def validate_nominee(self):
@@ -80,7 +92,7 @@ class WMSPOInvestment(Document):
 
 			if share_percentage != 100:
 				frappe.throw("Total share percentage of nominees must be 100%.")
-		
+
 	def validate_holders(self):
 		if self.holders and len(self.holders) > 0:
 			if self.holding_type == "Single":
@@ -90,16 +102,13 @@ class WMSPOInvestment(Document):
 			for holder in self.holders:
 				if holder.holder == self.client:
 					frappe.throw("Client cannot be a holder.")
-			
-
 
 	def validate_dates(self):
 		now_date = nowdate()
 		if self.entry_date and self.entry_date > now_date:
 			frappe.throw("Entry Date cannot be in the future.")
-		
+
 		if self.start_date:
 			if self.start_date > now_date:
 				frappe.throw("Start Date cannot be in the future.")
-			self.maturity_date = add_months(self.start_date, self.period) 
-
+			self.maturity_date = add_months(self.start_date, self.period)

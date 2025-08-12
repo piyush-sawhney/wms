@@ -6,19 +6,20 @@ from frappe.model.document import Document
 
 
 class WMSPOScheme(Document):
-    # begin: auto-generated types
-    # This code is auto-generated. Do not modify anything in this block.
+	# begin: auto-generated types
+	# This code is auto-generated. Do not modify anything in this block.
 
-    from typing import TYPE_CHECKING
+	from typing import TYPE_CHECKING
 
-    if TYPE_CHECKING:
-        from frappe.types import DF
+	if TYPE_CHECKING:
+		from frappe.types import DF
 
-        code: DF.Data
-        period: DF.Int
-        roi: DF.Float
-        scheme_name: DF.Data
-    # end: auto-generated types
-        def autoname(self):
-                roi_formatted = f"{self.roi:.2f}".replace(".", "-")
-                self.name = f"{self.code}-{self.period}M-R{roi_formatted}"
+		code: DF.Data
+		period: DF.Int
+		roi: DF.Float
+		scheme_name: DF.Data
+
+		# end: auto-generated types
+		def autoname(self):
+			roi_formatted = f"{self.roi:.2f}".replace(".", "-")
+			self.name = f"{self.code}-{self.period}M-R{roi_formatted}"

@@ -3,9 +3,12 @@
 
 import frappe
 from frappe.model.document import Document
-from wms.utils import get_financial_year_code,calculate_age
 from frappe.model.naming import make_autoname
-from frappe.utils import nowdate, add_years,add_days, add_months
+from frappe.utils import add_days, add_months, add_years, nowdate
+
+from wms.utils import calculate_age, get_financial_year_code
+
+
 class WMSInsurancePolicy(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
@@ -14,6 +17,7 @@ class WMSInsurancePolicy(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
+
 		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
 		from wms.wms_insurance.doctype.wms_insurance_member.wms_insurance_member import WMSInsuranceMember
 
@@ -60,9 +64,10 @@ class WMSInsurancePolicy(Document):
 		vehicle_type: DF.Link | None
 	# end: auto-generated types
 	pass
+
 	def autoname(self):
 		FY = get_financial_year_code(self.entry_date)
-		self.name = make_autoname(f'INS-{FY}-.####')
+		self.name = make_autoname(f"INS-{FY}-.####")
 
 	def validate(self):
 		self.validate_client()
@@ -70,14 +75,14 @@ class WMSInsurancePolicy(Document):
 		self.validate_dates()
 		self.validate_life_insurance()
 		self.validate_health_insurance()
-		self.validate_vehicle_insurance()	
+		self.validate_vehicle_insurance()
 		self.validate_other_insurance()
-	
+
 	def validate_other_insurance(self):
 		if self.insurance_type not in ["Vehicle Insurance", "Health Insurance", "Life Insurance"]:
 			if not self.desciption:
 				frappe.throw("Description is required for other types of insurance policies.")
-	
+
 	def validate_vehicle_insurance(self):
 		if self.insurance_type == "Vehicle Insurance" and self.is_existing_policy != 1:
 			if not self.vehicle_number:
@@ -88,23 +93,33 @@ class WMSInsurancePolicy(Document):
 				frappe.throw("Vehicle Type is required for Vehicle Insurance policies.")
 
 	def validate_health_insurance(self):
-		if self.insurance_type == "Health Insurance" and self.is_existing_policy !=1:
+		if self.insurance_type == "Health Insurance" and self.is_existing_policy != 1:
 			if not self.health_plan_name:
 				frappe.throw("Plan Name is required for Health Insurance policies.")
-			if self.health_type not in ["Floater", "Individual", "Multi-Individual", "Top Up", "Super Top Up"]:
-				frappe.throw("Invalid Health Type. Choose from Floater, Individual, Multi-Individual, Top Up, or Super Top Up.")
+			if self.health_type not in [
+				"Floater",
+				"Individual",
+				"Multi-Individual",
+				"Top Up",
+				"Super Top Up",
+			]:
+				frappe.throw(
+					"Invalid Health Type. Choose from Floater, Individual, Multi-Individual, Top Up, or Super Top Up."
+				)
 			if (self.health_type == "Floater" or self.health_type == "Multi-Individual") and not self.members:
-				frappe.throw("Members are required for Floater or Multi Individual Health Insurance policies.")
-	
+				frappe.throw(
+					"Members are required for Floater or Multi Individual Health Insurance policies."
+				)
+
 	def validate_life_insurance(self):
-		if self.insurance_type == "Life Insurance" and self.is_existing_policy !=1:
+		if self.insurance_type == "Life Insurance" and self.is_existing_policy != 1:
 			if not self.life_plan_name:
 				frappe.throw("Life Plan Name is required for Life Insurance policies.")
 			if not self.ppt:
 				frappe.throw("Premium Payment Term (PPT) is required for Life Insurance policies.")
 			if not self.premium_mode:
 				frappe.throw("Premium Mode is required for Life Insurance policies.")
-	
+
 	def validate_nominee(self):
 		if self.nominees and len(self.nominees) > 0:
 			share_percentage = 0
@@ -133,12 +148,12 @@ class WMSInsurancePolicy(Document):
 		else:
 			if not self.client:
 				frappe.throw("Person Assured is required when the policy is not for self.")
-	
+
 	def validate_dates(self):
 		now_date = nowdate()
 		if self.entry_date and self.entry_date > now_date:
 			frappe.throw("Entry Date cannot be in the future.")
-		
+
 		if self.start_date:
 			if self.start_date > now_date:
 				frappe.throw("Start Date cannot be in the future.")
