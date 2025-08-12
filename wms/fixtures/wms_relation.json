@@ -2,6 +2,34 @@
  {
   "docstatus": 0,
   "doctype": "WMS Relation",
+  "modified": "2025-08-05 18:23:02.967999",
+  "name": "Brother",
+  "relation_name": "Brother"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Relation",
+  "modified": "2025-08-05 18:23:18.087743",
+  "name": "Nephew",
+  "relation_name": "Nephew"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Relation",
+  "modified": "2025-08-05 18:23:21.666629",
+  "name": "Niece",
+  "relation_name": "Niece"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Relation",
+  "modified": "2025-08-05 18:23:34.172379",
+  "name": "Grandmother",
+  "relation_name": "Grandmother"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Relation",
   "modified": "2025-08-01 15:36:05.298203",
   "name": "Spouse",
   "relation_name": "Spouse"
