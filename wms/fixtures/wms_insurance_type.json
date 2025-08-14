@@ -16,6 +16,34 @@
  {
   "docstatus": 0,
   "doctype": "WMS Insurance Type",
+  "insurance_type": "Overseas Travel Insurance",
+  "modified": "2025-08-14 14:01:22.759735",
+  "name": "Overseas Travel Insurance"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Insurance Type",
+  "insurance_type": "Householder Insurance",
+  "modified": "2025-08-14 14:01:46.435604",
+  "name": "Householder Insurance"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Insurance Type",
+  "insurance_type": "Shopkeeper Insurance",
+  "modified": "2025-08-14 14:01:55.219191",
+  "name": "Shopkeeper Insurance"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Insurance Type",
+  "insurance_type": "Fire Insurance",
+  "modified": "2025-08-14 14:02:03.856766",
+  "name": "Fire Insurance"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Insurance Type",
   "insurance_type": "Health Insurance",
   "modified": "2025-08-04 17:37:40.016103",
   "name": "Health Insurance"
