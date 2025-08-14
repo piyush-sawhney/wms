@@ -48,7 +48,7 @@ class WMSClient(Document):
 		self.rename_client()
 
 	def create_name(self):
-		name_part = frappe.scrub(self.client_name).upper()  # Remove unsafe chars
+		name_part = frappe.scrub(self.client_name).strip().upper()  # Remove unsafe chars
 		if self.classification == "Sole Proprietor" and self.pan:
 			created_name = make_autoname(f"{name_part}-{self.pan.upper()}-.###")
 		elif self.pan:

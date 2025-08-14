@@ -60,7 +60,7 @@ class WMSInsurancePolicy(Document):
 		vehicle_make: DF.Data | None
 		vehicle_model: DF.Data | None
 		vehicle_number: DF.Data | None
-		vehicle_type: DF.Link | None
+		vehicle_type: DF.Literal["Private Car", "Two Wheeler", "Commercial"]
 	# end: auto-generated types
 	pass
 

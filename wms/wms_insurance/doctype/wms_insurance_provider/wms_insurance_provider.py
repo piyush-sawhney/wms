@@ -1,7 +1,7 @@
 # Copyright (c) 2025, KNAPS and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 
@@ -16,4 +16,11 @@ class WMSInsuranceProvider(Document):
 
 		provider_name: DF.Data
 	# end: auto-generated types
-	pass
+	
+	def autoname(self):
+		"""
+		Generate a unique name for the insurance provider if not already set.
+		The name is generated based on the provider's name.
+		"""
+		self.provider_name = self.provider_name.strip().title()  # Remove unsafe chars and format name
+		self.name = self.provider_name

@@ -1,0 +1,23 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "WMS Insurance Type",
+  "insurance_type": "Life Insurance",
+  "modified": "2025-08-14 13:29:24.051156",
+  "name": "Life Insurance"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Insurance Type",
+  "insurance_type": "Vehicle Insurance",
+  "modified": "2025-08-14 13:29:38.082356",
+  "name": "Vehicle Insurance"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Insurance Type",
+  "insurance_type": "Health Insurance",
+  "modified": "2025-08-04 17:37:40.016103",
+  "name": "Health Insurance"
+ }
+]

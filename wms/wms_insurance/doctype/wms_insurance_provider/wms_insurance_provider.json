@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:provider_name",
  "creation": "2025-08-03 17:08:46.991192",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -21,11 +20,10 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-05 17:19:55.041390",
+ "modified": "2025-08-14 13:50:16.764701",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Provider",
- "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

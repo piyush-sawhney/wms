@@ -284,9 +284,9 @@
   },
   {
    "fieldname": "vehicle_type",
-   "fieldtype": "Link",
+   "fieldtype": "Select",
    "label": "Vehicle Type",
-   "options": "WMS Vehicle Type"
+   "options": "Private Car\nTwo Wheeler\nCommercial"
   },
   {
    "fieldname": "chassis_number",
@@ -410,7 +410,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-14 13:36:37.343859",
+ "modified": "2025-08-14 13:56:25.232667",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Policy",
