@@ -17,7 +17,6 @@ class WMSInsurancePolicy(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
-
 		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
 		from wms.wms_insurance.doctype.wms_insurance_member.wms_insurance_member import WMSInsuranceMember
 
@@ -87,8 +86,6 @@ class WMSInsurancePolicy(Document):
 		if self.insurance_type == "Vehicle Insurance" and self.is_existing_policy != 1:
 			if not self.vehicle_number:
 				frappe.throw("Vehicle Number is required for Vehicle Insurance policies.")
-			if not self.date_of_registration:
-				frappe.throw("Date of Registration is required for Vehicle Insurance policies.")
 			if not self.vehicle_type:
 				frappe.throw("Vehicle Type is required for Vehicle Insurance policies.")
 
