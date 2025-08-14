@@ -97,7 +97,7 @@
   {
    "fieldname": "policy_number",
    "fieldtype": "Data",
-   "label": "Number",
+   "label": "Policy Number",
    "mandatory_depends_on": "eval:doc.status != \"Proposal\""
   },
   {
@@ -410,7 +410,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-14 13:56:25.232667",
+ "modified": "2025-08-14 13:59:34.961876",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Policy",
