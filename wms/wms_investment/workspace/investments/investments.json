@@ -1,0 +1,45 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"YKswCOPzMg\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Investments</span>\",\"col\":12}},{\"id\":\"aS0ZcMVn8p\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Mutual Funds\",\"col\":4}},{\"id\":\"--qo_4HY3P\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Post Office\",\"col\":4}},{\"id\":\"6lprQ9nwZv\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"FD/Bonds/NCDs\",\"col\":4}}]",
+ "creation": "2025-08-05 13:14:36.916267",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "expenses",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Investments",
+ "links": [],
+ "modified": "2025-08-15 22:07:18.145863",
+ "modified_by": "Administrator",
+ "module": "WMS Investment",
+ "name": "Investments",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "KNAPS",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "WMS MF Investment",
+   "label": "Mutual Funds",
+   "quick_list_filter": "[[\"WMS MF Investment\",\"status\",\"=\",\"Entry Done\",false]]"
+  },
+  {
+   "document_type": "WMS PO Investment",
+   "label": "Post Office",
+   "quick_list_filter": "[[\"WMS PO Investment\",\"status\",\"=\",\"Entry Done\",false]]"
+  },
+  {
+   "document_type": "WMS Fixed Investment",
+   "label": "FD/Bonds/NCDs",
+   "quick_list_filter": "[[\"WMS Fixed Investment\",\"status\",\"=\",\"Entry Done\",false]]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 7.0,
+ "shortcuts": [],
+ "title": "Investments"
+}
