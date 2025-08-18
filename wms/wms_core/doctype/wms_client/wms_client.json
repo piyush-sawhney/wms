@@ -22,6 +22,18 @@
   "ubos",
   "section_break_fnia",
   "uuid",
+  "address_and_contact_tab",
+  "address_and_contact_section",
+  "address_html",
+  "column_break_vyzs",
+  "contact_html",
+  "primary_address_and_contact_section",
+  "client_primary_address",
+  "primary_address",
+  "column_break_ngqk",
+  "client_primary_contact",
+  "mobile",
+  "email_id",
   "codes_tab",
   "post_office_cif",
   "column_break_iwuy",
@@ -168,6 +180,68 @@
    "fieldtype": "Data",
    "label": "NPS PRAN",
    "unique": 1
+  },
+  {
+   "fieldname": "address_and_contact_tab",
+   "fieldtype": "Tab Break",
+   "label": "Address and Contact"
+  },
+  {
+   "fieldname": "address_html",
+   "fieldtype": "HTML",
+   "label": "Address HTML"
+  },
+  {
+   "fieldname": "column_break_vyzs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_html",
+   "fieldtype": "HTML",
+   "label": "Contact HTML"
+  },
+  {
+   "fieldname": "address_and_contact_section",
+   "fieldtype": "Section Break",
+   "label": "Address and Contact"
+  },
+  {
+   "fieldname": "primary_address_and_contact_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Address and Contact"
+  },
+  {
+   "fieldname": "primary_address",
+   "fieldtype": "Text",
+   "label": "Primary Address"
+  },
+  {
+   "fieldname": "column_break_ngqk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "client_primary_address",
+   "fieldtype": "Link",
+   "label": "Client Primary Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "client_primary_contact",
+   "fieldtype": "Link",
+   "label": "Client Primary Contact",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Read Only",
+   "label": "Mobile",
+   "options": "Mobile"
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Read Only",
+   "label": "Email ID",
+   "options": "Email"
   }
  ],
  "grid_page_length": 50,
@@ -230,7 +304,7 @@
    "link_fieldname": "client"
   }
  ],
- "modified": "2025-08-05 17:24:53.908121",
+ "modified": "2025-08-18 13:38:47.740053",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",
