@@ -20,13 +20,13 @@ class WMSClient(Document):
 		from wms.wms_core.doctype.wms_ubo.wms_ubo import WMSUBO
 
 		classification: DF.Link
+		client_group: DF.Link | None
 		client_name: DF.Data
 		client_primary_address: DF.Link | None
 		client_primary_contact: DF.Link | None
 		codes: DF.Table[WMSClientCodes]
 		dob: DF.Date | None
 		email_id: DF.ReadOnly | None
-		gender: DF.Literal["Male", "Female", "Others"]
 		mobile: DF.ReadOnly | None
 		nps_pran: DF.Data | None
 		pan: DF.Link | None

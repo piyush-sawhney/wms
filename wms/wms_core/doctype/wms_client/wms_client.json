@@ -6,17 +6,13 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "classification",
-  "column_break_ojny",
-  "type",
-  "section_break_tkrr",
   "client_name",
-  "gender",
-  "column_break_ojsg",
+  "classification",
+  "type",
+  "client_group",
+  "column_break_ojny",
   "pan",
-  "section_break_acso",
   "dob",
-  "column_break_elxv",
   "pob",
   "section_break_sihe",
   "ubos",
@@ -63,14 +59,6 @@
    "placeholder": "Enter PAN Number"
   },
   {
-   "fieldname": "section_break_acso",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_elxv",
-   "fieldtype": "Column Break"
-  },
-  {
    "default": "Resident",
    "fieldname": "classification",
    "fieldtype": "Link",
@@ -104,34 +92,17 @@
    "placeholder": "City/District"
   },
   {
-   "depends_on": "eval: doc.type != \"Individual\"|| doc.classification ==\"Sole Proprietor\" ",
    "fieldname": "section_break_sihe",
    "fieldtype": "Section Break",
-   "label": "Non-Individual Details",
-   "read_only_depends_on": "eval: doc.type != \"Individual\"|| doc.classification ==\"Sole Proprietor\" "
+   "label": "Non-Individual Details"
   },
   {
-   "default": "Male",
-   "depends_on": "eval:doc.type === \"Individual\" && doc.classification != \"Sole Proprietor\"",
-   "fieldname": "gender",
-   "fieldtype": "Select",
-   "label": "Gender",
-   "options": "Male\nFemale\nOthers"
-  },
-  {
+   "depends_on": "eval: doc.type != \"Individual\"|| doc.classification ==\"Sole Proprietor\" ",
    "fieldname": "ubos",
    "fieldtype": "Table",
    "label": "Ultimate Beneficiary Owners",
    "mandatory_depends_on": "eval:doc.type != \"Individual\"",
    "options": "WMS UBO"
-  },
-  {
-   "fieldname": "section_break_tkrr",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_ojsg",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "column_break_ojny",
@@ -182,23 +153,29 @@
    "unique": 1
   },
   {
+   "depends_on": "eval: !doc.__islocal",
    "fieldname": "address_and_contact_tab",
    "fieldtype": "Tab Break",
    "label": "Address and Contact"
   },
   {
+   "depends_on": "eval: !doc.__islocal",
    "fieldname": "address_html",
    "fieldtype": "HTML",
-   "label": "Address HTML"
+   "label": "Address HTML",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_vyzs",
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval: !doc.__islocal",
    "fieldname": "contact_html",
    "fieldtype": "HTML",
-   "label": "Contact HTML"
+   "label": "Contact HTML",
+   "read_only": 1,
+   "read_only_depends_on": "eval: !doc.__islocal"
   },
   {
    "fieldname": "address_and_contact_section",
@@ -213,23 +190,28 @@
   {
    "fieldname": "primary_address",
    "fieldtype": "Text",
-   "label": "Primary Address"
+   "label": "Primary Address",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_ngqk",
    "fieldtype": "Column Break"
   },
   {
+   "description": "Reselect, if the chosen address is edited after save",
    "fieldname": "client_primary_address",
    "fieldtype": "Link",
    "label": "Client Primary Address",
-   "options": "Address"
+   "options": "Address",
+   "read_only": 1
   },
   {
+   "description": "Reselect, if the chosen address is edited after save",
    "fieldname": "client_primary_contact",
    "fieldtype": "Link",
    "label": "Client Primary Contact",
-   "options": "Contact"
+   "options": "Contact",
+   "read_only": 1
   },
   {
    "fieldname": "mobile",
@@ -242,6 +224,12 @@
    "fieldtype": "Read Only",
    "label": "Email ID",
    "options": "Email"
+  },
+  {
+   "fieldname": "client_group",
+   "fieldtype": "Link",
+   "label": "Client Group",
+   "options": "WMS Client Group"
   }
  ],
  "grid_page_length": 50,
@@ -304,7 +292,7 @@
    "link_fieldname": "client"
   }
  ],
- "modified": "2025-08-18 13:38:47.740053",
+ "modified": "2025-08-18 14:54:13.653724",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",
