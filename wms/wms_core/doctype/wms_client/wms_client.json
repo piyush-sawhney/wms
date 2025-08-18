@@ -18,6 +18,7 @@
   "ubos",
   "section_break_fnia",
   "uuid",
+  "dashboard_tab",
   "address_and_contact_tab",
   "address_and_contact_section",
   "address_html",
@@ -230,69 +231,19 @@
    "fieldtype": "Link",
    "label": "Client Group",
    "options": "WMS Client Group"
+  },
+  {
+   "fieldname": "dashboard_tab",
+   "fieldtype": "Tab Break",
+   "label": "Dashboard",
+   "show_dashboard": 1
   }
  ],
  "grid_page_length": 50,
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
- "links": [
-  {
-   "group": "Contact",
-   "link_doctype": "WMS Address",
-   "link_fieldname": "client"
-  },
-  {
-   "group": "Bank",
-   "link_doctype": "WMS Bank",
-   "link_fieldname": "client"
-  },
-  {
-   "group": "Contact",
-   "link_doctype": "WMS Phone",
-   "link_fieldname": "client"
-  },
-  {
-   "group": "Contact",
-   "link_doctype": "WMS Email",
-   "link_fieldname": "client"
-  },
-  {
-   "group": "Family",
-   "link_doctype": "WMS Family",
-   "link_fieldname": "family_head"
-  },
-  {
-   "group": "Investment",
-   "link_doctype": "WMS PO Investment",
-   "link_fieldname": "client"
-  },
-  {
-   "group": "Investment",
-   "link_doctype": "WMS Fixed Investment",
-   "link_fieldname": "client"
-  },
-  {
-   "group": "Service",
-   "link_doctype": "WMS Service",
-   "link_fieldname": "service_item"
-  },
-  {
-   "group": "Investment",
-   "link_doctype": "WMS MF Investment",
-   "link_fieldname": "client"
-  },
-  {
-   "group": "Insurance",
-   "link_doctype": "WMS Insurance Policy",
-   "link_fieldname": "proposer"
-  },
-  {
-   "group": "Insurance",
-   "link_doctype": "WMS Insurance Policy",
-   "link_fieldname": "client"
-  }
- ],
- "modified": "2025-08-18 14:54:13.653724",
+ "links": [],
+ "modified": "2025-08-18 16:36:52.642525",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",

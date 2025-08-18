@@ -6,16 +6,20 @@ def get_data():
 		"fieldname": "client",
 		"non_standard_fieldnames": {
 			"WMS Service": "service_item",
-			"WMS Investment Holder":"holder"
+			"WMS Family": "family_head"
 		},
 		"dynamic_links": {"service_item": ["WMS Client", "service_entity"]},
 		"internal_links": {
-            "WMS MF Investment": ["holders", "holder"]
+
         },
         "internal_and_external_links": {
+			
         },
 		"transactions": [
-			{"label": _("Investments"), "items": ["WMS MF Investment", "WMS PO Investment","WMS Fixed Investmentl̥"]},
-			{"label": _("Insurance"), "items": ["WMS MF Investment"]}
+			{"label": _("Investments"), "items": ["WMS MF Investment","WMS Fixed Investment","WMS PO Investment"]},
+			{"label": _("Insurance"), "items": ["WMS Insurance Policy"]},
+			{"label": _("Family"), "items": ["WMS Family"]},
+			{"label": _("Service Requests"), "items": ["WMS Service"]},
+			{"label": _("Banks"), "items": ["WMS Bank"]}
 			],
 	}
