@@ -4,7 +4,10 @@
 import frappe
 from frappe.model.document import Document
 from frappe.model.naming import make_autoname
-
+from frappe.contacts.address_and_contact import (
+	delete_contact_and_address,
+	load_address_and_contact,
+)
 from wms.utils import calculate_age
 
 
@@ -37,6 +40,12 @@ class WMSClient(Document):
 		ubos: DF.Table[WMSUBO]
 		uuid: DF.Data | None
 	# end: auto-generated types
+	def onload(self):
+		load_address_and_contact(self)
+
+	def on_trash(self):
+		delete_contact_and_address("WMS Client", self.name)
+
 
 	def autoname(self):
 		self.name = self.create_name()
