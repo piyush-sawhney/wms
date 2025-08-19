@@ -7,7 +7,7 @@ frappe.ui.form.on("WMS Client", {
 			frappe.contacts.render_address_and_contact(frm);
             // Hide New Contact Button
             if (frm.fields_dict["contact_html"] && "contact_list" in frm.doc.__onload) {
-			$(frm.fields_dict["contact_html"].wrapper)
+			$()
                 .find(".btn-contact").hide();
             }
         }

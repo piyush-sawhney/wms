@@ -49,7 +49,10 @@ class WMSClient(Document):
 
 	def autoname(self):
 		self.name = self.create_name()
-
+	
+	def after_insert(self):
+		create_contact(self)
+				
 	def before_save(self):
 		self.update_classification_for_individuals()
 
@@ -145,3 +148,39 @@ class WMSClient(Document):
 					frappe.msgprint("Classification updated to Minor based on age.")
 			elif age >= 18 and self.classification == "Minor":
 				frappe.throw("Minor cannot be greater than 18 years old. ")
+
+def create_contact(args):
+	values = {
+		"doctype": "Contact",
+		"links": [{"link_doctype": args.get("doctype"), "link_name": args.get("name")}],
+	}
+
+
+	if args.type == "Individual":
+		first, middle, last = parse_full_name(args.client_name)
+		values.update(
+			{
+				"first_name": first,
+				"middle_name": middle,
+				"last_name": last,
+			}
+		)
+	else:
+		values.update(
+			{
+				"company_name": args.client_name,
+			}
+		)
+	contact = frappe.get_doc(values)
+	contact.insert(ignore_permissions=True)
+	
+
+
+def parse_full_name(full_name: str) -> tuple[str, str | None, str | None]:
+	"""Parse full name into first name, middle name and last name"""
+	names = full_name.split()
+	first_name = names[0]
+	middle_name = " ".join(names[1:-1]) if len(names) > 2 else None
+	last_name = names[-1] if len(names) > 1 else None
+
+	return first_name, middle_name, last_name
