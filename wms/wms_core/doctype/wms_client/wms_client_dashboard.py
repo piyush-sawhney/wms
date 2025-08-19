@@ -16,7 +16,7 @@ def get_data():
 			
         },
 		"transactions": [
-			{"label": _("Investments"), "items": ["WMS MF Investment","WMS Fixed Investment","WMS PO Investment","WMS Demat Account"]},
+			{"label": _("Investments"), "items": ["WMS MF Investment","WMS Fixed Investment","WMS PO Investment","WMS Demat Account","WMS National Pension Scheme"]},
 			{"label": _("Insurance"), "items": ["WMS Insurance Policy"]},
 			{"label": _("Family"), "items": ["WMS Family"]},
 			{"label": _("Service Requests"), "items": ["WMS Service"]},
