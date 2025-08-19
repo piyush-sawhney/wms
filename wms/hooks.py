@@ -251,5 +251,6 @@ fixtures = [
 	"WMS Service Type",
 	"WMS Payment Type",
     "WMS Insurance Provider",
-    "WMS Insurance Type"
+    "WMS Insurance Type",
+	"WMS Product"
 ]

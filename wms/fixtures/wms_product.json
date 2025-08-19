@@ -1,0 +1,37 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "WMS Product",
+  "modified": "2025-08-19 14:01:41.870860",
+  "name": "DEMAT",
+  "product_name": "DEMAT"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Product",
+  "modified": "2025-08-19 14:03:41.420557",
+  "name": "Mutual Fund",
+  "product_name": "Mutual Fund"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Product",
+  "modified": "2025-08-19 14:03:48.967603",
+  "name": "Insurance",
+  "product_name": "Insurance"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Product",
+  "modified": "2025-08-19 14:03:59.232592",
+  "name": "National Pension Scheme",
+  "product_name": "National Pension Scheme"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Product",
+  "modified": "2025-08-19 14:04:23.077805",
+  "name": "Fixed Income",
+  "product_name": "Fixed Income"
+ }
+]
