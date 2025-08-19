@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class WMSDematAccount(Document):
+class WMSNationalPensionScheme(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -15,12 +15,7 @@ class WMSDematAccount(Document):
 		from frappe.types import DF
 
 		client: DF.Link
-		client_id: DF.Data | None
-		company_name: DF.Link
-		dp_id: DF.Data
-		dp_type: DF.Literal["CDSL", "NSDL"]
-		holding_type: DF.Link
-		status: DF.Literal["Opening Request", "Opened", "Request with DP", "Client Dependency"]
-		trading_id: DF.Data | None
+		company: DF.Link | None
+		status: DF.Literal[None]
 	# end: auto-generated types
 	pass

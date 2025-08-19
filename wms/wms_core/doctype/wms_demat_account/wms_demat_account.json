@@ -8,6 +8,8 @@
  "engine": "InnoDB",
  "field_order": [
   "client",
+  "column_break_thmc",
+  "holding_type",
   "column_break_xwtn",
   "status",
   "section_break_juok",
@@ -17,7 +19,10 @@
   "dp_id",
   "client_id",
   "column_break_cdzp",
-  "trading_id"
+  "trading_id",
+  "additional_holders_tab",
+  "nominee_details_tab",
+  "bank_details_tab"
  ],
  "fields": [
   {
@@ -57,8 +62,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Client ID",
-   "reqd": 1
+   "label": "Client ID"
   },
   {
    "columns": 1,
@@ -99,12 +103,39 @@
   {
    "fieldname": "section_break_juok",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_thmc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Single",
+   "fieldname": "holding_type",
+   "fieldtype": "Link",
+   "label": "Holding Type",
+   "options": "WMS Holding Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "additional_holders_tab",
+   "fieldtype": "Tab Break",
+   "label": "Additional Holders"
+  },
+  {
+   "fieldname": "nominee_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Nominee Details"
+  },
+  {
+   "fieldname": "bank_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Bank Details"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-19 14:54:45.321775",
+ "modified": "2025-08-19 15:03:56.882893",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Demat Account",
