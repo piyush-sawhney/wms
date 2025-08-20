@@ -1,6 +1,8 @@
 # Copyright (c) 2025, KNAPS and contributors
 # For license information, please see license.txt
 
+import random
+import string
 import frappe
 from frappe.model.document import Document
 from frappe.model.naming import make_autoname
@@ -18,6 +20,8 @@ class WMSClient(Document):
 	from typing import TYPE_CHECKING
 
 	if TYPE_CHECKING:
+		from frappe.contacts.doctype.contact_email.contact_email import ContactEmail
+		from frappe.contacts.doctype.contact_phone.contact_phone import ContactPhone
 		from frappe.types import DF
 		from wms.wms_core.doctype.wms_client_codes.wms_client_codes import WMSClientCodes
 		from wms.wms_core.doctype.wms_ubo.wms_ubo import WMSUBO
@@ -25,17 +29,17 @@ class WMSClient(Document):
 		classification: DF.Link
 		client_group: DF.Link | None
 		client_name: DF.Data
-		client_primary_address: DF.Link | None
-		client_primary_contact: DF.Link | None
 		codes: DF.Table[WMSClientCodes]
 		dob: DF.Date | None
-		email_id: DF.ReadOnly | None
-		mobile: DF.ReadOnly | None
+		email_addresses: DF.Table[ContactEmail]
 		nps_pran: DF.Data | None
+		numbers: DF.Table[ContactPhone]
 		pan: DF.Link | None
 		pob: DF.Data | None
 		post_office_cif: DF.Data | None
-		primary_address: DF.Text | None
+		primary_email: DF.Data | None
+		primary_mobile: DF.Data | None
+		proprietor: DF.Link | None
 		type: DF.Data | None
 		ubos: DF.Table[WMSUBO]
 		uuid: DF.Data | None
@@ -48,7 +52,8 @@ class WMSClient(Document):
 
 
 	def autoname(self):
-		self.name = self.create_name()
+		random_letters = ''.join(random.choices(string.ascii_uppercase, k=4))
+		self.name = make_autoname(f"CL{random_letters}.###")
 	
 	def after_insert(self):
 		create_contact(self)
@@ -61,37 +66,23 @@ class WMSClient(Document):
 		self.validate_ubos()
 		self.validate_pan_type_combination()
 		self.validate_dob()
-		self.rename_client()
+		self.validate_sole_proprietor()
+		self.validate_primary_email()
+		self.validate_primary_mobile()
 
-	def create_name(self):
-		name_part = frappe.scrub(self.client_name).strip().upper()  # Remove unsafe chars
-		if self.classification == "Sole Proprietor" and self.pan:
-			created_name = make_autoname(f"{name_part}-{self.pan.upper()}-.###")
-		elif self.pan:
-			created_name = f"{name_part}-{self.pan.upper()}"
-		else:
-			while True:
-				random_hash = frappe.generate_hash(length=5).upper()
-				name = f"{name_part}-{random_hash}"
-				if not frappe.db.exists(self.doctype, name):
-					created_name = name
-					break
-		return created_name
-
-	def rename_client(self):
-		if self.is_new() or frappe.flags.in_insert:
-			return  # Do not rename during first insert\new_name = self.create_name()
-		new_name = self.create_name()
-		if self.name == new_name:
-			return
-		if self.pan and self.pan.upper() not in self.name:
-			frappe.rename_doc(self.doctype, self.name, new_name, force=True)
-			self.name = new_name
-			return
-		if self.name.split("-")[0] != new_name.split("-")[0]:
-			frappe.rename_doc(self.doctype, self.name, new_name, force=True)
-			self.name = new_name
-
+	def validate_primary_email(self):
+		pass
+	
+	def validate_primary_mobile(self):
+		pass
+	
+	
+	def validate_sole_proprietor(self):
+		if self.type == "Individual" and self.classification == "Sole Proprietor":
+			if not self.proprietor:
+				frappe.throw("Proprietor Details are mandatory for Sole Proprietorship.")
+	
+	
 	def validate_pan_type_combination(self):
 		if not self.type or not self.pan:
 			return
@@ -124,10 +115,7 @@ class WMSClient(Document):
 				frappe.throw("Date of Birth/Incorporation cannot be in the future.")
 
 	def validate_ubos(self):
-		if self.type == "Individual" and self.classification == "Sole Proprietor":
-			if len(self.ubos) != 1:
-				frappe.throw("Enter Single Proprietor details in Beneficiaries Table")
-		elif self.type != "Individual":
+		if self.type != "Individual":
 			if self.type == "Hindu Undivided Family (HUF)" and len(self.ubos) != 1:
 				frappe.throw("Enter single karta details for the HUF")
 			elif len(self.ubos) < 1:

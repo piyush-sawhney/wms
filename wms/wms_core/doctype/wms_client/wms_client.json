@@ -9,41 +9,42 @@
   "client_name",
   "classification",
   "type",
-  "client_group",
   "column_break_ojny",
   "pan",
   "dob",
   "pob",
+  "column_break_bakg",
+  "primary_mobile",
+  "primary_email",
+  "client_group",
+  "section_break_rker",
+  "proprietor",
   "section_break_sihe",
   "ubos",
   "section_break_fnia",
   "uuid",
-  "dashboard_tab",
+  "contact_details_tab",
+  "numbers",
+  "email_addresses",
   "address_and_contact_tab",
   "address_and_contact_section",
   "address_html",
-  "column_break_vyzs",
-  "contact_html",
-  "primary_address_and_contact_section",
-  "client_primary_address",
-  "primary_address",
-  "column_break_ngqk",
-  "client_primary_contact",
-  "mobile",
-  "email_id",
   "codes_tab",
   "post_office_cif",
   "column_break_iwuy",
   "nps_pran",
   "section_break_mmdh",
-  "codes"
+  "codes",
+  "dashboard_tab"
  ],
  "fields": [
   {
    "allow_in_quick_entry": 1,
+   "columns": 2,
    "fieldname": "client_name",
    "fieldtype": "Data",
    "in_filter": 1,
+   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Name",
    "placeholder": "Client Name",
@@ -55,7 +56,6 @@
    "fieldtype": "Link",
    "in_filter": 1,
    "in_global_search": 1,
-   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "PAN",
    "options": "WMS PAN",
@@ -75,7 +75,6 @@
    "fetch_from": "classification.type",
    "fieldname": "type",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Type",
    "read_only": 1
@@ -100,11 +99,11 @@
    "label": "Non-Individual Details"
   },
   {
-   "depends_on": "eval: doc.type != \"Individual\"|| doc.classification ==\"Sole Proprietor\" ",
+   "depends_on": "eval: doc.type != \"Individual\"",
    "fieldname": "ubos",
    "fieldtype": "Table",
    "label": "Ultimate Beneficiary Owners",
-   "mandatory_depends_on": "eval:doc.type != \"Individual\"",
+   "mandatory_depends_on": "eval: doc.type != \"Individual\"",
    "options": "WMS UBO"
   },
   {
@@ -159,7 +158,7 @@
    "depends_on": "eval: !doc.__islocal",
    "fieldname": "address_and_contact_tab",
    "fieldtype": "Tab Break",
-   "label": "Address and Contact"
+   "label": "Addresses"
   },
   {
    "depends_on": "eval: !doc.__islocal",
@@ -169,68 +168,14 @@
    "read_only": 1
   },
   {
-   "fieldname": "column_break_vyzs",
-   "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval: !doc.__islocal",
-   "fieldname": "contact_html",
-   "fieldtype": "HTML",
-   "label": "Contact HTML",
-   "read_only": 1,
-   "read_only_depends_on": "eval: !doc.__islocal"
-  },
-  {
    "fieldname": "address_and_contact_section",
    "fieldtype": "Section Break",
-   "label": "Address and Contact"
-  },
-  {
-   "fieldname": "primary_address_and_contact_section",
-   "fieldtype": "Section Break",
-   "label": "Primary Address and Contact"
-  },
-  {
-   "fieldname": "primary_address",
-   "fieldtype": "Text",
-   "label": "Primary Address",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_ngqk",
-   "fieldtype": "Column Break"
-  },
-  {
-   "description": "Reselect, if the chosen address is edited after save",
-   "fieldname": "client_primary_address",
-   "fieldtype": "Link",
-   "label": "Client Primary Address",
-   "options": "Address",
-   "read_only": 1
-  },
-  {
-   "description": "Reselect, if the chosen address is edited after save",
-   "fieldname": "client_primary_contact",
-   "fieldtype": "Link",
-   "label": "Client Primary Contact",
-   "options": "Contact",
-   "read_only": 1
-  },
-  {
-   "fieldname": "mobile",
-   "fieldtype": "Read Only",
-   "label": "Mobile",
-   "options": "Mobile"
-  },
-  {
-   "fieldname": "email_id",
-   "fieldtype": "Read Only",
-   "label": "Email ID",
-   "options": "Email"
+   "label": "Addresses"
   },
   {
    "fieldname": "client_group",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Client Group",
    "options": "WMS Client Group"
   },
@@ -239,13 +184,62 @@
    "fieldtype": "Tab Break",
    "label": "Dashboard",
    "show_dashboard": 1
+  },
+  {
+   "fieldname": "column_break_bakg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "primary_mobile",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Primary Mobile"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "columns": 2,
+   "fieldname": "primary_email",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Primary Email"
+  },
+  {
+   "fieldname": "section_break_rker",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval: doc.classification == \"Sole Proprietor\"",
+   "fieldname": "proprietor",
+   "fieldtype": "Link",
+   "label": "Proprietor Details",
+   "link_filters": "[[\"WMS Client\",\"classification\",\"=\",\"Resident\"]]",
+   "mandatory_depends_on": "eval: doc.classification == \"Sole Proprietor\"",
+   "options": "WMS Client"
+  },
+  {
+   "fieldname": "numbers",
+   "fieldtype": "Table",
+   "label": "Numbers",
+   "options": "Contact Phone"
+  },
+  {
+   "fieldname": "email_addresses",
+   "fieldtype": "Table",
+   "label": "Email Addresses",
+   "options": "Contact Email"
+  },
+  {
+   "fieldname": "contact_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Contact Details"
   }
  ],
  "grid_page_length": 50,
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-19 17:54:44.452727",
+ "modified": "2025-08-20 14:21:22.666121",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",
@@ -273,6 +267,7 @@
  "quick_entry": 1,
  "row_format": "Dynamic",
  "search_fields": "pan",
+ "show_name_in_global_search": 1,
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
