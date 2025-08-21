@@ -10,6 +10,7 @@ from frappe.contacts.address_and_contact import (
 	delete_contact_and_address,
 	load_address_and_contact,
 )
+from frappe import _
 from wms.utils import calculate_age
 
 
@@ -55,8 +56,6 @@ class WMSClient(Document):
 		random_letters = ''.join(random.choices(string.ascii_uppercase, k=4))
 		self.name = make_autoname(f"CL{random_letters}.###")
 	
-	def after_insert(self):
-		create_contact(self)
 				
 	def before_save(self):
 		self.update_classification_for_individuals()
@@ -71,10 +70,56 @@ class WMSClient(Document):
 		self.validate_primary_mobile()
 
 	def validate_primary_email(self):
-		pass
+		"""Keep primary_email field in sync with child table."""
+		is_primary_email_set = True if bool(frappe.get_value(self.doctype, self.name, "primary_email")) else False
+		if not self.email_addresses:
+			if is_primary_email_set:
+				# Case when deleting all the child table rows
+				self.primary_email = None
+				self.flags.is_primary_email_set = False
+				return
+			if not is_primary_email_set and self.primary_email:
+				self.append("email_addresses", {
+					"email_id": self.primary_email,
+					"is_primary": 1,
+				})
+				self.flags.is_primary_email_set = True
+				return
+		else:
+			primary_rows = [e for e in self.email_addresses if e.is_primary]
+
+			if  len(primary_rows) != 1:
+				frappe.throw(_("There must be exactly {0} primary email in the table.".format(frappe.bold(_("One")))))
+
+			# Sync field from table primary
+			table_primary = (primary_rows[0].email_id or "").strip()
+			if table_primary != (self.primary_email or "").strip():
+				self.primary_email = table_primary
 	
 	def validate_primary_mobile(self):
-		pass
+		"""Keep primary_email field in sync with child table."""
+		is_primary_mobile_set = True if bool(frappe.get_value(self.doctype, self.name, "primary_mobile")) else False
+		if not self.numbers:
+			if is_primary_mobile_set:
+				# Case when deleting all the child table rows
+				self.primary_mobile = None
+				return
+			if not is_primary_mobile_set and self.primary_mobile:
+				self.append("numbers", {
+					"phone": self.primary_mobile,
+					"is_primary_mobile_no": 1
+				})
+				return
+		else:
+			primary_rows = [e for e in self.numbers if e.is_primary_mobile_no]
+
+			if  len(primary_rows) != 1:
+				frappe.throw(_("There must be exactly {0} primary mobile in the table.".format(frappe.bold(_("One")))))
+
+			# Sync field from table primary
+			table_primary = (primary_rows[0].phone or "").strip()
+			if table_primary != (self.primary_mobile or "").strip():
+				self.primary_mobile = table_primary
 	
 	
 	def validate_sole_proprietor(self):
@@ -136,39 +181,3 @@ class WMSClient(Document):
 					frappe.msgprint("Classification updated to Minor based on age.")
 			elif age >= 18 and self.classification == "Minor":
 				frappe.throw("Minor cannot be greater than 18 years old. ")
-
-def create_contact(args):
-	values = {
-		"doctype": "Contact",
-		"links": [{"link_doctype": args.get("doctype"), "link_name": args.get("name")}],
-	}
-
-
-	if args.type == "Individual":
-		first, middle, last = parse_full_name(args.client_name)
-		values.update(
-			{
-				"first_name": first,
-				"middle_name": middle,
-				"last_name": last,
-			}
-		)
-	else:
-		values.update(
-			{
-				"company_name": args.client_name,
-			}
-		)
-	contact = frappe.get_doc(values)
-	contact.insert(ignore_permissions=True)
-	
-
-
-def parse_full_name(full_name: str) -> tuple[str, str | None, str | None]:
-	"""Parse full name into first name, middle name and last name"""
-	names = full_name.split()
-	first_name = names[0]
-	middle_name = " ".join(names[1:-1]) if len(names) > 2 else None
-	last_name = names[-1] if len(names) > 1 else None
-
-	return first_name, middle_name, last_name
