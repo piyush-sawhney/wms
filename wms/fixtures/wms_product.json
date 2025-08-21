@@ -33,5 +33,12 @@
   "modified": "2025-08-19 14:04:23.077805",
   "name": "Fixed Income",
   "product_name": "Fixed Income"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Product",
+  "modified": "2025-08-21 14:57:44.795181",
+  "name": "Small Savings Schemes",
+  "product_name": "Small Savings Schemes"
  }
 ]

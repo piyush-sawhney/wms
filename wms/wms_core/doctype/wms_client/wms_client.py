@@ -29,15 +29,14 @@ class WMSClient(Document):
 
 		classification: DF.Link
 		client_group: DF.Link | None
+		client_image: DF.AttachImage | None
 		client_name: DF.Data
 		codes: DF.Table[WMSClientCodes]
 		dob: DF.Date | None
 		email_addresses: DF.Table[ContactEmail]
-		nps_pran: DF.Data | None
 		numbers: DF.Table[ContactPhone]
 		pan: DF.Link | None
 		pob: DF.Data | None
-		post_office_cif: DF.Data | None
 		primary_email: DF.Data | None
 		primary_mobile: DF.Data | None
 		proprietor: DF.Link | None

@@ -15,8 +15,8 @@ class WMSClientCodes(Document):
 		from frappe.types import DF
 
 		code: DF.Data
-		company_name: DF.DynamicLink | None
-		company_type: DF.Link | None
+		company_name: DF.Link | None
+		company_type: DF.Data | None
 		parent: DF.Data
 		parentfield: DF.Data
 		parenttype: DF.Data

@@ -1,0 +1,42 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-08-21 14:51:18.914790",
+  "name": "The New India Assurance Co Ltd",
+  "product": "Insurance",
+  "provider_name": "The New India Assurance Co Ltd"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-08-21 14:57:46.090368",
+  "name": "Post Office",
+  "product": "Small Savings Schemes",
+  "provider_name": "Post Office"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-08-21 14:58:23.137236",
+  "name": "ICICI Prudential Life Insurance Co Ltd",
+  "product": "Insurance",
+  "provider_name": "ICICI Prudential Life Insurance Co Ltd"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-08-21 14:58:42.474671",
+  "name": "Aditya Birla Health Insurance Co Ltd",
+  "product": "Insurance",
+  "provider_name": "Aditya Birla Health Insurance Co Ltd"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-08-21 14:59:16.186237",
+  "name": "PNB Housing Finance Ltd",
+  "product": "Fixed Income",
+  "provider_name": "PNB Housing Finance Ltd"
+ }
+]

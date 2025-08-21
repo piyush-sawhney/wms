@@ -8,14 +8,6 @@
   "type": "Hindu Undivided Family (HUF)"
  },
  {
-  "classification": "Resident",
-  "docstatus": 0,
-  "doctype": "WMS Client Classification",
-  "modified": "2025-07-23 17:58:10.545066",
-  "name": "Resident",
-  "type": "Individual"
- },
- {
   "classification": "Sole Proprietor",
   "docstatus": 0,
   "doctype": "WMS Client Classification",
@@ -142,5 +134,13 @@
   "modified": "2025-07-26 11:42:44.055426",
   "name": "Provident Fund Trust",
   "type": "Trust"
+ },
+ {
+  "classification": "Resident",
+  "docstatus": 0,
+  "doctype": "WMS Client Classification",
+  "modified": "2025-07-23 17:58:10.545066",
+  "name": "Resident",
+  "type": "Individual"
  }
 ]

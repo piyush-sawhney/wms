@@ -23,6 +23,8 @@
   "ubos",
   "section_break_fnia",
   "uuid",
+  "column_break_mawq",
+  "client_image",
   "contact_details_tab",
   "numbers",
   "email_addresses",
@@ -30,9 +32,6 @@
   "address_and_contact_section",
   "address_html",
   "codes_tab",
-  "post_office_cif",
-  "column_break_iwuy",
-  "nps_pran",
   "section_break_mmdh",
   "codes",
   "dashboard_tab"
@@ -56,6 +55,7 @@
    "fieldtype": "Link",
    "in_filter": 1,
    "in_global_search": 1,
+   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "PAN",
    "options": "WMS PAN",
@@ -129,12 +129,6 @@
    "label": "Codes"
   },
   {
-   "fieldname": "post_office_cif",
-   "fieldtype": "Data",
-   "label": "Post Office CIF",
-   "unique": 1
-  },
-  {
    "fieldname": "section_break_mmdh",
    "fieldtype": "Section Break"
   },
@@ -143,16 +137,6 @@
    "fieldtype": "Table",
    "label": "Codes",
    "options": "WMS Client Codes"
-  },
-  {
-   "fieldname": "column_break_iwuy",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "nps_pran",
-   "fieldtype": "Data",
-   "label": "NPS PRAN",
-   "unique": 1
   },
   {
    "depends_on": "eval: !doc.__islocal",
@@ -175,6 +159,7 @@
   {
    "fieldname": "client_group",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Client Group",
    "options": "WMS Client Group"
@@ -193,14 +178,16 @@
    "allow_in_quick_entry": 1,
    "fieldname": "primary_mobile",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Primary Mobile"
   },
   {
    "allow_in_quick_entry": 1,
-   "columns": 2,
+   "columns": 3,
    "fieldname": "primary_email",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Primary Email"
   },
@@ -233,13 +220,23 @@
    "fieldname": "contact_details_tab",
    "fieldtype": "Tab Break",
    "label": "Contact Details"
+  },
+  {
+   "fieldname": "column_break_mawq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "client_image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Client Image"
   }
  ],
  "grid_page_length": 50,
- "hide_toolbar": 1,
+ "image_field": "client_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-21 14:15:21.964566",
+ "modified": "2025-08-21 14:56:54.801246",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",
