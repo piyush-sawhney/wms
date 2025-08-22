@@ -111,9 +111,9 @@
    "fieldname": "company",
    "fieldtype": "Link",
    "label": "AMC",
-   "options": "WMS Asset Management Company",
-   "reqd": 1,
-   "set_only_once": 1
+   "link_filters": "[[\"WMS Product Provider\",\"product\",\"=\",\"Mutual Fund\"]]",
+   "options": "WMS Product Provider",
+   "reqd": 1
   },
   {
    "fieldname": "holding_type",
@@ -235,7 +235,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-12 15:07:54.605688",
+ "modified": "2025-08-22 20:23:15.194779",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Investment",

@@ -17,10 +17,10 @@ class WMSPAN(Document):
 		from frappe.types import DF
 
 		pan: DF.Data | None
-
 	# end: auto-generated types
-	def autoname(self):
+	def before_naming(self):
 		self.name = self.pan.strip().upper()
+		self.validate_pan()
 
 	def validate(self):
 		self.validate_pan()

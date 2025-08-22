@@ -106,7 +106,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Provider",
-   "options": "WMS Insurance Provider",
+   "link_filters": "[[\"WMS Product Provider\",\"product\",\"=\",\"Insurance\"]]",
+   "options": "WMS Product Provider",
    "reqd": 1
   },
   {
@@ -407,10 +408,10 @@
   },
   {
    "link_doctype": "WMS Service",
-   "link_fieldname": "investment"
+   "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-14 13:59:34.961876",
+ "modified": "2025-08-22 20:07:21.943791",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Policy",

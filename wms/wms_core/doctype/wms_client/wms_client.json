@@ -53,8 +53,6 @@
    "allow_in_quick_entry": 1,
    "fieldname": "pan",
    "fieldtype": "Link",
-   "in_filter": 1,
-   "in_global_search": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "PAN",
@@ -236,7 +234,7 @@
  "image_field": "client_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-21 14:56:54.801246",
+ "modified": "2025-08-22 20:21:42.380838",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",
@@ -261,7 +259,6 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "row_format": "Dynamic",
  "search_fields": "pan",
  "show_name_in_global_search": 1,

@@ -17,7 +17,6 @@ class WMSFixedInvestment(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
-
 		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
 		from wms.wms_investment.doctype.wms_investment_holder.wms_investment_holder import WMSInvestmentHolder
 
@@ -42,15 +41,7 @@ class WMSFixedInvestment(Document):
 		renewed_investment_type: DF.Link | None
 		roi: DF.Float
 		start_date: DF.Date | None
-		status: DF.Literal[
-			"Entry Done",
-			"Submitted",
-			"Investment Created",
-			"Renewed",
-			"Matured",
-			"Pre-Matured",
-			"Transmitted",
-		]
+		status: DF.Literal["Entry Done", "Submitted", "Investment Created", "Renewed", "Matured", "Pre-Matured", "Transmitted"]
 		through_broker: DF.Check
 		through_us: DF.Check
 	# end: auto-generated types

@@ -9,12 +9,6 @@ def get_data():
 			"WMS Family": "family_head"
 		},
 		"dynamic_links": {"service_item": ["WMS Client", "service_entity"]},
-		"internal_links": {
-
-        },
-        "internal_and_external_links": {
-			
-        },
 		"transactions": [
 			{"label": _("Investments"), "items": ["WMS MF Investment","WMS Fixed Investment","WMS PO Investment","WMS Demat Account","WMS National Pension Scheme"]},
 			{"label": _("Insurance"), "items": ["WMS Insurance Policy"]},
