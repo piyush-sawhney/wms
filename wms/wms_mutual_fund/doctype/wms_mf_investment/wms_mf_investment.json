@@ -19,7 +19,7 @@
   "through_us",
   "is_existing_folio",
   "section_break_ckes",
-  "company",
+  "amc",
   "scheme",
   "scheme_out",
   "column_break_droz",
@@ -106,14 +106,6 @@
   {
    "fieldname": "section_break_ckes",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "company",
-   "fieldtype": "Link",
-   "label": "AMC",
-   "link_filters": "[[\"WMS Product Provider\",\"product\",\"=\",\"Mutual Fund\"]]",
-   "options": "WMS Product Provider",
-   "reqd": 1
   },
   {
    "fieldname": "holding_type",
@@ -218,6 +210,14 @@
    "fieldtype": "Check",
    "label": "All Units?",
    "set_only_once": 1
+  },
+  {
+   "fieldname": "amc",
+   "fieldtype": "Link",
+   "label": "AMC",
+   "link_filters": "[[\"WMS Product Provider\",\"product\",\"=\",\"Mutual Fund\"]]",
+   "options": "WMS Product Provider",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
@@ -235,7 +235,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-22 20:23:15.194779",
+ "modified": "2025-08-22 20:53:07.573092",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Investment",

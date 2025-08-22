@@ -20,10 +20,10 @@ class WMSMFInvestment(Document):
 		from wms.wms_investment.doctype.wms_investment_holder.wms_investment_holder import WMSInvestmentHolder
 
 		all_units: DF.Check
+		amc: DF.Link
 		amount: DF.Currency
 		broker_name: DF.Link | None
 		client: DF.Link
-		company: DF.Link
 		currency: DF.Link | None
 		entry_date: DF.Date
 		folio_number: DF.Data | None

@@ -22,7 +22,7 @@
   "renewed_investment_type",
   "renewed_investment",
   "section_break_ckes",
-  "company",
+  "provider",
   "investment_type",
   "column_break_ebns",
   "investment_mode",
@@ -212,14 +212,6 @@
    "options": "WMS Broker"
   },
   {
-   "fieldname": "company",
-   "fieldtype": "Link",
-   "label": "Company",
-   "link_filters": "[[\"WMS Product Provider\",\"product\",\"=\",\"Fixed Income\"]]",
-   "options": "WMS Product Provider",
-   "reqd": 1
-  },
-  {
    "fieldname": "investment_type",
    "fieldtype": "Select",
    "label": "Investment Type",
@@ -260,6 +252,14 @@
    "fieldname": "is_existing_investment",
    "fieldtype": "Check",
    "label": "Is Existing Investment?"
+  },
+  {
+   "fieldname": "provider",
+   "fieldtype": "Link",
+   "label": "Company",
+   "link_filters": "[[\"WMS Product Provider\",\"product\",\"=\",\"Fixed Income\"]]",
+   "options": "WMS Product Provider",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
@@ -277,7 +277,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-22 20:03:32.673481",
+ "modified": "2025-08-22 20:54:03.045286",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS Fixed Investment",
@@ -307,7 +307,7 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "company,investment_type",
+ "search_fields": "provider,investment_type",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
