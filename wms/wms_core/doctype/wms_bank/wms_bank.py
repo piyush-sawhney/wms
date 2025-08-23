@@ -22,7 +22,6 @@ class WMSBank(Document):
 		micr: DF.Data | None
 		name: DF.Int | None
 		type: DF.Literal["Savings", "Current", "NRE", "NRO", "FCNR"]
-
 	# end: auto-generated types
 	def before_save(self):
 		self.format_fields()

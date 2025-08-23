@@ -234,7 +234,7 @@
  "image_field": "client_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-22 20:21:42.380838",
+ "modified": "2025-08-23 11:56:06.557855",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",
@@ -260,7 +260,7 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "pan",
+ "search_fields": "pan, primary_mobile, primary_email",
  "show_name_in_global_search": 1,
  "show_title_field_in_link": 1,
  "sort_field": "modified",

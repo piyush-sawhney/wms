@@ -32,7 +32,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-21 14:53:30.539051",
+ "modified": "2025-08-23 11:39:01.512915",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Product Provider",
@@ -49,6 +49,13 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "WMS Employee",
+   "select": 1,
    "write": 1
   }
  ],
