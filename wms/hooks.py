@@ -252,5 +252,12 @@ fixtures = [
 	"WMS Payment Type",
     "WMS Insurance Type",
 	"WMS Product",
-    "WMS Product Provider"
+    "WMS Product Provider",
+    {"dt": "Address Template", "filters": [
+        [
+            "name", "in", [
+                "India"
+            ]
+        ]
+    ]}
 ]
