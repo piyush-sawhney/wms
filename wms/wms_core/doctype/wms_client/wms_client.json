@@ -6,6 +6,10 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "column_break_icgq",
+  "column_break_jbps",
+  "status",
+  "section_break_awva",
   "client_name",
   "classification",
   "type",
@@ -228,13 +232,33 @@
    "fieldtype": "Attach Image",
    "hidden": 1,
    "label": "Client Image"
+  },
+  {
+   "fieldname": "column_break_icgq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jbps",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive\nDeceased",
+   "sort_options": 1
+  },
+  {
+   "fieldname": "section_break_awva",
+   "fieldtype": "Section Break"
   }
  ],
  "grid_page_length": 50,
  "image_field": "client_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-23 11:56:06.557855",
+ "modified": "2025-08-25 12:18:02.365888",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",
@@ -265,6 +289,19 @@
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
+ "states": [
+  {
+   "color": "Green",
+   "title": "Active"
+  },
+  {
+   "color": "Purple",
+   "title": "Inactive"
+  },
+  {
+   "color": "Red",
+   "title": "Deceased"
+  }
+ ],
  "title_field": "client_name"
 }

@@ -40,6 +40,7 @@ class WMSClient(Document):
 		primary_email: DF.Data | None
 		primary_mobile: DF.Data | None
 		proprietor: DF.Link | None
+		status: DF.Literal["Active", "Inactive", "Deceased"]
 		type: DF.Data | None
 		ubos: DF.Table[WMSUBO]
 		uuid: DF.Data | None
