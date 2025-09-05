@@ -263,7 +263,6 @@
   }
  ],
  "grid_page_length": 50,
- "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [
   {
@@ -277,7 +276,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-22 20:54:03.045286",
+ "modified": "2025-09-05 11:22:16.740089",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS Fixed Investment",
@@ -343,5 +342,6 @@
  ],
  "title_field": "client",
  "track_changes": 1,
- "track_seen": 1
+ "track_seen": 1,
+ "track_views": 1
 }

@@ -221,7 +221,6 @@
   }
  ],
  "grid_page_length": 50,
- "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [
   {
@@ -235,7 +234,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-08-22 20:53:07.573092",
+ "modified": "2025-09-05 11:19:56.652308",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Investment",
@@ -293,5 +292,6 @@
  ],
  "title_field": "client",
  "track_changes": 1,
- "track_seen": 1
+ "track_seen": 1,
+ "track_views": 1
 }

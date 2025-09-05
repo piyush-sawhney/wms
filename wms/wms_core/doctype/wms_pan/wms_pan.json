@@ -22,7 +22,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-22 20:15:49.054521",
+ "modified": "2025-09-05 11:24:15.568423",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS PAN",
@@ -51,5 +51,8 @@
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }

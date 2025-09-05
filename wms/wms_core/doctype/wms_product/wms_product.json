@@ -19,7 +19,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-23 11:39:11.051901",
+ "modified": "2025-09-05 11:24:06.695359",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Product",
@@ -49,5 +49,6 @@
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1
 }

@@ -50,7 +50,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-23 11:40:05.280614",
+ "modified": "2025-09-05 11:23:37.842207",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS National Pension Scheme",
@@ -84,5 +84,8 @@
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }

@@ -18,8 +18,7 @@ class WMSPOScheme(Document):
 		period: DF.Int
 		roi: DF.Float
 		scheme_name: DF.Data
-
-		# end: auto-generated types
+	# end: auto-generated types
 
 	def autoname(self):
 		roi_formatted = f"{self.roi:.2f}".replace(".", "-")

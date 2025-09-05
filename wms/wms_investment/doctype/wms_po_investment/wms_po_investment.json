@@ -230,7 +230,6 @@
   }
  ],
  "grid_page_length": 50,
- "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [
   {
@@ -244,7 +243,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-08-05 18:28:59.846271",
+ "modified": "2025-09-05 11:24:39.186223",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",
@@ -314,5 +313,6 @@
  ],
  "title_field": "client",
  "track_changes": 1,
- "track_seen": 1
+ "track_seen": 1,
+ "track_views": 1
 }
