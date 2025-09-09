@@ -15,7 +15,8 @@ class WMSNationalPensionScheme(Document):
 		from frappe.types import DF
 
 		client: DF.Link
-		company: DF.Link | None
+		nps_company: DF.Link | None
 		status: DF.Literal[None]
 	# end: auto-generated types
+
 	pass

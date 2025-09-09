@@ -9,7 +9,7 @@
   "column_break_sdaf",
   "status",
   "section_break_fcmx",
-  "company",
+  "nps_company",
   "nominee_tab"
  ],
  "fields": [
@@ -35,22 +35,22 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "company",
+   "fieldname": "nominee_tab",
+   "fieldtype": "Tab Break",
+   "label": "Nominee"
+  },
+  {
+   "fieldname": "nps_company",
    "fieldtype": "Link",
    "label": "Company",
    "link_filters": "[[\"WMS Product Provider\",\"product\",\"=\",\"National Pension Scheme\"]]",
    "options": "WMS Product Provider"
-  },
-  {
-   "fieldname": "nominee_tab",
-   "fieldtype": "Tab Break",
-   "label": "Nominee"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-05 11:23:37.842207",
+ "modified": "2025-09-09 14:31:16.321845",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS National Pension Scheme",
