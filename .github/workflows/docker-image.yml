@@ -4,6 +4,7 @@ on:
   push:
     branches: [ "dev-release" ]
   pull_request:
+  workflow_dispatch:
     
 
 jobs:
@@ -20,7 +21,7 @@ jobs:
       # 2️⃣ Encode apps.json as base64 and set environment variable
       - name: Encode apps.json to base64
         run: |
-          echo "APPS_JSON_BASE64=$(base64 -w 0 docker/apps.json)" >> $GITHUB_ENV
+          echo "APPS_JSON_BASE64=$(base64 -w 0 docker/dev/apps.json)" >> $GITHUB_ENV
 
       # 3️⃣ Validate apps.json using jq
       - name: Validate apps.json
