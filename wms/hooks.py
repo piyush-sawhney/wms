@@ -15,7 +15,7 @@ app_home = "/app/knaps"
 app_logo_url = "/assets/wms/images/knaps_brand.png"
 add_to_apps_screen = [
 	{
-		"name": "KNAPS",
+		"name": "KNAPS Financial Services",
 		"logo": "/assets/wms/images/knaps_brand.png",
 		"title": "KNAPS Financial Services",
 		"route": app_home,
@@ -25,7 +25,7 @@ add_to_apps_screen = [
 
 website_context = {
 	"favicon": "/assets/wms/images/knaps_logo.png",
-	"splash_image": "/assets/wms/images/knaps_brand.png",
+	"splash_image": "/assets/wms/images/knaps_logo.png",
 }
 
 # Includes in <head>
