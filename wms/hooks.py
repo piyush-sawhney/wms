@@ -11,15 +11,16 @@ app_license = "mit"
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "wms",
-# 		"logo": "/assets/wms/logo.png",
-# 		"title": "Wealth Management Service",
-# 		"route": "/wms",
-# 		"has_permission": "wms.api.permission.has_app_permission"
-# 	}
-# ]
+app_home = "/app/knaps"
+add_to_apps_screen = [
+	{
+		"name": "KNAPS",
+		"logo": "/assets/images/knaps_logo.png",
+		"title": "KNAPS Financial Services",
+		"route": app_home,
+		"has_permission": "wms.check_app_permission"
+	}
+]
 
 # Includes in <head>
 # ------------------
