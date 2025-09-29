@@ -12,15 +12,21 @@ app_license = "mit"
 
 # Each item in the list will be shown as an app in the apps page
 app_home = "/app/knaps"
+app_logo_url = "/assets/wms/images/knaps_brand.png"
 add_to_apps_screen = [
 	{
 		"name": "KNAPS",
-		"logo": "/assets/images/knaps_logo.png",
+		"logo": "/assets/wms/images/knaps_brand.png",
 		"title": "KNAPS Financial Services",
 		"route": app_home,
 		"has_permission": "wms.check_app_permission"
 	}
 ]
+
+website_context = {
+	"favicon": "/assets/wms/images/knaps_logo.png",
+	"splash_image": "/assets/wms/images/knaps_brand.png",
+}
 
 # Includes in <head>
 # ------------------
