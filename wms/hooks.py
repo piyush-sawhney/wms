@@ -11,7 +11,7 @@ app_license = "mit"
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
-app_home = "/app/knaps"
+app_home = "/app/home"
 app_logo_url = "/assets/wms/images/knaps_brand.png"
 add_to_apps_screen = [
 	{
