@@ -40,5 +40,26 @@
   "modified": "2025-08-21 14:57:44.795181",
   "name": "Small Savings Schemes",
   "product_name": "Small Savings Schemes"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Product",
+  "modified": "2025-09-29 22:38:20.929607",
+  "name": "Specialized Investment Funds",
+  "product_name": "Specialized Investment Funds"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Product",
+  "modified": "2025-09-29 22:38:43.757138",
+  "name": "Portfolio Management Services",
+  "product_name": "Portfolio Management Services"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Product",
+  "modified": "2025-09-29 22:39:01.099088",
+  "name": "Alternate Investment Funds",
+  "product_name": "Alternate Investment Funds"
  }
 ]
