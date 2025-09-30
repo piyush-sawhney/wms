@@ -90,12 +90,12 @@ website_context = {
 # ------------
 
 # before_install = "wms.install.before_install"
-# after_install = "wms.install.after_install"
+after_install = "wms.setup.install.after_install"
 
 # Uninstallation
 # ------------
 
-# before_uninstall = "wms.uninstall.before_uninstall"
+before_uninstall = "wms.setup.install.before_uninstall"
 # after_uninstall = "wms.uninstall.after_uninstall"
 
 # Integration Setup
