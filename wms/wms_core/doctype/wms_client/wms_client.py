@@ -28,7 +28,6 @@ class WMSClient(Document):
 		from wms.wms_core.doctype.wms_ubo.wms_ubo import WMSUBO
 
 		classification: DF.Link
-		client_group: DF.Link | None
 		client_image: DF.AttachImage | None
 		client_name: DF.Data
 		codes: DF.Table[WMSClientCodes]

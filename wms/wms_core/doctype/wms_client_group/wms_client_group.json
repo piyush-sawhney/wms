@@ -6,7 +6,9 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "group_name"
+  "group_name",
+  "section_break_nbsh",
+  "clients"
  ],
  "fields": [
   {
@@ -14,12 +16,22 @@
    "fieldtype": "Data",
    "label": "Name",
    "unique": 1
+  },
+  {
+   "fieldname": "section_break_nbsh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "clients",
+   "fieldtype": "Table",
+   "label": "Clients",
+   "options": "WMS Group Client"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-23 11:40:16.107939",
+ "modified": "2025-09-30 13:58:12.446832",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client Group",
