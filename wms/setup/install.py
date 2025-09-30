@@ -1,4 +1,5 @@
 import frappe
+# After Install Hook
 def after_install():
     update_app_name()
     update_backup_setting()
@@ -9,7 +10,7 @@ def update_app_name():
 def update_backup_setting():
     frappe.db.set_value("System Settings", None, "encrypt_backup", 1)
     frappe.db.set_value("System Settings", None, "backup_limit", 10)
-
+# Before Uninstall Hook
 def before_uninstall():
     frappe.db.set_value("System Settings", None, "default_app", "")
     frappe.db.set_value("System Settings", None, "encrypt_backup", 0)
