@@ -1,9 +1,8 @@
-name: Docker Image CI
+name: Dev Docker Image CI
 
 on:
   push:
     branches: [ "dev-release" ]
-  pull_request:
   workflow_dispatch:
     
 

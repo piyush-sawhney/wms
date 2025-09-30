@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:provider_name",
  "creation": "2025-08-19 13:46:44.912217",
@@ -32,7 +33,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-05 11:24:09.295532",
+ "modified": "2025-09-29 22:37:29.861584",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Product Provider",

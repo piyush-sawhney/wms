@@ -11,15 +11,22 @@ app_license = "mit"
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "wms",
-# 		"logo": "/assets/wms/logo.png",
-# 		"title": "Wealth Management Service",
-# 		"route": "/wms",
-# 		"has_permission": "wms.api.permission.has_app_permission"
-# 	}
-# ]
+app_home = "/app/home"
+app_logo_url = "/assets/wms/images/knaps_brand.png"
+add_to_apps_screen = [
+	{
+		"name": "KNAPS Financial Services",
+		"logo": "/assets/wms/images/knaps_brand.png",
+		"title": "KNAPS Financial Services",
+		"route": app_home,
+		"has_permission": "wms.check_app_permission"
+	}
+]
+
+website_context = {
+	"favicon": "/assets/wms/images/knaps_logo.png",
+	"splash_image": "/assets/wms/images/knaps_logo.png",
+}
 
 # Includes in <head>
 # ------------------
@@ -83,12 +90,12 @@ app_license = "mit"
 # ------------
 
 # before_install = "wms.install.before_install"
-# after_install = "wms.install.after_install"
+after_install = "wms.setup.install.after_install"
 
 # Uninstallation
 # ------------
 
-# before_uninstall = "wms.uninstall.before_uninstall"
+before_uninstall = "wms.setup.install.before_uninstall"
 # after_uninstall = "wms.uninstall.after_uninstall"
 
 # Integration Setup
