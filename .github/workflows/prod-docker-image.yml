@@ -1,8 +1,8 @@
-name: Docker Image CI
+name: Prod Docker Image CI
 
 on:
   push:
-    branches: [ "dev-release" ]
+    branches: [ "prod-release" ]
   pull_request:
   workflow_dispatch:
     
@@ -21,7 +21,7 @@ jobs:
       # 2️⃣ Encode apps.json as base64 and set environment variable
       - name: Encode apps.json to base64
         run: |
-          echo "APPS_JSON_BASE64=$(base64 -w 0 docker/dev/apps.json)" >> $GITHUB_ENV
+          echo "APPS_JSON_BASE64=$(base64 -w 0 docker/prod/apps.json)" >> $GITHUB_ENV
 
       # 3️⃣ Validate apps.json using jq
       - name: Validate apps.json
@@ -44,8 +44,8 @@ jobs:
             --build-arg FRAPPE_PATH=https://github.com/frappe/frappe \
             --build-arg FRAPPE_BRANCH=version-15 \
             --build-arg APPS_JSON_BASE64=${{ env.APPS_JSON_BASE64 }} \
-            --tag ${{ secrets.DOCKERHUB_USERNAME }}/wms:dev \
+            --tag ${{ secrets.DOCKERHUB_USERNAME }}/wms:prod \
             --file=frappe_docker/images/layered/Containerfile \
             frappe_docker
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/wms:dev
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/wms:prod
 
