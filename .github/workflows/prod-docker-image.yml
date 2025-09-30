@@ -3,7 +3,6 @@ name: Prod Docker Image CI
 on:
   push:
     branches: [ "prod-release" ]
-  pull_request:
   workflow_dispatch:
     
 
