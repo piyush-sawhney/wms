@@ -26,7 +26,7 @@ class WMSInsurancePolicy(Document):
 		date_of_registration: DF.Date | None
 		desciption: DF.TextEditor | None
 		discount: DF.Percent
-		end_date: DF.Date | None
+		maturity_date: DF.Date | None
 		engine_number: DF.Data | None
 		entity_item: DF.DynamicLink | None
 		entity_type: DF.Link | None
@@ -153,11 +153,11 @@ class WMSInsurancePolicy(Document):
 			frappe.throw("Entry Date cannot be in the future.")
 
 		if self.start_date:
-			if self.start_date > now_date:
-				frappe.throw("Start Date cannot be in the future.")
 			if self.period_type == "Days":
 				self.maturity_date = add_days(self.start_date, self.period)
 			elif self.period_type == "Months":
 				self.maturity_date = add_months(self.start_date, self.period)
 			elif self.period_type == "Years":
 				self.maturity_date = add_years(self.start_date, self.period)
+			self.maturity_date = add_days(self.maturity_date, -1)
+		

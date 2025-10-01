@@ -29,7 +29,7 @@
   "period_type",
   "period",
   "start_date",
-  "end_date",
+  "maturity_date",
   "section_break_lxcy",
   "entity_type",
   "column_break_idbk",
@@ -177,12 +177,6 @@
    "fieldtype": "Date",
    "label": "Commencement Date",
    "mandatory_depends_on": "eval:doc.status != \"Proposal\""
-  },
-  {
-   "fieldname": "end_date",
-   "fieldtype": "Date",
-   "label": "Maturity Date",
-   "read_only": 1
   },
   {
    "depends_on": "eval:doc.insurance_type === \"Life Insurance\"",
@@ -403,6 +397,12 @@
    "fieldtype": "Percent",
    "label": "Discount",
    "precision": "2"
+  },
+  {
+   "fieldname": "maturity_date",
+   "fieldtype": "Date",
+   "label": "Maturity Date",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
@@ -417,7 +417,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-10-01 21:40:02.054758",
+ "modified": "2025-10-01 21:43:54.740827",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Policy",
