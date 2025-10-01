@@ -60,6 +60,7 @@
   "engine_number",
   "ncb",
   "tp_loading",
+  "discount",
   "tab_5_tab",
   "nominees"
  ],
@@ -149,7 +150,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Status",
-   "options": "Proposal\nActive\nCancelled\nExpired\nRenewed"
+   "options": "Proposal\nActive\nCancelled\nExpired\nRenewed\nRejected"
   },
   {
    "default": "1",
@@ -396,6 +397,12 @@
    "fieldtype": "Date",
    "label": "Entry Date",
    "reqd": 1
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Percent",
+   "label": "Discount",
+   "precision": "2"
   }
  ],
  "grid_page_length": 50,
@@ -410,7 +417,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-09-05 11:24:28.578035",
+ "modified": "2025-10-01 21:09:08.147834",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Policy",

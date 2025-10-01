@@ -25,6 +25,7 @@ class WMSInsurancePolicy(Document):
 		currency: DF.Link | None
 		date_of_registration: DF.Date | None
 		desciption: DF.TextEditor | None
+		discount: DF.Percent
 		end_date: DF.Date | None
 		engine_number: DF.Data | None
 		entity_item: DF.DynamicLink | None
@@ -52,7 +53,7 @@ class WMSInsurancePolicy(Document):
 		quote_number: DF.Data | None
 		renewed_policy: DF.Link | None
 		start_date: DF.Date | None
-		status: DF.Literal["Proposal", "Active", "Cancelled", "Expired", "Renewed"]
+		status: DF.Literal["Proposal", "Active", "Cancelled", "Expired", "Renewed", "Rejected"]
 		sum_assured: DF.Currency
 		sum_assured_currency: DF.Link | None
 		through_us: DF.Check
