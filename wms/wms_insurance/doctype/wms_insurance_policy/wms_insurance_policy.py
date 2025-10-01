@@ -160,4 +160,5 @@ class WMSInsurancePolicy(Document):
 			elif self.period_type == "Years":
 				self.maturity_date = add_years(self.start_date, self.period)
 			self.maturity_date = add_days(self.maturity_date, -1)
-		
+		else:
+			self.maturity_date = None
