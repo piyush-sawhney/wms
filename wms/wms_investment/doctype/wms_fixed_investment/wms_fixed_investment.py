@@ -4,7 +4,7 @@
 import frappe
 from frappe.model.document import Document
 from frappe.model.naming import make_autoname
-from frappe.utils import add_months, nowdate
+from frappe.utils import add_months, nowdate, add_days
 
 from wms.utils import calculate_age, get_financial_year_code
 
@@ -107,3 +107,6 @@ class WMSFixedInvestment(Document):
 			if self.start_date > now_date:
 				frappe.throw("Start Date cannot be in the future.")
 			self.maturity_date = add_months(self.start_date, self.period)
+			self.maturity_date = add_days(self.maturity_date, -1)
+		else:
+			self.maturity_date = None

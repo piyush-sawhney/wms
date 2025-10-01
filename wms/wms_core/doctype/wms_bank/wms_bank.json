@@ -87,7 +87,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-09-05 11:23:17.099729",
+ "modified": "2025-10-01 22:00:24.981375",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Bank",
@@ -114,12 +114,12 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "bank_name, client",
+ "search_fields": "account_number, client",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "account_number",
+ "title_field": "bank_name",
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1

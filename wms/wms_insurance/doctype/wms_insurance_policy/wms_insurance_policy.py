@@ -25,7 +25,7 @@ class WMSInsurancePolicy(Document):
 		currency: DF.Link | None
 		date_of_registration: DF.Date | None
 		desciption: DF.TextEditor | None
-		end_date: DF.Date | None
+		discount: DF.Percent
 		engine_number: DF.Data | None
 		entity_item: DF.DynamicLink | None
 		entity_type: DF.Link | None
@@ -37,6 +37,7 @@ class WMSInsurancePolicy(Document):
 		is_existing_policy: DF.Check
 		is_for_self: DF.Check
 		life_plan_name: DF.Data | None
+		maturity_date: DF.Date | None
 		members: DF.Table[WMSInsuranceMember]
 		ncb: DF.Percent
 		nominees: DF.Table[WMSNominee]
@@ -52,7 +53,7 @@ class WMSInsurancePolicy(Document):
 		quote_number: DF.Data | None
 		renewed_policy: DF.Link | None
 		start_date: DF.Date | None
-		status: DF.Literal["Proposal", "Active", "Cancelled", "Expired", "Renewed"]
+		status: DF.Literal["Proposal", "Active", "Cancelled", "Expired", "Renewed", "Rejected"]
 		sum_assured: DF.Currency
 		sum_assured_currency: DF.Link | None
 		through_us: DF.Check
@@ -138,6 +139,8 @@ class WMSInsurancePolicy(Document):
 
 			if share_percentage != 100:
 				frappe.throw("Total share percentage of nominees must be 100%.")
+		else:
+			frappe.msgprint("No Nominee added in the policy.")
 
 	def validate_client(self):
 		if self.is_for_self:
@@ -152,11 +155,12 @@ class WMSInsurancePolicy(Document):
 			frappe.throw("Entry Date cannot be in the future.")
 
 		if self.start_date:
-			if self.start_date > now_date:
-				frappe.throw("Start Date cannot be in the future.")
 			if self.period_type == "Days":
 				self.maturity_date = add_days(self.start_date, self.period)
 			elif self.period_type == "Months":
 				self.maturity_date = add_months(self.start_date, self.period)
 			elif self.period_type == "Years":
 				self.maturity_date = add_years(self.start_date, self.period)
+			self.maturity_date = add_days(self.maturity_date, -1)
+		else:
+			self.maturity_date = None
