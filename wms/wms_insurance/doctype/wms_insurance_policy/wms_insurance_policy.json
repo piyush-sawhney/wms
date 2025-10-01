@@ -348,7 +348,6 @@
    "fieldname": "nominees",
    "fieldtype": "Table",
    "label": "Nominees",
-   "mandatory_depends_on": "eval:doc.through_us === 1 && doc.is_existing_policy != 1;",
    "options": "WMS Nominee"
   },
   {
@@ -417,7 +416,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-10-01 21:43:54.740827",
+ "modified": "2025-10-01 22:05:18.735355",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Policy",

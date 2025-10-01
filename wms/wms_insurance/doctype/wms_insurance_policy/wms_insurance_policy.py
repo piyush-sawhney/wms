@@ -26,7 +26,6 @@ class WMSInsurancePolicy(Document):
 		date_of_registration: DF.Date | None
 		desciption: DF.TextEditor | None
 		discount: DF.Percent
-		maturity_date: DF.Date | None
 		engine_number: DF.Data | None
 		entity_item: DF.DynamicLink | None
 		entity_type: DF.Link | None
@@ -38,6 +37,7 @@ class WMSInsurancePolicy(Document):
 		is_existing_policy: DF.Check
 		is_for_self: DF.Check
 		life_plan_name: DF.Data | None
+		maturity_date: DF.Date | None
 		members: DF.Table[WMSInsuranceMember]
 		ncb: DF.Percent
 		nominees: DF.Table[WMSNominee]
@@ -139,6 +139,8 @@ class WMSInsurancePolicy(Document):
 
 			if share_percentage != 100:
 				frappe.throw("Total share percentage of nominees must be 100%.")
+		else:
+			frappe.msgprint("No Nominee added in the policy.")
 
 	def validate_client(self):
 		if self.is_for_self:
