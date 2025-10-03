@@ -20,6 +20,7 @@
   "status",
   "through_us",
   "is_existing_policy",
+  "policy_document",
   "section_break_udyg",
   "sum_assured",
   "sum_assured_currency",
@@ -402,6 +403,11 @@
    "fieldtype": "Date",
    "label": "Maturity Date",
    "read_only": 1
+  },
+  {
+   "fieldname": "policy_document",
+   "fieldtype": "Attach",
+   "label": "Policy Document"
   }
  ],
  "grid_page_length": 50,
@@ -416,7 +422,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-10-01 22:05:18.735355",
+ "modified": "2025-10-03 18:39:34.019331",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Policy",

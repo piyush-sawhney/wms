@@ -44,6 +44,7 @@ class WMSInsurancePolicy(Document):
 		period: DF.Int
 		period_type: DF.Literal["Days", "Months", "Years"]
 		plan_number: DF.Data | None
+		policy_document: DF.Attach | None
 		policy_number: DF.Data | None
 		ppt: DF.Int
 		premium: DF.Currency

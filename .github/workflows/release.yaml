@@ -1,0 +1,86 @@
+name: CI Release + Dev Docker Image
+
+on:
+  push:
+    branches:
+      - develop
+      - dev-release
+      - prod-release
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2️⃣ Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      # 3️⃣ Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 4️⃣ Run semantic-release
+      - name: Run Semantic Release
+        id: semantic_release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  docker:
+    runs-on: ubuntu-latest
+    needs: release
+    if: github.ref == 'refs/heads/dev-release'
+    steps:
+      # 1️⃣ Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2️⃣ Encode apps.json as base64
+      - name: Encode apps.json to base64
+        run: |
+          echo "APPS_JSON_BASE64=$(base64 -w 0 docker/dev/apps.json)" >> $GITHUB_ENV
+
+      # 3️⃣ Validate apps.json using jq
+      - name: Validate apps.json
+        run: |
+          echo "${{ env.APPS_JSON_BASE64 }}" | base64 -d > updated_apps.json
+          jq empty updated_apps.json
+
+      # 4️⃣ Docker login
+      - name: Docker Hub Login
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      # 5️⃣ Build and push Docker image
+      - name: Build and Push Docker Image
+        run: |
+          # Get semantic-release version
+          VERSION=$(npx semantic-release --dry-run | grep "The next release version is" | awk '{print $6}')
+
+          # Clone frappe_docker
+          git clone https://github.com/frappe/frappe_docker
+
+          # Build Docker image
+          docker build \
+            --build-arg FRAPPE_PATH=https://github.com/frappe/frappe \
+            --build-arg FRAPPE_BRANCH=version-15 \
+            --build-arg APPS_JSON_BASE64=${{ env.APPS_JSON_BASE64 }} \
+            --tag ${{ secrets.DOCKERHUB_USERNAME }}/wms:${VERSION} \
+            --file=frappe_docker/images/layered/Containerfile \
+            frappe_docker
+
+          # Push Docker images
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/wms:${VERSION}
