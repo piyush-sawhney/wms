@@ -9,7 +9,7 @@
     "postinstall": "husky install"
   },
   "keywords": [],
-  "author": "",
+  "author": "KNAPS",
   "license": "ISC",
   "devDependencies": {
     "@commitlint/cli": "^20.1.0",
