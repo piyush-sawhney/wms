@@ -35,7 +35,7 @@ jobs:
         id: semantic_release
         run: npx semantic-release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
   docker:
     runs-on: ubuntu-latest
