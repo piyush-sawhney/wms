@@ -11,6 +11,10 @@
   "keywords": [],
   "author": "KNAPS",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/piyush-sawhney/wms.git"
+  },
   "devDependencies": {
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
