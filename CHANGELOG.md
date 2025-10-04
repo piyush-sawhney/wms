@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/piyush-sawhney/wms/compare/v1.1.2...v1.1.3) (2025-10-04)
+
+
+### Bug Fixes
+
+* fixing assets json issue in frappe docker ([759948c](https://github.com/piyush-sawhney/wms/commit/759948c8f193193a599f3e439a283dcbdad00fdd))
+
 ## [1.1.2](https://github.com/piyush-sawhney/wms/compare/v1.1.1...v1.1.2) (2025-10-04)
 
 
