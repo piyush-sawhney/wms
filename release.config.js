@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   branches: [
-    'develop',                       // full semantic-release rules
+    'develop',                                 // full semantic-release rules
     { name: 'dev-release', prerelease: false },  // patch-only
     { name: 'prod-release', prerelease: false }  // stable production
   ],
@@ -45,9 +45,17 @@ module.exports = {
     [
       {
         verifyConditions: () => {},
-        prepare: ({ nextRelease, branch }) => {
+        prepare: (pluginConfig, context) => {
+          const { nextRelease, options, logger } = context;
+          const branchName = options.branch?.name; // safely get branch name
+
+          if (!nextRelease) {
+            logger.log('No nextRelease detected, skipping version update.');
+            return;
+          }
+
           // Only allow patch bumps on dev-release
-          if (branch.name === 'dev-release' && nextRelease.type !== 'patch') {
+          if (branchName === 'dev-release' && nextRelease.type !== 'patch') {
             throw new Error(
               'Only patch releases allowed on dev-release. Commit types must be fixes.'
             );
@@ -63,6 +71,8 @@ module.exports = {
           );
 
           fs.writeFileSync(initFile, content, { encoding: 'utf8' });
+
+          logger.log(`Updated ${initFile} to version ${nextRelease.version}`);
         }
       }
     ]
