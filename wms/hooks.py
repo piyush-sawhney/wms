@@ -85,7 +85,9 @@ website_context = {
 # 	"methods": "wms.utils.jinja_methods",
 # 	"filters": "wms.utils.jinja_filters"
 # }
-
+# Migrations
+before_migrate = "wms.setup.migrate.before_migrate"
+after_migrate = "wms.setup.migrate.after_migrate"
 # Installation
 # ------------
 
