@@ -35,7 +35,7 @@
   {
    "document_type": "WMS Insurance Policy",
    "label": "Insurance Due List",
-   "quick_list_filter": "[[\"WMS Insurance Policy\",\"end_date\",\"Timespan\",\"next 30 days\",false]]"
+   "quick_list_filter": "[[\"WMS Insurance Policy\",\"maturity_date\",\"Timespan\",\"next 30 days\",false]]"
   }
  ],
  "roles": [],
