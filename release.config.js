@@ -39,7 +39,8 @@ module.exports = {
       '@semantic-release/git',
       {
         assets: ['wms/__init__.py', 'CHANGELOG.md'],
-        message: 'chore(release): ${nextRelease.version} [skip ci]'
+        message: 'chore(release): ${nextRelease.version} [skip ci]',
+        push: true
       }
     ],
     [
