@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/piyush-sawhney/wms/compare/v1.1.1...v1.1.2) (2025-10-04)
+
+
+### Bug Fixes
+
+*  update end date to maturity date in insurance ([ca3ea25](https://github.com/piyush-sawhney/wms/commit/ca3ea25d1cb08b741dc1ff3adf7b643e2c92b7a8))
+
 ## [1.1.1](https://github.com/piyush-sawhney/wms/compare/v1.1.0...v1.1.1) (2025-10-04)
 
 # [1.1.0](https://github.com/piyush-sawhney/wms/compare/v1.0.0...v1.1.0) (2025-10-04)
