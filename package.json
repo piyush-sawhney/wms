@@ -1,0 +1,27 @@
+{
+  "name": "wms",
+  "version": "1.0.0",
+  "description": "A Frappe app for a wealth manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky",
+    "postinstall": "husky install"
+  },
+  "keywords": [],
+  "author": "KNAPS",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/piyush-sawhney/wms.git"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^12.0.2",
+    "husky": "^9.1.7",
+    "semantic-release": "^24.2.9"
+  }
+}

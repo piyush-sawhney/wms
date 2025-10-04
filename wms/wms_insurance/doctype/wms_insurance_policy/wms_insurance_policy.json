@@ -10,6 +10,7 @@
   "is_for_self",
   "client",
   "provider",
+  "policy_document",
   "column_break_mjwm",
   "insurance_type",
   "quote_number",
@@ -402,6 +403,11 @@
    "fieldtype": "Date",
    "label": "Maturity Date",
    "read_only": 1
+  },
+  {
+   "fieldname": "policy_document",
+   "fieldtype": "Attach",
+   "label": "Policy Document"
   }
  ],
  "grid_page_length": 50,
@@ -416,7 +422,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-10-01 22:05:18.735355",
+ "modified": "2025-10-04 12:17:06.005789",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Policy",
