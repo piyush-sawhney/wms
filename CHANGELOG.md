@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/piyush-sawhney/wms/compare/v1.0.0...v1.1.0) (2025-10-04)
+
+
+### Features
+
+* fixing the automated release ([4047f01](https://github.com/piyush-sawhney/wms/commit/4047f0143dc37b97bf82d4fd113d7aa55ce7a9ee))
+
 # 1.0.0 (2025-10-04)
 
 
