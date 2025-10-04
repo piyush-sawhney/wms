@@ -69,6 +69,9 @@ module.exports = {
             /^__version__\s*=\s*['"].*['"]/m,
             `__version__ = "${nextRelease.version}"`
           );
+          logger.log('Updating file at: ', initFile);
+          logger.log('Current content:', content);
+          logger.log('Next release version:', nextRelease.version);
 
           fs.writeFileSync(initFile, content, { encoding: 'utf8' });
 
