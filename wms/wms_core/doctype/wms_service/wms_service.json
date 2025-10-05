@@ -103,7 +103,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-05 11:23:26.083739",
+ "modified": "2025-10-05 09:48:00.271195",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Service",
@@ -161,6 +161,5 @@
  ],
  "title_field": "type",
  "track_changes": 1,
- "track_seen": 1,
- "track_views": 1
+ "track_seen": 1
 }

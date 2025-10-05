@@ -21,7 +21,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-05 11:26:47.529355",
+ "modified": "2025-10-05 09:49:10.362384",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Payment Type",
@@ -50,6 +50,5 @@
  "sort_order": "ASC",
  "states": [],
  "track_changes": 1,
- "track_seen": 1,
- "track_views": 1
+ "track_seen": 1
 }

@@ -422,7 +422,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-10-04 12:17:06.005789",
+ "modified": "2025-10-05 09:50:13.147755",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Policy",
@@ -480,6 +480,5 @@
  ],
  "title_field": "client",
  "track_changes": 1,
- "track_seen": 1,
- "track_views": 1
+ "track_seen": 1
 }
