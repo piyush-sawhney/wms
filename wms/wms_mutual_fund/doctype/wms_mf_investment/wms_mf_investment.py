@@ -22,6 +22,7 @@ class WMSMFInvestment(Document):
 		all_units: DF.Check
 		amc: DF.Link
 		amount: DF.Currency
+		broker_code: DF.Data | None
 		broker_name: DF.Link | None
 		client: DF.Link
 		currency: DF.Link | None

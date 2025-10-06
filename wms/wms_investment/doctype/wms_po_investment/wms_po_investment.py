@@ -29,8 +29,10 @@ class WMSPOInvestment(Document):
 		holding_type: DF.Link
 		is_active: DF.Check
 		is_existing_investment: DF.Check
+		is_partner_investment: DF.Check
 		maturity_date: DF.Date | None
 		nominees: DF.Table[WMSNominee]
+		partner_name: DF.Data | None
 		period: DF.Int
 		renewed_investment: DF.DynamicLink | None
 		renewed_investment_type: DF.Link | None

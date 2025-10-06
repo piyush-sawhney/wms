@@ -11,12 +11,14 @@
   "account_number",
   "column_break_uehu",
   "entry_date",
-  "through_us",
   "is_existing_investment",
-  "renewed_investment_type",
+  "through_us",
+  "is_partner_investment",
+  "partner_name",
   "column_break_pojr",
   "status",
   "is_active",
+  "renewed_investment_type",
   "renewed_investment",
   "section_break_ckes",
   "scheme_name",
@@ -227,6 +229,19 @@
    "fieldname": "is_existing_investment",
    "fieldtype": "Check",
    "label": "Is Existing Investment?"
+  },
+  {
+   "depends_on": "eval: doc.is_partner_investment == 1;",
+   "fieldname": "partner_name",
+   "fieldtype": "Data",
+   "label": "Partner Name",
+   "mandatory_depends_on": "eval: doc.is_partner_investment == 1;"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_partner_investment",
+   "fieldtype": "Check",
+   "label": "Is Partner Investment?"
   }
  ],
  "grid_page_length": 50,
@@ -243,7 +258,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-10-05 09:48:29.253327",
+ "modified": "2025-10-06 16:00:00.628548",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",
