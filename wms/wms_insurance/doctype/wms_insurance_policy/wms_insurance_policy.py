@@ -36,11 +36,13 @@ class WMSInsurancePolicy(Document):
 		insurance_type: DF.Link
 		is_existing_policy: DF.Check
 		is_for_self: DF.Check
+		is_partner_investment: DF.Check
 		life_plan_name: DF.Data | None
 		maturity_date: DF.Date | None
 		members: DF.Table[WMSInsuranceMember]
 		ncb: DF.Percent
 		nominees: DF.Table[WMSNominee]
+		partner_name: DF.Data | None
 		period: DF.Int
 		period_type: DF.Literal["Days", "Months", "Years"]
 		plan_number: DF.Data | None

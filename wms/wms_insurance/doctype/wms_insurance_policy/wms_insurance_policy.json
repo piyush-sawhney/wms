@@ -19,8 +19,10 @@
   "column_break_crjn",
   "entry_date",
   "status",
-  "through_us",
   "is_existing_policy",
+  "through_us",
+  "is_partner_investment",
+  "partner_name",
   "section_break_udyg",
   "sum_assured",
   "sum_assured_currency",
@@ -408,6 +410,19 @@
    "fieldname": "policy_document",
    "fieldtype": "Attach",
    "label": "Policy Document"
+  },
+  {
+   "depends_on": "eval: doc.is_partner_investment == 1;",
+   "fieldname": "partner_name",
+   "fieldtype": "Data",
+   "label": "Partner Name",
+   "mandatory_depends_on": "eval: doc.is_partner_investment == 1;"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_partner_investment",
+   "fieldtype": "Check",
+   "label": "Is Partner Investment?"
   }
  ],
  "grid_page_length": 50,
@@ -422,7 +437,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-10-05 09:50:13.147755",
+ "modified": "2025-10-06 17:19:47.370844",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Policy",

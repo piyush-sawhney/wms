@@ -29,8 +29,10 @@ class WMSPOInvestment(Document):
 		holding_type: DF.Link
 		is_active: DF.Check
 		is_existing_investment: DF.Check
+		is_partner_investment: DF.Check
 		maturity_date: DF.Date | None
 		nominees: DF.Table[WMSNominee]
+		partner_name: DF.Data | None
 		period: DF.Int
 		renewed_investment: DF.DynamicLink | None
 		renewed_investment_type: DF.Link | None
@@ -39,6 +41,7 @@ class WMSPOInvestment(Document):
 		scheme_name: DF.Link
 		start_date: DF.Date | None
 		status: DF.Literal["Entry Done", "Submitted to PO", "Passbook Received", "Passbook Sent to Customer", "Renewed", "Matured", "Pre-Matured", "Transmitted"]
+		submit_branch: DF.Data | None
 		through_us: DF.Check
 	# end: auto-generated types
 	def autoname(self):
