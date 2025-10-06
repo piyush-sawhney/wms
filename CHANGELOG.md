@@ -1,3 +1,5 @@
+## [1.1.6](https://github.com/piyush-sawhney/wms/compare/v1.1.5...v1.1.6) (2025-10-06)
+
 ## [1.1.5](https://github.com/piyush-sawhney/wms/compare/v1.1.4...v1.1.5) (2025-10-06)
 
 ## [1.1.4](https://github.com/piyush-sawhney/wms/compare/v1.1.3...v1.1.4) (2025-10-05)
