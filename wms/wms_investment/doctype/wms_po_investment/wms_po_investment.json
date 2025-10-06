@@ -26,6 +26,7 @@
   "period",
   "roi",
   "column_break_ubqv",
+  "submit_branch",
   "amount",
   "currency",
   "column_break_xoon",
@@ -242,6 +243,11 @@
    "fieldname": "is_partner_investment",
    "fieldtype": "Check",
    "label": "Is Partner Investment?"
+  },
+  {
+   "fieldname": "submit_branch",
+   "fieldtype": "Data",
+   "label": "Submit Branch"
   }
  ],
  "grid_page_length": 50,
@@ -258,7 +264,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-10-06 16:00:00.628548",
+ "modified": "2025-10-06 19:40:09.954828",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",

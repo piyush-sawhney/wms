@@ -41,6 +41,7 @@ class WMSPOInvestment(Document):
 		scheme_name: DF.Link
 		start_date: DF.Date | None
 		status: DF.Literal["Entry Done", "Submitted to PO", "Passbook Received", "Passbook Sent to Customer", "Renewed", "Matured", "Pre-Matured", "Transmitted"]
+		submit_branch: DF.Data | None
 		through_us: DF.Check
 	# end: auto-generated types
 	def autoname(self):
