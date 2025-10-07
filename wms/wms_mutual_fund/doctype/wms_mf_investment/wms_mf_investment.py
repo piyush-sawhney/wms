@@ -33,7 +33,7 @@ class WMSMFInvestment(Document):
 		is_existing_folio: DF.Check
 		nominees: DF.Table[WMSNominee]
 		request_type: DF.Literal["New Purchase", "Additional Purchase", "SIP", "Redemption", "Switch", "STP", "SWP"]
-		scheme: DF.Link
+		scheme: DF.Link | None
 		scheme_out: DF.Link | None
 		status: DF.Literal["Entry Done", "Submitted", "Investment Created", "Dependency on Client", "Pending With Us"]
 		through_broker: DF.Check
@@ -58,17 +58,17 @@ class WMSMFInvestment(Document):
 			self.is_existing_folio = 1
 
 	def validate_folio_number(self):
-		if self.is_existing_folio and not self.folio_number:
-			frappe.throw("Folio Number is required for existing folios.")
 		if not self.is_existing_folio and self.folio_number:
 			frappe.throw("Folio Number should not be provided for new folios.")
-		import re
 
-		pattern = r"^\d+(\/\d{2})?$"
-		if bool(re.match(pattern, self.folio_number)) is False:
-			frappe.throw(
-				"Folio Number must be a number or a number followed by a slash and two digits (e.g., 12563/45)."
-			)
+		if self.folio_number:
+			import re
+
+			pattern = r"^\d+(\/\d{2})?$"
+			if bool(re.match(pattern, self.folio_number)) is False:
+				frappe.throw(
+					"Folio Number must be a number or a number followed by a slash (/) and two digits (e.g., 12563/45)."
+				)
 
 	def validate_scheme(self):
 		if not self.scheme:

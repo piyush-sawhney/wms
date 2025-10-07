@@ -8,7 +8,8 @@
  "engine": "InnoDB",
  "field_order": [
   "provider_name",
-  "product"
+  "product",
+  "code"
  ],
  "fields": [
   {
@@ -28,12 +29,17 @@
    "label": "Product",
    "options": "WMS Product",
    "reqd": 1
+  },
+  {
+   "fieldname": "code",
+   "fieldtype": "Data",
+   "label": "Code"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-29 22:37:29.861584",
+ "modified": "2025-10-07 12:47:48.205296",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Product Provider",

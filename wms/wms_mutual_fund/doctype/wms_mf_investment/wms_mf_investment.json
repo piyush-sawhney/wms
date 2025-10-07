@@ -42,8 +42,7 @@
    "label": "Client",
    "options": "WMS Client",
    "reqd": 1,
-   "search_index": 1,
-   "set_only_once": 1
+   "search_index": 1
   },
   {
    "columns": 2,
@@ -67,8 +66,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Entry Date",
-   "reqd": 1,
-   "set_only_once": 1
+   "reqd": 1
   },
   {
    "fieldname": "column_break_pojr",
@@ -114,8 +112,7 @@
    "fieldtype": "Link",
    "label": "Holding Type",
    "options": "WMS Holding Type",
-   "reqd": 1,
-   "set_only_once": 1
+   "reqd": 1
   },
   {
    "fieldname": "amount",
@@ -125,16 +122,14 @@
    "label": "Amount",
    "non_negative": 1,
    "options": "currency",
-   "precision": "2",
-   "set_only_once": 1
+   "precision": "2"
   },
   {
    "default": "INR",
    "fieldname": "currency",
    "fieldtype": "Link",
    "label": "Currency",
-   "options": "Currency",
-   "set_only_once": 1
+   "options": "Currency"
   },
   {
    "depends_on": "eval:doc.holding_type != null && doc.holding_type != \"Single\"",
@@ -167,9 +162,7 @@
    "fieldname": "scheme",
    "fieldtype": "Link",
    "label": "Scheme",
-   "options": "WMS MF Scheme",
-   "reqd": 1,
-   "set_only_once": 1
+   "options": "WMS MF Scheme"
   },
   {
    "default": "New Purchase",
@@ -193,8 +186,7 @@
    "fieldtype": "Float",
    "label": "Units",
    "non_negative": 1,
-   "read_only_depends_on": "eval:doc.all_units === 1;",
-   "set_only_once": 1
+   "read_only_depends_on": "eval:doc.all_units === 1;"
   },
   {
    "fieldname": "column_break_droz",
@@ -210,8 +202,7 @@
    "default": "0",
    "fieldname": "all_units",
    "fieldtype": "Check",
-   "label": "All Units?",
-   "set_only_once": 1
+   "label": "All Units?"
   },
   {
    "fieldname": "amc",
@@ -243,7 +234,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-10-06 19:23:43.284551",
+ "modified": "2025-10-07 12:57:21.069422",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Investment",
