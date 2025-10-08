@@ -94,7 +94,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Status",
-   "options": "Entry Done\nSubmitted\nInvestment Created\nRenewed\nMatured\nPre-Matured\nTransmitted",
+   "options": "Entry Done\nSubmitted\nInvestment Created\nRenewed\nMatured\nPre-Matured\nTransmitted\nFD with Us",
    "reqd": 1
   },
   {
@@ -285,7 +285,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-10-06 19:27:31.508199",
+ "modified": "2025-10-08 21:56:59.101347",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS Fixed Investment",
@@ -347,6 +347,10 @@
   {
    "color": "Orange",
    "title": "Transmitted"
+  },
+  {
+   "color": "Cyan",
+   "title": "FD with Us"
   }
  ],
  "title_field": "client",

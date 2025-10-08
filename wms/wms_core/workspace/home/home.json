@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"3C6C8XBmOq\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Home</span>\",\"col\":12}},{\"id\":\"ZIdy70-gig\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Clients\",\"col\":4}},{\"id\":\"Qd4ssEjCes\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Families\",\"col\":4}}]",
+ "content": "[{\"id\":\"3C6C8XBmOq\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Home</span>\",\"col\":12}},{\"id\":\"ZIdy70-gig\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Clients\",\"col\":4}},{\"id\":\"Qd4ssEjCes\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Families\",\"col\":4}},{\"id\":\"Xusn_5WH_t\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Client Addresses\",\"col\":3}}]",
  "creation": "2025-09-29 22:31:12.064244",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Home",
  "links": [],
- "modified": "2025-10-05 09:44:36.758770",
+ "modified": "2025-10-08 15:14:31.543580",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "Home",
@@ -35,6 +35,15 @@
  ],
  "roles": [],
  "sequence_id": 28.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Client Addresses",
+   "link_to": "Address",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
  "title": "Home"
 }
