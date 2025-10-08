@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/piyush-sawhney/wms/compare/v1.1.7...v1.2.0) (2025-10-08)
+
+
+### Features
+
+* new dashboard for insurance workspace ([f907e36](https://github.com/piyush-sawhney/wms/commit/f907e36eae705e26b0ab0400922fb0cbdaec6e23))
+
 ## [1.1.7](https://github.com/piyush-sawhney/wms/compare/v1.1.6...v1.1.7) (2025-10-07)
 
 ## [1.1.6](https://github.com/piyush-sawhney/wms/compare/v1.1.5...v1.1.6) (2025-10-06)
