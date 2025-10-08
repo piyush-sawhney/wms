@@ -42,7 +42,7 @@ class WMSFixedInvestment(Document):
 		renewed_investment_type: DF.Link | None
 		roi: DF.Float
 		start_date: DF.Date | None
-		status: DF.Literal["Entry Done", "Submitted", "Investment Created", "Renewed", "Matured", "Pre-Matured", "Transmitted"]
+		status: DF.Literal["Entry Done", "Submitted", "Investment Created", "Renewed", "Matured", "Pre-Matured", "Transmitted", "FD with Us"]
 		through_broker: DF.Check
 		through_us: DF.Check
 	# end: auto-generated types
