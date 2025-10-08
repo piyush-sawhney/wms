@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"YKswCOPzMg\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Investments</span>\",\"col\":12}},{\"id\":\"aS0ZcMVn8p\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Mutual Funds\",\"col\":4}},{\"id\":\"--qo_4HY3P\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Post Office\",\"col\":4}},{\"id\":\"6lprQ9nwZv\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"FD/Bonds/NCDs\",\"col\":4}}]",
+ "content": "[{\"id\":\"YKswCOPzMg\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Investments</span>\",\"col\":12}},{\"id\":\"y9uo38GuMx\",\"type\":\"paragraph\",\"data\":{\"text\":\"Fixed Investment\",\"col\":3}},{\"id\":\"hA9bnDVude\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending With Us\",\"col\":3}},{\"id\":\"9TddsLp4nv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending Creation\",\"col\":3}},{\"id\":\"uA5G9P4USC\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Investment Created\",\"col\":3}},{\"id\":\"L5H3Y4-gbE\",\"type\":\"paragraph\",\"data\":{\"text\":\"Post Office\",\"col\":3}},{\"id\":\"7amvkNQ_oY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending With Us\",\"col\":3}},{\"id\":\"68yd2r5wIE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending Creation\",\"col\":3}},{\"id\":\"_6Mc01JF1x\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Investment Created\",\"col\":3}},{\"id\":\"kFd1SBpfwf\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"aS0ZcMVn8p\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Mutual Funds\",\"col\":4}},{\"id\":\"--qo_4HY3P\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Post Office\",\"col\":4}},{\"id\":\"6lprQ9nwZv\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"FD/Bonds/NCDs\",\"col\":4}}]",
  "creation": "2025-08-05 13:14:36.916267",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Investments",
  "links": [],
- "modified": "2025-09-29 22:32:59.043350",
+ "modified": "2025-10-08 15:32:22.243204",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "Investments",
@@ -40,6 +40,34 @@
  ],
  "roles": [],
  "sequence_id": 7.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "format": "{}",
+   "label": "Pending With Us",
+   "link_to": "WMS PO Investment",
+   "stats_filter": "[[\"WMS PO Investment\",\"status\",\"in\",[\"Entry Done\",\"Passbook Received\",null],false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Pink",
+   "doc_view": "List",
+   "format": "{} ",
+   "label": "Pending Creation",
+   "link_to": "WMS PO Investment",
+   "stats_filter": "[[\"WMS PO Investment\",\"status\",\"=\",\"Submitted to PO\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "{} ",
+   "label": "Investment Created",
+   "link_to": "WMS PO Investment",
+   "stats_filter": "[[\"WMS PO Investment\",\"status\",\"in\",[\"Passbook Sent to Customer\",null],false]]",
+   "type": "DocType"
+  }
+ ],
  "title": "Investments"
 }
