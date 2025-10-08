@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/piyush-sawhney/wms/compare/v1.2.0...v1.3.0) (2025-10-08)
+
+
+### Features
+
+* updated new investment dashboard ([2b32aad](https://github.com/piyush-sawhney/wms/commit/2b32aad144992fa1d53b929b0decbded3da9ad09))
+
 # [1.2.0](https://github.com/piyush-sawhney/wms/compare/v1.1.7...v1.2.0) (2025-10-08)
 
 
