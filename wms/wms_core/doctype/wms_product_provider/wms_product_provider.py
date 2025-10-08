@@ -14,6 +14,7 @@ class WMSProductProvider(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
+		code: DF.Data | None
 		product: DF.Link
 		provider_name: DF.Data
 	# end: auto-generated types
