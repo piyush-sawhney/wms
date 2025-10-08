@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Investments",
  "links": [],
- "modified": "2025-10-08 15:32:22.243204",
+ "modified": "2025-10-08 15:43:08.155862",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "Investments",
@@ -62,10 +62,10 @@
   {
    "color": "Green",
    "doc_view": "List",
-   "format": "{} ",
+   "format": "{} in 90 Days",
    "label": "Investment Created",
    "link_to": "WMS PO Investment",
-   "stats_filter": "[[\"WMS PO Investment\",\"status\",\"in\",[\"Passbook Sent to Customer\",null],false]]",
+   "stats_filter": "[[\"WMS PO Investment\",\"status\",\"in\",[\"Passbook Sent to Customer\",null],false],[\"WMS PO Investment\",\"start_date\",\"Timespan\",\"last 90 days\",false]]",
    "type": "DocType"
   }
  ],
