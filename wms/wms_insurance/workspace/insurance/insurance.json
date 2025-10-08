@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"3Zj19JUDLq\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Insurance</span>\",\"col\":12}},{\"id\":\"RKlNZ7Pc3s\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Insurance Policies\",\"col\":4}}]",
+ "content": "[{\"id\":\"3Zj19JUDLq\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Insurance</span>\",\"col\":12}},{\"id\":\"VvttJdXI6V\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Add New Insurance\",\"col\":4}},{\"id\":\"9sMDb1KZRf\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"_PzRRrEE7k\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Health Insurance<b></b></span>\",\"col\":12}},{\"id\":\"hNj1awqtqj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Due List (H)\",\"col\":3}},{\"id\":\"OXQHLjhfom\",\"type\":\"spacer\",\"data\":{\"col\":4}},{\"id\":\"ovkQOfNf7j\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Proposal Stage (H)\",\"col\":3}},{\"id\":\"DecFmR5Iyv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Policies (H)\",\"col\":3}},{\"id\":\"LqfvU2seRQ\",\"type\":\"spacer\",\"data\":{\"col\":4}},{\"id\":\"sr1DuPN7NM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Not Renewed (H)\",\"col\":3}},{\"id\":\"vTPgD3GvYN\",\"type\":\"spacer\",\"data\":{\"col\":11}},{\"id\":\"KzxumWxD68\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Vehicle Insurance<b></b></span>\",\"col\":12}},{\"id\":\"fO0aJwG05V\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Due List (V)\",\"col\":3}},{\"id\":\"vos_xoKpAP\",\"type\":\"spacer\",\"data\":{\"col\":4}},{\"id\":\"hqVLChPZfE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Proposal Stage (V)\",\"col\":3}},{\"id\":\"7vIvkv4jRV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Policies (V)\",\"col\":3}},{\"id\":\"xm7mw4m0gg\",\"type\":\"spacer\",\"data\":{\"col\":4}},{\"id\":\"GDrsoVrFUR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Not Renewed (V)\",\"col\":3}},{\"id\":\"jLcMH9o2IH\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"d1DglsDWXm\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>General Insurance</b></span>\",\"col\":12}},{\"id\":\"T5aRMm4j6n\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Due List (G)\",\"col\":3}},{\"id\":\"UqOQLWyD63\",\"type\":\"spacer\",\"data\":{\"col\":4}},{\"id\":\"E1xb1pOLyK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Proposal Stage (G)\",\"col\":3}},{\"id\":\"4wFPhv2Mrz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Policies (G)\",\"col\":3}},{\"id\":\"BoM8Thzqim\",\"type\":\"spacer\",\"data\":{\"col\":4}},{\"id\":\"YbfCnc7A93\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Not Renewed (G)\",\"col\":3}}]",
  "creation": "2025-08-05 13:25:41.540697",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Insurance",
  "links": [],
- "modified": "2025-09-29 22:33:19.078843",
+ "modified": "2025-10-08 17:38:08.694300",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "Insurance",
@@ -21,15 +21,126 @@
  "owner": "Administrator",
  "parent_page": "Home",
  "public": 1,
- "quick_lists": [
-  {
-   "document_type": "WMS Insurance Policy",
-   "label": "Insurance Policies",
-   "quick_list_filter": "[[\"WMS Insurance Policy\",\"status\",\"=\",\"Proposal\",false]]"
-  }
- ],
+ "quick_lists": [],
  "roles": [],
  "sequence_id": 23.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "Add New Insurance",
+   "link_to": "WMS Insurance Policy",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Pink",
+   "doc_view": "List",
+   "format": "{} In Next 30 Days",
+   "label": "Due List (H)",
+   "link_to": "WMS Insurance Policy",
+   "stats_filter": "[[\"WMS Insurance Policy\",\"maturity_date\",\"Timespan\",\"next 30 days\",false],[\"WMS Insurance Policy\",\"status\",\"=\",\"Active\",false],[\"WMS Insurance Policy\",\"insurance_type\",\"=\",\"Health Insurance\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "{} in last 90 Days",
+   "label": "New Policies (V)",
+   "link_to": "WMS Insurance Policy",
+   "stats_filter": "[[\"WMS Insurance Policy\",\"status\",\"=\",\"Active\",false],[\"WMS Insurance Policy\",\"start_date\",\"Timespan\",\"last 90 days\",false],[\"WMS Insurance Policy\",\"insurance_type\",\"=\",\"Vehicle Insurance\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "format": "{}",
+   "label": "Proposal Stage (H)",
+   "link_to": "WMS Insurance Policy",
+   "stats_filter": "[[\"WMS Insurance Policy\",\"status\",\"=\",\"Proposal\",false],[\"WMS Insurance Policy\",\"insurance_type\",\"=\",\"Health Insurance\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "{} in last 90 Days",
+   "label": "New Policies (G)",
+   "link_to": "WMS Insurance Policy",
+   "stats_filter": "[[\"WMS Insurance Policy\",\"insurance_type\",\"not in\",[\"Vehicle Insurance\",\"Health Insurance\",\"Life Insurance\"],false],[\"WMS Insurance Policy\",\"start_date\",\"Timespan\",\"last 90 days\",false],[\"WMS Insurance Policy\",\"status\",\"=\",\"Active\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "{} in last 90 Days",
+   "label": "New Policies (H)",
+   "link_to": "WMS Insurance Policy",
+   "stats_filter": "[[\"WMS Insurance Policy\",\"status\",\"=\",\"Active\",false],[\"WMS Insurance Policy\",\"start_date\",\"Timespan\",\"last 90 days\",false],[\"WMS Insurance Policy\",\"insurance_type\",\"=\",\"Health Insurance\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "format": "{} in last 90 Days",
+   "label": "Not Renewed (G)",
+   "link_to": "WMS Insurance Policy",
+   "stats_filter": "[[\"WMS Insurance Policy\",\"status\",\"=\",\"Expired\",false],[\"WMS Insurance Policy\",\"maturity_date\",\"Timespan\",\"last 90 days\",false],[\"WMS Insurance Policy\",\"insurance_type\",\"not in\",[\"Vehicle Insurance\",\"Health Insurance\",\"Life Insurance\"],false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "format": "{} in last 90 Days",
+   "label": "Not Renewed (H)",
+   "link_to": "WMS Insurance Policy",
+   "stats_filter": "[[\"WMS Insurance Policy\",\"status\",\"=\",\"Expired\",false],[\"WMS Insurance Policy\",\"maturity_date\",\"Timespan\",\"last 90 days\",false],[\"WMS Insurance Policy\",\"insurance_type\",\"=\",\"Health Insurance\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Pink",
+   "doc_view": "List",
+   "format": "{} In Next 30 Days",
+   "label": "Due List (V)",
+   "link_to": "WMS Insurance Policy",
+   "stats_filter": "[[\"WMS Insurance Policy\",\"maturity_date\",\"Timespan\",\"next 30 days\",false],[\"WMS Insurance Policy\",\"status\",\"=\",\"Active\",false],[\"WMS Insurance Policy\",\"insurance_type\",\"=\",\"Vehicle Insurance\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "format": "{}",
+   "label": "Proposal Stage (V)",
+   "link_to": "WMS Insurance Policy",
+   "stats_filter": "[[\"WMS Insurance Policy\",\"status\",\"=\",\"Proposal\",false],[\"WMS Insurance Policy\",\"insurance_type\",\"=\",\"Vehicle Insurance\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "format": "{} in last 90 Days",
+   "label": "Not Renewed (V)",
+   "link_to": "WMS Insurance Policy",
+   "stats_filter": "[[\"WMS Insurance Policy\",\"status\",\"=\",\"Expired\",false],[\"WMS Insurance Policy\",\"maturity_date\",\"Timespan\",\"last 90 days\",false],[\"WMS Insurance Policy\",\"insurance_type\",\"=\",\"Vehicle Insurance\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Pink",
+   "doc_view": "List",
+   "format": "{} In Next 30 Days",
+   "label": "Due List (G)",
+   "link_to": "WMS Insurance Policy",
+   "stats_filter": "[[\"WMS Insurance Policy\",\"maturity_date\",\"Timespan\",\"next 30 days\",false],[\"WMS Insurance Policy\",\"status\",\"=\",\"Active\",false],[\"WMS Insurance Policy\",\"insurance_type\",\"not in\",[\"Vehicle Insurance\",\"Health Insurance\",\"Life Insurance\"],false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "format": "{}",
+   "label": "Proposal Stage (G)",
+   "link_to": "WMS Insurance Policy",
+   "stats_filter": "[[\"WMS Insurance Policy\",\"status\",\"=\",\"Proposal\",false],[\"WMS Insurance Policy\",\"insurance_type\",\"not in\",[\"Vehicle Insurance\",\"Health Insurance\",\"Life Insurance\"],false]]",
+   "type": "DocType"
+  }
+ ],
  "title": "Insurance"
 }
