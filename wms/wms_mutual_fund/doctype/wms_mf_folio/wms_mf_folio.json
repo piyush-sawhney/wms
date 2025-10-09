@@ -1,0 +1,221 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "creation": "2025-10-09 13:45:17.550240",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "client",
+  "holding_type",
+  "amc",
+  "folio_number",
+  "folio_check_digits",
+  "column_break_pojr",
+  "through_us",
+  "through_broker",
+  "broker_name",
+  "broker_code",
+  "is_existing_folio",
+  "folio_created",
+  "holders_tab",
+  "holders",
+  "nominees_tab",
+  "nominees"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Client",
+   "options": "WMS Client",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "holding_type",
+   "fieldtype": "Link",
+   "label": "Holding Type",
+   "options": "WMS Holding Type",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "folio_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Folio Number",
+   "mandatory_depends_on": "eval:doc.is_existing_folio == 1;",
+   "non_negative": 1,
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "through_broker",
+   "fieldtype": "Check",
+   "label": "Through Broker?"
+  },
+  {
+   "depends_on": "eval:doc.through_broker == 1;",
+   "fieldname": "broker_name",
+   "fieldtype": "Link",
+   "label": "Broker Name",
+   "mandatory_depends_on": "eval:doc.through_broker == 1;",
+   "options": "WMS Broker",
+   "read_only_depends_on": "eval:doc.through_broker == 0;"
+  },
+  {
+   "depends_on": "eval:doc.through_broker == 1;",
+   "fieldname": "broker_code",
+   "fieldtype": "Data",
+   "label": "Broker Code",
+   "mandatory_depends_on": "eval:doc.through_broker == 1;"
+  },
+  {
+   "fieldname": "column_break_pojr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "through_us",
+   "fieldtype": "Check",
+   "label": "Through Us?"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_existing_folio",
+   "fieldtype": "Check",
+   "label": "Is Existing Folio?"
+  },
+  {
+   "columns": 3,
+   "fieldname": "amc",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "AMC",
+   "link_filters": "[[\"WMS Product Provider\",\"product\",\"=\",\"Mutual Fund\"]]",
+   "options": "WMS Product Provider",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.holding_type != null && doc.holding_type != \"Single\"",
+   "fieldname": "holders_tab",
+   "fieldtype": "Tab Break",
+   "label": "Holders"
+  },
+  {
+   "depends_on": "eval:doc.holding_type != \"Single\"",
+   "fieldname": "holders",
+   "fieldtype": "Table",
+   "in_standard_filter": 1,
+   "label": "Holders",
+   "mandatory_depends_on": "eval:doc.holding_type != \"Single\" && doc.through_us == 1 && doc.is_existing_folio != 1;",
+   "options": "WMS Investment Holder"
+  },
+  {
+   "fieldname": "nominees_tab",
+   "fieldtype": "Tab Break",
+   "label": "Nominees"
+  },
+  {
+   "fieldname": "nominees",
+   "fieldtype": "Table",
+   "label": "Nominees",
+   "mandatory_depends_on": "eval:doc.through_us == 1 && doc.is_existing_folio != 1;",
+   "options": "WMS Nominee"
+  },
+  {
+   "fieldname": "folio_check_digits",
+   "fieldtype": "Int",
+   "label": "Folio Check Digits",
+   "length": 2,
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "folio_created",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Folio Created?"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "group": "Service",
+   "link_doctype": "WMS Service",
+   "link_fieldname": "service_item"
+  },
+  {
+   "group": "Transaction",
+   "link_doctype": "WMS MF Transaction",
+   "link_fieldname": "folio_number"
+  }
+ ],
+ "modified": "2025-10-09 16:48:07.441019",
+ "modified_by": "Administrator",
+ "module": "WMS Mutual Fund",
+ "name": "WMS MF Folio",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "role": "WMS Employee",
+   "select": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "WMS MF Manager",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "client, amc",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Purple",
+   "title": "Entry Done"
+  },
+  {
+   "color": "Yellow",
+   "title": "Submitted"
+  },
+  {
+   "color": "Green",
+   "title": "Investment Created"
+  },
+  {
+   "color": "Blue",
+   "title": "Dependency on Client"
+  },
+  {
+   "color": "Red",
+   "title": "Pending With Us"
+  }
+ ],
+ "title_field": "folio_number",
+ "track_changes": 1,
+ "track_seen": 1
+}

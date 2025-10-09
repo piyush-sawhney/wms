@@ -10,7 +10,7 @@ def get_data():
 		},
 		"dynamic_links": {"service_item": ["WMS Client", "service_entity"]},
 		"transactions": [
-			{"label": _("Investments"), "items": ["WMS MF Investment","WMS Fixed Investment","WMS PO Investment","WMS Demat Account","WMS National Pension Scheme"]},
+			{"label": _("Investments"), "items": ["WMS MF Folio","WMS Fixed Investment","WMS PO Investment","WMS Demat Account","WMS National Pension Scheme"]},
 			{"label": _("Insurance"), "items": ["WMS Insurance Policy"]},
 			{"label": _("Family"), "items": ["WMS Family"]},
 			{"label": _("Service Requests"), "items": ["WMS Service"]},
