@@ -1,3 +1,14 @@
+## [1.4.1](https://github.com/piyush-sawhney/wms/compare/v1.4.0...v1.4.1) (2025-10-09)
+
+# [1.4.0](https://github.com/piyush-sawhney/wms/compare/v1.3.1...v1.4.0) (2025-10-09)
+
+
+### Features
+
+* new mutual fund entry doctypes to accomoodate folios and transactions ([82f4e15](https://github.com/piyush-sawhney/wms/commit/82f4e15855721d888f8f50df6ca090129dda4427))
+
+## [1.3.1](https://github.com/piyush-sawhney/wms/compare/v1.3.0...v1.3.1) (2025-10-08)
+
 # [1.3.0](https://github.com/piyush-sawhney/wms/compare/v1.2.0...v1.3.0) (2025-10-08)
 
 
