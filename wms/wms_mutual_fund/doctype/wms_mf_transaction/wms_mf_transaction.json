@@ -110,7 +110,8 @@
    "in_standard_filter": 1,
    "label": "Scheme",
    "options": "WMS MF Scheme",
-   "reqd": 1
+   "reqd": 1,
+   "search_index": 1
   },
   {
    "depends_on": "eval:doc.request_type == \"STP\" || doc.request_type == \"Switch\"",
@@ -168,7 +169,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-10-09 14:48:14.880433",
+ "modified": "2025-10-10 12:27:17.667602",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Transaction",
@@ -199,6 +200,8 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "request_type, scheme",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [
@@ -223,6 +226,7 @@
    "title": "Pending With Us"
   }
  ],
+ "title_field": "folio_number",
  "track_changes": 1,
  "track_seen": 1
 }

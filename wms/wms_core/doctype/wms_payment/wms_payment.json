@@ -80,7 +80,7 @@
    "fieldname": "investment_type",
    "fieldtype": "Link",
    "label": "Investment Type",
-   "link_filters": "[[\"DocType\",\"name\",\"in\",[\"WMS Fixed Investment\",\"WMS PO Investment\",\"WMS MF Investment\",\"WMS Insurance Policy\"]]]",
+   "link_filters": "[[\"DocType\",\"name\",\"in\",[\"WMS Fixed Investment\",\"WMS PO Investment\",\"WMS MF Transaction\",\"WMS Insurance Policy\"]]]",
    "options": "DocType",
    "reqd": 1
   },
@@ -105,7 +105,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-05 09:49:03.988306",
+ "modified": "2025-10-10 12:23:54.910840",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Payment",
