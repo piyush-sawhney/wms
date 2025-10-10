@@ -19,6 +19,7 @@
   "broker_code",
   "is_existing_folio",
   "folio_created",
+  "client_name",
   "holders_tab",
   "holders",
   "nominees_tab",
@@ -143,6 +144,13 @@
    "fieldtype": "Check",
    "label": "Folio Created?",
    "read_only": 1
+  },
+  {
+   "fetch_from": "client.client_name",
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Client Name"
   }
  ],
  "grid_page_length": 50,
@@ -159,7 +167,7 @@
    "link_fieldname": "folio_number"
   }
  ],
- "modified": "2025-10-10 14:09:45.789557",
+ "modified": "2025-10-10 15:56:24.772739",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Folio",

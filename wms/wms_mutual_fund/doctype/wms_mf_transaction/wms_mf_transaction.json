@@ -8,10 +8,11 @@
  "engine": "InnoDB",
  "field_order": [
   "folio_number",
-  "request_type",
-  "column_break_pojr",
-  "through_us",
+  "client_name",
   "through_broker",
+  "column_break_pojr",
+  "request_type",
+  "through_us",
   "broker_code",
   "broker_name",
   "column_break_jexs",
@@ -158,6 +159,15 @@
   {
    "fieldname": "column_break_jexs",
    "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "folio_number.client_name",
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Client Name",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
@@ -169,7 +179,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-10-10 12:27:17.667602",
+ "modified": "2025-10-10 15:56:43.577484",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Transaction",
