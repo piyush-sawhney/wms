@@ -20,6 +20,7 @@ class WMSMFFolio(Document):
 		broker_code: DF.Data | None
 		broker_name: DF.Link | None
 		client: DF.Link
+		client_name: DF.Data | None
 		folio_check_digits: DF.Int
 		folio_created: DF.Check
 		folio_number: DF.Data | None

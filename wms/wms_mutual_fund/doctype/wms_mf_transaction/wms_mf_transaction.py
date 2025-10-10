@@ -18,6 +18,7 @@ class WMSMFTransaction(Document):
 		amount: DF.Currency
 		broker_code: DF.Data | None
 		broker_name: DF.Link | None
+		client_name: DF.Data | None
 		currency: DF.Link | None
 		entry_date: DF.Date
 		folio_number: DF.Link
