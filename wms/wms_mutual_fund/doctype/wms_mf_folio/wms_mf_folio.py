@@ -43,8 +43,8 @@ class WMSMFFolio(Document):
 		self.validate_folio_number()
 
 
-	def validate_folio_number(self):
-		if self.folio_number and self.folio_number != "New Folio":
+	def validate_folio_number(self):		
+		if self.folio_number:
 			import re
 
 			pattern = r"^\d+$"
@@ -58,6 +58,7 @@ class WMSMFFolio(Document):
 			)
 			if existing:
 				frappe.throw(f"Folio Number <b>{self.folio_number}</b> already exists in record.")
+			self.folio_created = 1
 
 	def on_update(self):
 		if self.folio_number and self.name != self.folio_number:

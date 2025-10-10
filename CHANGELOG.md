@@ -1,3 +1,12 @@
+## [1.4.4](https://github.com/piyush-sawhney/wms/compare/v1.4.3...v1.4.4) (2025-10-10)
+
+## [1.4.3](https://github.com/piyush-sawhney/wms/compare/v1.4.2...v1.4.3) (2025-10-10)
+
+
+### Bug Fixes
+
+* is folio created when folio number exists fixed ([08d887e](https://github.com/piyush-sawhney/wms/commit/08d887eb3a47abef8af47e1d96709104d81f1490))
+
 ## [1.4.2](https://github.com/piyush-sawhney/wms/compare/v1.4.1...v1.4.2) (2025-10-10)
 
 ## [1.4.1](https://github.com/piyush-sawhney/wms/compare/v1.4.0...v1.4.1) (2025-10-09)

@@ -141,8 +141,8 @@
    "default": "0",
    "fieldname": "folio_created",
    "fieldtype": "Check",
-   "hidden": 1,
-   "label": "Folio Created?"
+   "label": "Folio Created?",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
@@ -159,7 +159,7 @@
    "link_fieldname": "folio_number"
   }
  ],
- "modified": "2025-10-09 16:48:07.441019",
+ "modified": "2025-10-10 14:09:45.789557",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Folio",
