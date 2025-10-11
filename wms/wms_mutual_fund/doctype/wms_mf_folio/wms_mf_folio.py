@@ -57,10 +57,10 @@ class WMSMFFolio(Document):
 			existing = frappe.db.exists(
             	self.doctype, {"folio_number": self.folio_number}
 			)
-			if existing:
+			if existing and self.name != existing:
 				frappe.throw(f"Folio Number <b>{self.folio_number}</b> already exists in record.")
 			self.folio_created = 1
-
+		   
 	def on_update(self):
 		if self.folio_number and self.name != self.folio_number:
 			self.folio_created = 1
@@ -103,4 +103,3 @@ class WMSMFFolio(Document):
 			for holder in self.holders:
 				if holder.holder == self.client:
 					frappe.throw("Client cannot be a holder.")
-
