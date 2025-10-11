@@ -1,3 +1,10 @@
+## [1.4.7](https://github.com/piyush-sawhney/wms/compare/v1.4.6...v1.4.7) (2025-10-11)
+
+
+### Bug Fixes
+
+* folio already exists error for same folio fixed ([214a987](https://github.com/piyush-sawhney/wms/commit/214a98739b5f6ba7049822c138ecf127c5bdf2d9)), closes [#55](https://github.com/piyush-sawhney/wms/issues/55)
+
 ## [1.4.6](https://github.com/piyush-sawhney/wms/compare/v1.4.5...v1.4.6) (2025-10-10)
 
 ## [1.4.5](https://github.com/piyush-sawhney/wms/compare/v1.4.4...v1.4.5) (2025-10-10)
