@@ -1,3 +1,11 @@
+## [1.4.8](https://github.com/piyush-sawhney/wms/compare/v1.4.7...v1.4.8) (2025-10-12)
+
+
+### Bug Fixes
+
+* po investment maturity date ([8077513](https://github.com/piyush-sawhney/wms/commit/80775132d59c8872e1e41ac511be3cb49cd01157)), closes [#57](https://github.com/piyush-sawhney/wms/issues/57)
+* syntax issue in patches removing execute ([5230267](https://github.com/piyush-sawhney/wms/commit/523026779ff51a48fa55209170a7234d63c9addd))
+
 ## [1.4.7](https://github.com/piyush-sawhney/wms/compare/v1.4.6...v1.4.7) (2025-10-11)
 
 
