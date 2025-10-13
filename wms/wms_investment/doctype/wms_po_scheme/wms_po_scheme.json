@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_rename": 1,
  "creation": "2025-07-30 16:31:14.600470",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -54,7 +55,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-05 11:26:26.126989",
+ "modified": "2025-10-13 16:42:42.010747",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Scheme",
