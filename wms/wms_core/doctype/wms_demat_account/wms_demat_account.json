@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:{dp_id}{client_id}",
  "creation": "2025-08-19 13:45:35.630543",
@@ -20,9 +21,14 @@
   "client_id",
   "column_break_cdzp",
   "trading_id",
+  "is_existing_demat",
+  "through_us",
   "additional_holders_tab",
+  "holders",
   "nominee_details_tab",
-  "bank_details_tab"
+  "nominees",
+  "banks_tab",
+  "banks"
  ],
  "fields": [
   {
@@ -117,6 +123,7 @@
    "reqd": 1
   },
   {
+   "depends_on": "eval:doc.holding_type != null && doc.holding_type != \"Single\"",
    "fieldname": "additional_holders_tab",
    "fieldtype": "Tab Break",
    "label": "Additional Holders"
@@ -127,15 +134,48 @@
    "label": "Nominee Details"
   },
   {
-   "fieldname": "bank_details_tab",
+   "depends_on": "eval:doc.holding_type != null && doc.holding_type != \"Single\"",
+   "fieldname": "holders",
+   "fieldtype": "Table",
+   "label": "Holders",
+   "mandatory_depends_on": "eval:doc.holding_type != \"Single\" && doc.through_us == 1 && doc.is_existing_demat != 1;",
+   "options": "WMS Investment Holder"
+  },
+  {
+   "fieldname": "nominees",
+   "fieldtype": "Table",
+   "label": "Nominees",
+   "mandatory_depends_on": "eval:doc.through_us == 1 && doc.is_existing_demat != 1;",
+   "options": "WMS Nominee"
+  },
+  {
+   "fieldname": "banks_tab",
    "fieldtype": "Tab Break",
-   "label": "Bank Details"
+   "label": "Banks"
+  },
+  {
+   "fieldname": "banks",
+   "fieldtype": "Table",
+   "label": "Banks",
+   "options": "WMS Banks"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_existing_demat",
+   "fieldtype": "Check",
+   "label": "Is Existing DEMAT?"
+  },
+  {
+   "default": "1",
+   "fieldname": "through_us",
+   "fieldtype": "Check",
+   "label": "Through Us?"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-05 09:48:11.847831",
+ "modified": "2025-10-13 15:42:38.363692",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Demat Account",
