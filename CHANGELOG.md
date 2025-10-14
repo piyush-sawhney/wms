@@ -1,3 +1,21 @@
+## [1.4.12](https://github.com/piyush-sawhney/wms/compare/v1.4.11...v1.4.12) (2025-10-14)
+
+
+### Bug Fixes
+
+* demat bank duplicate issuse ([4988814](https://github.com/piyush-sawhney/wms/commit/49888149d0a5ce1863561d5dd67108fd02516a1a)), closes [#61](https://github.com/piyush-sawhney/wms/issues/61)
+
+## [1.4.11](https://github.com/piyush-sawhney/wms/compare/v1.4.10...v1.4.11) (2025-10-13)
+
+## [1.4.10](https://github.com/piyush-sawhney/wms/compare/v1.4.9...v1.4.10) (2025-10-13)
+
+
+### Bug Fixes
+
+* update missing demat detail ([42c8d69](https://github.com/piyush-sawhney/wms/commit/42c8d69f32aa65272795bd64dd19f5ccb414b5be)), closes [#60](https://github.com/piyush-sawhney/wms/issues/60)
+
+## [1.4.9](https://github.com/piyush-sawhney/wms/compare/v1.4.8...v1.4.9) (2025-10-13)
+
 ## [1.4.8](https://github.com/piyush-sawhney/wms/compare/v1.4.7...v1.4.8) (2025-10-12)
 
 

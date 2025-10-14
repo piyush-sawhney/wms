@@ -249,7 +249,7 @@
  "image_field": "client_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-05 09:49:41.608474",
+ "modified": "2025-10-13 16:42:10.201156",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",
@@ -271,6 +271,7 @@
    "create": 1,
    "read": 1,
    "role": "WMS Employee",
+   "select": 1,
    "write": 1
   }
  ],
