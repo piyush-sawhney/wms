@@ -1,8 +1,7 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
- "autoname": "format:{dp_id}{client_id}",
+ "autoname": "autoincrement",
  "creation": "2025-08-19 13:45:35.630543",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -175,11 +174,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-13 15:42:38.363692",
+ "modified": "2025-10-14 11:58:03.187047",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Demat Account",
- "naming_rule": "Expression",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {

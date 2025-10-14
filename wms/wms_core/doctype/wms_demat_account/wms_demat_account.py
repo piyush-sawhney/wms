@@ -16,7 +16,6 @@ class WMSDematAccount(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
-
 		from wms.wms_core.doctype.wms_banks.wms_banks import WMSBanks
 		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
 		from wms.wms_investment.doctype.wms_investment_holder.wms_investment_holder import WMSInvestmentHolder
@@ -30,6 +29,7 @@ class WMSDematAccount(Document):
 		holders: DF.Table[WMSInvestmentHolder]
 		holding_type: DF.Link
 		is_existing_demat: DF.Check
+		name: DF.Int | None
 		nominees: DF.Table[WMSNominee]
 		status: DF.Literal["Opening Request", "Opened", "Request with DP", "Client Dependency"]
 		through_us: DF.Check
@@ -44,11 +44,19 @@ class WMSDematAccount(Document):
 
 	def validate_single_default_bank(self):
 		if self.banks:
-			default_banks = [e for e in self.banks if e.is_default]
-			if len(default_banks) != 1:
-				frappe.throw(
-					_("There must be exactly {} default bank in the table.".format(frappe.bold(_("One"))))
-				)
+			if len(self.banks) == 1:
+				self.banks[0].is_default = 1
+			else:
+				default_banks = [e for e in self.banks if e.is_default]
+				if len(default_banks) != 1:
+					frappe.throw(
+						_("There must be exactly {} default bank in the table.".format(frappe.bold(_("One"))))
+					)
+			if len(self.banks) > 1:
+				# Check if there are multiple banks with the same account number
+				account_numbers = [e.account_number for e in self.banks]
+				if len(account_numbers) != len(set(account_numbers)):
+					frappe.throw(_("There cannot be multiple banks with the same account number."))
 
 	def validate_nominee(self):
 		if self.nominees and len(self.nominees) > 0:
