@@ -5,7 +5,11 @@ import frappe, os
 from frappe.model.document import Document
 from bs4 import BeautifulSoup
 from datetime import datetime
-from wms.wms_data_import.doctype.wms_insurance_import.html_file_processor import process_new_india_policy_expiry_register_html
+from wms.wms_data_import.doctype.wms_insurance_import.html_file_processor import (
+	process_new_india_policy_expiry_register_html,
+)
+
+
 class WMSInsuranceImport(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
@@ -32,7 +36,7 @@ def process_new_india_policy_expiry_register(dt):
 	if not os.path.exists(file_path):
 		frappe.throw(f"File not found: {file_path}")
 	process_new_india_policy_expiry_register_html(file_path)
-	
+
 
 @frappe.whitelist()
 def import_insurance_policies(docname):
