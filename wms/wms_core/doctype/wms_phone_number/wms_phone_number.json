@@ -1,0 +1,64 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-10-18 11:25:55.869236",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "phone",
+  "column_break_nafk",
+  "is_primary_phone",
+  "column_break_uxsf",
+  "is_whatsapp_number"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "default": "+91-",
+   "fieldname": "phone",
+   "fieldtype": "Phone",
+   "in_list_view": 1,
+   "label": "Phone"
+  },
+  {
+   "columns": 2,
+   "default": "0",
+   "fieldname": "is_primary_phone",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Primary Phone?"
+  },
+  {
+   "columns": 2,
+   "default": "0",
+   "fieldname": "is_whatsapp_number",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Whatsapp Number?"
+  },
+  {
+   "fieldname": "column_break_nafk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_uxsf",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-10-18 11:42:38.216830",
+ "modified_by": "Administrator",
+ "module": "WMS Core",
+ "name": "WMS Phone Number",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

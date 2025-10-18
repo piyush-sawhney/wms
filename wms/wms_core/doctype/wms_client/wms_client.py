@@ -22,9 +22,9 @@ class WMSClient(Document):
 
 	if TYPE_CHECKING:
 		from frappe.contacts.doctype.contact_email.contact_email import ContactEmail
-		from frappe.contacts.doctype.contact_phone.contact_phone import ContactPhone
 		from frappe.types import DF
 		from wms.wms_core.doctype.wms_client_codes.wms_client_codes import WMSClientCodes
+		from wms.wms_core.doctype.wms_phone_number.wms_phone_number import WMSPhoneNumber
 		from wms.wms_core.doctype.wms_ubo.wms_ubo import WMSUBO
 
 		classification: DF.Link
@@ -33,16 +33,19 @@ class WMSClient(Document):
 		codes: DF.Table[WMSClientCodes]
 		dob: DF.Date | None
 		email_addresses: DF.Table[ContactEmail]
-		numbers: DF.Table[ContactPhone]
+		is_whatsapp_no: DF.Check
 		pan: DF.Link | None
+		phone_numbers: DF.Table[WMSPhoneNumber]
 		pob: DF.Data | None
 		primary_email: DF.Data | None
-		primary_mobile: DF.Data | None
+		primary_mobile: DF.Phone | None
 		proprietor: DF.Link | None
 		status: DF.Literal["Active", "Inactive", "Deceased"]
 		type: DF.Data | None
 		ubos: DF.Table[WMSUBO]
 		uuid: DF.Data | None
+		whatsapp_number: DF.Phone | None
+
 	# end: auto-generated types
 	def onload(self):
 		load_address_and_contact(self)
@@ -50,12 +53,10 @@ class WMSClient(Document):
 	def on_trash(self):
 		delete_contact_and_address("WMS Client", self.name)
 
-
 	def autoname(self):
-		random_letters = ''.join(random.choices(string.ascii_uppercase, k=4))
+		random_letters = "".join(random.choices(string.ascii_uppercase, k=4))
 		self.name = make_autoname(f"CL{random_letters}.###")
-	
-				
+
 	def before_save(self):
 		self.update_classification_for_individuals()
 
@@ -66,11 +67,49 @@ class WMSClient(Document):
 		self.validate_dob()
 		self.validate_sole_proprietor()
 		self.validate_primary_email()
-		self.validate_primary_mobile()
+		# self.validate_primary_mobile()
+		self.validate_contact_numbers()
+
+	def validate_contact_numbers(self):
+		if self.is_new():
+			if self.primary_mobile == "+91-":
+				self.primary_mobile = None
+			if self.primary_mobile and self.is_whatsapp_no:
+				self.whatsapp_number = self.primary_mobile
+				self.append(
+					"phone_numbers",
+					{"phone": self.primary_mobile, "is_primary_phone": 1, "is_whatsapp_number": 1},
+				)
+			if self.primary_mobile and not self.is_whatsapp_no:
+				if self.whatsapp_number == "+91-":
+					self.whatsapp_number = None
+					self.append(
+						"phone_numbers",
+						{"phone": self.primary_mobile, "is_primary_phone": 1, "is_whatsapp_number": 0},
+					)
+				else:
+					if self.primary_mobile == self.whatsapp_number:
+						self.append(
+							"phone_numbers",
+							{"phone": self.primary_mobile, "is_primary_phone": 1, "is_whatsapp_number": 1},
+						)
+					elif self.primary_mobile != self.whatsapp_number:
+						self.append(
+							"phone_numbers",
+							{"phone": self.primary_mobile, "is_primary_phone": 1, "is_whatsapp_number": 0},
+						)
+						self.append(
+							"phone_numbers",
+							{"phone": self.whatsapp_number, "is_primary_phone": 0, "is_whatsapp_number": 1},
+						)
+		else:
+			sync_phone_numbers_table(self)
 
 	def validate_primary_email(self):
 		"""Keep primary_email field in sync with child table."""
-		is_primary_email_set = True if bool(frappe.get_value(self.doctype, self.name, "primary_email")) else False
+		is_primary_email_set = (
+			True if bool(frappe.get_value(self.doctype, self.name, "primary_email")) else False
+		)
 		if not self.email_addresses:
 			if is_primary_email_set:
 				# Case when deleting all the child table rows
@@ -78,55 +117,60 @@ class WMSClient(Document):
 				self.flags.is_primary_email_set = False
 				return
 			if not is_primary_email_set and self.primary_email:
-				self.append("email_addresses", {
-					"email_id": self.primary_email,
-					"is_primary": 1,
-				})
+				self.append(
+					"email_addresses",
+					{
+						"email_id": self.primary_email,
+						"is_primary": 1,
+					},
+				)
 				self.flags.is_primary_email_set = True
 				return
 		else:
 			primary_rows = [e for e in self.email_addresses if e.is_primary]
 
-			if  len(primary_rows) != 1:
-				frappe.throw(_("There must be exactly {0} primary email in the table.".format(frappe.bold(_("One")))))
+			if len(primary_rows) != 1:
+				frappe.throw(
+					_("There must be exactly {0} primary email in the table.".format(frappe.bold(_("One"))))
+				)
 
 			# Sync field from table primary
 			table_primary = (primary_rows[0].email_id or "").strip()
 			if table_primary != (self.primary_email or "").strip():
 				self.primary_email = table_primary
-	
+
 	def validate_primary_mobile(self):
 		"""Keep primary_email field in sync with child table."""
-		is_primary_mobile_set = True if bool(frappe.get_value(self.doctype, self.name, "primary_mobile")) else False
-		if not self.numbers:
+		if self.primary_mobile == "+91-":
+			self.primary_mobile = None
+		is_primary_mobile_set = (
+			True if bool(frappe.get_value(self.doctype, self.name, "primary_mobile")) else False
+		)
+		if not self.phone_numbers:
 			if is_primary_mobile_set:
 				# Case when deleting all the child table rows
 				self.primary_mobile = None
 				return
 			if not is_primary_mobile_set and self.primary_mobile:
-				self.append("numbers", {
-					"phone": self.primary_mobile,
-					"is_primary_mobile_no": 1
-				})
+				self.append("phone_numbers", {"phone": self.primary_mobile, "is_primary_phone": 1})
 				return
 		else:
-			primary_rows = [e for e in self.numbers if e.is_primary_mobile_no]
-
-			if  len(primary_rows) != 1:
-				frappe.throw(_("There must be exactly {0} primary mobile in the table.".format(frappe.bold(_("One")))))
+			primary_rows = [e for e in self.phone_numbers if e.is_primary_phone]
+			if len(primary_rows) != 1:
+				frappe.throw(
+					_("There must be exactly {0} primary mobile in the table.".format(frappe.bold(_("One"))))
+				)
 
 			# Sync field from table primary
 			table_primary = (primary_rows[0].phone or "").strip()
 			if table_primary != (self.primary_mobile or "").strip():
 				self.primary_mobile = table_primary
-	
-	
+
 	def validate_sole_proprietor(self):
 		if self.type == "Individual" and self.classification == "Sole Proprietor":
 			if not self.proprietor:
 				frappe.throw("Proprietor Details are mandatory for Sole Proprietorship.")
-	
-	
+
 	def validate_pan_type_combination(self):
 		if not self.type or not self.pan:
 			return
@@ -180,3 +224,7 @@ class WMSClient(Document):
 					frappe.msgprint("Classification updated to Minor based on age.")
 			elif age >= 18 and self.classification == "Minor":
 				frappe.throw("Minor cannot be greater than 18 years old. ")
+
+
+def sync_phone_numbers_table(dt):
+	pass

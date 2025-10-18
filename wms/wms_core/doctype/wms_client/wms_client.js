@@ -7,6 +7,7 @@ frappe.ui.form.on("WMS Client", {
 		if (!frm.doc.__islocal) {
             frm.set_df_property("primary_email", "read_only", !!frm.doc.primary_email);
             frm.set_df_property("primary_mobile", "read_only", !!frm.doc.primary_mobile);
+            frm.set_df_property("whatsapp_number", "read_only", !!frm.doc.whatsapp_number);
 			frappe.contacts.render_address_and_contact(frm);
             // Hide New Contact Button
             if (frm.fields_dict["contact_html"] && "contact_list" in frm.doc.__onload) {

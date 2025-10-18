@@ -19,6 +19,8 @@
   "pob",
   "column_break_bakg",
   "primary_mobile",
+  "is_whatsapp_no",
+  "whatsapp_number",
   "primary_email",
   "section_break_rker",
   "proprietor",
@@ -29,7 +31,7 @@
   "column_break_mawq",
   "client_image",
   "contact_details_tab",
-  "numbers",
+  "phone_numbers",
   "email_addresses",
   "address_and_contact_tab",
   "address_and_contact_section",
@@ -169,8 +171,9 @@
   },
   {
    "allow_in_quick_entry": 1,
+   "default": "+91-",
    "fieldname": "primary_mobile",
-   "fieldtype": "Data",
+   "fieldtype": "Phone",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Primary Mobile"
@@ -196,12 +199,6 @@
    "link_filters": "[[\"WMS Client\",\"classification\",\"=\",\"Resident\"]]",
    "mandatory_depends_on": "eval: doc.classification == \"Sole Proprietor\"",
    "options": "WMS Client"
-  },
-  {
-   "fieldname": "numbers",
-   "fieldtype": "Table",
-   "label": "Numbers",
-   "options": "Contact Phone"
   },
   {
    "fieldname": "email_addresses",
@@ -243,13 +240,30 @@
   {
    "fieldname": "section_break_awva",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "phone_numbers",
+   "fieldtype": "Table",
+   "label": "Phone Numbers",
+   "options": "WMS Phone Number"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_whatsapp_no",
+   "fieldtype": "Check",
+   "label": "Is Whatsapp No?"
+  },
+  {
+   "fieldname": "whatsapp_number",
+   "fieldtype": "Phone",
+   "label": "Whatsapp Number"
   }
  ],
  "grid_page_length": 50,
  "image_field": "client_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-13 16:42:10.201156",
+ "modified": "2025-10-18 12:07:11.213645",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",
