@@ -1,19 +1,24 @@
-from typing import Tuple
-from datetime import datetime, date
-from wms.wms_data_import.import_helper import create_insurance_policy, get_or_create_wms_client, get_policy_details
+from datetime import date, datetime
+
+import frappe
+import pandas as pd
+from bs4 import BeautifulSoup
+
 from wms.wms_data_import.doctype.wms_insurance_import.fields_processor import (
-	process_policy_number,
-	process_insurance_type,
 	process_client_name,
+	process_insurance_type,
+	process_policy_number,
 	process_premium_amount,
 	process_sum_insured_amount,
 )
-import frappe
-from bs4 import BeautifulSoup
-import pandas as pd
+from wms.wms_data_import.import_helper import (
+	create_insurance_policy,
+	get_or_create_wms_client,
+	get_policy_details_from_web,
+)
 
 
-def get_report_duration(report_table) -> Tuple[date, date]:
+def get_report_duration(report_table) -> tuple[date, date]:
 	first_row_cells = [td.get_text(" ", strip=True) for td in report_table.find_all("td")]
 	if not first_row_cells or "Policy Expiry Register Report" not in first_row_cells[0]:
 		frappe.throw("The uploaded file is not a valid Policy Expiry Register report.")
@@ -65,11 +70,13 @@ def update_client_and_policy_data(policy_table):
 		if len(cells) == len(headers):
 			data.append(cells)
 	df = pd.DataFrame(data, columns=headers)
-	df = df.iloc[:-1]
-	df = process_df_fields(df)
-	for index, file_policy_data in df.iterrows():
+	df = df.iloc[:-1]  # Remove the last summary row
+	df = process_df_fields(df)  # Process and clean DataFrame fields
+
+	for _index, file_policy_data in df.iterrows():
 		policy_number = str(file_policy_data["Policy Number"])
-		app_policy_data = get_policy_details(policy_number)
+
+		app_policy_data = get_policy_details_from_web(policy_number)
 		if app_policy_data:
 			validate_and_update_policy_data(app_policy_data, file_policy_data)
 		else:
@@ -80,15 +87,14 @@ def update_client_and_policy_data(policy_table):
 				file_policy_data["Insured Telephone 3"],
 			)
 			create_insurance_policy(file_policy_data, wms_client)
-	# Check if policy exists in the system
-	# If yes, validate and update detail, update client code if required
-	# If no, create new policy and client as required
 
 
 def process_new_india_policy_expiry_register_html(file_path):
-	with open(file_path, "r", encoding="utf-8") as f:
+	with open(file_path) as f:
 		html_content = f.read()
 		soup = BeautifulSoup(html_content, "html.parser")
 		tables = soup.find_all("table")
+
 		from_date, to_date = get_report_duration(tables[1])
+
 		update_client_and_policy_data(tables[3])

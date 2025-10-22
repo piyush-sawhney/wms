@@ -13,7 +13,8 @@
   "from_date",
   "to_date",
   "section_break_fyis",
-  "error_log"
+  "error_log",
+  "success_log"
  ],
  "fields": [
   {
@@ -72,12 +73,17 @@
    "fieldtype": "Date",
    "label": "To Date",
    "read_only": 1
+  },
+  {
+   "fieldname": "success_log",
+   "fieldtype": "Long Text",
+   "label": "Success Log"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-16 14:47:09.791027",
+ "modified": "2025-10-22 14:29:38.709025",
  "modified_by": "Administrator",
  "module": "WMS Data Import",
  "name": "WMS Insurance Import",

@@ -22,16 +22,18 @@ def get_or_create_wms_client(client_code_provider, client_code, client_name=None
 	return wms_client
 
 
-def get_policy_details(policy_number: str):
-	policy = frappe.get_value("WMS Insurance Policy", {"policy_number": policy_number})
+def get_policy_details_from_web(policy_number: str):
+	policy = frappe.db.exists("WMS Insurance Policy", {"policy_number": policy_number})
 	if policy:
-		return frappe.get_doc("WMS Insurance Policy", policy)
+		return frappe.get_doc("WMS Insurance Policy", {"policy_number": policy_number})
 	else:
 		return policy
 
 
 def create_insurance_policy(policy_data, wms_client):
-	policy_period_months = frappe.utils.month_diff(policy_data["Policy Expiry Date"], policy_data["Policy Inception Date"])
+	policy_period_months = frappe.utils.month_diff(
+		policy_data["Policy Expiry Date"], policy_data["Policy Inception Date"]
+	)
 	policy = frappe.get_doc(
 		{
 			"doctype": "WMS Insurance Policy",
@@ -46,7 +48,7 @@ def create_insurance_policy(policy_data, wms_client):
 			"period_type": "Months",
 			"period": policy_period_months,
 			"provider": "The New India Assurance Co Ltd",
-			"desciption": policy_data["Policy Type"]
+			"desciption": policy_data["Policy Type"],
 		}
 	)
 	if policy_data["Policy Expiry Date"] > frappe.utils.getdate(frappe.utils.today()):
