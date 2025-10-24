@@ -15,4 +15,4 @@ def process_new_india_policy_expiry_register(dt):
 	validate_file_type(file_path, dt.report_type)
 	if not os.path.exists(file_path):
 		frappe.throw(f"File not found: {file_path}")
-	process_new_india_policy_expiry_register_html(file_path)
+	process_new_india_policy_expiry_register_html(dt, file_path)

@@ -53,6 +53,10 @@ def import_insurance_policies(docname):
 	dt = frappe.get_doc(doctype, docname)
 	if dt.insurance_provider and dt.insurance_provider == "The New India Assurance Co Ltd":
 		if dt.report_type == "Policy Expiry Register":
-			process_new_india_policy_expiry_register(dt)
+			from_date, to_date = process_new_india_policy_expiry_register(dt)
+			dt.from_date = from_date
+			dt.to_date = to_date
+			dt.status = "Completed"
+			dt.save(ignore_permissions=True)
 
 	# frappe.msgprint(f"Importing insurance policies for document: {dt}")

@@ -11,14 +11,15 @@ from wms.wms_data_import.doctype.wms_insurance_import.fields_processor import (
 	process_premium_amount,
 	process_sum_insured_amount,
 )
-from wms.wms_data_import.import_helper import (
+from wms.wms_data_import.helpers.import_helper import (
 	create_insurance_policy,
 	get_or_create_wms_client,
 	get_policy_details_from_web,
 )
+from wms.wms_data_import.helpers.import_logger import log_error, log_success
 
 
-def get_report_duration(report_table) -> tuple[date, date]:
+def get_report_duration(dt, report_table) -> tuple[date, date]:
 	first_row_cells = [td.get_text(" ", strip=True) for td in report_table.find_all("td")]
 	if not first_row_cells or "Policy Expiry Register Report" not in first_row_cells[0]:
 		frappe.throw("The uploaded file is not a valid Policy Expiry Register report.")
@@ -58,11 +59,14 @@ def process_df_fields(df: pd.DataFrame) -> pd.DataFrame:
 def validate_and_update_policy_data(app_policy_data, file_policy_data):
 	if app_policy_data.start_date != file_policy_data["Policy Inception Date"]:
 		app_policy_data.start_date = file_policy_data["Policy Inception Date"]
+		frappe.get_doc(app_policy_data).save(ignore_permissions=True)
+
 	if app_policy_data.maturity_date != file_policy_data["Policy Expiry Date"]:
 		app_policy_data.maturity_date = file_policy_data["Policy Expiry Date"]
+		frappe.get_doc(app_policy_data).save(ignore_permissions=True)
 
 
-def update_client_and_policy_data(policy_table):
+def update_client_and_policy_data(dt, policy_table):
 	headers = [td.get_text(strip=True) for td in policy_table.find("tr").find_all("td")]
 	data = []
 	for row in policy_table.find_all("tr")[1:]:  # skip header
@@ -78,23 +82,32 @@ def update_client_and_policy_data(policy_table):
 
 		app_policy_data = get_policy_details_from_web(policy_number)
 		if app_policy_data:
-			validate_and_update_policy_data(app_policy_data, file_policy_data)
+			try:
+				validate_and_update_policy_data(app_policy_data, file_policy_data)
+				message = f"Policy {policy_number} updated successfully."
+				log_success(dt, message, commit=True)
+
+			except Exception:
+				message = f"Policy {policy_number} update failed."
+				log_error(dt, message, commit=True)
+				raise
 		else:
 			wms_client = get_or_create_wms_client(
+				dt,
 				"The New India Assurance Co Ltd",
 				file_policy_data["Policy Holder Code"],
 				file_policy_data["Insured Name"],
 				file_policy_data["Insured Telephone 3"],
 			)
-			create_insurance_policy(file_policy_data, wms_client)
+			create_insurance_policy(dt, file_policy_data, wms_client)
 
 
-def process_new_india_policy_expiry_register_html(file_path):
+def process_new_india_policy_expiry_register_html(dt, file_path):
 	with open(file_path) as f:
 		html_content = f.read()
 		soup = BeautifulSoup(html_content, "html.parser")
 		tables = soup.find_all("table")
 
-		from_date, to_date = get_report_duration(tables[1])
-
-		update_client_and_policy_data(tables[3])
+		from_date, to_date = get_report_duration(dt, tables[1])
+		update_client_and_policy_data(dt, tables[3])
+		return from_date, to_date
