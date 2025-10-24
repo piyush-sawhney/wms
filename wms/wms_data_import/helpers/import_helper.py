@@ -69,12 +69,12 @@ def create_insurance_policy(dt, policy_data, wms_client):
 			policy.engine_number = policy_data["Engine No"]
 		policy.insert(ignore_permissions=True)
 		message = (
-			f"Policy {policy_data['Policy Number']} for client {wms_client.get_title()} created successfully."
+			f"Policy {policy_data['Policy Number']} for client {wms_client} created successfully."
 		)
 		log_success(dt, message, commit=True)
 	except Exception:
 		message = (
-			f"Policy {policy_data['Policy Number']} for client {wms_client.get_title()} creation failed."
+			f"Policy {policy_data['Policy Number']} for client {wms_client} creation failed."
 		)
 		log_error(dt, message, commit=True)
 		return policy

@@ -42,7 +42,7 @@ class WMSInsuranceImport(Document):
 		self.validate_file_type()
 
 	def validate_file_type(self):
-		if not self.uploaded_file:
+		if not self.upload_file:
 			frappe.throw(_("Please attach a file before saving."))
 
 
