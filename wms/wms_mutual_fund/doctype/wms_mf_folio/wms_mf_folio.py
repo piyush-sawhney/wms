@@ -3,7 +3,9 @@
 
 import frappe
 from frappe.model.document import Document
+
 from wms.utils import calculate_age
+
 
 class WMSMFFolio(Document):
 	# begin: auto-generated types
@@ -13,11 +15,11 @@ class WMSMFFolio(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
+
 		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
 		from wms.wms_investment.doctype.wms_investment_holder.wms_investment_holder import WMSInvestmentHolder
 
 		amc: DF.Link
-		broker_code: DF.Data | None
 		broker_name: DF.Link | None
 		client: DF.Link
 		client_name: DF.Data | None
@@ -28,6 +30,7 @@ class WMSMFFolio(Document):
 		holding_type: DF.Link
 		is_existing_folio: DF.Check
 		nominees: DF.Table[WMSNominee]
+		sub_broker_code: DF.Data | None
 		through_broker: DF.Check
 		through_us: DF.Check
 	# end: auto-generated types
@@ -37,14 +40,12 @@ class WMSMFFolio(Document):
 		if self.folio_number:
 			self.name = self.folio_number
 
-
 	def validate(self):
 		self.validate_holders()
 		self.validate_nominee()
 		self.validate_folio_number()
 
-
-	def validate_folio_number(self):		
+	def validate_folio_number(self):
 		if self.folio_number:
 			import re
 
@@ -54,18 +55,15 @@ class WMSMFFolio(Document):
 					"Folio Number must be a number. Slash (/) and two digits should be entered in Folio Check Digits."
 				)
 
-			existing = frappe.db.exists(
-            	self.doctype, {"folio_number": self.folio_number}
-			)
+			existing = frappe.db.exists(self.doctype, {"folio_number": self.folio_number})
 			if existing and self.name != existing:
 				frappe.throw(f"Folio Number <b>{self.folio_number}</b> already exists in record.")
 			self.folio_created = 1
-		   
+
 	def on_update(self):
 		if self.folio_number and self.name != self.folio_number:
 			self.folio_created = 1
 			frappe.rename_doc(self.doctype, self.name, self.folio_number, merge=False)
-
 
 	def validate_nominee(self):
 		if self.nominees and len(self.nominees) > 0:

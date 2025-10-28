@@ -16,7 +16,7 @@
   "section_break_xrtq",
   "description",
   "section_break_itst",
-  "notes"
+  "tracking_updates"
  ],
  "fields": [
   {
@@ -71,14 +71,24 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "notes",
-   "fieldtype": "Text Editor",
-   "label": "Notes",
-   "mandatory_depends_on": "eval:doc.status === \"Client Dependency\""
-  },
-  {
    "fieldname": "column_break_jkzo",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_item",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Service Item",
+   "options": "service_entity",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tracking_updates",
+   "fieldtype": "Table",
+   "label": "Tracking Updates",
+   "mandatory_depends_on": "eval:doc.status === \"Client Dependency\" || doc.status === \"Pending With Us\" ",
+   "options": "WMS Service Tracking"
   },
   {
    "fieldname": "service_entity",
@@ -89,21 +99,12 @@
    "link_filters": "[[\"DocType\",\"name\",\"in\",[\"WMS Client\",\"WMS Fixed Investment\",\"WMS PO Investment\",\"WMS Insurance Policy\",\"WMS Bank\",\"WMS MF Folio\"]]]",
    "options": "DocType",
    "reqd": 1
-  },
-  {
-   "fieldname": "service_item",
-   "fieldtype": "Dynamic Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Service Item",
-   "options": "service_entity",
-   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-10 12:29:47.118704",
+ "modified": "2025-10-28 13:48:51.883255",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Service",

@@ -17,12 +17,14 @@ class WMSPOInvestment(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
+
 		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
 		from wms.wms_investment.doctype.wms_investment_holder.wms_investment_holder import WMSInvestmentHolder
 
 		account_number: DF.Data | None
 		amount: DF.Currency
 		client: DF.Link
+		client_name: DF.Data | None
 		currency: DF.Link | None
 		entry_date: DF.Date
 		holders: DF.Table[WMSInvestmentHolder]
@@ -40,9 +42,19 @@ class WMSPOInvestment(Document):
 		scheme_code: DF.Data | None
 		scheme_name: DF.Link
 		start_date: DF.Date | None
-		status: DF.Literal["Entry Done", "Submitted to PO", "Passbook Received", "Passbook Sent to Customer", "Renewed", "Matured", "Pre-Matured", "Transmitted"]
+		status: DF.Literal[
+			"Entry Done",
+			"Submitted to PO",
+			"Passbook Received",
+			"Passbook Sent to Customer",
+			"Renewed",
+			"Matured",
+			"Pre-Matured",
+			"Transmitted",
+		]
 		submit_branch: DF.Data | None
 		through_us: DF.Check
+
 	# end: auto-generated types
 	def autoname(self):
 		FY = get_financial_year_code(self.entry_date)
