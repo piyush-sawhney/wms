@@ -17,6 +17,7 @@ class WMSInsurancePolicy(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
+
 		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
 		from wms.wms_insurance.doctype.wms_insurance_member.wms_insurance_member import WMSInsuranceMember
 
@@ -154,7 +155,7 @@ class WMSInsurancePolicy(Document):
 
 	def validate_dates(self):
 		now_date = nowdate()
-		if self.entry_date and self.entry_date > now_date:
+		if self.entry_date and str(self.entry_date) > now_date:
 			frappe.throw("Entry Date cannot be in the future.")
 
 		if self.start_date:
