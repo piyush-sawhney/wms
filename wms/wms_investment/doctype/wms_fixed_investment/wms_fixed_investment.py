@@ -114,11 +114,14 @@ class WMSFixedInvestment(Document):
 
 	def validate_dates(self):
 		now_date = nowdate()
-		if self.entry_date and self.entry_date > now_date:
+		print("here")
+		print(type(now_date))
+		print(type(self.entry_date))
+		if self.entry_date and str(self.entry_date) > now_date:
 			frappe.throw("Entry Date cannot be in the future.")
 
 		if self.start_date:
-			if self.start_date > now_date:
+			if str(self.start_date) > now_date:
 				frappe.throw("Start Date cannot be in the future.")
 			self.maturity_date = add_months(self.start_date, self.period)
 			self.maturity_date = add_days(self.maturity_date, -1)
