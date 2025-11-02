@@ -23,10 +23,20 @@ class WMSMFTransaction(Document):
 		entry_date: DF.Date
 		folio_number: DF.Link
 		name: DF.Int | None
-		request_type: DF.Literal["New Purchase", "Additional Purchase", "SIP", "Redemption", "Switch", "STP", "SWP"]
+		rejected_reason: DF.Data | None
+		request_type: DF.Literal[
+			"New Purchase", "Additional Purchase", "SIP", "Redemption", "Switch", "STP", "SWP"
+		]
 		scheme: DF.Link
 		scheme_out: DF.Link | None
-		status: DF.Literal["Entry Done", "Submitted", "Investment Created", "Dependency on Client", "Pending With Us"]
+		status: DF.Literal[
+			"Entry Done",
+			"Submitted",
+			"Investment Created",
+			"Dependency on Client",
+			"Pending With Us",
+			"Rejected",
+		]
 		through_broker: DF.Check
 		through_us: DF.Check
 		units: DF.Float

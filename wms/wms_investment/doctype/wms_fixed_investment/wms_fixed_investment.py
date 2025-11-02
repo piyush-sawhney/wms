@@ -4,7 +4,7 @@
 import frappe
 from frappe.model.document import Document
 from frappe.model.naming import make_autoname
-from frappe.utils import add_months, nowdate, add_days
+from frappe.utils import add_days, add_months, nowdate
 
 from wms.utils import calculate_age, get_financial_year_code
 
@@ -17,14 +17,15 @@ class WMSFixedInvestment(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
+
 		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
 		from wms.wms_investment.doctype.wms_investment_holder.wms_investment_holder import WMSInvestmentHolder
 
 		account_number: DF.Data | None
 		amount: DF.Currency
-		broker_code: DF.Data | None
 		broker_name: DF.Link | None
 		client: DF.Link
+		client_name: DF.Data | None
 		currency: DF.Link | None
 		entry_date: DF.Date
 		holders: DF.Table[WMSInvestmentHolder]
@@ -38,11 +39,23 @@ class WMSFixedInvestment(Document):
 		nominees: DF.Table[WMSNominee]
 		period: DF.Int
 		provider: DF.Link
+		rejected_reason: DF.Data | None
 		renewed_investment: DF.DynamicLink | None
 		renewed_investment_type: DF.Link | None
 		roi: DF.Float
 		start_date: DF.Date | None
-		status: DF.Literal["Entry Done", "Submitted", "Investment Created", "Renewed", "Matured", "Pre-Matured", "Transmitted", "FD with Us"]
+		status: DF.Literal[
+			"Entry Done",
+			"Submitted",
+			"Investment Created",
+			"Renewed",
+			"Matured",
+			"Pre-Matured",
+			"Transmitted",
+			"FD with Us",
+			"Rejected",
+		]
+		sub_broker_code: DF.Data | None
 		through_broker: DF.Check
 		through_us: DF.Check
 	# end: auto-generated types

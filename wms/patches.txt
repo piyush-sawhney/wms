@@ -6,3 +6,5 @@
 # Patches added in this section will be executed after doctypes are migrated
 wms.patches.mf_folio_refetch_client_name
 wms.patches.mf_transation_refetch_client_name
+wms.patches.fixed_investment_refetch_client_name
+wms.patches.po_investment_refetch_client_name

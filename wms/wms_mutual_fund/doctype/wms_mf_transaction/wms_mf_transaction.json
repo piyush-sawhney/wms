@@ -18,6 +18,7 @@
   "column_break_jexs",
   "entry_date",
   "status",
+  "rejected_reason",
   "section_break_ckes",
   "scheme",
   "scheme_out",
@@ -91,7 +92,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Status",
-   "options": "Entry Done\nSubmitted\nInvestment Created\nDependency on Client\nPending With Us",
+   "options": "Entry Done\nSubmitted\nInvestment Created\nDependency on Client\nPending With Us\nRejected",
    "reqd": 1
   },
   {
@@ -168,6 +169,13 @@
    "in_standard_filter": 1,
    "label": "Client Name",
    "read_only": 1
+  },
+  {
+   "fieldname": "rejected_reason",
+   "fieldtype": "Data",
+   "label": "Rejected Reason",
+   "mandatory_depends_on": "eval: doc.status == \"Rejected\"",
+   "read_only_depends_on": "eval: doc.status !== \"Rejected\""
   }
  ],
  "grid_page_length": 50,
@@ -179,7 +187,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-10-10 15:56:43.577484",
+ "modified": "2025-11-02 14:44:10.996181",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Transaction",
