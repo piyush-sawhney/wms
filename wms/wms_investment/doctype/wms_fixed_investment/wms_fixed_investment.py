@@ -39,6 +39,7 @@ class WMSFixedInvestment(Document):
 		nominees: DF.Table[WMSNominee]
 		period: DF.Int
 		provider: DF.Link
+		rejected_reason: DF.Data | None
 		renewed_investment: DF.DynamicLink | None
 		renewed_investment_type: DF.Link | None
 		roi: DF.Float
@@ -52,6 +53,7 @@ class WMSFixedInvestment(Document):
 			"Pre-Matured",
 			"Transmitted",
 			"FD with Us",
+			"Rejected",
 		]
 		sub_broker_code: DF.Data | None
 		through_broker: DF.Check

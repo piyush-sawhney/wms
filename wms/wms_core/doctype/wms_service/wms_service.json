@@ -5,6 +5,7 @@
  "engine": "InnoDB",
  "field_order": [
   "status",
+  "rejected_reason",
   "column_break_ewqr",
   "entry_date",
   "section_break_jjsb",
@@ -99,12 +100,19 @@
    "link_filters": "[[\"DocType\",\"name\",\"in\",[\"WMS Client\",\"WMS Fixed Investment\",\"WMS PO Investment\",\"WMS Insurance Policy\",\"WMS Bank\",\"WMS MF Folio\"]]]",
    "options": "DocType",
    "reqd": 1
+  },
+  {
+   "fieldname": "rejected_reason",
+   "fieldtype": "Data",
+   "label": "Rejected Reason",
+   "mandatory_depends_on": "eval: doc.status == \"Rejected\"",
+   "read_only_depends_on": "eval: doc.status !== \"Rejected\""
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-28 13:48:51.883255",
+ "modified": "2025-11-02 14:45:16.701462",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Service",

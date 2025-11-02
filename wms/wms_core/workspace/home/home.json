@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"3C6C8XBmOq\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Home</span>\",\"col\":12}},{\"id\":\"ZIdy70-gig\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Clients\",\"col\":4}},{\"id\":\"Qd4ssEjCes\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Families\",\"col\":4}},{\"id\":\"UfWyc4JRIm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Client Addresses\",\"col\":4}},{\"id\":\"u0VYLHfNif\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Service\",\"col\":3}},{\"id\":\"Ji8mt0CQuK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending Service\",\"col\":4}},{\"id\":\"cKtsqQhCMv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Resolved Services\",\"col\":4}}]",
+ "content": "[{\"id\":\"3C6C8XBmOq\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Home</span>\",\"col\":12}},{\"id\":\"ZIdy70-gig\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Clients\",\"col\":4}},{\"id\":\"Qd4ssEjCes\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Families\",\"col\":4}},{\"id\":\"UfWyc4JRIm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Client Addresses\",\"col\":4}},{\"id\":\"u0VYLHfNif\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Service\",\"col\":4}},{\"id\":\"YpmAy_J4ye\",\"type\":\"spacer\",\"data\":{\"col\":4}},{\"id\":\"Ji8mt0CQuK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending Service\",\"col\":4}},{\"id\":\"cKtsqQhCMv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Resolved Services\",\"col\":4}},{\"id\":\"rzjS2giXpA\",\"type\":\"spacer\",\"data\":{\"col\":4}},{\"id\":\"SX-VLU4FyB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rejected Services\",\"col\":4}}]",
  "creation": "2025-09-29 22:31:12.064244",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Home",
  "links": [],
- "modified": "2025-10-15 12:00:06.602550",
+ "modified": "2025-11-02 14:47:09.018401",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "Home",
@@ -36,6 +36,15 @@
  "roles": [],
  "sequence_id": 28.0,
  "shortcuts": [
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "format": "{} In Last 30 Days",
+   "label": "Rejected Services",
+   "link_to": "WMS Service",
+   "stats_filter": "[[\"WMS Service\",\"status\",\"=\",\"Rejected\",false],[\"WMS Service\",\"entry_date\",\"Timespan\",\"last 30 days\",false]]",
+   "type": "DocType"
+  },
   {
    "color": "Green",
    "doc_view": "List",

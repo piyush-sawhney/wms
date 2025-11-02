@@ -18,6 +18,7 @@ class WMSService(Document):
 
 		description: DF.SmallText | None
 		entry_date: DF.Date
+		rejected_reason: DF.Data | None
 		service_entity: DF.Link
 		service_item: DF.DynamicLink
 		status: DF.Literal[

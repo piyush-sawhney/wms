@@ -36,6 +36,7 @@ class WMSPOInvestment(Document):
 		nominees: DF.Table[WMSNominee]
 		partner_name: DF.Data | None
 		period: DF.Int
+		rejected_reason: DF.Data | None
 		renewed_investment: DF.DynamicLink | None
 		renewed_investment_type: DF.Link | None
 		roi: DF.Float
@@ -51,6 +52,7 @@ class WMSPOInvestment(Document):
 			"Matured",
 			"Pre-Matured",
 			"Transmitted",
+			"Rejected",
 		]
 		submit_branch: DF.Data | None
 		through_us: DF.Check

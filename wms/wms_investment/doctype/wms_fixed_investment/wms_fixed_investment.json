@@ -19,6 +19,7 @@
   "sub_broker_code",
   "column_break_pojr",
   "status",
+  "rejected_reason",
   "is_active",
   "is_existing_investment",
   "renewed_investment_type",
@@ -95,7 +96,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Status",
-   "options": "Entry Done\nSubmitted\nInvestment Created\nRenewed\nMatured\nPre-Matured\nTransmitted\nFD with Us",
+   "options": "Entry Done\nSubmitted\nInvestment Created\nRenewed\nMatured\nPre-Matured\nTransmitted\nFD with Us\nRejected",
    "reqd": 1
   },
   {
@@ -277,6 +278,13 @@
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Client Name"
+  },
+  {
+   "fieldname": "rejected_reason",
+   "fieldtype": "Data",
+   "label": "Rejected Reason",
+   "mandatory_depends_on": "eval: doc.status == \"Rejected\"",
+   "read_only_depends_on": "eval: doc.status !== \"Rejected\""
   }
  ],
  "grid_page_length": 50,
@@ -293,7 +301,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-10-28 13:31:46.345423",
+ "modified": "2025-11-02 14:40:35.904394",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS Fixed Investment",
