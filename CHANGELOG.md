@@ -1,3 +1,10 @@
+## [1.4.18](https://github.com/piyush-sawhney/wms/compare/v1.4.17...v1.4.18) (2025-11-02)
+
+
+### Bug Fixes
+
+* failing pathes due to date and str mismatch ([322cb1c](https://github.com/piyush-sawhney/wms/commit/322cb1ca18e1b2efe6f803a51f2c02a41abc7ef0))
+
 ## [1.4.17](https://github.com/piyush-sawhney/wms/compare/v1.4.16...v1.4.17) (2025-11-02)
 
 
