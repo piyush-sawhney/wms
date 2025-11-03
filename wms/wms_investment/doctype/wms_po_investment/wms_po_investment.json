@@ -274,9 +274,9 @@
    "in_standard_filter": 1,
    "label": "Guardian",
    "link_filters": "[[\"WMS Client\",\"type\",\"=\",\"Individual\"],[\"WMS Client\",\"classification\",\"not in\",[\"Sole Proprietor\",\"Minor\"]]]",
-   "mandatory_depends_on": "eval: doc.client_classification == \"Minor\"",
+   "mandatory_depends_on": "eval: doc.client_classification === \"Minor\"",
    "options": "WMS Client",
-   "read_only_depends_on": "eval: doc.client_classification != \"Minor\""
+   "read_only_depends_on": "eval: doc.client_classification !== \"Minor\""
   },
   {
    "fetch_from": "client.classification",
@@ -300,7 +300,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-11-03 16:50:58.584519",
+ "modified": "2025-11-03 16:56:57.087628",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",
