@@ -7,9 +7,11 @@
  "engine": "InnoDB",
  "field_order": [
   "client",
+  "guardian",
   "holding_type",
   "account_number",
   "client_name",
+  "client_classification",
   "column_break_uehu",
   "entry_date",
   "is_existing_investment",
@@ -154,7 +156,7 @@
    "read_only": 1
   },
   {
-   "depends_on": "eval:doc.holding_type != null && doc.holding_type != \"Single\"",
+   "depends_on": "eval:doc.holding_type != null && doc.holding_type != \"Single\" && doc.client_classification !== \"Minor\"; ",
    "fieldname": "holders_tab",
    "fieldtype": "Tab Break",
    "label": "Holders"
@@ -165,7 +167,7 @@
    "fieldtype": "Table",
    "in_standard_filter": 1,
    "label": "Holders",
-   "mandatory_depends_on": "eval:doc.holding_type != \"Single\" && doc.through_us == 1 && doc.is_existing_investment != 1;",
+   "mandatory_depends_on": "eval:doc.holding_type != \"Single\" && doc.through_us == 1 && doc.is_existing_investment != 1 && doc.client_classification === \"Minor\"; ",
    "options": "WMS Investment Holder"
   },
   {
@@ -264,6 +266,24 @@
    "label": "Rejected Reason",
    "mandatory_depends_on": "eval: doc.status == \"Rejected\"",
    "read_only_depends_on": "eval: doc.status !== \"Rejected\""
+  },
+  {
+   "fieldname": "guardian",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Guardian",
+   "link_filters": "[[\"WMS Client\",\"type\",\"=\",\"Individual\"],[\"WMS Client\",\"classification\",\"not in\",[\"Sole Proprietor\",\"Minor\"]]]",
+   "mandatory_depends_on": "eval: doc.client_classification == \"Minor\"",
+   "options": "WMS Client",
+   "read_only_depends_on": "eval: doc.client_classification != \"Minor\""
+  },
+  {
+   "fetch_from": "client.classification",
+   "fieldname": "client_classification",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Client Classification"
   }
  ],
  "grid_page_length": 50,
@@ -280,7 +300,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-11-02 14:42:18.889437",
+ "modified": "2025-11-03 16:33:19.936433",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",

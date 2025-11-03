@@ -24,9 +24,11 @@ class WMSPOInvestment(Document):
 		account_number: DF.Data | None
 		amount: DF.Currency
 		client: DF.Link
+		client_classification: DF.Data | None
 		client_name: DF.Data | None
 		currency: DF.Link | None
 		entry_date: DF.Date
+		guardian: DF.Link | None
 		holders: DF.Table[WMSInvestmentHolder]
 		holding_type: DF.Link
 		is_active: DF.Check
@@ -67,6 +69,14 @@ class WMSPOInvestment(Document):
 		self.validate_nominee()
 		self.validate_dates()
 		self.validate_is_active()
+		self.validate_minor_investment()
+
+	def validate_minor_investment(self):
+		if self.client_classification == "Minor":
+			if self.guardian and self.guardian == self.client:
+				frappe.throw("Guardian cannot be the client.")
+			if self.holding_type != "Single":
+				frappe.throw("Holding Type must be 'Single' for Minor clients.")
 
 	def validate_is_active(self):
 		if self.status in ["Renewed", "Matured", "Pre-Matured", "Transmitted"]:
@@ -82,6 +92,8 @@ class WMSPOInvestment(Document):
 					frappe.throw("Client cannot be a nominee.")
 				if nominee.nominee_name in holders:
 					frappe.throw("Holder cannot be a nominee.")
+				if self.guardian and nominee.nominee_name == self.guardian:
+					frappe.throw("Guardian cannot be a nominee.")
 				if nominee.dob:
 					if calculate_age(nominee.dob) < 18:
 						nominee.is_minor = 1
