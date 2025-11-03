@@ -188,7 +188,7 @@
    "link_fieldname": "folio_number"
   }
  ],
- "modified": "2025-11-03 17:12:18.346060",
+ "modified": "2025-11-03 18:24:22.121226",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Folio",
@@ -218,7 +218,7 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "client_name, amc",
+ "search_fields": "client_name, holding_type,amc",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

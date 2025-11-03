@@ -321,7 +321,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-11-03 16:49:46.872348",
+ "modified": "2025-11-03 18:25:34.796971",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS Fixed Investment",
@@ -351,7 +351,7 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "provider,investment_type",
+ "search_fields": "account_number,entry_date, provider, investment_type, holding_type,amount",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

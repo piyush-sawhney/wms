@@ -11,6 +11,8 @@
   "client",
   "provider",
   "policy_document",
+  "proposer_name",
+  "client_name",
   "column_break_mjwm",
   "insurance_type",
   "quote_number",
@@ -423,6 +425,20 @@
    "fieldname": "is_partner_investment",
    "fieldtype": "Check",
    "label": "Is Partner Investment?"
+  },
+  {
+   "fetch_from": "proposer.client_name",
+   "fieldname": "proposer_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Proposer Name"
+  },
+  {
+   "fetch_from": "client.client_name",
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Client Name"
   }
  ],
  "grid_page_length": 50,
@@ -437,7 +453,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-10-06 17:19:47.370844",
+ "modified": "2025-11-03 18:36:23.014890",
  "modified_by": "Administrator",
  "module": "WMS Insurance",
  "name": "WMS Insurance Policy",
@@ -467,7 +483,7 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "insurance_type, provider, sum_assured",
+ "search_fields": "policy_number,entry_date,insurance_type, provider, sum_assured",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
@@ -493,7 +509,7 @@
    "title": "Renewed"
   }
  ],
- "title_field": "client",
+ "title_field": "client_name",
  "track_changes": 1,
  "track_seen": 1
 }
