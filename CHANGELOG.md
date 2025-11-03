@@ -1,3 +1,10 @@
+## [1.4.20](https://github.com/piyush-sawhney/wms/compare/v1.4.19...v1.4.20) (2025-11-03)
+
+
+### Bug Fixes
+
+* improving ui with user friendly search fields for fixed po mf folio and transaction ([76d43dc](https://github.com/piyush-sawhney/wms/commit/76d43dce2226a4dd10627e8528ba0bb9f80ccd76)), closes [#84](https://github.com/piyush-sawhney/wms/issues/84)
+
 ## [1.4.19](https://github.com/piyush-sawhney/wms/compare/v1.4.18...v1.4.19) (2025-11-03)
 
 
