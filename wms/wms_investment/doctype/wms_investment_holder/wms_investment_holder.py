@@ -14,9 +14,7 @@ class WMSInvestmentHolder(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		guardian: DF.Link | None
 		holder: DF.Link | None
-		holder_classification: DF.Data | None
 		parent: DF.Data
 		parentfield: DF.Data
 		parenttype: DF.Data
