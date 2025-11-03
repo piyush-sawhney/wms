@@ -1,3 +1,12 @@
+## [1.4.19](https://github.com/piyush-sawhney/wms/compare/v1.4.18...v1.4.19) (2025-11-03)
+
+
+### Bug Fixes
+
+* handling guardian in fixed investment ([3d9ea2f](https://github.com/piyush-sawhney/wms/commit/3d9ea2fc1a4405402b6eb3cbc169192fc422bcde)), closes [#86](https://github.com/piyush-sawhney/wms/issues/86)
+* handling guardian in mf folio ([b40b23f](https://github.com/piyush-sawhney/wms/commit/b40b23f119b34ab5a7bd6139ab5274a6ae887793)), closes [#86](https://github.com/piyush-sawhney/wms/issues/86)
+* handling guardian investment in po ([2d3da19](https://github.com/piyush-sawhney/wms/commit/2d3da19b443c0fd5ef52874f3ba0e67fb4ad224b)), closes [#86](https://github.com/piyush-sawhney/wms/issues/86)
+
 ## [1.4.18](https://github.com/piyush-sawhney/wms/compare/v1.4.17...v1.4.18) (2025-11-02)
 
 
