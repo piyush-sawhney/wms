@@ -161,7 +161,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Guardian",
-   "link_filters": "[[\"WMS Client\",\"type\",\"like\",\"%Individual%\"],[\"WMS Client\",\"classification\",\"not in\",[\"Minor\",\"Sole Proprietor\"]]]",
+   "link_filters": "[[\"WMS Client\",\"type\",\"=\",\"Individual\"],[\"WMS Client\",\"classification\",\"not in\",[\"Minor\",\"Sole Proprietor\"]]]",
    "mandatory_depends_on": "eval: doc.client_classification === \"Minor\"",
    "options": "WMS Client",
    "read_only_depends_on": "eval: doc.client_classification !== \"Minor\""
@@ -188,7 +188,7 @@
    "link_fieldname": "folio_number"
   }
  ],
- "modified": "2025-11-03 18:24:22.121226",
+ "modified": "2025-11-04 20:20:24.738078",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Folio",
