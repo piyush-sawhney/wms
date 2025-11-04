@@ -28,6 +28,7 @@ class WMSMFTransaction(Document):
 			"New Purchase", "Additional Purchase", "SIP", "Redemption", "Switch", "STP", "SWP"
 		]
 		scheme: DF.Link
+		scheme_name: DF.Data | None
 		scheme_out: DF.Link | None
 		status: DF.Literal[
 			"Entry Done",

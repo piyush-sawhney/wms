@@ -23,6 +23,7 @@ class WMSInsurancePolicy(Document):
 
 		chassis_number: DF.Data | None
 		client: DF.Link | None
+		client_name: DF.Data | None
 		currency: DF.Link | None
 		date_of_registration: DF.Date | None
 		desciption: DF.TextEditor | None
@@ -53,6 +54,7 @@ class WMSInsurancePolicy(Document):
 		premium: DF.Currency
 		premium_mode: DF.Literal["Monthly", "Quarterly", "Half Yearly", "Yearly", "Single"]
 		proposer: DF.Link
+		proposer_name: DF.Data | None
 		provider: DF.Link
 		quote_number: DF.Data | None
 		renewed_policy: DF.Link | None
@@ -149,6 +151,7 @@ class WMSInsurancePolicy(Document):
 	def validate_client(self):
 		if self.is_for_self:
 			self.client = self.proposer
+			self.client_name = frappe.db.get_value("WMS Client", self.client, "client_name")
 		else:
 			if not self.client:
 				frappe.throw("Person Assured is required when the policy is not for self.")

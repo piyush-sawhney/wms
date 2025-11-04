@@ -1,3 +1,28 @@
+## [1.5.1](https://github.com/piyush-sawhney/wms/compare/v1.5.0...v1.5.1) (2025-11-04)
+
+# [1.5.0](https://github.com/piyush-sawhney/wms/compare/v1.4.20...v1.5.0) (2025-11-04)
+
+
+### Features
+
+* frappe message for same pan with multiple clients ([e12bc04](https://github.com/piyush-sawhney/wms/commit/e12bc04ce28746adb70b23d9844e815384ef5c46)), closes [#88](https://github.com/piyush-sawhney/wms/issues/88)
+
+## [1.4.20](https://github.com/piyush-sawhney/wms/compare/v1.4.19...v1.4.20) (2025-11-03)
+
+
+### Bug Fixes
+
+* improving ui with user friendly search fields for fixed po mf folio and transaction ([76d43dc](https://github.com/piyush-sawhney/wms/commit/76d43dce2226a4dd10627e8528ba0bb9f80ccd76)), closes [#84](https://github.com/piyush-sawhney/wms/issues/84)
+
+## [1.4.19](https://github.com/piyush-sawhney/wms/compare/v1.4.18...v1.4.19) (2025-11-03)
+
+
+### Bug Fixes
+
+* handling guardian in fixed investment ([3d9ea2f](https://github.com/piyush-sawhney/wms/commit/3d9ea2fc1a4405402b6eb3cbc169192fc422bcde)), closes [#86](https://github.com/piyush-sawhney/wms/issues/86)
+* handling guardian in mf folio ([b40b23f](https://github.com/piyush-sawhney/wms/commit/b40b23f119b34ab5a7bd6139ab5274a6ae887793)), closes [#86](https://github.com/piyush-sawhney/wms/issues/86)
+* handling guardian investment in po ([2d3da19](https://github.com/piyush-sawhney/wms/commit/2d3da19b443c0fd5ef52874f3ba0e67fb4ad224b)), closes [#86](https://github.com/piyush-sawhney/wms/issues/86)
+
 ## [1.4.18](https://github.com/piyush-sawhney/wms/compare/v1.4.17...v1.4.18) (2025-11-02)
 
 

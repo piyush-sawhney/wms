@@ -3,14 +3,16 @@
 
 import random
 import string
+
 import frappe
-from frappe.model.document import Document
-from frappe.model.naming import make_autoname
+from frappe import _
 from frappe.contacts.address_and_contact import (
 	delete_contact_and_address,
 	load_address_and_contact,
 )
-from frappe import _
+from frappe.model.document import Document
+from frappe.model.naming import make_autoname
+
 from wms.utils import calculate_age
 
 
@@ -24,6 +26,7 @@ class WMSClient(Document):
 		from frappe.contacts.doctype.contact_email.contact_email import ContactEmail
 		from frappe.contacts.doctype.contact_phone.contact_phone import ContactPhone
 		from frappe.types import DF
+
 		from wms.wms_core.doctype.wms_client_codes.wms_client_codes import WMSClientCodes
 		from wms.wms_core.doctype.wms_ubo.wms_ubo import WMSUBO
 
@@ -43,6 +46,7 @@ class WMSClient(Document):
 		type: DF.Data | None
 		ubos: DF.Table[WMSUBO]
 		uuid: DF.Data | None
+
 	# end: auto-generated types
 	def onload(self):
 		load_address_and_contact(self)
@@ -50,14 +54,24 @@ class WMSClient(Document):
 	def on_trash(self):
 		delete_contact_and_address("WMS Client", self.name)
 
-
 	def autoname(self):
-		random_letters = ''.join(random.choices(string.ascii_uppercase, k=4))
+		random_letters = "".join(random.choices(string.ascii_uppercase, k=4))
 		self.name = make_autoname(f"CL{random_letters}.###")
-	
-				
+
 	def before_save(self):
 		self.update_classification_for_individuals()
+
+	def validate_multiple_pans(self):
+		if self.pan:
+			list_of_client_with_pan = frappe.db.get_list(
+				"WMS Client", filters={"name": ["!=", self.name], "pan": self.pan}, pluck="client_name"
+			)
+			if list_of_client_with_pan:
+				frappe.msgprint(
+					msg=list_of_client_with_pan,
+					title="Clients with same PAN that exists in the system.",
+					as_list=True,
+				)
 
 	def validate(self):
 		self.validate_client_name()
@@ -70,7 +84,9 @@ class WMSClient(Document):
 
 	def validate_primary_email(self):
 		"""Keep primary_email field in sync with child table."""
-		is_primary_email_set = True if bool(frappe.get_value(self.doctype, self.name, "primary_email")) else False
+		is_primary_email_set = (
+			True if bool(frappe.get_value(self.doctype, self.name, "primary_email")) else False
+		)
 		if not self.email_addresses:
 			if is_primary_email_set:
 				# Case when deleting all the child table rows
@@ -78,58 +94,63 @@ class WMSClient(Document):
 				self.flags.is_primary_email_set = False
 				return
 			if not is_primary_email_set and self.primary_email:
-				self.append("email_addresses", {
-					"email_id": self.primary_email,
-					"is_primary": 1,
-				})
+				self.append(
+					"email_addresses",
+					{
+						"email_id": self.primary_email,
+						"is_primary": 1,
+					},
+				)
 				self.flags.is_primary_email_set = True
 				return
 		else:
 			primary_rows = [e for e in self.email_addresses if e.is_primary]
 
-			if  len(primary_rows) != 1:
-				frappe.throw(_("There must be exactly {0} primary email in the table.".format(frappe.bold(_("One")))))
+			if len(primary_rows) != 1:
+				frappe.throw(
+					_("There must be exactly {} primary email in the table.".format(frappe.bold(_("One"))))
+				)
 
 			# Sync field from table primary
 			table_primary = (primary_rows[0].email_id or "").strip()
 			if table_primary != (self.primary_email or "").strip():
 				self.primary_email = table_primary
-	
+
 	def validate_primary_mobile(self):
 		"""Keep primary_email field in sync with child table."""
-		is_primary_mobile_set = True if bool(frappe.get_value(self.doctype, self.name, "primary_mobile")) else False
+		is_primary_mobile_set = (
+			True if bool(frappe.get_value(self.doctype, self.name, "primary_mobile")) else False
+		)
 		if not self.numbers:
 			if is_primary_mobile_set:
 				# Case when deleting all the child table rows
 				self.primary_mobile = None
 				return
 			if not is_primary_mobile_set and self.primary_mobile:
-				self.append("numbers", {
-					"phone": self.primary_mobile,
-					"is_primary_mobile_no": 1
-				})
+				self.append("numbers", {"phone": self.primary_mobile, "is_primary_mobile_no": 1})
 				return
 		else:
 			primary_rows = [e for e in self.numbers if e.is_primary_mobile_no]
 
-			if  len(primary_rows) != 1:
-				frappe.throw(_("There must be exactly {0} primary mobile in the table.".format(frappe.bold(_("One")))))
+			if len(primary_rows) != 1:
+				frappe.throw(
+					_("There must be exactly {} primary mobile in the table.".format(frappe.bold(_("One"))))
+				)
 
 			# Sync field from table primary
 			table_primary = (primary_rows[0].phone or "").strip()
 			if table_primary != (self.primary_mobile or "").strip():
 				self.primary_mobile = table_primary
-	
-	
+
 	def validate_sole_proprietor(self):
 		if self.type == "Individual" and self.classification == "Sole Proprietor":
 			if not self.proprietor:
 				frappe.throw("Proprietor Details are mandatory for Sole Proprietorship.")
-	
-	
+
 	def validate_pan_type_combination(self):
 		if not self.type or not self.pan:
 			return
+		self.validate_multiple_pans()
 		type_to_pan_code = {
 			"Individual": "P",
 			"Body of Individuals (BOI)": "B",

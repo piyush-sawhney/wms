@@ -21,6 +21,7 @@
   "rejected_reason",
   "section_break_ckes",
   "scheme",
+  "scheme_name",
   "scheme_out",
   "column_break_droz",
   "amount",
@@ -176,6 +177,13 @@
    "label": "Rejected Reason",
    "mandatory_depends_on": "eval: doc.status == \"Rejected\"",
    "read_only_depends_on": "eval: doc.status !== \"Rejected\""
+  },
+  {
+   "fetch_from": "scheme.scheme_name",
+   "fieldname": "scheme_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Scheme Name"
   }
  ],
  "grid_page_length": 50,
@@ -187,7 +195,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-11-02 14:44:10.996181",
+ "modified": "2025-11-03 18:19:09.326657",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Transaction",
@@ -218,7 +226,7 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "request_type, scheme",
+ "search_fields": "entry_date,client_name, request_type, scheme_name",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

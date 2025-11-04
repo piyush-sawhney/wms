@@ -149,7 +149,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-07 12:28:39.358844",
+ "modified": "2025-11-03 18:43:21.313268",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Scheme",
@@ -190,7 +190,7 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "plan, option, sub_option",
+ "search_fields": "plan, option, sub_option, amc",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

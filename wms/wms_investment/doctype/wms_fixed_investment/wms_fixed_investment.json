@@ -7,10 +7,12 @@
  "engine": "InnoDB",
  "field_order": [
   "client",
+  "guardian",
   "client_name",
   "holding_type",
   "account_number",
   "ledger_number",
+  "client_classification",
   "column_break_uehu",
   "entry_date",
   "through_us",
@@ -170,18 +172,18 @@
    "read_only": 1
   },
   {
-   "depends_on": "eval:doc.holding_type != null && doc.holding_type != \"Single\"",
+   "depends_on": "eval:doc.holding_type != null && doc.holding_type != \"Single\" && doc.client_classification !== \"Minor\"; ",
    "fieldname": "holders_tab",
    "fieldtype": "Tab Break",
    "label": "Holders"
   },
   {
-   "depends_on": "eval:doc.holding_type != \"Single\"",
+   "depends_on": "eval:doc.holding_type != \"Single\" && doc.client_classification !== \"Minor\"; ",
    "fieldname": "holders",
    "fieldtype": "Table",
    "in_standard_filter": 1,
    "label": "Holders",
-   "mandatory_depends_on": "eval:doc.holding_type != \"Single\" && doc.through_us == 1 && doc.is_existing_investment != 1;",
+   "mandatory_depends_on": "eval:doc.holding_type != \"Single\" && doc.through_us == 1 && doc.is_existing_investment != 1 && doc.client_classification === \"Minor\";",
    "options": "WMS Investment Holder"
   },
   {
@@ -285,6 +287,24 @@
    "label": "Rejected Reason",
    "mandatory_depends_on": "eval: doc.status == \"Rejected\"",
    "read_only_depends_on": "eval: doc.status !== \"Rejected\""
+  },
+  {
+   "fieldname": "guardian",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Guardian",
+   "link_filters": "[[\"WMS Client\",\"type\",\"=\",\"Individual\"],[\"WMS Client\",\"classification\",\"not in\",[\"Sole Proprietor\",\"Minor\"]]]",
+   "mandatory_depends_on": "eval: doc.client_classification === \"Minor\"",
+   "options": "WMS Client",
+   "read_only_depends_on": "eval: doc.client_classification != \"Minor\""
+  },
+  {
+   "fetch_from": "client.classification",
+   "fieldname": "client_classification",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Client Classification"
   }
  ],
  "grid_page_length": 50,
@@ -301,7 +321,7 @@
    "link_fieldname": "service_item"
   }
  ],
- "modified": "2025-11-02 14:40:35.904394",
+ "modified": "2025-11-03 18:25:34.796971",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS Fixed Investment",
@@ -331,7 +351,7 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "provider,investment_type",
+ "search_fields": "account_number,entry_date, provider, investment_type, holding_type,amount",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
