@@ -1,3 +1,12 @@
+## [1.5.4](https://github.com/piyush-sawhney/wms/compare/v1.5.3...v1.5.4) (2025-11-04)
+
+
+### Bug Fixes
+
+* ui issues with guardian investment when initaited from the client dashboard ([b1dbb58](https://github.com/piyush-sawhney/wms/commit/b1dbb58c171e0871139570eaa5dd1820d4d99b3d))
+
+## [1.5.3](https://github.com/piyush-sawhney/wms/compare/v1.5.2...v1.5.3) (2025-11-04)
+
 ## [1.5.2](https://github.com/piyush-sawhney/wms/compare/v1.5.1...v1.5.2) (2025-11-04)
 
 

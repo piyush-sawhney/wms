@@ -43,6 +43,10 @@ class WMSMFFolio(Document):
 		if self.folio_number:
 			self.name = self.folio_number
 
+	def before_save(self):
+		if self.client_classification != "Minor":
+			self.guardian = None
+
 	def validate(self):
 		self.validate_holders()
 		self.validate_nominee()
