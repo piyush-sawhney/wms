@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/piyush-sawhney/wms/compare/v1.5.1...v1.5.2) (2025-11-04)
+
+
+### Bug Fixes
+
+* add patch for scheme name in mf transaction ([e511e51](https://github.com/piyush-sawhney/wms/commit/e511e51d02ea747df513d7f10af9674ba711dcfb)), closes [#75](https://github.com/piyush-sawhney/wms/issues/75)
+
 ## [1.5.1](https://github.com/piyush-sawhney/wms/compare/v1.5.0...v1.5.1) (2025-11-04)
 
 # [1.5.0](https://github.com/piyush-sawhney/wms/compare/v1.4.20...v1.5.0) (2025-11-04)
