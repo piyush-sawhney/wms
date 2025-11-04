@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/piyush-sawhney/wms/compare/v1.4.20...v1.5.0) (2025-11-04)
+
+
+### Features
+
+* frappe message for same pan with multiple clients ([e12bc04](https://github.com/piyush-sawhney/wms/commit/e12bc04ce28746adb70b23d9844e815384ef5c46)), closes [#88](https://github.com/piyush-sawhney/wms/issues/88)
+
 ## [1.4.20](https://github.com/piyush-sawhney/wms/compare/v1.4.19...v1.4.20) (2025-11-03)
 
 
