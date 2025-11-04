@@ -8,3 +8,4 @@ wms.patches.mf_folio_refetch_client_name
 wms.patches.mf_transation_refetch_client_name
 wms.patches.fixed_investment_refetch_client_name
 wms.patches.po_investment_refetch_client_name
+wms.patches.wms_insurance_refetch_name
