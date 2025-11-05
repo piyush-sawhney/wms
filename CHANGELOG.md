@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/piyush-sawhney/wms/compare/v1.5.4...v1.6.0) (2025-11-05)
+
+
+### Features
+
+* add extension to po investments ([1510b9d](https://github.com/piyush-sawhney/wms/commit/1510b9d14940c899220a135e7c2203cca4c4e683)), closes [#94](https://github.com/piyush-sawhney/wms/issues/94)
+
 ## [1.5.4](https://github.com/piyush-sawhney/wms/compare/v1.5.3...v1.5.4) (2025-11-04)
 
 
