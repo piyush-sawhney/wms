@@ -1,3 +1,10 @@
+## [1.6.6](https://github.com/piyush-sawhney/wms/compare/v1.6.5...v1.6.6) (2025-11-06)
+
+
+### Bug Fixes
+
+* fixing empty passbook and fd status issue in migration ([97c4e16](https://github.com/piyush-sawhney/wms/commit/97c4e163f20d7f7ad4e9cb1cdabadab406973028)), closes [#108](https://github.com/piyush-sawhney/wms/issues/108)
+
 ## [1.6.5](https://github.com/piyush-sawhney/wms/compare/v1.6.4...v1.6.5) (2025-11-06)
 
 ## [1.6.4](https://github.com/piyush-sawhney/wms/compare/v1.6.3...v1.6.4) (2025-11-06)
