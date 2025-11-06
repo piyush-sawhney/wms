@@ -30,7 +30,7 @@ class WMSFixedInvestment(Document):
 		client_name: DF.Data | None
 		currency: DF.Link | None
 		entry_date: DF.Date
-		fd_status: DF.Literal["", "With Us", "With Client", "With Company"]
+		fd_status: DF.Literal["Not Created", "With Us", "With Client", "With Company"]
 		guardian: DF.Link | None
 		holders: DF.Table[WMSInvestmentHolder]
 		holding_type: DF.Link
@@ -126,9 +126,6 @@ class WMSFixedInvestment(Document):
 
 	def validate_dates(self):
 		now_date = nowdate()
-		print("here")
-		print(type(now_date))
-		print(type(self.entry_date))
 		if self.entry_date and str(self.entry_date) > now_date:
 			frappe.throw(_("Entry Date cannot be in the future."))
 

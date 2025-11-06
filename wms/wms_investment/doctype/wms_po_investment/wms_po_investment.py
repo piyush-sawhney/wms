@@ -40,7 +40,7 @@ class WMSPOInvestment(Document):
 		maturity_date: DF.Date | None
 		nominees: DF.Table[WMSNominee]
 		partner_name: DF.Data | None
-		passbook_status: DF.Literal["", "With Us", "With Client", "With PO"]
+		passbook_status: DF.Literal["Not Created", "With Us", "With Client", "With PO"]
 		period: DF.Int
 		rejected_reason: DF.Data | None
 		renewed_investment: DF.DynamicLink | None
