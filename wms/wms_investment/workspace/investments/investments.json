@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Investments",
  "links": [],
- "modified": "2025-11-02 14:52:10.442255",
+ "modified": "2025-11-06 13:43:14.420806",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "Investments",
@@ -47,9 +47,27 @@
    "color": "Blue",
    "doc_view": "List",
    "format": "{}",
+   "label": "PO Passbook with us",
+   "link_to": "WMS PO Investment",
+   "stats_filter": "[[\"WMS PO Investment\",\"passbook_status\",\"=\",\"With Us\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "format": "{}",
    "label": "FD with us",
    "link_to": "WMS Fixed Investment",
    "stats_filter": "[[\"WMS Fixed Investment\",\"status\",\"=\",\"FD with Us\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Pink",
+   "doc_view": "List",
+   "format": "{} ",
+   "label": "PO Pending Creation",
+   "link_to": "WMS PO Investment",
+   "stats_filter": "[[\"WMS PO Investment\",\"status\",\"=\",\"Submitted\",false]]",
    "type": "DocType"
   },
   {
@@ -67,6 +85,15 @@
    "label": "Create MF Investment",
    "link_to": "WMS MF Transaction",
    "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "{} in last 90 days",
+   "label": "PO New Investments Created",
+   "link_to": "WMS PO Investment",
+   "stats_filter": "[[\"WMS PO Investment\",\"status\",\"=\",\"Active\",false],[\"WMS PO Investment\",\"start_date\",\"Timespan\",\"last 90 days\",false]]",
    "type": "DocType"
   },
   {
@@ -139,15 +166,6 @@
    "type": "DocType"
   },
   {
-   "color": "Green",
-   "doc_view": "List",
-   "format": "{} in last 90 days",
-   "label": "PO New Investments Created",
-   "link_to": "WMS PO Investment",
-   "stats_filter": "[[\"WMS PO Investment\",\"status\",\"in\",[\"Passbook Sent to Customer\",null],false],[\"WMS PO Investment\",\"start_date\",\"Timespan\",\"last 90 days\",false]]",
-   "type": "DocType"
-  },
-  {
    "color": "Grey",
    "doc_view": "List",
    "label": "PO Investment List",
@@ -180,24 +198,6 @@
    "label": "PO Pending Submission",
    "link_to": "WMS PO Investment",
    "stats_filter": "[[\"WMS PO Investment\",\"status\",\"in\",[\"Entry Done\"],false]]",
-   "type": "DocType"
-  },
-  {
-   "color": "Blue",
-   "doc_view": "List",
-   "format": "{}",
-   "label": "PO Passbook with us",
-   "link_to": "WMS PO Investment",
-   "stats_filter": "[[\"WMS PO Investment\",\"status\",\"=\",\"Passbook Received\",false]]",
-   "type": "DocType"
-  },
-  {
-   "color": "Pink",
-   "doc_view": "List",
-   "format": "{} ",
-   "label": "PO Pending Creation",
-   "link_to": "WMS PO Investment",
-   "stats_filter": "[[\"WMS PO Investment\",\"status\",\"=\",\"Submitted to PO\",false]]",
    "type": "DocType"
   }
  ],
