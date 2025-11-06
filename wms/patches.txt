@@ -10,3 +10,4 @@ wms.patches.fixed_investment_refetch_client_name
 wms.patches.po_investment_refetch_client_name
 wms.patches.wms_insurance_refetch_name
 wms.patches.wms_transaction_fetch_scheme_name
+wms.patches.po_investment_status_migration

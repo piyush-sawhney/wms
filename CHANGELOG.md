@@ -1,3 +1,25 @@
+## [1.6.5](https://github.com/piyush-sawhney/wms/compare/v1.6.4...v1.6.5) (2025-11-06)
+
+## [1.6.4](https://github.com/piyush-sawhney/wms/compare/v1.6.3...v1.6.4) (2025-11-06)
+
+## [1.6.3](https://github.com/piyush-sawhney/wms/compare/v1.6.2...v1.6.3) (2025-11-06)
+
+## [1.6.2](https://github.com/piyush-sawhney/wms/compare/v1.6.1...v1.6.2) (2025-11-06)
+
+## [1.6.1](https://github.com/piyush-sawhney/wms/compare/v1.6.0...v1.6.1) (2025-11-06)
+
+
+### Bug Fixes
+
+* po extension logic and removal of renewed investment ([6f9a5c9](https://github.com/piyush-sawhney/wms/commit/6f9a5c92c2d500b0ab573e054048ffeddd95cb78)), closes [#103](https://github.com/piyush-sawhney/wms/issues/103)
+
+# [1.6.0](https://github.com/piyush-sawhney/wms/compare/v1.5.4...v1.6.0) (2025-11-05)
+
+
+### Features
+
+* add extension to po investments ([1510b9d](https://github.com/piyush-sawhney/wms/commit/1510b9d14940c899220a135e7c2203cca4c4e683)), closes [#94](https://github.com/piyush-sawhney/wms/issues/94)
+
 ## [1.5.4](https://github.com/piyush-sawhney/wms/compare/v1.5.3...v1.5.4) (2025-11-04)
 
 

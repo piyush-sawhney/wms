@@ -21,6 +21,7 @@ class WMSPOInvestment(Document):
 
 		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
 		from wms.wms_investment.doctype.wms_investment_holder.wms_investment_holder import WMSInvestmentHolder
+		from wms.wms_investment.doctype.wms_po_extension.wms_po_extension import WMSPOExtension
 
 		account_number: DF.Data | None
 		amount: DF.Currency
@@ -29,15 +30,17 @@ class WMSPOInvestment(Document):
 		client_name: DF.Data | None
 		currency: DF.Link | None
 		entry_date: DF.Date
+		extend_investment: DF.Check
+		extensions: DF.Table[WMSPOExtension]
 		guardian: DF.Link | None
 		holders: DF.Table[WMSInvestmentHolder]
 		holding_type: DF.Link
-		is_active: DF.Check
 		is_existing_investment: DF.Check
 		is_partner_investment: DF.Check
 		maturity_date: DF.Date | None
 		nominees: DF.Table[WMSNominee]
 		partner_name: DF.Data | None
+		passbook_status: DF.Literal["", "With Us", "With Client", "With PO"]
 		period: DF.Int
 		rejected_reason: DF.Data | None
 		renewed_investment: DF.DynamicLink | None
@@ -48,9 +51,8 @@ class WMSPOInvestment(Document):
 		start_date: DF.Date | None
 		status: DF.Literal[
 			"Entry Done",
-			"Submitted to PO",
-			"Passbook Received",
-			"Passbook Sent to Customer",
+			"Submitted",
+			"Active",
 			"Renewed",
 			"Matured",
 			"Pre-Matured",
@@ -69,8 +71,12 @@ class WMSPOInvestment(Document):
 		self.validate_holders()
 		self.validate_nominee()
 		self.validate_dates()
-		self.validate_is_active()
 		self.validate_minor_investment()
+		self.validate_rejected_investment()
+
+	def validate_rejected_investment(self):
+		if self.status != "Rejected" and self.rejected_reason:
+			self.rejected_reason = None
 
 	def validate_minor_investment(self):
 		if self.client_classification == "Minor":
@@ -78,10 +84,6 @@ class WMSPOInvestment(Document):
 				frappe.throw(_("Guardian cannot be the client."))
 			if self.holding_type != "Single":
 				frappe.throw(_("Holding Type must be 'Single' for Minor clients."))
-
-	def validate_is_active(self):
-		if self.status in ["Renewed", "Matured", "Pre-Matured", "Transmitted"]:
-			self.is_active = 0
 
 	def validate_nominee(self):
 		if self.nominees and len(self.nominees) > 0:
@@ -124,13 +126,21 @@ class WMSPOInvestment(Document):
 
 	def validate_dates(self):
 		now_date = nowdate()
-
 		if self.entry_date and str(self.entry_date) > now_date:
 			frappe.throw(_("Entry Date cannot be in the future."))
-
 		if self.start_date:
 			if str(self.start_date) > now_date:
 				frappe.throw(_("Start Date cannot be in the future."))
-			self.maturity_date = add_months(self.start_date, self.period)
+			if self.extend_investment and len(self.extensions) > 0:
+				latest = sorted(self.extensions, key=lambda x: x.extension_date, reverse=True)[0]
+				if len(self.extensions) > 1:
+					previous = sorted(self.extensions, key=lambda x: x.extension_date, reverse=True)[1]
+					if str(latest.extension_date) < str(previous.extension_date):
+						frappe.throw(_("Latest Extension Date cannot be before previous Extension Date"))
+				elif str(latest.extension_date) < str(add_months(self.start_date, self.period)):
+					frappe.throw(_("Extension Date cannot be before Maturity Date"))
+				self.maturity_date = add_months(latest.extension_date, latest.extension_period)
+			else:
+				self.maturity_date = add_months(self.start_date, self.period)
 		else:
 			self.maturity_date = None

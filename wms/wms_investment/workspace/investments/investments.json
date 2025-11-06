@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"rbT6BTS1P9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Investments</b></span>\",\"col\":12}},{\"id\":\"5j-KHyYOxB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create PO Investment\",\"col\":4}},{\"id\":\"fP48zs-sDk\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"Wii7c79Kl2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"PO Investment List\",\"col\":4}},{\"id\":\"8-svSc0z_z\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create MF Investment\",\"col\":4}},{\"id\":\"5T1xGXh83R\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"Q4mmHYYRSh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MF Folio List\",\"col\":4}},{\"id\":\"Ni1RTMBme5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create FD/BOND/NCD\",\"col\":4}},{\"id\":\"LEGZt8dmUu\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"xU6VeEPPMI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Fixed Investment List\",\"col\":4}},{\"id\":\"Ha9cc3Kaiv\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"l73kLrp1rT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Post Office Investments</b></span>\",\"col\":12}},{\"id\":\"7amvkNQ_oY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"PO Pending Submission\",\"col\":4}},{\"id\":\"_1xO55rOOk\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"4aGUZX9FPk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"PO Passbook with us\",\"col\":4}},{\"id\":\"9TddsLp4nv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"PO Pending Creation\",\"col\":4}},{\"id\":\"3Vzj4Q5OS4\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"hA9bnDVude\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"PO New Investments Created\",\"col\":4}},{\"id\":\"iWOKayQ70I\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rejected Investments\",\"col\":4}},{\"id\":\"kFd1SBpfwf\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"nr0WKD_BvO\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Fixed Investments</b></span>\",\"col\":12}},{\"id\":\"9lUfXeWO09\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending Submission\",\"col\":4}},{\"id\":\"BvYQrWoY67\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"orUopfVPzX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Investment Created\",\"col\":4}},{\"id\":\"l0Ur69L8kL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending Creation\",\"col\":4}},{\"id\":\"OzUzOD665e\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"hu440pJW0F\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"FD with us\",\"col\":4}},{\"id\":\"iwbYAT_DBh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rejected Investments\",\"col\":4}},{\"id\":\"nZIeRSUJ2T\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"72cZQ4o2rz\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>MF Investments</b></span>\",\"col\":12}},{\"id\":\"lH1ohXgVly\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MF Pending Submission\",\"col\":4}},{\"id\":\"If2Yl5_S-V\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"L9RBarKUNr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending Folio Creation\",\"col\":4}},{\"id\":\"RV2Dsgffaj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MF Dependency\",\"col\":4}},{\"id\":\"2NxbeBbQAi\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"s-PNaEYlo8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MF Pending Transaction\",\"col\":4}},{\"id\":\"RKADvaZQ8Q\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rejected Transactions\",\"col\":4}}]",
+ "content": "[{\"id\":\"rbT6BTS1P9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Investments</b></span>\",\"col\":12}},{\"id\":\"5j-KHyYOxB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create PO Investment\",\"col\":4}},{\"id\":\"fP48zs-sDk\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"Wii7c79Kl2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"PO Investment List\",\"col\":4}},{\"id\":\"8-svSc0z_z\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create MF Investment\",\"col\":4}},{\"id\":\"5T1xGXh83R\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"Q4mmHYYRSh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MF Folio List\",\"col\":4}},{\"id\":\"Ni1RTMBme5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create FD/BOND/NCD\",\"col\":4}},{\"id\":\"LEGZt8dmUu\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"xU6VeEPPMI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Fixed Investment List\",\"col\":4}},{\"id\":\"Ha9cc3Kaiv\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"l73kLrp1rT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Post Office Investments</b></span>\",\"col\":12}},{\"id\":\"7amvkNQ_oY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"PO Pending Submission\",\"col\":4}},{\"id\":\"_1xO55rOOk\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"9TddsLp4nv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"PO Pending Creation\",\"col\":4}},{\"id\":\"hA9bnDVude\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"PO New Investments Created\",\"col\":4}},{\"id\":\"3Vzj4Q5OS4\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"iWOKayQ70I\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rejected Investments\",\"col\":4}},{\"id\":\"4aGUZX9FPk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"PO Passbook With Us\",\"col\":4}},{\"id\":\"PoSfrmhcL-\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"48ZHUWEsf8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Passbook With PO\",\"col\":4}},{\"id\":\"kFd1SBpfwf\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"nr0WKD_BvO\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Fixed Investments</b></span>\",\"col\":12}},{\"id\":\"9lUfXeWO09\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending Submission\",\"col\":4}},{\"id\":\"BvYQrWoY67\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"orUopfVPzX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Investment Created\",\"col\":4}},{\"id\":\"l0Ur69L8kL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending Creation\",\"col\":4}},{\"id\":\"OzUzOD665e\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"hu440pJW0F\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"FD With Us\",\"col\":4}},{\"id\":\"iwbYAT_DBh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rejected Investments\",\"col\":4}},{\"id\":\"0FmS4rMhfG\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"-e57GJhRXh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"FD With Company\",\"col\":4}},{\"id\":\"nZIeRSUJ2T\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"72cZQ4o2rz\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>MF Investments</b></span>\",\"col\":12}},{\"id\":\"lH1ohXgVly\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MF Pending Submission\",\"col\":4}},{\"id\":\"If2Yl5_S-V\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"L9RBarKUNr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending Folio Creation\",\"col\":4}},{\"id\":\"RV2Dsgffaj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MF Dependency\",\"col\":4}},{\"id\":\"2NxbeBbQAi\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"s-PNaEYlo8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MF Pending Transaction\",\"col\":4}},{\"id\":\"RKADvaZQ8Q\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rejected Transactions\",\"col\":4}}]",
  "creation": "2025-08-05 13:14:36.916267",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Investments",
  "links": [],
- "modified": "2025-11-02 14:52:10.442255",
+ "modified": "2025-11-06 14:03:29.719264",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "Investments",
@@ -25,6 +25,15 @@
  "roles": [],
  "sequence_id": 7.0,
  "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "format": "{}",
+   "label": "PO Passbook With Us",
+   "link_to": "WMS PO Investment",
+   "stats_filter": "[[\"WMS PO Investment\",\"passbook_status\",\"=\",\"With Us\",false]]",
+   "type": "DocType"
+  },
   {
    "color": "Red",
    "doc_view": "List",
@@ -44,12 +53,30 @@
    "type": "DocType"
   },
   {
-   "color": "Blue",
+   "color": "Yellow",
    "doc_view": "List",
    "format": "{}",
-   "label": "FD with us",
+   "label": "Passbook With PO",
+   "link_to": "WMS PO Investment",
+   "stats_filter": "[[\"WMS PO Investment\",\"passbook_status\",\"=\",\"With PO\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Pink",
+   "doc_view": "List",
+   "format": "{} ",
+   "label": "PO Pending Creation",
+   "link_to": "WMS PO Investment",
+   "stats_filter": "[[\"WMS PO Investment\",\"status\",\"=\",\"Submitted\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "{} in last 90 Days",
+   "label": "Investment Created",
    "link_to": "WMS Fixed Investment",
-   "stats_filter": "[[\"WMS Fixed Investment\",\"status\",\"=\",\"FD with Us\",false]]",
+   "stats_filter": "[[\"WMS Fixed Investment\",\"status\",\"=\",\"Active\",false],[\"WMS Fixed Investment\",\"start_date\",\"Timespan\",\"last 90 days\",false]]",
    "type": "DocType"
   },
   {
@@ -70,6 +97,24 @@
    "type": "DocType"
   },
   {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "{} in last 90 days",
+   "label": "PO New Investments Created",
+   "link_to": "WMS PO Investment",
+   "stats_filter": "[[\"WMS PO Investment\",\"status\",\"=\",\"Active\",false],[\"WMS PO Investment\",\"start_date\",\"Timespan\",\"last 90 days\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Pink",
+   "doc_view": "List",
+   "format": "{}",
+   "label": "Pending Creation",
+   "link_to": "WMS Fixed Investment",
+   "stats_filter": "[[\"WMS Fixed Investment\",\"status\",\"=\",\"Submitted\",false]]",
+   "type": "DocType"
+  },
+  {
    "color": "Pink",
    "doc_view": "List",
    "format": "{}",
@@ -79,12 +124,30 @@
    "type": "DocType"
   },
   {
+   "color": "Blue",
+   "doc_view": "List",
+   "format": "{}",
+   "label": "FD With Us",
+   "link_to": "WMS Fixed Investment",
+   "stats_filter": "[[\"WMS Fixed Investment\",\"fd_status\",\"=\",\"With Us\",false]]",
+   "type": "DocType"
+  },
+  {
    "color": "Orange",
    "doc_view": "List",
    "format": "{}",
    "label": "Pending Folio Creation",
    "link_to": "WMS MF Folio",
    "stats_filter": "[[\"WMS MF Folio\",\"folio_created\",\"=\",0,false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Yellow",
+   "doc_view": "List",
+   "format": "{}",
+   "label": "FD With Company",
+   "link_to": "WMS Fixed Investment",
+   "stats_filter": "[[\"WMS Fixed Investment\",\"fd_status\",\"=\",\"With Company\",false]]",
    "type": "DocType"
   },
   {
@@ -139,38 +202,11 @@
    "type": "DocType"
   },
   {
-   "color": "Green",
-   "doc_view": "List",
-   "format": "{} in last 90 days",
-   "label": "PO New Investments Created",
-   "link_to": "WMS PO Investment",
-   "stats_filter": "[[\"WMS PO Investment\",\"status\",\"in\",[\"Passbook Sent to Customer\",null],false],[\"WMS PO Investment\",\"start_date\",\"Timespan\",\"last 90 days\",false]]",
-   "type": "DocType"
-  },
-  {
    "color": "Grey",
    "doc_view": "List",
    "label": "PO Investment List",
    "link_to": "WMS PO Investment",
    "stats_filter": "[[\"WMS PO Investment\",\"status\",\"!=\",null,false]]",
-   "type": "DocType"
-  },
-  {
-   "color": "Green",
-   "doc_view": "List",
-   "format": "{} in last 90 Days",
-   "label": "Investment Created",
-   "link_to": "WMS Fixed Investment",
-   "stats_filter": "[[\"WMS Fixed Investment\",\"status\",\"=\",\"Investment Created\",false],[\"WMS Fixed Investment\",\"start_date\",\"Timespan\",\"last 90 days\",false]]",
-   "type": "DocType"
-  },
-  {
-   "color": "Pink",
-   "doc_view": "List",
-   "format": "{}",
-   "label": "Pending Creation",
-   "link_to": "WMS Fixed Investment",
-   "stats_filter": "[[\"WMS Fixed Investment\",\"status\",\"=\",\"Submitted\",false]]",
    "type": "DocType"
   },
   {
@@ -180,24 +216,6 @@
    "label": "PO Pending Submission",
    "link_to": "WMS PO Investment",
    "stats_filter": "[[\"WMS PO Investment\",\"status\",\"in\",[\"Entry Done\"],false]]",
-   "type": "DocType"
-  },
-  {
-   "color": "Blue",
-   "doc_view": "List",
-   "format": "{}",
-   "label": "PO Passbook with us",
-   "link_to": "WMS PO Investment",
-   "stats_filter": "[[\"WMS PO Investment\",\"status\",\"=\",\"Passbook Received\",false]]",
-   "type": "DocType"
-  },
-  {
-   "color": "Pink",
-   "doc_view": "List",
-   "format": "{} ",
-   "label": "PO Pending Creation",
-   "link_to": "WMS PO Investment",
-   "stats_filter": "[[\"WMS PO Investment\",\"status\",\"=\",\"Submitted to PO\",false]]",
    "type": "DocType"
   }
  ],
