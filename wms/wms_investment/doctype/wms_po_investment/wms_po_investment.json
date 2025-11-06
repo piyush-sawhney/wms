@@ -305,12 +305,13 @@
    "read_only_depends_on": "eval: doc.status != \"Active\";"
   },
   {
+   "default": "Not Created",
    "fieldname": "passbook_status",
    "fieldtype": "Select",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Passbook Status",
-   "options": "\nWith Us\nWith Client\nWith PO",
+   "options": "Not Created\nWith Us\nWith Client\nWith PO",
    "reqd": 1
   },
   {
@@ -337,7 +338,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-11-06 12:52:04.220218",
+ "modified": "2025-11-06 14:27:32.682975",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",
