@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/piyush-sawhney/wms/compare/v1.6.0...v1.6.1) (2025-11-06)
+
+
+### Bug Fixes
+
+* po extension logic and removal of renewed investment ([6f9a5c9](https://github.com/piyush-sawhney/wms/commit/6f9a5c92c2d500b0ab573e054048ffeddd95cb78)), closes [#103](https://github.com/piyush-sawhney/wms/issues/103)
+
 # [1.6.0](https://github.com/piyush-sawhney/wms/compare/v1.5.4...v1.6.0) (2025-11-05)
 
 
