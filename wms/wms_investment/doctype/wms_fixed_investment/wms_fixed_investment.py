@@ -30,12 +30,12 @@ class WMSFixedInvestment(Document):
 		client_name: DF.Data | None
 		currency: DF.Link | None
 		entry_date: DF.Date
+		fd_status: DF.Literal["", "With Us", "With Client", "With Company"]
 		guardian: DF.Link | None
 		holders: DF.Table[WMSInvestmentHolder]
 		holding_type: DF.Link
 		investment_mode: DF.Literal["Cumulative", "Monthly", "Quarterly", "Half Yearly", "Yearly"]
 		investment_type: DF.Literal["FD", "BOND", "NCD"]
-		is_active: DF.Check
 		is_existing_investment: DF.Check
 		ledger_number: DF.Data | None
 		maturity_date: DF.Date | None
@@ -50,12 +50,11 @@ class WMSFixedInvestment(Document):
 		status: DF.Literal[
 			"Entry Done",
 			"Submitted",
-			"Investment Created",
+			"Active",
 			"Renewed",
 			"Matured",
 			"Pre-Matured",
 			"Transmitted",
-			"FD with Us",
 			"Rejected",
 		]
 		sub_broker_code: DF.Data | None

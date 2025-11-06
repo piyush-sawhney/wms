@@ -65,7 +65,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Account Number",
-   "mandatory_depends_on": "eval:doc.status == \"Book Recevied\"",
+   "mandatory_depends_on": "eval:doc.status === \"Active\";",
    "unique": 1
   },
   {
@@ -337,7 +337,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-11-06 12:45:10.835370",
+ "modified": "2025-11-06 12:52:04.220218",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",
