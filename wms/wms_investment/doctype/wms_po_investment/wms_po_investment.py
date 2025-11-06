@@ -43,7 +43,6 @@ class WMSPOInvestment(Document):
 		passbook_status: DF.Literal["", "With Us", "With Client", "With PO"]
 		period: DF.Int
 		rejected_reason: DF.Data | None
-		renew_investment: DF.Check
 		renewed_investment: DF.DynamicLink | None
 		renewed_investment_type: DF.Link | None
 		roi: DF.Float
@@ -51,7 +50,14 @@ class WMSPOInvestment(Document):
 		scheme_name: DF.Link
 		start_date: DF.Date | None
 		status: DF.Literal[
-			"Entry Done", "Submitted", "Active", "Matured", "Pre-Matured", "Transmitted", "Rejected"
+			"Entry Done",
+			"Submitted",
+			"Active",
+			"Renewed",
+			"Matured",
+			"Pre-Matured",
+			"Transmitted",
+			"Rejected",
 		]
 		submit_branch: DF.Data | None
 		through_us: DF.Check
@@ -66,31 +72,11 @@ class WMSPOInvestment(Document):
 		self.validate_nominee()
 		self.validate_dates()
 		self.validate_minor_investment()
-		self.validate_renewal_or_extension()
 		self.validate_rejected_investment()
 
 	def validate_rejected_investment(self):
 		if self.status != "Rejected" and self.rejected_reason:
 			self.rejected_reason = None
-
-	def validate_renewal_or_extension(self):
-		if (
-			(self.renew_investment or self.extend_investment)
-			and self.status != "Active"
-			and not self.start_date
-		):
-			frappe.throw(_("Only active investments with valid start date can be renewed or extended."))
-		if self.renew_investment and self.extend_investment:
-			frappe.throw(_("Cannot renew and extend the investment at the same time."))
-		if self.renewed_investment_type and self.renewed_investment and self.extend_investment:
-			frappe.throw(_("Cannot extend already renewed investment."))
-		if len(self.extensions) > 0 and self.renew_investment:
-			frappe.throw(_("Cannot renew already extended investment."))
-		if not self.renew_investment:
-			self.renewed_investment = None
-			self.renewed_investment_type = None
-		if not self.extend_investment:
-			self.extensions = []
 
 	def validate_minor_investment(self):
 		if self.client_classification == "Minor":
@@ -147,7 +133,11 @@ class WMSPOInvestment(Document):
 				frappe.throw(_("Start Date cannot be in the future."))
 			if self.extend_investment and len(self.extensions) > 0:
 				latest = sorted(self.extensions, key=lambda x: x.extension_date, reverse=True)[0]
-				if self.maturity_date and self.maturity_date > latest.extension_date:
+				if len(self.extensions) > 1:
+					previous = sorted(self.extensions, key=lambda x: x.extension_date, reverse=True)[1]
+					if str(latest.extension_date) < str(previous.extension_date):
+						frappe.throw(_("Latest Extension Date cannot be before previous Extension Date"))
+				elif str(latest.extension_date) < str(add_months(self.start_date, self.period)):
 					frappe.throw(_("Extension Date cannot be before Maturity Date"))
 				self.maturity_date = add_months(latest.extension_date, latest.extension_period)
 			else:

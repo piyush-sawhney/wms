@@ -33,6 +33,7 @@
    "in_list_view": 1,
    "label": "Extension RoI",
    "non_negative": 1,
+   "precision": "2",
    "reqd": 1
   }
  ],
@@ -40,7 +41,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-11-05 22:05:44.001159",
+ "modified": "2025-11-06 11:33:49.914354",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Extension",
