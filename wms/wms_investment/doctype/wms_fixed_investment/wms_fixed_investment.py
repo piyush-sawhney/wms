@@ -46,6 +46,7 @@ class WMSFixedInvestment(Document):
 		renewed_investment: DF.DynamicLink | None
 		renewed_investment_type: DF.Link | None
 		roi: DF.Float
+		scheme_name: DF.Data | None
 		start_date: DF.Date | None
 		status: DF.Literal[
 			"Entry Done",
