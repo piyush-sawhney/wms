@@ -17,12 +17,14 @@ class WMSRDTransaction(Document):
 		bank_account_number: DF.Data | None
 		cheque_number: DF.Data | None
 		denomination: DF.Float
+		holder_name: DF.Data | None
 		number_of_installments: DF.Int
 		parent: DF.Data
 		parentfield: DF.Data
 		parenttype: DF.Data
 		rd_account_number: DF.Link
 		rd_amount: DF.Float
+		rd_deposit_amount: DF.Float
 		rebate: DF.Float
 		surcharge: DF.Float
 	# end: auto-generated types
