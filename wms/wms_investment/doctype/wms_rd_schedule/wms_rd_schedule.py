@@ -31,6 +31,14 @@ class WMSRDSchedule(Document):
 	# end: auto-generated types
 	pass
 
+	def before_validate(self):
+		if self.is_new():
+			self.schedule_number = None
+			self.schedule_date = None
+			self.total_rebate = None
+			self.total_surcharge = None
+			self.deposit_amount = None
+
 	def validate(self):
 		self.validate_schedules()
 
