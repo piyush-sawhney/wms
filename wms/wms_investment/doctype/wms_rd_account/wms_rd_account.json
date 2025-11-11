@@ -3,6 +3,7 @@
  "allow_rename": 1,
  "autoname": "field:rd_account_number",
  "creation": "2025-11-09 10:49:56.817158",
+ "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -259,7 +260,7 @@
  "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-11-11 19:36:46.309911",
+ "modified": "2025-11-11 20:15:50.035039",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS RD Account",
@@ -293,8 +294,8 @@
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
  "search_fields": "holder_name, denomination",
- "sort_field": "modified",
- "sort_order": "DESC",
+ "sort_field": "next_installment_date",
+ "sort_order": "ASC",
  "states": [],
  "track_changes": 1
 }
