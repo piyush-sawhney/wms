@@ -1,18 +1,5 @@
 import frappe
 def execute():
-	# Update client_name in WMS Bank from linked WMS Client
-	null_client_name_list = frappe.get_all(
-		"WMS Bank", filters={"client_name": None}, fields=["name", "client"]
-	)
-	[
-		frappe.set_value(
-			"WMS Bank",
-			item["name"],
-			"client_name",
-			frappe.get_value("WMS Client", item["client"], "client_name"),
-		)
-		for item in null_client_name_list
-	]
 	# Truncate account_number to last 4 digits for non-Post Office banks
 	non_post_office_banks = frappe.get_all(
 		"WMS Bank", filters={"bank_name": ["not like", "%post office%"]}, pluck="name"
@@ -32,3 +19,17 @@ def execute():
 		if "post office" not in bank_doc.bank_name.lower():
 			payment_doc.account_number = payment_doc.account_number[-4:]
 			payment_doc.save(ignore_permissions=True)
+	
+	# Update client_name in WMS Bank from linked WMS Client
+	null_client_name_list = frappe.get_all(
+		"WMS Bank", filters={"client_name": None}, fields=["name", "client"]
+	)
+	[
+		frappe.set_value(
+			"WMS Bank",
+			item["name"],
+			"client_name",
+			frappe.get_value("WMS Client", item["client"], "client_name"),
+		)
+		for item in null_client_name_list
+	]
