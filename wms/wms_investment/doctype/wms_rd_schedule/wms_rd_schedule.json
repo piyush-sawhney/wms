@@ -12,11 +12,11 @@
   "schedule_number",
   "schedule_date",
   "column_break_mjzc",
+  "deposit_amount",
+  "schedule_amount",
+  "column_break_ykvq",
   "total_rebate",
   "total_surcharge",
-  "column_break_ykvq",
-  "schedule_amount",
-  "deposit_amount",
   "section_break_rtah",
   "rd_accounts",
   "section_break_nv6h",
@@ -111,6 +111,8 @@
   {
    "fieldname": "schedule_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Schedule Type",
    "options": "Cash\nCheque",
    "reqd": 1
@@ -126,6 +128,7 @@
   {
    "fieldname": "schedule_document",
    "fieldtype": "Attach",
+   "in_list_view": 1,
    "label": "Schedule Document",
    "read_only": 1
   }
@@ -135,7 +138,8 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-11 17:23:51.062860",
+ "max_attachments": 1,
+ "modified": "2025-11-12 15:37:37.985221",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS RD Schedule",

@@ -38,6 +38,7 @@ class WMSRDSchedule(Document):
 			self.total_rebate = None
 			self.total_surcharge = None
 			self.deposit_amount = None
+			self.schedule_document = None
 
 	def validate(self):
 		self.validate_schedules()
