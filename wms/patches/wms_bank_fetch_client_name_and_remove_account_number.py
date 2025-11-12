@@ -1,6 +1,4 @@
 import frappe
-
-
 def execute():
 	# Update client_name in WMS Bank from linked WMS Client
 	null_client_name_list = frappe.get_all(
