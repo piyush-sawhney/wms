@@ -17,7 +17,6 @@ class WMSRDAccount(Document):
 
 		account_number: DF.Data | None
 		account_opening_date: DF.Date | None
-		active: DF.Data | None
 		amount: DF.Currency
 		bank_account_number: DF.Data | None
 		card_number: DF.Data | None
@@ -36,6 +35,7 @@ class WMSRDAccount(Document):
 		rd_account_number: DF.Data | None
 		rebate: DF.Float
 		start_date: DF.Date | None
+		status: DF.Data | None
 		surcharge: DF.Float
 		total_deposit_amount: DF.Float
 		total_month_paid: DF.Int

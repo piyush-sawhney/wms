@@ -14,7 +14,6 @@ class WMSRDSchedule(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
-
 		from wms.wms_investment.doctype.wms_rd_transaction.wms_rd_transaction import WMSRDTransaction
 
 		amended_from: DF.Link | None

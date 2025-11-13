@@ -14,7 +14,7 @@
   "account_number",
   "amount",
   "column_break_soks",
-  "active",
+  "status",
   "start_date",
   "section_break_repg",
   "card_number",
@@ -49,13 +49,6 @@
    "label": "Account Number",
    "read_only": 1,
    "unique": 1
-  },
-  {
-   "fetch_from": "po_investment.status",
-   "fieldname": "active",
-   "fieldtype": "Data",
-   "label": "Status",
-   "read_only": 1
   },
   {
    "fieldname": "section_break_niyf",
@@ -254,13 +247,20 @@
    "fieldtype": "Check",
    "label": "Is Card Updated?",
    "read_only": 1
+  },
+  {
+   "fetch_from": "po_investment.status",
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-11-11 20:15:50.035039",
+ "modified": "2025-11-12 17:04:26.070152",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS RD Account",
@@ -283,6 +283,7 @@
    "create": 1,
    "read": 1,
    "role": "WMS RD Software",
+   "select": 1,
    "write": 1
   },
   {

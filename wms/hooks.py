@@ -157,23 +157,23 @@ before_uninstall = "wms.setup.install.before_uninstall"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"wms.tasks.all"
-# 	],
-# 	"daily": [
-# 		"wms.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"wms.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"wms.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"wms.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	# "all": [
+	# 	"wms.tasks.all"
+	# ],
+	"daily": [
+		"wms.scheduled_taks.rd_account_updation"
+	],
+	# "hourly": [
+	# 	"wms.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"wms.tasks.weekly"
+	# ],
+	# "monthly": [
+	# 	"wms.tasks.monthly"
+	# ],
+}
 
 # Testing
 # -------
