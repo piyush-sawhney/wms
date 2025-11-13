@@ -1,3 +1,11 @@
+# [1.7.0](https://github.com/piyush-sawhney/wms/compare/v1.6.10...v1.7.0) (2025-11-13)
+
+
+### Features
+
+* creating doctypes for rd account transaction and schedule ([1dff1eb](https://github.com/piyush-sawhney/wms/commit/1dff1eb0e279420d1464e1a342a092a9a9fc111e))
+* rd accounts and schedule creation ([a14467b](https://github.com/piyush-sawhney/wms/commit/a14467b618aebb17cc0eaadbe6259d7963867ee1))
+
 ## [1.6.10](https://github.com/piyush-sawhney/wms/compare/v1.6.9...v1.6.10) (2025-11-13)
 
 ## [1.6.9](https://github.com/piyush-sawhney/wms/compare/v1.6.8...v1.6.9) (2025-11-12)
