@@ -13,3 +13,4 @@ wms.patches.wms_transaction_fetch_scheme_name
 wms.patches.po_investment_status_migration
 wms.patches.fixed_investment_status_migration
 wms.patches.create_rd_folder
+wms.patches.wms_bank_fetch_client_name
