@@ -31,16 +31,6 @@ class WMSBank(Document):
 		self.validate_micr()
 		self.validate_ifsc()
 		self.validate_bank_name()
-		self.validate_account_number()
-
-	def validate_account_number(self):
-		if self.bank_name:
-			if "post office" not in self.bank_name.lower():
-				if self.account_number and len(self.account_number) > 4:
-					frappe.throw(_("Enter only last 4 digits of account number for accounts other than Post Office."))
-			else:
-				if frappe.db.exists("WMS Bank", {"account_number": self.account_number, "name": ["!=", self.name]}):
-					frappe.throw(_("Account number must be unique."))
 
 	def validate_bank_name(self):
 		if not self.bank_name:
