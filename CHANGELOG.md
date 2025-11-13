@@ -1,3 +1,25 @@
+## [1.7.1](https://github.com/piyush-sawhney/wms/compare/v1.7.0...v1.7.1) (2025-11-13)
+
+# [1.7.0](https://github.com/piyush-sawhney/wms/compare/v1.6.10...v1.7.0) (2025-11-13)
+
+
+### Features
+
+* creating doctypes for rd account transaction and schedule ([1dff1eb](https://github.com/piyush-sawhney/wms/commit/1dff1eb0e279420d1464e1a342a092a9a9fc111e))
+* rd accounts and schedule creation ([a14467b](https://github.com/piyush-sawhney/wms/commit/a14467b618aebb17cc0eaadbe6259d7963867ee1))
+
+## [1.6.10](https://github.com/piyush-sawhney/wms/compare/v1.6.9...v1.6.10) (2025-11-13)
+
+## [1.6.9](https://github.com/piyush-sawhney/wms/compare/v1.6.8...v1.6.9) (2025-11-12)
+
+
+### Bug Fixes
+
+* failing patch bank client name ([87b9158](https://github.com/piyush-sawhney/wms/commit/87b9158de61c21613b4e35f9678c925fe7ac6d12))
+* failing patch for null client name in bank ([75f8a97](https://github.com/piyush-sawhney/wms/commit/75f8a97d0eba0bd6464658d9b1845ec0da95e11a))
+
+## [1.6.8](https://github.com/piyush-sawhney/wms/compare/v1.6.7...v1.6.8) (2025-11-11)
+
 ## [1.6.7](https://github.com/piyush-sawhney/wms/compare/v1.6.6...v1.6.7) (2025-11-07)
 
 ## [1.6.6](https://github.com/piyush-sawhney/wms/compare/v1.6.5...v1.6.6) (2025-11-06)

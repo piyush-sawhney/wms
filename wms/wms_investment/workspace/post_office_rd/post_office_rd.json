@@ -1,0 +1,71 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"aKn7EWglSd\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Post Office RD</span>\",\"col\":12}},{\"id\":\"hWIRycvl-R\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"RD Account List\",\"col\":4}},{\"id\":\"QL6_KDMj-H\",\"type\":\"spacer\",\"data\":{\"col\":4}},{\"id\":\"vTbu0ZqNAr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incomplete RD Accounts\",\"col\":4}},{\"id\":\"uIclbRNVWJ\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Unsubmitted RD Accounts\",\"col\":4}},{\"id\":\"Q0IpBONTMf\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"jNq4UpmiIt\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>RD Schedules</b></span>\",\"col\":12}},{\"id\":\"AtV44JqADD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create Schedule\",\"col\":4}},{\"id\":\"UEr_M4tJaT\",\"type\":\"spacer\",\"data\":{\"col\":4}},{\"id\":\"x8zFwy2qpa\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending Creation\",\"col\":4}}]",
+ "creation": "2025-11-12 16:48:46.300485",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "chart",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Post Office RD",
+ "links": [],
+ "modified": "2025-11-12 16:59:25.925050",
+ "modified_by": "Administrator",
+ "module": "WMS Investment",
+ "name": "Post Office RD",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "Home",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "WMS RD Account",
+   "label": "Unsubmitted RD Accounts",
+   "quick_list_filter": "[[\"WMS RD Account\",\"next_installment_date\",\"Timespan\",\"this month\",false]]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 8.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "format": "{}",
+   "label": "RD Account List",
+   "link_to": "WMS RD Account",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "Create Schedule",
+   "link_to": "WMS RD Schedule",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "format": "{}",
+   "label": "Incomplete RD Accounts",
+   "link_to": "WMS RD Account",
+   "stats_filter": "[[\"WMS RD Account\",\"po_investment\",\"is\",\"not set\",false],[\"WMS RD Account\",\"card_number\",\"is\",\"not set\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Pink",
+   "doc_view": "List",
+   "format": "{}",
+   "label": "Pending Creation",
+   "link_to": "WMS RD Schedule",
+   "stats_filter": "[[\"WMS RD Schedule\",\"docstatus\",\"=\",\"0\",false]]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Post Office RD"
+}

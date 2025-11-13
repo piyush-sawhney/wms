@@ -19,7 +19,7 @@ add_to_apps_screen = [
 		"logo": "/assets/wms/images/knaps_brand.png",
 		"title": "KNAPS Financial Services",
 		"route": app_home,
-		"has_permission": "wms.check_app_permission"
+		"has_permission": "wms.check_app_permission",
 	}
 ]
 
@@ -157,23 +157,21 @@ before_uninstall = "wms.setup.install.before_uninstall"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"wms.tasks.all"
-# 	],
-# 	"daily": [
-# 		"wms.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"wms.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"wms.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"wms.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	# "all": [
+	# 	"wms.tasks.all"
+	# ],
+	"daily": ["wms.tasks.daily.update_po_investment_in_rd_account"],
+	# "hourly": [
+	# 	"wms.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"wms.tasks.weekly"
+	# ],
+	# "monthly": [
+	# 	"wms.tasks.monthly"
+	# ],
+}
 
 # Testing
 # -------
@@ -259,14 +257,8 @@ fixtures = [
 	"WMS Relation",
 	"WMS Service Type",
 	"WMS Payment Type",
-    "WMS Insurance Type",
+	"WMS Insurance Type",
 	"WMS Product",
-    "WMS Product Provider",
-    {"dt": "Address Template", "filters": [
-        [
-            "name", "in", [
-                "India"
-            ]
-        ]
-    ]}
+	"WMS Product Provider",
+	{"dt": "Address Template", "filters": [["name", "in", ["India"]]]},
 ]
