@@ -5,6 +5,16 @@ import frappe
 def after_install():
 	update_app_name()
 	update_backup_setting()
+	create_folders()
+
+def create_folders():
+	folder = frappe.get_doc({
+        "doctype": "File",
+        "file_name": "RD Schedules",
+        "is_folder": 1,
+        "folder": "Home"
+    })
+	folder.insert(ignore_permissions=True)
 
 
 def update_app_name():
