@@ -36,6 +36,7 @@ class WMSClient(Document):
 		codes: DF.Table[WMSClientCodes]
 		dob: DF.Date | None
 		email_addresses: DF.Table[ContactEmail]
+		label: DF.Data | None
 		numbers: DF.Table[ContactPhone]
 		pan: DF.Link | None
 		pob: DF.Data | None

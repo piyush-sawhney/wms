@@ -161,7 +161,7 @@ scheduler_events = {
 	# "all": [
 	# 	"wms.tasks.all"
 	# ],
-	"daily": ["wms.tasks.daily.update_po_investment_in_rd_account"],
+	# "daily": ["wms.tasks.daily.update_po_investment_in_rd_account"],
 	# "hourly": [
 	# 	"wms.tasks.hourly"
 	# ],

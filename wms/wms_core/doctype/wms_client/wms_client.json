@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "column_break_icgq",
+  "label",
   "column_break_jbps",
   "status",
   "section_break_awva",
@@ -243,13 +244,18 @@
   {
    "fieldname": "section_break_awva",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "label",
+   "fieldtype": "Data",
+   "label": "Label"
   }
  ],
  "grid_page_length": 50,
  "image_field": "client_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-13 16:42:10.201156",
+ "modified": "2025-11-15 15:40:42.913606",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",
@@ -276,7 +282,7 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "pan, primary_mobile, primary_email",
+ "search_fields": "pan, primary_mobile, primary_email, label",
  "show_name_in_global_search": 1,
  "show_title_field_in_link": 1,
  "sort_field": "modified",
