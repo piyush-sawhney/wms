@@ -66,14 +66,14 @@ class WMSPOInvestment(Document):
 	def autoname(self):
 		FY = get_financial_year_code(self.entry_date)
 		self.name = make_autoname(f"PO-{FY}-.####")
-	
-	def before_save(self):
-		self.update_status_for_rd_account_doctype()
 
-	def update_status_for_rd_account_doctype(self):
-		if self.status and self.account_number and self.scheme_code == "RD":
-			if frappe.db.exists('WMS RD Account', self.account_number):
-				frappe.db.set_value("WMS RD Account", self.account_number), 'status', self.status
+	# def before_save(self):
+	# 	self.update_status_for_rd_account_doctype()
+
+	# def update_status_for_rd_account_doctype(self):
+	# 	if self.status and self.account_number and self.scheme_code == "RD":
+	# 		if frappe.db.exists('WMS RD Account', self.account_number):
+	# 			frappe.db.set_value("WMS RD Account", self.account_number, 'status', self.status)
 
 	def validate(self):
 		self.validate_holders()
