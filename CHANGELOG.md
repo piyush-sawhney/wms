@@ -1,3 +1,5 @@
+## [1.7.4](https://github.com/piyush-sawhney/wms/compare/v1.7.3...v1.7.4) (2025-11-19)
+
 ## [1.7.3](https://github.com/piyush-sawhney/wms/compare/v1.7.2...v1.7.3) (2025-11-18)
 
 
