@@ -1,4 +1,5 @@
 import frappe
+from frappe import _
 
 
 def notify_role(role, message):
@@ -16,7 +17,7 @@ def notify_role(role, message):
 	# Create Notification Log (no email sent)
 	for user in recipients:
 		log = frappe.new_doc("Notification Log")
-		log.subject = "RD Account Mismatch with PO Investment"
+		log.subject = _("RD Account Mismatch with PO Investment")
 		log.email_content = message
 		log.for_user = user
 		log.type = "Alert"
@@ -50,5 +51,5 @@ def update_po_investment_in_rd_account():
 				rd_doc.save()
 			except frappe.ValidationError as e:
 				frappe.clear_last_message()
-				message = f"RD Account {rd_account} and PO Investment {po_investment} " f"have {e}"
+				message = _(f"RD Account {rd_account} and PO Investment {po_investment} " f"have {e}")
 				notify_role("WMS RD Manager", message)
