@@ -1,3 +1,22 @@
+## [1.8.1](https://github.com/piyush-sawhney/wms/compare/v1.8.0...v1.8.1) (2025-11-22)
+
+
+### Bug Fixes
+
+* invalid client json fix ([102c2b0](https://github.com/piyush-sawhney/wms/commit/102c2b083b43892e7fca28cc02283b2b6af44c74))
+
+# [1.8.0](https://github.com/piyush-sawhney/wms/compare/v1.7.5...v1.8.0) (2025-11-22)
+
+
+### Features
+
+* completing contact feature with relevant patches ([68c96af](https://github.com/piyush-sawhney/wms/commit/68c96afdb42aaa0fadee225010bd6e475a8a8625))
+* contact with whatsapp ([376a196](https://github.com/piyush-sawhney/wms/commit/376a196020b866931db95eb3f244b5900c9c13ad))
+
+## [1.7.5](https://github.com/piyush-sawhney/wms/compare/v1.7.4...v1.7.5) (2025-11-19)
+
+## [1.7.4](https://github.com/piyush-sawhney/wms/compare/v1.7.3...v1.7.4) (2025-11-19)
+
 ## [1.7.3](https://github.com/piyush-sawhney/wms/compare/v1.7.2...v1.7.3) (2025-11-18)
 
 

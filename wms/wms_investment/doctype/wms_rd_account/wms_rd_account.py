@@ -51,7 +51,7 @@ class WMSRDAccount(Document):
 		if self.po_investment and not self.start_date:
 			frappe.throw(_("Start date cannot be empty"))
 		if self.start_date:
-			if str(self.start_date) != self.account_opening_date:
+			if str(self.start_date) != str(self.account_opening_date):
 				frappe.throw(_("Start date mismatch."))
 
 	def validate_denomination(self):
