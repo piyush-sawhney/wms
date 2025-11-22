@@ -70,161 +70,190 @@ class WMSClient(Document):
 		self.validate_dob()
 		self.validate_sole_proprietor()
 		self.validate_primary_email()
-		self.validate_unique_phone_numbers()
 		self.validate_phone_numbers()
 
 	def validate_phone_numbers(self):
+		self._normalize_numbers()
+		self.validate_unique_phone_numbers()
+
+		if self.is_new():
+			self._build_table_from_fields()
+		else:
+			self._sync_fields_and_table()
+
+	# ---------------------------------------
+	# 1. NORMALIZATION
+	# ---------------------------------------
+
+	def _normalize_numbers(self):
 		if self.primary_mobile == "+91-":
 			self.primary_mobile = None
 		if self.whatsapp_number == "+91-":
 			self.whatsapp_number = None
-		if self.is_new():
-			self._create_phone_number_table_from_fields()
-		else:
-			self._sync_phone_number_fields_and_table()
 
-	def _sync_phone_number_fields_and_table(self):
-		if not self.phone_numbers:
-			print("No Child Table")
-			is_primary_mobile_set = (
-				True if bool(frappe.get_value(self.doctype, self.name, "primary_mobile")) else False
-			)
-			if is_primary_mobile_set:
-				print("No Child Table: Database Has Primary Number")
-				self.primary_mobile = None
-				self.whatsapp_number = None
-			else:
-				print("No Child Table: Database Does Not Have Primary Number")
-				self._create_phone_number_table_from_fields()
-		else:
-			print("Yes Child Table")
-			primary_rows = [e for e in self.phone_numbers if e.is_primary_phone]
-			whatsapp_primary_rows = [e for e in self.phone_numbers if e.is_primary_whatsapp]
-			if len(primary_rows) != 1:
-				frappe.throw(_("Only {} primary phone number allowed.".format(frappe.bold(_("One")))))
-			table_primary = (primary_rows[0].phone or "").strip()
-			table_whatsapp = (whatsapp_primary_rows[0].phone or "").strip() if whatsapp_primary_rows else None
-			if table_primary != (self.primary_mobile or "").strip():
-				print("Yes Child Table: Table primary diff Primary")
-				self.primary_mobile = table_primary
-			is_whatsapp_mobile_set = (
-				True if bool(frappe.get_value(self.doctype, self.name, "whatsapp_number")) else False
-			)
-			if is_whatsapp_mobile_set:
-				if not whatsapp_primary_rows:
-					print("Yes Child Table: Database Yes Whatsapp: No Table Whatsapp")
-					self.whatsapp_number = None
-					self.is_whatsapp_no = 0
-				elif len(whatsapp_primary_rows) != 1:
-					frappe.throw(
-						_("Only {} Whatsapp primary phone number allowed.".format(frappe.bold(_("One"))))
-					)
-				else:
-					print("Yes Child Table: Database Yes Whatsapp: Yes Table Whatsapp")
-					if table_whatsapp != (self.whatsapp_number or "").strip():
-						print(
-							"Yes Child Table: Database Yes Whatsapp: Yes Table Whatsapp: Table Whatsapp diff Whtsapp"
-						)
-						self.whatsapp_number = table_whatsapp
-						if self.whatsapp_number == self.primary_mobile:
-							self.is_whatsapp_no = 1
-						else:
-							self.is_whatsapp_no = 0
-					else:
-						print("Yes Child Table: Database Yes Whatsapp: Yes Table Whatsapp: No Diff")
-						self.is_whatsapp_no = 1
-			else:
-				if not whatsapp_primary_rows:
-					print("Yes Child Table: Database No Whatsapp: No Table Whatsapp")
-					if self.is_whatsapp_no:
-						print("Yes Child Table: Database No Whatsapp: No Table Whatsapp: Yes Is Whatsapp")
-						self.whatsapp_number = self.primary_mobile
-						self._process_whatsapp_number_in_phone_numbers(self.whatsapp_number)
-					elif self.whatsapp_number:
-						print(
-							"Yes Child Table: Database No Whatsapp: No Table Whatsapp: No Is Whatsapp: Yes Whatsapp"
-						)
-						if self.whatsapp_number == self.primary_mobile:
-							print(
-								"Yes Child Table: Database No Whatsapp: No Table Whatsapp: No Is Whatsapp: Yes Whatsapp: No Diff"
-							)
-
-							self.is_whatsapp_no = 1
-							self._process_whatsapp_number_in_phone_numbers(self.whatsapp_number)
-						else:
-							print(
-								"Yes Child Table: Database No Whatsapp: No Table Whatsapp: No Is Whatsapp: Yes Whatsapp: Yes Diff"
-							)
-							self._process_whatsapp_number_in_phone_numbers(self.whatsapp_number)
-				else:
-					print("Yes Child Table: Database No Whatsapp: Yes Table Whatsapp")
-					if len(whatsapp_primary_rows) != 1:
-						frappe.throw(
-							_("Only {} Whatsapp phone number allowed.".format(frappe.bold(_("One"))))
-						)
-					else:
-						self.whatsapp_number = table_whatsapp
-						self._process_whatsapp_number_in_phone_numbers(self.whatsapp_number)
-						if self.whatsapp_number == self.primary_mobile:
-							self.is_whatsapp_no = 1
-						else:
-							self.is_whatsapp_no = 0
-
-	def _process_whatsapp_number_in_phone_numbers(self, whatsapp_number):
-		found = 0
-		for row in self.phone_numbers:
-			row_whatsapp_number = (row.phone or "").strip()
-
-			if not row_whatsapp_number:
-				continue
-			if row_whatsapp_number == whatsapp_number:
-				row.is_primary_whatsapp = 1
-				found = 1
-			else:
-				row.is_primary_whatsapp = 0
-		if not found:
-			self.append("phone_numbers", {"phone": self.whatsapp_number, "is_primary_whatsapp": 1})
-
-	def _create_phone_number_table_from_fields(self):
-		if self.primary_mobile:
-			if bool(self.is_whatsapp_no):
-				self.whatsapp_number = self.primary_mobile
-				self.append(
-					"phone_numbers",
-					{"phone": self.primary_mobile, "is_primary_phone": 1, "is_primary_whatsapp": 1},
-				)
-			else:
-				if self.whatsapp_number:
-					if self.primary_mobile == self.whatsapp_number:
-						self.is_whatsapp_no = 1
-						self.append(
-							"phone_numbers",
-							{"phone": self.primary_mobile, "is_primary_phone": 1, "is_primary_whatsapp": 1},
-						)
-					else:
-						self.append("phone_numbers", {"phone": self.primary_mobile, "is_primary_phone": 1})
-						self.append(
-							"phone_numbers", {"phone": self.whatsapp_number, "is_primary_whatsapp": 1}
-						)
-				else:
-					self.append("phone_numbers", {"phone": self.primary_mobile, "is_primary_phone": 1})
-		elif self.whatsapp_number:
-			self.primary_mobile = self.whatsapp_number
-			self.is_whatsapp_no = 1
-			self.append(
-				"phone_numbers",
-				{"phone": self.whatsapp_number, "is_primary_phone": 1, "is_primary_whatsapp": 1},
-			)
+	# ---------------------------------------
+	# 2. UNIQUE VALIDATION
+	# ---------------------------------------
 
 	def validate_unique_phone_numbers(self):
 		seen = set()
 		for row in self.phone_numbers:
 			phone = (row.phone or "").strip()
-			if not phone:
-				continue
-			if phone in seen:
+			if phone and phone in seen:
 				frappe.throw(_(f"Duplicate Phone Number: {frappe.bold(phone)}"))
 			seen.add(phone)
+
+	# ---------------------------------------
+	# 3A. NEW DOCUMENT LOGIC
+	# ---------------------------------------
+
+	def _build_table_from_fields(self):
+		pm = (self.primary_mobile or "").strip()
+		wa = (self.whatsapp_number or "").strip()
+		is_wa_primary = bool(self.is_whatsapp_no)
+
+		if pm:
+			# CASE A: primary exists
+			if is_wa_primary:
+				wa = pm
+				self.whatsapp_number = pm
+				self._add_row(pm, phone=1, wa=1)
+			else:
+				if wa:
+					if pm == wa:
+						self.is_whatsapp_no = 1
+						self._add_row(pm, phone=1, wa=1)
+					else:
+						self._add_row(pm, phone=1)
+						self._add_row(wa, wa=1)
+				else:
+					self._add_row(pm, phone=1)
+
+		elif wa:
+			# CASE B: only whatsapp provided
+			self.primary_mobile = wa
+			self.is_whatsapp_no = 1
+			self._add_row(wa, phone=1, wa=1)
+
+	# ---------------------------------------
+	# 3B. EXISTING DOCUMENT LOGIC
+	# ---------------------------------------
+
+	def _sync_fields_and_table(self):
+		table = list(self.phone_numbers)
+
+		if not table:
+			self._sync_no_table_case()
+			return
+
+		self._sync_primary(table)
+		self._sync_whatsapp(table)
+
+	# ---------------------------------------
+	# PRIMARY LOGIC
+	# ---------------------------------------
+
+	def _sync_primary(self, table):
+		primary_rows = [r for r in table if r.is_primary_phone]
+
+		if len(primary_rows) != 1:
+			frappe.throw(
+				_("There must be exactly {}  Primary Number in the table.".format(frappe.bold(_("One"))))
+			)
+
+		table_primary = (primary_rows[0].phone or "").strip()
+
+		if (self.primary_mobile or "").strip() != table_primary:
+			self.primary_mobile = table_primary
+
+	# ---------------------------------------
+	# WHATSAPP LOGIC
+	# ---------------------------------------
+
+	def _sync_whatsapp(self, table):
+		whatsapp_rows = [r for r in table if r.is_primary_whatsapp]
+		db_has_whatsapp = bool(frappe.get_value(self.doctype, self.name, "whatsapp_number"))
+
+		# CASE 1: database HAS whatsapp
+		if db_has_whatsapp:
+			self._sync_whatsapp_when_db_has_value(whatsapp_rows)
+			return
+
+		# CASE 2: database does NOT have whatsapp
+		self._sync_whatsapp_when_db_empty(whatsapp_rows, table)
+
+	def _sync_whatsapp_when_db_has_value(self, whatsapp_rows):
+		if not whatsapp_rows:
+			self.whatsapp_number = None
+			self.is_whatsapp_no = 0
+			return
+
+		if len(whatsapp_rows) != 1:
+			frappe.throw(
+				_("There must be exactly {}  Primary Whatsapp in the table.".format(frappe.bold(_("One"))))
+			)
+
+		table_wa = (whatsapp_rows[0].phone or "").strip()
+
+		if table_wa != (self.whatsapp_number or "").strip():
+			self.whatsapp_number = table_wa
+
+		self.is_whatsapp_no = int(self.whatsapp_number == self.primary_mobile)
+
+	def _sync_whatsapp_when_db_empty(self, whatsapp_rows, table):
+		# CASE A: no whatsapp in table
+		if not whatsapp_rows:
+			if self.is_whatsapp_no:
+				self.whatsapp_number = self.primary_mobile
+				self._mark_whatsapp(self.whatsapp_number, table)
+			elif self.whatsapp_number:
+				self._mark_whatsapp(self.whatsapp_number, table)
+			return
+
+		# CASE B: table has whatsapp
+		if len(whatsapp_rows) != 1:
+			frappe.throw(
+				_("There must be exactly {}  Primary Whatsapp in the table.".format(frappe.bold(_("One"))))
+			)
+
+		table_wa = (whatsapp_rows[0].phone or "").strip()
+		self.whatsapp_number = table_wa
+		self._mark_whatsapp(table_wa, table)
+		self.is_whatsapp_no = int(self.whatsapp_number == self.primary_mobile)
+
+	# ---------------------------------------
+	# HELPERS
+	# ---------------------------------------
+
+	def _add_row(self, number, phone=0, wa=0):
+		self.append(
+			"phone_numbers",
+			{
+				"phone": number,
+				"is_primary_phone": phone,
+				"is_primary_whatsapp": wa,
+			},
+		)
+
+	def _mark_whatsapp(self, number, table):
+		found = False
+		for row in table:
+			row_no = (row.phone or "").strip()
+			row.is_primary_whatsapp = int(row_no == number)
+			if row_no == number:
+				found = True
+		if not found:
+			self._add_row(number, wa=1)
+
+	def _sync_no_table_case(self):
+		db_primary_exists = bool(frappe.get_value(self.doctype, self.name, "primary_mobile"))
+
+		if db_primary_exists:
+			# DB has primary → clear fields
+			self.primary_mobile = None
+			self.whatsapp_number = None
+		else:
+			self._build_table_from_fields()
 
 	def validate_primary_email(self):
 		"""Keep primary_email field in sync with child table."""

@@ -258,6 +258,8 @@
    "default": "+91-",
    "fieldname": "whatsapp_number",
    "fieldtype": "Phone",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Whatsapp Number"
   }
  ],
@@ -265,7 +267,7 @@
  "image_field": "client_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-11-21 23:05:39.434274",
+ "modified": "2025-11-22 20:32:36.055832",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",

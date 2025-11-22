@@ -6,3 +6,4 @@
 # Patches added in this section will be executed after doctypes are migrated
 wms.patches.mf_folio_refetch_client_name
 wms.patches.mf_transation_refetch_client_name
+wms.patches.contact_doctype_wms_phone_number
