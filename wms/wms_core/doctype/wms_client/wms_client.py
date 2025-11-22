@@ -36,8 +36,14 @@ class WMSClient(Document):
 		codes: DF.Table[WMSClientCodes]
 		dob: DF.Date | None
 		email_addresses: DF.Table[ContactEmail]
+		email_declaration: DF.Literal[
+			"Self", "Spouse", "Parent", "Sibling", "Children", "POA", "Custodian", "Others"
+		]
 		is_whatsapp_no: DF.Check
 		label: DF.Data | None
+		mobile_declaration: DF.Literal[
+			"Self", "Spouse", "Parent", "Sibling", "Children", "POA", "Custodian", "Others"
+		]
 		pan: DF.Link | None
 		phone_numbers: DF.Table[WMSPhoneNumber]
 		pob: DF.Data | None
@@ -301,7 +307,6 @@ class WMSClient(Document):
 			table_primary = (primary_rows[0].email_id or "").strip()
 			if table_primary != (self.primary_email or "").strip():
 				self.primary_email = table_primary
-
 
 	def validate_sole_proprietor(self):
 		if self.type == "Individual" and self.classification == "Sole Proprietor":

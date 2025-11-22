@@ -18,11 +18,14 @@
   "pan",
   "dob",
   "pob",
-  "column_break_bakg",
+  "column_break_luyo",
   "primary_mobile",
+  "mobile_declaration",
   "is_whatsapp_no",
   "whatsapp_number",
+  "column_break_iftc",
   "primary_email",
+  "email_declaration",
   "section_break_rker",
   "proprietor",
   "section_break_sihe",
@@ -167,10 +170,6 @@
    "show_dashboard": 1
   },
   {
-   "fieldname": "column_break_bakg",
-   "fieldtype": "Column Break"
-  },
-  {
    "allow_in_quick_entry": 1,
    "default": "+91-",
    "fieldname": "primary_mobile",
@@ -266,14 +265,38 @@
   {
    "fieldname": "label",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Label"
+  },
+  {
+   "default": "Self",
+   "fieldname": "mobile_declaration",
+   "fieldtype": "Select",
+   "label": "Mobile Declaration",
+   "options": "Self\nSpouse\nParent\nSibling\nChildren\nPOA\nCustodian\nOthers"
+  },
+  {
+   "default": "Self",
+   "fieldname": "email_declaration",
+   "fieldtype": "Select",
+   "label": "Email Declaration",
+   "options": "Self\nSpouse\nParent\nSibling\nChildren\nPOA\nCustodian\nOthers"
+  },
+  {
+   "fieldname": "column_break_luyo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_iftc",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "image_field": "client_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-11-22 20:32:36.055832",
+ "modified": "2025-11-23 01:27:19.761537",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",

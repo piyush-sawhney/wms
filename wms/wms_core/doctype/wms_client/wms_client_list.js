@@ -1,6 +1,7 @@
 frappe.listview_settings["WMS Client"] = {
 	add_fields: [
 		"client_name",
+		"label",
 		"pan",
 		"primary_mobile",
 		"whatsapp_number",
