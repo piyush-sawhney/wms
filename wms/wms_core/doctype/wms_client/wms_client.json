@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "column_break_icgq",
+  "label",
   "column_break_jbps",
   "status",
   "section_break_awva",
@@ -261,6 +262,9 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Whatsapp Number"
+   "fieldname": "label",
+   "fieldtype": "Data",
+   "label": "Label"
   }
  ],
  "grid_page_length": 50,
@@ -294,7 +298,7 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "pan, primary_mobile, primary_email",
+ "search_fields": "pan, primary_mobile, primary_email, label",
  "show_name_in_global_search": 1,
  "show_title_field_in_link": 1,
  "sort_field": "modified",

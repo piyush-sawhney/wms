@@ -1,3 +1,130 @@
+## [1.7.5](https://github.com/piyush-sawhney/wms/compare/v1.7.4...v1.7.5) (2025-11-19)
+
+## [1.7.4](https://github.com/piyush-sawhney/wms/compare/v1.7.3...v1.7.4) (2025-11-19)
+
+## [1.7.3](https://github.com/piyush-sawhney/wms/compare/v1.7.2...v1.7.3) (2025-11-18)
+
+
+### Bug Fixes
+
+* failing rd account creation ([3dd59e3](https://github.com/piyush-sawhney/wms/commit/3dd59e3b9eb6e2d72156892cee94e9c245020fc9))
+
+## [1.7.2](https://github.com/piyush-sawhney/wms/compare/v1.7.1...v1.7.2) (2025-11-15)
+
+## [1.7.1](https://github.com/piyush-sawhney/wms/compare/v1.7.0...v1.7.1) (2025-11-13)
+
+# [1.7.0](https://github.com/piyush-sawhney/wms/compare/v1.6.10...v1.7.0) (2025-11-13)
+
+
+### Features
+
+* creating doctypes for rd account transaction and schedule ([1dff1eb](https://github.com/piyush-sawhney/wms/commit/1dff1eb0e279420d1464e1a342a092a9a9fc111e))
+* rd accounts and schedule creation ([a14467b](https://github.com/piyush-sawhney/wms/commit/a14467b618aebb17cc0eaadbe6259d7963867ee1))
+
+## [1.6.10](https://github.com/piyush-sawhney/wms/compare/v1.6.9...v1.6.10) (2025-11-13)
+
+## [1.6.9](https://github.com/piyush-sawhney/wms/compare/v1.6.8...v1.6.9) (2025-11-12)
+
+
+### Bug Fixes
+
+* failing patch bank client name ([87b9158](https://github.com/piyush-sawhney/wms/commit/87b9158de61c21613b4e35f9678c925fe7ac6d12))
+* failing patch for null client name in bank ([75f8a97](https://github.com/piyush-sawhney/wms/commit/75f8a97d0eba0bd6464658d9b1845ec0da95e11a))
+
+## [1.6.8](https://github.com/piyush-sawhney/wms/compare/v1.6.7...v1.6.8) (2025-11-11)
+
+## [1.6.7](https://github.com/piyush-sawhney/wms/compare/v1.6.6...v1.6.7) (2025-11-07)
+
+## [1.6.6](https://github.com/piyush-sawhney/wms/compare/v1.6.5...v1.6.6) (2025-11-06)
+
+
+### Bug Fixes
+
+* fixing empty passbook and fd status issue in migration ([97c4e16](https://github.com/piyush-sawhney/wms/commit/97c4e163f20d7f7ad4e9cb1cdabadab406973028)), closes [#108](https://github.com/piyush-sawhney/wms/issues/108)
+
+## [1.6.5](https://github.com/piyush-sawhney/wms/compare/v1.6.4...v1.6.5) (2025-11-06)
+
+## [1.6.4](https://github.com/piyush-sawhney/wms/compare/v1.6.3...v1.6.4) (2025-11-06)
+
+## [1.6.3](https://github.com/piyush-sawhney/wms/compare/v1.6.2...v1.6.3) (2025-11-06)
+
+## [1.6.2](https://github.com/piyush-sawhney/wms/compare/v1.6.1...v1.6.2) (2025-11-06)
+
+## [1.6.1](https://github.com/piyush-sawhney/wms/compare/v1.6.0...v1.6.1) (2025-11-06)
+
+
+### Bug Fixes
+
+* po extension logic and removal of renewed investment ([6f9a5c9](https://github.com/piyush-sawhney/wms/commit/6f9a5c92c2d500b0ab573e054048ffeddd95cb78)), closes [#103](https://github.com/piyush-sawhney/wms/issues/103)
+
+# [1.6.0](https://github.com/piyush-sawhney/wms/compare/v1.5.4...v1.6.0) (2025-11-05)
+
+
+### Features
+
+* add extension to po investments ([1510b9d](https://github.com/piyush-sawhney/wms/commit/1510b9d14940c899220a135e7c2203cca4c4e683)), closes [#94](https://github.com/piyush-sawhney/wms/issues/94)
+
+## [1.5.4](https://github.com/piyush-sawhney/wms/compare/v1.5.3...v1.5.4) (2025-11-04)
+
+
+### Bug Fixes
+
+* ui issues with guardian investment when initaited from the client dashboard ([b1dbb58](https://github.com/piyush-sawhney/wms/commit/b1dbb58c171e0871139570eaa5dd1820d4d99b3d))
+
+## [1.5.3](https://github.com/piyush-sawhney/wms/compare/v1.5.2...v1.5.3) (2025-11-04)
+
+## [1.5.2](https://github.com/piyush-sawhney/wms/compare/v1.5.1...v1.5.2) (2025-11-04)
+
+
+### Bug Fixes
+
+* add patch for scheme name in mf transaction ([e511e51](https://github.com/piyush-sawhney/wms/commit/e511e51d02ea747df513d7f10af9674ba711dcfb)), closes [#75](https://github.com/piyush-sawhney/wms/issues/75)
+
+## [1.5.1](https://github.com/piyush-sawhney/wms/compare/v1.5.0...v1.5.1) (2025-11-04)
+
+# [1.5.0](https://github.com/piyush-sawhney/wms/compare/v1.4.20...v1.5.0) (2025-11-04)
+
+
+### Features
+
+* frappe message for same pan with multiple clients ([e12bc04](https://github.com/piyush-sawhney/wms/commit/e12bc04ce28746adb70b23d9844e815384ef5c46)), closes [#88](https://github.com/piyush-sawhney/wms/issues/88)
+
+## [1.4.20](https://github.com/piyush-sawhney/wms/compare/v1.4.19...v1.4.20) (2025-11-03)
+
+
+### Bug Fixes
+
+* improving ui with user friendly search fields for fixed po mf folio and transaction ([76d43dc](https://github.com/piyush-sawhney/wms/commit/76d43dce2226a4dd10627e8528ba0bb9f80ccd76)), closes [#84](https://github.com/piyush-sawhney/wms/issues/84)
+
+## [1.4.19](https://github.com/piyush-sawhney/wms/compare/v1.4.18...v1.4.19) (2025-11-03)
+
+
+### Bug Fixes
+
+* handling guardian in fixed investment ([3d9ea2f](https://github.com/piyush-sawhney/wms/commit/3d9ea2fc1a4405402b6eb3cbc169192fc422bcde)), closes [#86](https://github.com/piyush-sawhney/wms/issues/86)
+* handling guardian in mf folio ([b40b23f](https://github.com/piyush-sawhney/wms/commit/b40b23f119b34ab5a7bd6139ab5274a6ae887793)), closes [#86](https://github.com/piyush-sawhney/wms/issues/86)
+* handling guardian investment in po ([2d3da19](https://github.com/piyush-sawhney/wms/commit/2d3da19b443c0fd5ef52874f3ba0e67fb4ad224b)), closes [#86](https://github.com/piyush-sawhney/wms/issues/86)
+
+## [1.4.18](https://github.com/piyush-sawhney/wms/compare/v1.4.17...v1.4.18) (2025-11-02)
+
+
+### Bug Fixes
+
+* failing pathes due to date and str mismatch ([322cb1c](https://github.com/piyush-sawhney/wms/commit/322cb1ca18e1b2efe6f803a51f2c02a41abc7ef0))
+
+## [1.4.17](https://github.com/piyush-sawhney/wms/compare/v1.4.16...v1.4.17) (2025-11-02)
+
+
+### Bug Fixes
+
+* disallow space in po scheme code ([27c53f3](https://github.com/piyush-sawhney/wms/commit/27c53f326ba431423a97ee11a606af73aebc7c14)), closes [#71](https://github.com/piyush-sawhney/wms/issues/71)
+
+## [1.4.16](https://github.com/piyush-sawhney/wms/compare/v1.4.15...v1.4.16) (2025-11-02)
+
+## [1.4.15](https://github.com/piyush-sawhney/wms/compare/v1.4.14...v1.4.15) (2025-11-02)
+
+## [1.4.14](https://github.com/piyush-sawhney/wms/compare/v1.4.13...v1.4.14) (2025-10-28)
+
 ## [1.4.13](https://github.com/piyush-sawhney/wms/compare/v1.4.12...v1.4.13) (2025-10-15)
 
 ## [1.4.12](https://github.com/piyush-sawhney/wms/compare/v1.4.11...v1.4.12) (2025-10-14)

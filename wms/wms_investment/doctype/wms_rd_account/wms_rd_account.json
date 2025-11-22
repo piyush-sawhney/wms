@@ -1,0 +1,305 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:rd_account_number",
+ "creation": "2025-11-09 10:49:56.817158",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_niyf",
+  "po_investment",
+  "client_name",
+  "column_break_mhmq",
+  "account_number",
+  "amount",
+  "column_break_soks",
+  "status",
+  "start_date",
+  "section_break_repg",
+  "card_number",
+  "new_card_number",
+  "is_card_updated",
+  "column_break_dbqm",
+  "client_bank",
+  "bank_account_number",
+  "section_break_rcse",
+  "rd_account_number",
+  "holder_name",
+  "account_opening_date",
+  "denomination",
+  "column_break_yorw",
+  "rebate",
+  "surcharge",
+  "default_installments",
+  "total_deposit_amount",
+  "column_break_metk",
+  "last_deposit_date",
+  "next_installment_date",
+  "total_month_paid",
+  "pending_installments",
+  "section_break_pjrt",
+  "last_updated"
+ ],
+ "fields": [
+  {
+   "fetch_from": "po_investment.account_number",
+   "fieldname": "account_number",
+   "fieldtype": "Data",
+   "label": "Account Number",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_niyf",
+   "fieldtype": "Section Break",
+   "label": "PO Investment Details"
+  },
+  {
+   "fieldname": "column_break_mhmq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "po_investment.amount",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_rcse",
+   "fieldtype": "Section Break",
+   "label": "Portal Details"
+  },
+  {
+   "fieldname": "account_opening_date",
+   "fieldtype": "Date",
+   "label": "Account Opening Date",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "denomination",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Denomination",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_deposit_amount",
+   "fieldtype": "Float",
+   "label": "Total Deposit Amount",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_yorw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_month_paid",
+   "fieldtype": "Int",
+   "label": "Total Month Paid",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "next_installment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Next Installment Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_deposit_date",
+   "fieldtype": "Date",
+   "label": "Last Deposit Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rebate",
+   "fieldtype": "Float",
+   "label": "Rebate",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "surcharge",
+   "fieldtype": "Float",
+   "label": "Default Fee",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "default_installments",
+   "fieldtype": "Float",
+   "label": "Default Installments",
+   "non_negative": 1,
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pending_installments",
+   "fieldtype": "Float",
+   "label": "Pending Installments",
+   "non_negative": 1,
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_repg",
+   "fieldtype": "Section Break",
+   "label": "Card And Bank Details"
+  },
+  {
+   "fieldname": "card_number",
+   "fieldtype": "Data",
+   "label": "Card Number"
+  },
+  {
+   "fieldname": "new_card_number",
+   "fieldtype": "Data",
+   "label": "New Card Number"
+  },
+  {
+   "fieldname": "column_break_dbqm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_pjrt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "last_updated",
+   "fieldtype": "Datetime",
+   "label": "Last Updated",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "po_investment.client_name",
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Client Name",
+   "link_filters": "[[\"WMS PO Investment\",\"scheme_code\",\"=\",\"RD\"],[\"WMS PO Investment\",\"status\",\"=\",\"Active\"]]",
+   "read_only": 1
+  },
+  {
+   "fieldname": "po_investment",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "PO Investment",
+   "link_filters": "[[\"WMS PO Investment\",\"scheme_code\",\"=\",\"RD\"],[\"WMS PO Investment\",\"status\",\"=\",\"Active\"]]",
+   "options": "WMS PO Investment",
+   "unique": 1
+  },
+  {
+   "fieldname": "holder_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Holder Name",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_soks",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "po_investment.start_date",
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "client_bank",
+   "fieldtype": "Link",
+   "label": "Client Bank",
+   "options": "WMS Bank"
+  },
+  {
+   "fetch_from": "client_bank.account_number",
+   "fieldname": "bank_account_number",
+   "fieldtype": "Data",
+   "label": "Bank Account Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rd_account_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "RD Account Number",
+   "non_negative": 1,
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_metk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_card_updated",
+   "fieldtype": "Check",
+   "label": "Is Card Updated?",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "po_investment.status",
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Status",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-19 16:28:54.590842",
+ "modified_by": "Administrator",
+ "module": "WMS Investment",
+ "name": "WMS RD Account",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "WMS RD Software",
+   "select": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "WMS Investment Manager",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "holder_name, denomination",
+ "sort_field": "next_installment_date",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}

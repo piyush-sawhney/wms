@@ -5,6 +5,7 @@
  "engine": "InnoDB",
  "field_order": [
   "status",
+  "rejected_reason",
   "column_break_ewqr",
   "entry_date",
   "section_break_jjsb",
@@ -16,7 +17,7 @@
   "section_break_xrtq",
   "description",
   "section_break_itst",
-  "notes"
+  "tracking_updates"
  ],
  "fields": [
   {
@@ -71,14 +72,24 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "notes",
-   "fieldtype": "Text Editor",
-   "label": "Notes",
-   "mandatory_depends_on": "eval:doc.status === \"Client Dependency\""
-  },
-  {
    "fieldname": "column_break_jkzo",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_item",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Service Item",
+   "options": "service_entity",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tracking_updates",
+   "fieldtype": "Table",
+   "label": "Tracking Updates",
+   "mandatory_depends_on": "eval:doc.status === \"Client Dependency\" || doc.status === \"Pending With Us\" ",
+   "options": "WMS Service Tracking"
   },
   {
    "fieldname": "service_entity",
@@ -91,19 +102,17 @@
    "reqd": 1
   },
   {
-   "fieldname": "service_item",
-   "fieldtype": "Dynamic Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Service Item",
-   "options": "service_entity",
-   "reqd": 1
+   "fieldname": "rejected_reason",
+   "fieldtype": "Data",
+   "label": "Rejected Reason",
+   "mandatory_depends_on": "eval: doc.status == \"Rejected\"",
+   "read_only_depends_on": "eval: doc.status !== \"Rejected\""
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-10 12:29:47.118704",
+ "modified": "2025-11-02 14:45:16.701462",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Service",

@@ -8,6 +8,7 @@
  "engine": "InnoDB",
  "field_order": [
   "client",
+  "guardian",
   "holding_type",
   "amc",
   "folio_number",
@@ -16,10 +17,11 @@
   "through_us",
   "through_broker",
   "broker_name",
-  "broker_code",
+  "sub_broker_code",
   "is_existing_folio",
   "folio_created",
   "client_name",
+  "client_classification",
   "holders_tab",
   "holders",
   "nominees_tab",
@@ -71,13 +73,6 @@
    "read_only_depends_on": "eval:doc.through_broker == 0;"
   },
   {
-   "depends_on": "eval:doc.through_broker == 1;",
-   "fieldname": "broker_code",
-   "fieldtype": "Data",
-   "label": "Broker Code",
-   "mandatory_depends_on": "eval:doc.through_broker == 1;"
-  },
-  {
    "fieldname": "column_break_pojr",
    "fieldtype": "Column Break"
   },
@@ -105,18 +100,18 @@
    "reqd": 1
   },
   {
-   "depends_on": "eval:doc.holding_type != null && doc.holding_type != \"Single\"",
+   "depends_on": "eval:doc.holding_type != null && doc.holding_type != \"Single\" && doc.client_classification !== \"Minor\"; ",
    "fieldname": "holders_tab",
    "fieldtype": "Tab Break",
    "label": "Holders"
   },
   {
-   "depends_on": "eval:doc.holding_type != \"Single\"",
+   "depends_on": "eval:doc.holding_type != \"Single\" && doc.client_classification !== \"Minor\"; ",
    "fieldname": "holders",
    "fieldtype": "Table",
    "in_standard_filter": 1,
    "label": "Holders",
-   "mandatory_depends_on": "eval:doc.holding_type != \"Single\" && doc.through_us == 1 && doc.is_existing_folio != 1;",
+   "mandatory_depends_on": "eval:doc.holding_type != \"Single\" && doc.through_us == 1 && doc.is_existing_folio != 1 && doc.client_classification !== \"Minor\"; ",
    "options": "WMS Investment Holder"
   },
   {
@@ -151,6 +146,32 @@
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Client Name"
+  },
+  {
+   "depends_on": "eval:doc.through_broker == 1;",
+   "fieldname": "sub_broker_code",
+   "fieldtype": "Data",
+   "label": "Sub Broker Code",
+   "mandatory_depends_on": "eval:doc.through_broker == 1;"
+  },
+  {
+   "columns": 2,
+   "fieldname": "guardian",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Guardian",
+   "link_filters": "[[\"WMS Client\",\"type\",\"=\",\"Individual\"],[\"WMS Client\",\"classification\",\"not in\",[\"Sole Proprietor\",\"Minor\"]]]",
+   "mandatory_depends_on": "eval: doc.client_classification === \"Minor\"",
+   "options": "WMS Client",
+   "read_only_depends_on": "eval: doc.client_classification !== \"Minor\""
+  },
+  {
+   "fetch_from": "client.classification",
+   "fieldname": "client_classification",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Client Classification"
   }
  ],
  "grid_page_length": 50,
@@ -167,7 +188,7 @@
    "link_fieldname": "folio_number"
   }
  ],
- "modified": "2025-10-10 15:56:24.772739",
+ "modified": "2025-11-04 23:16:18.694267",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Folio",
@@ -197,7 +218,7 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "client, amc",
+ "search_fields": "client_name, holding_type,amc",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

@@ -17,15 +17,13 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Name",
-   "reqd": 1,
-   "set_only_once": 1
+   "reqd": 1
   },
   {
    "fieldname": "code",
    "fieldtype": "Data",
    "label": "Code",
-   "reqd": 1,
-   "set_only_once": 1
+   "reqd": 1
   },
   {
    "fieldname": "column_break_jihi",
@@ -38,8 +36,7 @@
    "label": "Period",
    "non_negative": 1,
    "placeholder": "In Months",
-   "reqd": 1,
-   "set_only_once": 1
+   "reqd": 1
   },
   {
    "fieldname": "roi",
@@ -48,14 +45,13 @@
    "label": "Rate of Interest",
    "non_negative": 1,
    "precision": "2",
-   "reqd": 1,
-   "set_only_once": 1
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-13 16:42:42.010747",
+ "modified": "2025-11-06 13:44:50.275041",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Scheme",

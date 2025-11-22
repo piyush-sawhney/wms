@@ -37,6 +37,7 @@ class WMSClient(Document):
 		dob: DF.Date | None
 		email_addresses: DF.Table[ContactEmail]
 		is_whatsapp_no: DF.Check
+		label: DF.Data | None
 		pan: DF.Link | None
 		phone_numbers: DF.Table[WMSPhoneNumber]
 		pob: DF.Data | None
@@ -62,6 +63,18 @@ class WMSClient(Document):
 
 	def before_save(self):
 		self.update_classification_for_individuals()
+
+	def validate_multiple_pans(self):
+		if self.pan:
+			list_of_client_with_pan = frappe.db.get_list(
+				"WMS Client", filters={"name": ["!=", self.name], "pan": self.pan}, pluck="client_name"
+			)
+			if list_of_client_with_pan:
+				frappe.msgprint(
+					msg=list_of_client_with_pan,
+					title="Clients with same PAN that exists in the system.",
+					as_list=True,
+				)
 
 	def validate(self):
 		self.validate_client_name()
@@ -289,32 +302,6 @@ class WMSClient(Document):
 			if table_primary != (self.primary_email or "").strip():
 				self.primary_email = table_primary
 
-	def validate_primary_mobile(self):
-		"""Keep primary_email field in sync with child table."""
-		if self.primary_mobile == "+91-":
-			self.primary_mobile = None
-		is_primary_mobile_set = (
-			True if bool(frappe.get_value(self.doctype, self.name, "primary_mobile")) else False
-		)
-		if not self.phone_numbers:
-			if is_primary_mobile_set:
-				# Case when deleting all the child table rows
-				self.primary_mobile = None
-				return
-			if not is_primary_mobile_set and self.primary_mobile:
-				self.append("phone_numbers", {"phone": self.primary_mobile, "is_primary_phone": 1})
-				return
-		else:
-			primary_rows = [e for e in self.phone_numbers if e.is_primary_phone]
-			if len(primary_rows) != 1:
-				frappe.throw(
-					_("There must be exactly {} primary mobile in the table.".format(frappe.bold(_("One"))))
-				)
-
-			# Sync field from table primary
-			table_primary = (primary_rows[0].phone or "").strip()
-			if table_primary != (self.primary_mobile or "").strip():
-				self.primary_mobile = table_primary
 
 	def validate_sole_proprietor(self):
 		if self.type == "Individual" and self.classification == "Sole Proprietor":
@@ -324,6 +311,7 @@ class WMSClient(Document):
 	def validate_pan_type_combination(self):
 		if not self.type or not self.pan:
 			return
+		self.validate_multiple_pans()
 		type_to_pan_code = {
 			"Individual": "P",
 			"Body of Individuals (BOI)": "B",

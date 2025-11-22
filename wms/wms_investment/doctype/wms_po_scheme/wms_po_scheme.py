@@ -22,6 +22,7 @@ class WMSPOScheme(Document):
 
 	def autoname(self):
 		roi_formatted = f"{self.roi:.2f}".replace(".", "-")
+		self.code = self.code.replace(" ", "")
 		self.name = f"{self.code.upper()}-{self.period}M-R{roi_formatted}"
 
 	def validate(self):

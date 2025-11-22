@@ -7,3 +7,11 @@
 wms.patches.mf_folio_refetch_client_name
 wms.patches.mf_transation_refetch_client_name
 wms.patches.contact_doctype_wms_phone_number
+wms.patches.fixed_investment_refetch_client_name
+wms.patches.po_investment_refetch_client_name
+wms.patches.wms_insurance_refetch_name
+wms.patches.wms_transaction_fetch_scheme_name
+wms.patches.po_investment_status_migration
+wms.patches.fixed_investment_status_migration
+wms.patches.create_rd_folder
+wms.patches.wms_bank_fetch_client_name

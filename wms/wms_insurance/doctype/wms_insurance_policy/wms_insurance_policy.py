@@ -17,11 +17,13 @@ class WMSInsurancePolicy(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
+
 		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
 		from wms.wms_insurance.doctype.wms_insurance_member.wms_insurance_member import WMSInsuranceMember
 
 		chassis_number: DF.Data | None
 		client: DF.Link | None
+		client_name: DF.Data | None
 		currency: DF.Link | None
 		date_of_registration: DF.Date | None
 		desciption: DF.TextEditor | None
@@ -52,6 +54,7 @@ class WMSInsurancePolicy(Document):
 		premium: DF.Currency
 		premium_mode: DF.Literal["Monthly", "Quarterly", "Half Yearly", "Yearly", "Single"]
 		proposer: DF.Link
+		proposer_name: DF.Data | None
 		provider: DF.Link
 		quote_number: DF.Data | None
 		renewed_policy: DF.Link | None
@@ -148,13 +151,14 @@ class WMSInsurancePolicy(Document):
 	def validate_client(self):
 		if self.is_for_self:
 			self.client = self.proposer
+			self.client_name = frappe.db.get_value("WMS Client", self.client, "client_name")
 		else:
 			if not self.client:
 				frappe.throw("Person Assured is required when the policy is not for self.")
 
 	def validate_dates(self):
 		now_date = nowdate()
-		if self.entry_date and self.entry_date > now_date:
+		if self.entry_date and str(self.entry_date) > now_date:
 			frappe.throw("Entry Date cannot be in the future.")
 
 		if self.start_date:
