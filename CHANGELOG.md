@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/piyush-sawhney/wms/compare/v1.8.0...v1.8.1) (2025-11-22)
+
+
+### Bug Fixes
+
+* invalid client json fix ([102c2b0](https://github.com/piyush-sawhney/wms/commit/102c2b083b43892e7fca28cc02283b2b6af44c74))
+
 # [1.8.0](https://github.com/piyush-sawhney/wms/compare/v1.7.5...v1.8.0) (2025-11-22)
 
 
