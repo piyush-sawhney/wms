@@ -207,6 +207,7 @@
    "options": "Contact Email"
   },
   {
+   "depends_on": "eval: !doc.__islocal;",
    "fieldname": "contact_details_tab",
    "fieldtype": "Tab Break",
    "label": "Contact Details"
@@ -254,6 +255,7 @@
    "label": "Is Whatsapp No?"
   },
   {
+   "default": "+91-",
    "fieldname": "whatsapp_number",
    "fieldtype": "Phone",
    "label": "Whatsapp Number"
@@ -263,7 +265,7 @@
  "image_field": "client_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-18 12:07:11.213645",
+ "modified": "2025-11-21 23:05:39.434274",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Client",

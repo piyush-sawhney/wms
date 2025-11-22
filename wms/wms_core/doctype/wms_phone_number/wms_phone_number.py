@@ -15,7 +15,7 @@ class WMSPhoneNumber(Document):
 		from frappe.types import DF
 
 		is_primary_phone: DF.Check
-		is_whatsapp_number: DF.Check
+		is_primary_whatsapp: DF.Check
 		parent: DF.Data
 		parentfield: DF.Data
 		parenttype: DF.Data
