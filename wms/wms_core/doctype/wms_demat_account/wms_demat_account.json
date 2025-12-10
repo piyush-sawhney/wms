@@ -24,7 +24,7 @@
   "demat_account_number",
   "column_break_cdzp",
   "registered_bank",
-  "account_number",
+  "bank_account_number",
   "additional_holders_tab",
   "holders",
   "nominee_details_tab",
@@ -175,16 +175,16 @@
   },
   {
    "fetch_from": "registered_bank.account_number",
-   "fieldname": "account_number",
+   "fieldname": "bank_account_number",
    "fieldtype": "Data",
-   "label": "Account Number",
+   "label": "Bank Account Number",
    "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-10 15:05:51.966344",
+ "modified": "2025-12-10 15:06:30.777326",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Demat Account",

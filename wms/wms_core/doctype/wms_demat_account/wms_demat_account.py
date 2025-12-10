@@ -20,7 +20,7 @@ class WMSDematAccount(Document):
 		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
 		from wms.wms_investment.doctype.wms_investment_holder.wms_investment_holder import WMSInvestmentHolder
 
-		account_number: DF.Data | None
+		bank_account_number: DF.Data | None
 		client: DF.Link
 		client_id: DF.Data | None
 		company_name: DF.Link
