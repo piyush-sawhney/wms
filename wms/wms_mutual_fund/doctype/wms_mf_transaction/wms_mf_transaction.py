@@ -30,6 +30,7 @@ class WMSMFTransaction(Document):
 		scheme: DF.Link
 		scheme_name: DF.Data | None
 		scheme_out: DF.Link | None
+		start_date: DF.Date
 		status: DF.Literal[
 			"Entry Done",
 			"Submitted",
