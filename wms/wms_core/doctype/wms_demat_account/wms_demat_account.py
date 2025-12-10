@@ -48,23 +48,6 @@ class WMSDematAccount(Document):
 	def validate(self):
 		self.validate_holders()
 		self.validate_nominee()
-		self.validate_single_default_bank()
-
-	def validate_single_default_bank(self):
-		if self.banks:
-			if len(self.banks) == 1:
-				self.banks[0].is_default = 1
-			else:
-				default_banks = [e for e in self.banks if e.is_default]
-				if len(default_banks) != 1:
-					frappe.throw(
-						_("There must be exactly {} default bank in the table.".format(frappe.bold(_("One"))))
-					)
-			if len(self.banks) > 1:
-				# Check if there are multiple banks with the same account number
-				account_numbers = [e.account_number for e in self.banks]
-				if len(account_numbers) != len(set(account_numbers)):
-					frappe.throw(_("There cannot be multiple banks with the same account number."))
 
 	def validate_nominee(self):
 		if self.nominees and len(self.nominees) > 0:
