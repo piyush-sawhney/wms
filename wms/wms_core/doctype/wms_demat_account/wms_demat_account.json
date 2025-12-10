@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_import": 1,
- "autoname": "autoincrement",
+ "allow_rename": 1,
  "creation": "2025-08-19 13:45:35.630543",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -15,19 +15,20 @@
   "section_break_juok",
   "dp_type",
   "company_name",
+  "through_us",
+  "is_existing_demat",
   "column_break_zlui",
   "dp_id",
   "client_id",
-  "column_break_cdzp",
   "trading_id",
-  "is_existing_demat",
-  "through_us",
+  "demat_account_number",
+  "column_break_cdzp",
+  "registered_bank",
+  "account_number",
   "additional_holders_tab",
   "holders",
   "nominee_details_tab",
-  "nominees",
-  "banks_tab",
-  "banks"
+  "nominees"
  ],
  "fields": [
   {
@@ -148,17 +149,6 @@
    "options": "WMS Nominee"
   },
   {
-   "fieldname": "banks_tab",
-   "fieldtype": "Tab Break",
-   "label": "Banks"
-  },
-  {
-   "fieldname": "banks",
-   "fieldtype": "Table",
-   "label": "Banks",
-   "options": "WMS Banks"
-  },
-  {
    "default": "0",
    "fieldname": "is_existing_demat",
    "fieldtype": "Check",
@@ -169,16 +159,35 @@
    "fieldname": "through_us",
    "fieldtype": "Check",
    "label": "Through Us?"
+  },
+  {
+   "fieldname": "demat_account_number",
+   "fieldtype": "Data",
+   "label": "Demat Account Number",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "registered_bank",
+   "fieldtype": "Link",
+   "label": "Registered Bank",
+   "options": "WMS Bank"
+  },
+  {
+   "fetch_from": "registered_bank.account_number",
+   "fieldname": "account_number",
+   "fieldtype": "Data",
+   "label": "Account Number",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-14 11:58:03.187047",
+ "modified": "2025-12-10 15:05:51.966344",
  "modified_by": "Administrator",
  "module": "WMS Core",
  "name": "WMS Demat Account",
- "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
@@ -207,10 +216,12 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "client, company_name",
+ "search_fields": "client, company_name, dp_type, trading_id",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "demat_account_number",
  "track_changes": 1,
  "track_seen": 1
 }
