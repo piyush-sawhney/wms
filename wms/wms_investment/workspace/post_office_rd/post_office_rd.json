@@ -13,8 +13,8 @@
  "is_hidden": 0,
  "label": "Post Office RD",
  "links": [],
- "modified": "2025-12-10 15:31:08.362328",
- "modified_by": "piyush.sawhney@knaps.in",
+ "modified": "2025-12-10 17:28:59.593569",
+ "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "Post Office RD",
  "number_cards": [],
@@ -46,7 +46,7 @@
    "format": "{} in last 7 days",
    "label": "Created Schedules",
    "link_to": "WMS RD Schedule",
-   "stats_filter": "[[\"WMS RD Schedule\",\"schedule_date\",\"Timespan\",\"last 7 days\",false]]",
+   "stats_filter": "[[\"WMS RD Schedule\",\"schedule_date\",\"Timespan\",\"last 7 days\",false],[\"WMS RD Schedule\",\"docstatus\",\"=\",\"1\",false]]",
    "type": "DocType"
   },
   {
