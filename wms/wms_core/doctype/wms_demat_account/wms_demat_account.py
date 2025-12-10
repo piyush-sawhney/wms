@@ -16,26 +16,34 @@ class WMSDematAccount(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
-		from wms.wms_core.doctype.wms_banks.wms_banks import WMSBanks
+
 		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
 		from wms.wms_investment.doctype.wms_investment_holder.wms_investment_holder import WMSInvestmentHolder
 
-		banks: DF.Table[WMSBanks]
+		bank_account_number: DF.Data | None
 		client: DF.Link
 		client_id: DF.Data | None
 		company_name: DF.Link
+		demat_account_number: DF.Data | None
 		dp_id: DF.Data
 		dp_type: DF.Literal["CDSL", "NSDL"]
 		holders: DF.Table[WMSInvestmentHolder]
 		holding_type: DF.Link
 		is_existing_demat: DF.Check
-		name: DF.Int | None
 		nominees: DF.Table[WMSNominee]
+		registered_bank: DF.Link | None
 		status: DF.Literal["Opening Request", "Opened", "Request with DP", "Client Dependency"]
 		through_us: DF.Check
 		trading_id: DF.Data | None
 	# end: auto-generated types
 	pass
+
+	def auto_name(self):
+		if self.dp_id and self.client_id:
+			self.demat_account_number = self.dp_id + self.client_id
+			self.name = self.demat_account_number
+		elif self.trading_id:
+			self.name = self.trading_id
 
 	def validate(self):
 		self.validate_holders()

@@ -12,6 +12,7 @@
   "through_broker",
   "column_break_pojr",
   "request_type",
+  "start_date",
   "through_us",
   "broker_code",
   "broker_name",
@@ -184,6 +185,17 @@
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Scheme Name"
+  },
+  {
+   "columns": 2,
+   "default": "Today",
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Start Date",
+   "mandatory_depends_on": "eval: doc.request_type === \"SIP\" || doc.request_type === \"STP\" || doc.request_type === \"SWP\";",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
@@ -195,8 +207,8 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-11-03 18:19:09.326657",
- "modified_by": "Administrator",
+ "modified": "2025-12-10 14:17:26.709230",
+ "modified_by": "piyush.sawhney@knaps.in",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Transaction",
  "naming_rule": "Autoincrement",

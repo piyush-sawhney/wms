@@ -24,6 +24,8 @@ class WMSRDAccount(Document):
 		client_name: DF.Data | None
 		default_installments: DF.Float
 		denomination: DF.Float
+		extend_investment: DF.Check
+		final_card_number: DF.Data | None
 		holder_name: DF.Data | None
 		is_card_updated: DF.Check
 		last_deposit_date: DF.Date | None
@@ -63,3 +65,14 @@ class WMSRDAccount(Document):
 		if self.account_number:
 			if self.account_number != self.rd_account_number:
 				frappe.throw(_("Account number mismatch."))
+
+	def validate(self):
+		self.validate_card_number()
+
+	def validate_card_number(self):
+		self.final_card_number = self.new_card_number if self.extend_investment else self.card_number
+		if self.extend_investment and not self.new_card_number:
+			self.is_card_updated = False
+			frappe.msgprint(_("New Card Number is empty for an extended investment."))
+		if self.card_number == self.new_card_number:
+			frappe.msgprint(_("Old and New Card numbers are same."))

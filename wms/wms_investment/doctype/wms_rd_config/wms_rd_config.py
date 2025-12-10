@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class WMSBanks(Document):
+class WMSRDConfig(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,12 +14,7 @@ class WMSBanks(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		account_number: DF.Data | None
-		bank_name: DF.Link | None
-		ifsc: DF.Data | None
-		is_default: DF.Check
-		parent: DF.Data
-		parentfield: DF.Data
-		parenttype: DF.Data
+		last_counter: DF.Int
+		page_number: DF.Int
 	# end: auto-generated types
 	pass

@@ -1,3 +1,14 @@
+## [1.8.5](https://github.com/piyush-sawhney/wms/compare/v1.8.4...v1.8.5) (2025-12-10)
+
+## [1.8.4](https://github.com/piyush-sawhney/wms/compare/v1.8.3...v1.8.4) (2025-12-10)
+
+
+### Bug Fixes
+
+* failing demat account creation and autoname logic ([c4dbeb9](https://github.com/piyush-sawhney/wms/commit/c4dbeb9904b26004209bb7779822ad1bc43a41b1))
+
+## [1.8.3](https://github.com/piyush-sawhney/wms/compare/v1.8.2...v1.8.3) (2025-12-10)
+
 ## [1.8.2](https://github.com/piyush-sawhney/wms/compare/v1.8.1...v1.8.2) (2025-11-22)
 
 ## [1.8.1](https://github.com/piyush-sawhney/wms/compare/v1.8.0...v1.8.1) (2025-11-22)

@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"aKn7EWglSd\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Post Office RD</span>\",\"col\":12}},{\"id\":\"hWIRycvl-R\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"RD Account List\",\"col\":4}},{\"id\":\"QL6_KDMj-H\",\"type\":\"spacer\",\"data\":{\"col\":4}},{\"id\":\"vTbu0ZqNAr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incomplete RD Accounts\",\"col\":4}},{\"id\":\"uIclbRNVWJ\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Unsubmitted RD Accounts\",\"col\":4}},{\"id\":\"Q0IpBONTMf\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"jNq4UpmiIt\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>RD Schedules</b></span>\",\"col\":12}},{\"id\":\"AtV44JqADD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create Schedule\",\"col\":4}},{\"id\":\"UEr_M4tJaT\",\"type\":\"spacer\",\"data\":{\"col\":4}},{\"id\":\"x8zFwy2qpa\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending Creation\",\"col\":4}}]",
+ "content": "[{\"id\":\"aKn7EWglSd\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Post Office RD</span>\",\"col\":12}},{\"id\":\"hWIRycvl-R\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"RD Account List\",\"col\":4}},{\"id\":\"QL6_KDMj-H\",\"type\":\"spacer\",\"data\":{\"col\":4}},{\"id\":\"vTbu0ZqNAr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incomplete RD Accounts\",\"col\":4}},{\"id\":\"uIclbRNVWJ\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Unsubmitted RD Accounts\",\"col\":4}},{\"id\":\"Q0IpBONTMf\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"jNq4UpmiIt\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>RD Schedules</b></span>\",\"col\":12}},{\"id\":\"AtV44JqADD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create Schedule\",\"col\":4}},{\"id\":\"dGcaeqvbXT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Created Schedules\",\"col\":5}},{\"id\":\"x8zFwy2qpa\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending Creation\",\"col\":3}}]",
  "creation": "2025-11-12 16:48:46.300485",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,8 +13,8 @@
  "is_hidden": 0,
  "label": "Post Office RD",
  "links": [],
- "modified": "2025-11-12 16:59:25.925050",
- "modified_by": "Administrator",
+ "modified": "2025-12-10 15:31:08.362328",
+ "modified_by": "piyush.sawhney@knaps.in",
  "module": "WMS Investment",
  "name": "Post Office RD",
  "number_cards": [],
@@ -38,6 +38,15 @@
    "label": "RD Account List",
    "link_to": "WMS RD Account",
    "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "{} in last 7 days",
+   "label": "Created Schedules",
+   "link_to": "WMS RD Schedule",
+   "stats_filter": "[[\"WMS RD Schedule\",\"schedule_date\",\"Timespan\",\"last 7 days\",false]]",
    "type": "DocType"
   },
   {

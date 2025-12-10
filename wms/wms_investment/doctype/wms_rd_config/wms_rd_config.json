@@ -1,0 +1,64 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-10 11:09:31.600649",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "last_counter",
+  "column_break_jgyb",
+  "page_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "last_counter",
+   "fieldtype": "Int",
+   "label": "Last Counter",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "page_number",
+   "fieldtype": "Int",
+   "label": "Page Number",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_jgyb",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-12-10 11:16:38.564370",
+ "modified_by": "Administrator",
+ "module": "WMS Investment",
+ "name": "WMS RD Config",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "WMS RD Software",
+   "select": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
