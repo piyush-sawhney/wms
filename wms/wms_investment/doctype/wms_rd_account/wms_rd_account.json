@@ -16,10 +16,12 @@
   "column_break_soks",
   "status",
   "start_date",
+  "extend_investment",
   "section_break_repg",
   "card_number",
   "new_card_number",
   "is_card_updated",
+  "final_card_number",
   "column_break_dbqm",
   "client_bank",
   "bank_account_number",
@@ -257,13 +259,28 @@
    "in_standard_filter": 1,
    "label": "Status",
    "read_only": 1
+  },
+  {
+   "fieldname": "final_card_number",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Final Card Number",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "po_investment.extend_investment",
+   "fieldname": "extend_investment",
+   "fieldtype": "Check",
+   "label": "Extend Investment",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-11-19 16:28:54.590842",
+ "modified": "2025-12-10 13:24:57.741436",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS RD Account",
