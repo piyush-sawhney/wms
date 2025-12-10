@@ -70,9 +70,12 @@ class WMSRDAccount(Document):
 		self.validate_card_number()
 
 	def validate_card_number(self):
+		if not self.card_number and not self.new_card_number:
+			self.is_card_updated = bool(0)
+			self.final_card_number = None
 		self.final_card_number = self.new_card_number if self.extend_investment else self.card_number
 		if self.extend_investment and not self.new_card_number:
-			self.is_card_updated = False
+			self.is_card_updated = bool(0)
 			frappe.msgprint(_("New Card Number is empty for an extended investment."))
 		if self.card_number == self.new_card_number:
 			frappe.msgprint(_("Old and New Card numbers are same."))
