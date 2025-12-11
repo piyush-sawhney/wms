@@ -263,7 +263,6 @@
   {
    "fieldname": "final_card_number",
    "fieldtype": "Data",
-   "hidden": 1,
    "label": "Final Card Number",
    "read_only": 1
   },
@@ -280,7 +279,7 @@
  "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-10 13:24:57.741436",
+ "modified": "2025-12-10 17:37:06.528077",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS RD Account",
