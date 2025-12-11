@@ -1,3 +1,10 @@
+## [1.8.6](https://github.com/piyush-sawhney/wms/compare/v1.8.5...v1.8.6) (2025-12-11)
+
+
+### Bug Fixes
+
+* remove wms demat bank validations ([19ebd74](https://github.com/piyush-sawhney/wms/commit/19ebd74c9967566e7a8da3674a7fa0fe2623edf3)), closes [#136](https://github.com/piyush-sawhney/wms/issues/136)
+
 ## [1.8.5](https://github.com/piyush-sawhney/wms/compare/v1.8.4...v1.8.5) (2025-12-10)
 
 ## [1.8.4](https://github.com/piyush-sawhney/wms/compare/v1.8.3...v1.8.4) (2025-12-10)
