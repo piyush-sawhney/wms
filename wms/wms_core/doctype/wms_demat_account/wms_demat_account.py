@@ -38,33 +38,22 @@ class WMSDematAccount(Document):
 	# end: auto-generated types
 	pass
 
-	def auto_name(self):
+	def before_naming(self):
+		if self.is_new():
+			self.demat_account_number = None
 		if self.dp_id and self.client_id:
 			self.demat_account_number = self.dp_id + self.client_id
 			self.name = self.demat_account_number
-		elif self.trading_id:
-			self.name = self.trading_id
+
+	def on_update(self):
+		if self.dp_id and self.client_id:
+			self.demat_account_number = self.dp_id + self.client_id
+			if self.name != self.demat_account_number:
+				frappe.rename_doc(self.doctype, self.name, self.demat_account_number, merge=False)
 
 	def validate(self):
 		self.validate_holders()
 		self.validate_nominee()
-		self.validate_single_default_bank()
-
-	def validate_single_default_bank(self):
-		if self.banks:
-			if len(self.banks) == 1:
-				self.banks[0].is_default = 1
-			else:
-				default_banks = [e for e in self.banks if e.is_default]
-				if len(default_banks) != 1:
-					frappe.throw(
-						_("There must be exactly {} default bank in the table.".format(frappe.bold(_("One"))))
-					)
-			if len(self.banks) > 1:
-				# Check if there are multiple banks with the same account number
-				account_numbers = [e.account_number for e in self.banks]
-				if len(account_numbers) != len(set(account_numbers)):
-					frappe.throw(_("There cannot be multiple banks with the same account number."))
 
 	def validate_nominee(self):
 		if self.nominees and len(self.nominees) > 0:
