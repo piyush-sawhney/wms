@@ -38,12 +38,18 @@ class WMSDematAccount(Document):
 	# end: auto-generated types
 	pass
 
-	def auto_name(self):
+	def before_naming(self):
+		if self.is_new():
+			self.demat_account_number = None
 		if self.dp_id and self.client_id:
 			self.demat_account_number = self.dp_id + self.client_id
 			self.name = self.demat_account_number
-		elif self.trading_id:
-			self.name = self.trading_id
+
+	def on_update(self):
+		if self.dp_id and self.client_id:
+			self.demat_account_number = self.dp_id + self.client_id
+			if self.name != self.demat_account_number:
+				frappe.rename_doc(self.doctype, self.name, self.demat_account_number, merge=False)
 
 	def validate(self):
 		self.validate_holders()
