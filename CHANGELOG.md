@@ -1,3 +1,11 @@
+## [1.8.8](https://github.com/piyush-sawhney/wms/compare/v1.8.7...v1.8.8) (2025-12-12)
+
+
+### Bug Fixes
+
+* card number same message is coming for null card number ([2118012](https://github.com/piyush-sawhney/wms/commit/2118012dfb950bca2fd9d8a0e7290c2d97e22296)), closes [#134](https://github.com/piyush-sawhney/wms/issues/134)
+* demat naming logic ([75fa560](https://github.com/piyush-sawhney/wms/commit/75fa560ccb1aec3c314b601cae86127f3b05ed3c)), closes [#131](https://github.com/piyush-sawhney/wms/issues/131)
+
 ## [1.8.7](https://github.com/piyush-sawhney/wms/compare/v1.8.6...v1.8.7) (2025-12-11)
 
 ## [1.8.6](https://github.com/piyush-sawhney/wms/compare/v1.8.5...v1.8.6) (2025-12-11)
