@@ -1,0 +1,983 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-17 12:59:20.838467",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "folio_details_tab",
+  "section_break_fqpz",
+  "folio_number",
+  "holding_nature",
+  "folio_creation_date",
+  "column_break_dhhm",
+  "folio_created_date",
+  "broker_code",
+  "column_break_pznk",
+  "amc_code",
+  "sub_broker_dealer_code",
+  "section_break_mczk",
+  "is_demat",
+  "column_break_vluk",
+  "dp_id",
+  "section_break_trii",
+  "old_folio_number",
+  "tpa_linked",
+  "column_break_ltxn",
+  "scheme_folio_number",
+  "gst_state_code",
+  "section_break_sbmr",
+  "tpin",
+  "rta",
+  "column_break_vhuw",
+  "remarks",
+  "investor_details_tab",
+  "first_holder_details_section",
+  "first_holder",
+  "tax_status",
+  "first_holder_father_name",
+  "column_break_widf",
+  "first_holder_pan",
+  "occupation",
+  "first_holder_mother_name",
+  "column_break_pkgy",
+  "first_holder_dob",
+  "aadhar_status",
+  "column_break_medl",
+  "first_holder_fatca",
+  "first_holder_ckyc",
+  "second_holder_details_section",
+  "second_holder_name",
+  "column_break_erwi",
+  "second__holder_pan",
+  "column_break_kxjm",
+  "second_holder_dob",
+  "column_break_qltm",
+  "second_holder_fatca",
+  "second_holder_ckyc",
+  "third_holder_details_section",
+  "third_holder_name",
+  "column_break_bsim",
+  "third_holder_pan",
+  "column_break_mkzw",
+  "third_holder_dob",
+  "column_break_jvge",
+  "third_holder_fatca",
+  "third_holder_ckyc",
+  "guardian_details_section",
+  "guardian_name",
+  "column_break_qqzv",
+  "guardian_pan",
+  "column_break_zlje",
+  "guardian_dob",
+  "column_break_pzbt",
+  "guardian_fatca",
+  "guardian_ckyc",
+  "scheme_details_tab",
+  "scheme_code",
+  "scheme_name",
+  "reinvestment_flag",
+  "column_break_xtlw",
+  "unit_balance",
+  "ruppee_balance",
+  "balance_date",
+  "nominee_details_tab",
+  "first_nominee_details_section",
+  "first_nominee_name",
+  "first_nominee_id_type",
+  "first_nominee_address_1",
+  "first_nominee_city",
+  "column_break_rjos",
+  "first_nominee_dob",
+  "first_nominee_id_number",
+  "first_nominee_address_2",
+  "first_nominee_state",
+  "column_break_rkqq",
+  "first_nominee_relation",
+  "first_nominee_percentage",
+  "first_nominee_address_3",
+  "first_nominee_pincode",
+  "column_break_spwg",
+  "first_nominee_mobile",
+  "first_nominee_email",
+  "section_break_cpfm",
+  "second_nominee_name",
+  "second_nominee_id_type",
+  "second_nominee_address_1",
+  "second_nominee_city",
+  "column_break_awzj",
+  "second_nominee_dob",
+  "second_nominee_id_number",
+  "second_nominee_address_2",
+  "second_nominee_pincode",
+  "column_break_zdkf",
+  "second_nominee_relation",
+  "second_nominee_percentage",
+  "second_nominee_address_3",
+  "second_nominee_state",
+  "column_break_zudy",
+  "second_nominee_mobile",
+  "second_nominee_email",
+  "third_nominee_details_section",
+  "third_nominee_name",
+  "third_nominee_id_type",
+  "third_nominee_address_1",
+  "third_nominee_city",
+  "column_break_qbya",
+  "third_nominee_dob",
+  "third_nominee_id_number",
+  "third_nominee_address_2",
+  "third_nominee_state",
+  "column_break_iwal",
+  "third_nominee_relation",
+  "third_nominee_percentage",
+  "third_nominee_address_3",
+  "third_nominee_pincode",
+  "column_break_adwp",
+  "third_nominee_mobile",
+  "third_nominee_email",
+  "tab_4_tab",
+  "phone_office",
+  "phone_residence",
+  "column_break_nejx",
+  "mobile",
+  "email",
+  "address_details_tab",
+  "first_holder_address_1",
+  "first_holder_city",
+  "first_holder_pincode",
+  "column_break_vtnv",
+  "first_holder_address_2",
+  "first_holder_state",
+  "column_break_pfuk",
+  "first_holder_address_3",
+  "first_holder_country",
+  "bank_details_tab",
+  "bank_name",
+  "bank_branch",
+  "column_break_ayiy",
+  "bank_account_number",
+  "bank_account_type",
+  "column_break_ghxa",
+  "bank_ifsc",
+  "section_break_uqat",
+  "bank_address_1",
+  "bank_city",
+  "column_break_ncmh",
+  "bank_address_2",
+  "bank_pincode",
+  "column_break_slkl",
+  "bank_address_3"
+ ],
+ "fields": [
+  {
+   "fieldname": "investor_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Investor Details"
+  },
+  {
+   "fieldname": "first_holder",
+   "fieldtype": "Data",
+   "label": "First Holder Name"
+  },
+  {
+   "fieldname": "scheme_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Scheme Details"
+  },
+  {
+   "fieldname": "nominee_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Nominee Details"
+  },
+  {
+   "fieldname": "first_holder_pan",
+   "fieldtype": "Data",
+   "label": "First Holder PAN"
+  },
+  {
+   "fieldname": "column_break_widf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tab_4_tab",
+   "fieldtype": "Tab Break",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "column_break_pkgy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "first_holder_dob",
+   "fieldtype": "Date",
+   "label": "First Holder DoB"
+  },
+  {
+   "fieldname": "address_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Address Details"
+  },
+  {
+   "fieldname": "second_holder_name",
+   "fieldtype": "Data",
+   "label": "Second Holder Name"
+  },
+  {
+   "fieldname": "second__holder_pan",
+   "fieldtype": "Data",
+   "label": "Second  Holder PAN"
+  },
+  {
+   "fieldname": "second_holder_dob",
+   "fieldtype": "Date",
+   "label": "Second Holder DoB"
+  },
+  {
+   "fieldname": "third_holder_name",
+   "fieldtype": "Data",
+   "label": "Third Holder Name"
+  },
+  {
+   "fieldname": "third_holder_pan",
+   "fieldtype": "Data",
+   "label": "Third Holder PAN"
+  },
+  {
+   "fieldname": "third_holder_dob",
+   "fieldtype": "Date",
+   "label": "Third Holder DoB"
+  },
+  {
+   "fieldname": "column_break_medl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "first_holder_fatca",
+   "fieldtype": "Check",
+   "label": "First Holder FATCA"
+  },
+  {
+   "fieldname": "second_holder_details_section",
+   "fieldtype": "Section Break",
+   "label": "Second Holder Details"
+  },
+  {
+   "fieldname": "column_break_erwi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_kxjm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "third_holder_details_section",
+   "fieldtype": "Section Break",
+   "label": "Third Holder Details"
+  },
+  {
+   "fieldname": "column_break_bsim",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_mkzw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "first_holder_details_section",
+   "fieldtype": "Section Break",
+   "label": "First Holder Details"
+  },
+  {
+   "fieldname": "column_break_qltm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "second_holder_fatca",
+   "fieldtype": "Check",
+   "label": "Second Holder FATCA"
+  },
+  {
+   "fieldname": "column_break_jvge",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "third_holder_fatca",
+   "fieldtype": "Check",
+   "label": "Third Holder FATCA"
+  },
+  {
+   "fieldname": "guardian_details_section",
+   "fieldtype": "Section Break",
+   "label": "Guardian Details"
+  },
+  {
+   "fieldname": "guardian_name",
+   "fieldtype": "Data",
+   "label": "Guardian Name"
+  },
+  {
+   "fieldname": "column_break_qqzv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "guardian_pan",
+   "fieldtype": "Data",
+   "label": "Guardian PAN "
+  },
+  {
+   "fieldname": "column_break_zlje",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "guardian_dob",
+   "fieldtype": "Date",
+   "label": "Guardian DoB"
+  },
+  {
+   "fieldname": "column_break_pzbt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "guardian_fatca",
+   "fieldtype": "Check",
+   "label": "Guardian FATCA"
+  },
+  {
+   "fieldname": "folio_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Folio Details"
+  },
+  {
+   "fieldname": "folio_number",
+   "fieldtype": "Data",
+   "label": "Folio Number"
+  },
+  {
+   "fieldname": "column_break_dhhm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "folio_created_date",
+   "fieldtype": "Date",
+   "label": "Folio Created Date"
+  },
+  {
+   "fieldname": "column_break_pznk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amc_code",
+   "fieldtype": "Date",
+   "label": "AMC Code"
+  },
+  {
+   "fieldname": "scheme_code",
+   "fieldtype": "Data",
+   "label": "Scheme Code"
+  },
+  {
+   "fieldname": "scheme_name",
+   "fieldtype": "Data",
+   "label": "Scheme Name"
+  },
+  {
+   "fieldname": "first_holder_address_1",
+   "fieldtype": "Data",
+   "label": "First Holder Address 1"
+  },
+  {
+   "fieldname": "first_holder_city",
+   "fieldtype": "Data",
+   "label": "First Holder City"
+  },
+  {
+   "fieldname": "column_break_vtnv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "first_holder_address_2",
+   "fieldtype": "Data",
+   "label": "First Holder Address 2"
+  },
+  {
+   "fieldname": "first_holder_pincode",
+   "fieldtype": "Data",
+   "label": "First Holder Pincode"
+  },
+  {
+   "fieldname": "column_break_pfuk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "first_holder_address_3",
+   "fieldtype": "Data",
+   "label": "First Holder Address 3"
+  },
+  {
+   "fieldname": "column_break_xtlw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "unit_balance",
+   "fieldtype": "Data",
+   "label": "Unit Balance"
+  },
+  {
+   "fieldname": "ruppee_balance",
+   "fieldtype": "Currency",
+   "label": "Ruppee Balance"
+  },
+  {
+   "fieldname": "balance_date",
+   "fieldtype": "Date",
+   "label": "Balance Date"
+  },
+  {
+   "fieldname": "phone_office",
+   "fieldtype": "Data",
+   "label": "Phone Office"
+  },
+  {
+   "fieldname": "phone_residence",
+   "fieldtype": "Data",
+   "label": "Phone Residence"
+  },
+  {
+   "fieldname": "column_break_nejx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "holding_nature",
+   "fieldtype": "Data",
+   "label": "Holding Nature"
+  },
+  {
+   "fieldname": "broker_code",
+   "fieldtype": "Data",
+   "label": "Broker Code"
+  },
+  {
+   "fieldname": "sub_broker_dealer_code",
+   "fieldtype": "Data",
+   "label": "Sub Broker Dealer Code"
+  },
+  {
+   "fieldname": "tax_status",
+   "fieldtype": "Data",
+   "label": "Tax Status"
+  },
+  {
+   "fieldname": "reinvestment_flag",
+   "fieldtype": "Data",
+   "label": "Reinvestment Flag"
+  },
+  {
+   "fieldname": "bank_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Bank Details"
+  },
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Name"
+  },
+  {
+   "fieldname": "column_break_ayiy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bank_account_number",
+   "fieldtype": "Data",
+   "label": "Bank Account Number"
+  },
+  {
+   "fieldname": "bank_branch",
+   "fieldtype": "Data",
+   "label": "Bank Branch"
+  },
+  {
+   "fieldname": "bank_account_type",
+   "fieldtype": "Data",
+   "label": "Bank Account Type"
+  },
+  {
+   "fieldname": "section_break_uqat",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "bank_address_1",
+   "fieldtype": "Data",
+   "label": "Bank Address 1"
+  },
+  {
+   "fieldname": "column_break_ncmh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bank_address_2",
+   "fieldtype": "Data",
+   "label": "Bank Address 2"
+  },
+  {
+   "fieldname": "column_break_slkl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bank_address_3",
+   "fieldtype": "Data",
+   "label": "Bank Address 3"
+  },
+  {
+   "fieldname": "section_break_fqpz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "bank_city",
+   "fieldtype": "Data",
+   "label": "Bank City"
+  },
+  {
+   "fieldname": "bank_pincode",
+   "fieldtype": "Data",
+   "label": "Bank Pincode"
+  },
+  {
+   "fieldname": "occupation",
+   "fieldtype": "Data",
+   "label": "Occupation"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile"
+  },
+  {
+   "fieldname": "first_nominee_name",
+   "fieldtype": "Data",
+   "label": "First Nominee Name"
+  },
+  {
+   "fieldname": "first_nominee_id_type",
+   "fieldtype": "Data",
+   "label": "First Nominee ID Type"
+  },
+  {
+   "fieldname": "column_break_rjos",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "first_nominee_dob",
+   "fieldtype": "Date",
+   "label": "First Nominee DoB"
+  },
+  {
+   "fieldname": "column_break_rkqq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "first_nominee_relation",
+   "fieldtype": "Data",
+   "label": "First Nominee Relation"
+  },
+  {
+   "fieldname": "column_break_spwg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "first_nominee_percentage",
+   "fieldtype": "Float",
+   "label": "First Nominee Percentage"
+  },
+  {
+   "fieldname": "first_nominee_mobile",
+   "fieldtype": "Data",
+   "label": "First Nominee Mobile"
+  },
+  {
+   "fieldname": "first_nominee_email",
+   "fieldtype": "Data",
+   "label": "First Nominee Email"
+  },
+  {
+   "fieldname": "first_nominee_address_1",
+   "fieldtype": "Data",
+   "label": "First Nominee Address 1"
+  },
+  {
+   "fieldname": "first_nominee_city",
+   "fieldtype": "Data",
+   "label": "First Nominee City"
+  },
+  {
+   "fieldname": "first_nominee_address_2",
+   "fieldtype": "Data",
+   "label": "First Nominee Address 2"
+  },
+  {
+   "fieldname": "first_nominee_address_3",
+   "fieldtype": "Data",
+   "label": "First Nominee Address 3"
+  },
+  {
+   "fieldname": "first_nominee_pincode",
+   "fieldtype": "Data",
+   "label": "First Nominee Pincode"
+  },
+  {
+   "fieldname": "section_break_cpfm",
+   "fieldtype": "Section Break",
+   "label": "Second Nominee Details"
+  },
+  {
+   "fieldname": "second_nominee_name",
+   "fieldtype": "Data",
+   "label": "Second Nominee Name"
+  },
+  {
+   "fieldname": "column_break_awzj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_zdkf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_zudy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "second_nominee_id_type",
+   "fieldtype": "Data",
+   "label": "Second Nominee ID Type"
+  },
+  {
+   "fieldname": "second_nominee_id_number",
+   "fieldtype": "Data",
+   "label": "Second Nominee ID Number"
+  },
+  {
+   "fieldname": "second_nominee_percentage",
+   "fieldtype": "Float",
+   "label": "Second Nominee Percentage"
+  },
+  {
+   "fieldname": "first_nominee_state",
+   "fieldtype": "Data",
+   "label": "First Nominee State"
+  },
+  {
+   "fieldname": "second_nominee_dob",
+   "fieldtype": "Date",
+   "label": "Second Nominee DoB"
+  },
+  {
+   "fieldname": "second_nominee_relation",
+   "fieldtype": "Data",
+   "label": "Second Nominee Relation"
+  },
+  {
+   "fieldname": "second_nominee_mobile",
+   "fieldtype": "Data",
+   "label": "Second Nominee Mobile"
+  },
+  {
+   "fieldname": "second_nominee_email",
+   "fieldtype": "Data",
+   "label": "Second Nominee Email"
+  },
+  {
+   "fieldname": "second_nominee_address_1",
+   "fieldtype": "Data",
+   "label": "Second Nominee Address 1"
+  },
+  {
+   "fieldname": "second_nominee_address_2",
+   "fieldtype": "Data",
+   "label": "Second Nominee Address 2"
+  },
+  {
+   "fieldname": "second_nominee_address_3",
+   "fieldtype": "Data",
+   "label": "Second Nominee Address 3"
+  },
+  {
+   "fieldname": "second_nominee_city",
+   "fieldtype": "Data",
+   "label": "Second Nominee City"
+  },
+  {
+   "fieldname": "second_nominee_pincode",
+   "fieldtype": "Data",
+   "label": "Second Nominee Pincode"
+  },
+  {
+   "fieldname": "second_nominee_state",
+   "fieldtype": "Data",
+   "label": "Second Nominee State"
+  },
+  {
+   "fieldname": "first_nominee_details_section",
+   "fieldtype": "Section Break",
+   "label": "First Nominee Details"
+  },
+  {
+   "fieldname": "third_nominee_details_section",
+   "fieldtype": "Section Break",
+   "label": "Third Nominee Details"
+  },
+  {
+   "fieldname": "third_nominee_name",
+   "fieldtype": "Data",
+   "label": "Third Nominee Name"
+  },
+  {
+   "fieldname": "column_break_qbya",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "third_nominee_dob",
+   "fieldtype": "Date",
+   "label": "Third Nominee DoB"
+  },
+  {
+   "fieldname": "column_break_iwal",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "third_nominee_relation",
+   "fieldtype": "Data",
+   "label": "Third Nominee Relation"
+  },
+  {
+   "fieldname": "third_nominee_id_type",
+   "fieldtype": "Data",
+   "label": "Third Nominee ID Type"
+  },
+  {
+   "fieldname": "column_break_adwp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "third_nominee_mobile",
+   "fieldtype": "Data",
+   "label": "Third Nominee Mobile"
+  },
+  {
+   "fieldname": "third_nominee_id_number",
+   "fieldtype": "Data",
+   "label": "Third Nominee ID Number"
+  },
+  {
+   "fieldname": "third_nominee_percentage",
+   "fieldtype": "Float",
+   "label": "Third Nominee Percentage"
+  },
+  {
+   "fieldname": "third_nominee_email",
+   "fieldtype": "Data",
+   "label": "Third Nominee Email"
+  },
+  {
+   "fieldname": "third_nominee_address_1",
+   "fieldtype": "Data",
+   "label": "Third Nominee Address 1"
+  },
+  {
+   "fieldname": "third_nominee_address_2",
+   "fieldtype": "Data",
+   "label": "Third Nominee Address 2"
+  },
+  {
+   "fieldname": "third_nominee_address_3",
+   "fieldtype": "Data",
+   "label": "Third Nominee Address 3"
+  },
+  {
+   "fieldname": "third_nominee_city",
+   "fieldtype": "Data",
+   "label": "Third Nominee City"
+  },
+  {
+   "fieldname": "third_nominee_state",
+   "fieldtype": "Data",
+   "label": "Third Nominee State"
+  },
+  {
+   "fieldname": "third_nominee_pincode",
+   "fieldtype": "Data",
+   "label": "Third Nominee Pincode"
+  },
+  {
+   "fieldname": "column_break_ghxa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bank_ifsc",
+   "fieldtype": "Data",
+   "label": "Bank IFSC"
+  },
+  {
+   "fieldname": "section_break_mczk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_demat",
+   "fieldtype": "Check",
+   "label": "Is Demat?"
+  },
+  {
+   "fieldname": "column_break_vluk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dp_id",
+   "fieldtype": "Data",
+   "label": "DP ID"
+  },
+  {
+   "fieldname": "folio_creation_date",
+   "fieldtype": "Date",
+   "label": "Folio Creation Date"
+  },
+  {
+   "fieldname": "section_break_trii",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tpa_linked",
+   "fieldtype": "Data",
+   "label": "TPA Linked"
+  },
+  {
+   "fieldname": "aadhar_status",
+   "fieldtype": "Data",
+   "label": "Aadhar Status"
+  },
+  {
+   "fieldname": "first_holder_ckyc",
+   "fieldtype": "Data",
+   "label": "First Holder CKYC"
+  },
+  {
+   "fieldname": "second_holder_ckyc",
+   "fieldtype": "Data",
+   "label": "Second Holder CKYC"
+  },
+  {
+   "fieldname": "third_holder_ckyc",
+   "fieldtype": "Data",
+   "label": "Third Holder CKYC"
+  },
+  {
+   "fieldname": "guardian_ckyc",
+   "fieldtype": "Data",
+   "label": "Guardian CKYC"
+  },
+  {
+   "fieldname": "first_nominee_id_number",
+   "fieldtype": "Data",
+   "label": "First Nominee ID Number"
+  },
+  {
+   "fieldname": "column_break_ltxn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gst_state_code",
+   "fieldtype": "Data",
+   "label": "GST State Code"
+  },
+  {
+   "fieldname": "old_folio_number",
+   "fieldtype": "Data",
+   "label": "Old Folio Number"
+  },
+  {
+   "fieldname": "scheme_folio_number",
+   "fieldtype": "Data",
+   "label": "Scheme Folio Number"
+  },
+  {
+   "fieldname": "first_holder_country",
+   "fieldtype": "Data",
+   "label": "First Holder Country"
+  },
+  {
+   "fieldname": "section_break_sbmr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "first_holder_state",
+   "fieldtype": "Data",
+   "label": "First Holder State"
+  },
+  {
+   "fieldname": "tpin",
+   "fieldtype": "Data",
+   "label": "TPIN"
+  },
+  {
+   "fieldname": "first_holder_father_name",
+   "fieldtype": "Data",
+   "label": "First Holder Father Name"
+  },
+  {
+   "fieldname": "first_holder_mother_name",
+   "fieldtype": "Data",
+   "label": "First Holder Mother Name"
+  },
+  {
+   "fieldname": "rta",
+   "fieldtype": "Select",
+   "label": "RTA",
+   "options": "CAMS\nKFINTECH"
+  },
+  {
+   "fieldname": "column_break_vhuw",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-17 15:33:10.578631",
+ "modified_by": "Administrator",
+ "module": "WMS Mutual Funds",
+ "name": "WMS MF Investor Folio Scheme Master",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

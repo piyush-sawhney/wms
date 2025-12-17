@@ -2,3 +2,4 @@ WMS Core
 WMS Insurance
 WMS Investment
 WMS Mutual Fund
+WMS Mutual Funds
