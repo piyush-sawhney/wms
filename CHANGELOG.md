@@ -1,3 +1,10 @@
+## [1.8.11](https://github.com/piyush-sawhney/wms/compare/v1.8.10...v1.8.11) (2025-12-18)
+
+
+### Bug Fixes
+
+* start date removal from list view and default value ([f07577f](https://github.com/piyush-sawhney/wms/commit/f07577f13576b78df6217980917359467d8ee02e))
+
 ## [1.8.10](https://github.com/piyush-sawhney/wms/compare/v1.8.9...v1.8.10) (2025-12-18)
 
 
