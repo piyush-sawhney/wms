@@ -1,3 +1,10 @@
+## [1.8.10](https://github.com/piyush-sawhney/wms/compare/v1.8.9...v1.8.10) (2025-12-18)
+
+
+### Bug Fixes
+
+* start date mandotroy removal for all purchase types ([59a8aea](https://github.com/piyush-sawhney/wms/commit/59a8aea5d7eedbfe93ced1f647108e9a8ff2af88)), closes [#139](https://github.com/piyush-sawhney/wms/issues/139)
+
 ## [1.8.9](https://github.com/piyush-sawhney/wms/compare/v1.8.8...v1.8.9) (2025-12-18)
 
 
