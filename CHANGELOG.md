@@ -1,3 +1,10 @@
+## [1.8.9](https://github.com/piyush-sawhney/wms/compare/v1.8.8...v1.8.9) (2025-12-18)
+
+
+### Bug Fixes
+
+* failing schedule filters ([2afeac9](https://github.com/piyush-sawhney/wms/commit/2afeac91b82ad72e24c2744b55b16c569f86e4c8))
+
 ## [1.8.8](https://github.com/piyush-sawhney/wms/compare/v1.8.7...v1.8.8) (2025-12-12)
 
 
