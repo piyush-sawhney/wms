@@ -1,0 +1,53 @@
+{
+ "add_total_row": 1,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-12-26 12:08:09.891814",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "default": "Today",
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  },
+  {
+   "default": "Today",
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 1,
+ "is_standard": "Yes",
+ "json": "{}",
+ "letter_head": null,
+ "modified": "2025-12-26 14:24:37.294843",
+ "modified_by": "Administrator",
+ "module": "WMS Investment",
+ "name": "Created Schedule Details",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\n    s.schedule_number AS \"Schedule Number:Data:150\",\n    s.schedule_date AS \"Schedule Date:Date:150\",\n    s.schedule_amount AS \"Schedule Amount:Currency:170\",\n    s.total_rebate AS \"Rebate:Currency:120\",\n    s.total_surcharge AS \"Surcharge:Currency:120\",\n\n    (s.schedule_amount + s.total_surcharge - s.total_rebate)\n        AS \"Deposit Amount:Currency:140\",\n\n    COUNT(t.name) AS \"RD Books:Int:120\"\n\nFROM `tabWMS RD Schedule` s\nLEFT JOIN `tabWMS RD Transaction` t\n    ON t.parent = s.name\n    AND t.parenttype = 'WMS RD Schedule'\n\nWHERE s.docstatus = 1\nAND s.schedule_date BETWEEN %(from_date)s AND %(to_date)s\n\nGROUP BY s.name\nORDER BY s.schedule_date DESC;\n",
+ "ref_doctype": "WMS RD Schedule",
+ "report_name": "Created Schedule Details",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "WMS Investment Manager"
+  },
+  {
+   "role": "WMS Owner"
+  }
+ ],
+ "timeout": 0
+}

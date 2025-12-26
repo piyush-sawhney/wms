@@ -187,12 +187,8 @@
    "label": "Scheme Name"
   },
   {
-   "columns": 2,
-   "default": "Today",
    "fieldname": "start_date",
    "fieldtype": "Date",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Start Date",
    "mandatory_depends_on": "eval: doc.request_type === \"SIP\" || doc.request_type === \"STP\" || doc.request_type === \"SWP\";"
   }
@@ -206,7 +202,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-12-18 11:23:07.459076",
+ "modified": "2025-12-18 11:55:33.653261",
  "modified_by": "Administrator",
  "module": "WMS Mutual Fund",
  "name": "WMS MF Transaction",
