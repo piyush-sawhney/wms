@@ -260,5 +260,6 @@ fixtures = [
 	"WMS Insurance Type",
 	"WMS Product",
 	"WMS Product Provider",
+    "WMS PO Scheme Info",
 	{"dt": "Address Template", "filters": [["name", "in", ["India"]]]},
 ]

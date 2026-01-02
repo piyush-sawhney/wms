@@ -2,6 +2,20 @@
  {
   "docstatus": 0,
   "doctype": "WMS Product",
+  "modified": "2025-11-07 14:04:48.316176",
+  "name": "MFD Software",
+  "product_name": "MFD Software"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Product",
+  "modified": "2025-12-02 12:03:46.416822",
+  "name": "54EC BONDS",
+  "product_name": "54EC BONDS"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Product",
   "modified": "2025-08-19 14:01:41.870860",
   "name": "DEMAT",
   "product_name": "DEMAT"

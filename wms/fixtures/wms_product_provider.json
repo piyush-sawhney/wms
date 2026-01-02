@@ -1,5 +1,222 @@
 [
  {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-07 12:08:03.964778",
+  "name": "Nippon India Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "Nippon India Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:01:39.474610",
+  "name": "Baroda BNP Paribas Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "Baroda BNP Paribas Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:01:49.276166",
+  "name": "Canara Robeco Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "Canara Robeco Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:02:03.191333",
+  "name": "Edelweiss Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "Edelweiss Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:02:47.575577",
+  "name": "Invesco Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "Invesco Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:03:19.467503",
+  "name": "LIC Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "LIC Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:03:30.491421",
+  "name": "Mirae Asset Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "Mirae Asset Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:03:53.836616",
+  "name": "PGIM India Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "PGIM India Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:04:01.343485",
+  "name": "Quant Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "Quant Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:04:33.208144",
+  "name": "ICICI Prudential Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "ICICI Prudential Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:04:45.262812",
+  "name": "DSP Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "DSP Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:05:19.598263",
+  "name": "HSBC Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "HSBC Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:05:48.104448",
+  "name": "Franklin Templeton Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "Franklin Templeton Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:05:56.394677",
+  "name": "Union Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "Union Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:06:15.671912",
+  "name": "Whiteoak Capital Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "Whiteoak Capital Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:06:38.823317",
+  "name": "PPFAS Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "PPFAS Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:07:02.377242",
+  "name": "Bandhan Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "Bandhan Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-27 17:56:25.553258",
+  "name": "Axis Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "Axis Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-11-19 11:46:31.769260",
+  "name": "LIC Housing Finance Limited",
+  "product": "Fixed Income",
+  "provider_name": "LIC Housing Finance Limited"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-11-20 11:26:14.109807",
+  "name": "ICICI Home Finance Co Ltd",
+  "product": "Fixed Income",
+  "provider_name": "ICICI Home Finance Co Ltd"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-11-22 12:55:21.920867",
+  "name": "Mahindra and Mahindra Financial Services Ltd",
+  "product": "Fixed Income",
+  "provider_name": "Mahindra and Mahindra Financial Services Ltd"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-11-29 13:55:49.714246",
+  "name": "HDFC Ltd - Platinum",
+  "product": "Fixed Income",
+  "provider_name": "HDFC Ltd - Platinum"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-12-02 12:03:53.991440",
+  "name": "POWER FINANCE CORPORATION LTD",
+  "product": "54EC BONDS",
+  "provider_name": "POWER FINANCE CORPORATION LTD"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-12-03 13:25:54.557284",
+  "name": "IRFC CAPITAL GAIN BONDS 54 EC",
+  "product": "Fixed Income",
+  "provider_name": "IRFC CAPITAL GAIN BONDS 54 EC"
+ },
+ {
+  "code": null,
   "docstatus": 0,
   "doctype": "WMS Product Provider",
   "modified": "2025-08-21 14:51:18.914790",
@@ -8,6 +225,7 @@
   "provider_name": "The New India Assurance Co Ltd"
  },
  {
+  "code": null,
   "docstatus": 0,
   "doctype": "WMS Product Provider",
   "modified": "2025-08-21 14:57:46.090368",
@@ -16,6 +234,7 @@
   "provider_name": "Post Office"
  },
  {
+  "code": null,
   "docstatus": 0,
   "doctype": "WMS Product Provider",
   "modified": "2025-08-21 14:58:23.137236",
@@ -24,6 +243,7 @@
   "provider_name": "ICICI Prudential Life Insurance Co Ltd"
  },
  {
+  "code": null,
   "docstatus": 0,
   "doctype": "WMS Product Provider",
   "modified": "2025-08-21 14:58:42.474671",
@@ -32,11 +252,174 @@
   "provider_name": "Aditya Birla Health Insurance Co Ltd"
  },
  {
+  "code": null,
   "docstatus": 0,
   "doctype": "WMS Product Provider",
   "modified": "2025-08-21 14:59:16.186237",
   "name": "PNB Housing Finance Ltd",
   "product": "Fixed Income",
   "provider_name": "PNB Housing Finance Ltd"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 12:35:25.151781",
+  "name": "Sundaram Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "Sundaram Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:03:02.209287",
+  "name": "JM Financial Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "JM Financial Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:03:40.409080",
+  "name": "Motilal Oswal Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "Motilal Oswal Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:05:29.906909",
+  "name": "Kotak Mahindra Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "Kotak Mahindra Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:05:40.731409",
+  "name": "Tata Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "Tata Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-11-17 18:22:13.631253",
+  "name": "Rural Electrification Corp Ltd - Rec-54Ec Bonds",
+  "product": "Fixed Income",
+  "provider_name": "Rural Electrification Corp Ltd - Rec-54Ec Bonds"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:04:17.345029",
+  "name": "UTI Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "UTI Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:04:54.669531",
+  "name": "Aditya Birla Sun Life Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "Aditya Birla Sun Life Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:05:07.757874",
+  "name": "HDFC Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "HDFC Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-11-20 10:57:45.099610",
+  "name": "Shriram Finance Ltd-Unnati",
+  "product": "Fixed Income",
+  "provider_name": "Shriram Finance Ltd-Unnati"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-11-20 11:07:28.917893",
+  "name": "Shriram Finance Ltd-Jubilee",
+  "product": "Fixed Income",
+  "provider_name": "Shriram Finance Ltd-Jubilee"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-13 13:04:28.221820",
+  "name": "ADITYA BIRLA MONEY LIMITED",
+  "product": "DEMAT",
+  "provider_name": "ADITYA BIRLA MONEY LIMITED"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-11-07 14:51:02.719959",
+  "name": "POWER FINANCE CORPORATION LIMITED",
+  "product": "Fixed Income",
+  "provider_name": "POWER FINANCE CORPORATION LIMITED"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:06:50.050753",
+  "name": "Mahindra Manulife Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "Mahindra Manulife Mutual Fund"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-11-17 18:53:12.531713",
+  "name": "National Highway Authority India-54 EC Capital Gains Bonds",
+  "product": "Fixed Income",
+  "provider_name": "National Highway Authority India-54 EC Capital Gains Bonds"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-08 15:06:27.173879",
+  "name": "SBI Mutual Fund",
+  "product": "Mutual Fund",
+  "provider_name": "SBI Mutual Fund"
+ },
+ {
+  "code": "RBI BONDS",
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-10-22 12:32:49.108665",
+  "name": "HDFC BANK-RBI FLOATING RATE SAVINGS BOND 2020 (TAXABLE)",
+  "product": "Fixed Income",
+  "provider_name": "HDFC BANK-RBI FLOATING RATE SAVINGS BOND 2020 (TAXABLE)"
+ },
+ {
+  "code": null,
+  "docstatus": 0,
+  "doctype": "WMS Product Provider",
+  "modified": "2025-11-07 14:04:54.059166",
+  "name": "Redvision",
+  "product": "MFD Software",
+  "provider_name": "Redvision"
  }
 ]

@@ -2,6 +2,55 @@
  {
   "docstatus": 0,
   "doctype": "WMS Service Type",
+  "modified": "2025-10-13 12:24:20.909782",
+  "name": "New Saving Account",
+  "type_name": "New Saving Account"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Service Type",
+  "modified": "2025-10-24 12:26:16.694250",
+  "name": "SWP Cancellation",
+  "type_name": "SWP Cancellation"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Service Type",
+  "modified": "2025-11-06 15:53:00.677657",
+  "name": "Change of Broker Request",
+  "type_name": "Change of Broker Request"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Service Type",
+  "modified": "2025-11-06 15:55:45.293121",
+  "name": "SWP Request",
+  "type_name": "SWP Request"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Service Type",
+  "modified": "2025-11-19 13:37:34.972948",
+  "name": "STP",
+  "type_name": "STP"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Service Type",
+  "modified": "2025-11-19 16:14:30.368735",
+  "name": "SIP STOP",
+  "type_name": "SIP STOP"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Service Type",
+  "modified": "2025-11-19 16:17:19.187937",
+  "name": "SIP CANCELLATION",
+  "type_name": "SIP CANCELLATION"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Service Type",
   "modified": "2025-08-01 19:19:51.652566",
   "name": "15 G/H Update",
   "type_name": "15 G/H Update"
@@ -124,5 +173,19 @@
   "modified": "2025-08-05 15:21:55.278813",
   "name": "PAN Update",
   "type_name": "PAN Update"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Service Type",
+  "modified": "2025-10-07 11:55:17.191300",
+  "name": "Minor To Major",
+  "type_name": "Minor To Major"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Service Type",
+  "modified": "2025-11-19 12:52:55.639282",
+  "name": "PPF Deposit",
+  "type_name": "PPF Deposit"
  }
 ]

@@ -18,7 +18,6 @@ class WMSPOInvestment(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
-
 		from wms.wms_core.doctype.wms_nominee.wms_nominee import WMSNominee
 		from wms.wms_investment.doctype.wms_investment_holder.wms_investment_holder import WMSInvestmentHolder
 		from wms.wms_investment.doctype.wms_po_extension.wms_po_extension import WMSPOExtension
@@ -49,19 +48,9 @@ class WMSPOInvestment(Document):
 		scheme_code: DF.Data | None
 		scheme_name: DF.Link
 		start_date: DF.Date | None
-		status: DF.Literal[
-			"Entry Done",
-			"Submitted",
-			"Active",
-			"Renewed",
-			"Matured",
-			"Pre-Matured",
-			"Transmitted",
-			"Rejected",
-		]
+		status: DF.Literal["Entry Done", "Submitted", "Active", "Renewed", "Matured", "Pre-Matured", "Transmitted", "Rejected"]
 		submit_branch: DF.Data | None
 		through_us: DF.Check
-
 	# end: auto-generated types
 	def autoname(self):
 		FY = get_financial_year_code(self.entry_date)

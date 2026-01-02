@@ -1,0 +1,90 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Scheme Info",
+  "modified": "2026-01-02 18:00:19.764745",
+  "name": "MIS",
+  "scheme_code": "MIS",
+  "scheme_name": "Monthly Income Scheme"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Scheme Info",
+  "modified": "2026-01-02 18:00:38.900878",
+  "name": "RD",
+  "scheme_code": "RD",
+  "scheme_name": "Recurring Deposit"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Scheme Info",
+  "modified": "2026-01-02 18:00:49.048894",
+  "name": "TD1",
+  "scheme_code": "TD1",
+  "scheme_name": "Time Deposit 1 Year"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Scheme Info",
+  "modified": "2026-01-02 18:00:58.716597",
+  "name": "TD2",
+  "scheme_code": "TD2",
+  "scheme_name": "Time Deposit 2 Year"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Scheme Info",
+  "modified": "2026-01-02 18:01:10.258154",
+  "name": "KVP",
+  "scheme_code": "KVP",
+  "scheme_name": "Kisan Vikas Patra"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Scheme Info",
+  "modified": "2026-01-02 18:01:26.452268",
+  "name": "POSB",
+  "scheme_code": "POSB",
+  "scheme_name": "Post Office Savings Bank"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Scheme Info",
+  "modified": "2026-01-02 18:01:36.336878",
+  "name": "NSC",
+  "scheme_code": "NSC",
+  "scheme_name": "National Savings Scheme"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Scheme Info",
+  "modified": "2026-01-02 18:01:56.222893",
+  "name": "TD3",
+  "scheme_code": "TD3",
+  "scheme_name": "Time Deposit 3 Year"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Scheme Info",
+  "modified": "2026-01-02 18:02:04.878075",
+  "name": "TD5",
+  "scheme_code": "TD5",
+  "scheme_name": "Time Deposit 5 Year"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Scheme Info",
+  "modified": "2026-01-02 18:02:28.836268",
+  "name": "SCSS",
+  "scheme_code": "SCSS",
+  "scheme_name": "Senior Citizen Savings Scheme"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS PO Scheme Info",
+  "modified": "2026-01-02 18:02:40.591604",
+  "name": "SSY",
+  "scheme_code": "SSY",
+  "scheme_name": "Sukanya Samriddhi Yojana"
+ }
+]

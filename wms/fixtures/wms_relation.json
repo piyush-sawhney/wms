@@ -2,6 +2,13 @@
  {
   "docstatus": 0,
   "doctype": "WMS Relation",
+  "modified": "2025-10-06 20:13:59.927141",
+  "name": "Grandson",
+  "relation_name": "Grandson"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Relation",
   "modified": "2025-08-05 18:23:02.967999",
   "name": "Brother",
   "relation_name": "Brother"
@@ -103,5 +110,19 @@
   "modified": "2025-08-01 17:06:13.164682",
   "name": "Sister",
   "relation_name": "Sister"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Relation",
+  "modified": "2025-12-29 18:14:00.296418",
+  "name": "Sister-in-Law",
+  "relation_name": "Sister-in-Law"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Relation",
+  "modified": "2025-10-06 20:14:20.506978",
+  "name": "Granddaughter",
+  "relation_name": "Granddaughter"
  }
 ]

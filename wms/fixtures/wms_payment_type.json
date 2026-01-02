@@ -2,6 +2,13 @@
  {
   "docstatus": 0,
   "doctype": "WMS Payment Type",
+  "modified": "2025-11-06 16:37:23.813494",
+  "name": "One Time Mandate",
+  "payment_type": "One Time Mandate"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "WMS Payment Type",
   "modified": "2025-08-02 17:43:16.075497",
   "name": "UPI",
   "payment_type": "UPI"

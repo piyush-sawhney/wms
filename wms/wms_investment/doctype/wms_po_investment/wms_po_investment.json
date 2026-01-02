@@ -100,7 +100,7 @@
    "fieldname": "scheme_name",
    "fieldtype": "Link",
    "label": "Scheme Name",
-   "options": "WMS PO Scheme",
+   "options": "WMS PO Scheme Info",
    "reqd": 1
   },
   {
@@ -119,13 +119,12 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "scheme_name.period",
    "fetch_if_empty": 1,
    "fieldname": "period",
    "fieldtype": "Int",
    "label": "Period",
-   "non_negative": 1,
-   "read_only": 1
+   "mandatory_depends_on": "eval: doc.scheme_code != \"POSB\";",
+   "non_negative": 1
   },
   {
    "default": "INR",
@@ -139,13 +138,11 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "scheme_name.roi",
-   "fetch_if_empty": 1,
    "fieldname": "roi",
    "fieldtype": "Float",
    "label": "Rate of Interest",
-   "precision": "2",
-   "read_only": 1
+   "mandatory_depends_on": "eval: doc.scheme_code != \"POSB\";",
+   "precision": "2"
   },
   {
    "fieldname": "start_date",
@@ -203,7 +200,7 @@
    "label": "Through Us?"
   },
   {
-   "fetch_from": "scheme_name.code",
+   "fetch_from": "scheme_name.scheme_code",
    "fieldname": "scheme_code",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -337,7 +334,7 @@
    "link_fieldname": "investment"
   }
  ],
- "modified": "2025-12-10 15:10:39.401745",
+ "modified": "2026-01-02 16:57:24.512087",
  "modified_by": "Administrator",
  "module": "WMS Investment",
  "name": "WMS PO Investment",
